@@ -26,8 +26,8 @@ typedef enum {
 
 #define DRIVE_STRAIGHT() drive(0, 250, 128, 0)												// +125mm/s 											// -100mm/s
 #define STOP() drive(0, 0, 0, 0)
-#define TURN_RIGHT() drive(0, 25, 255, 255)
-#define TURN_LEFT() drive(0, 25, 0, 1)
+#define TURN_RIGHT() drive(0, 50, 255, 255)
+#define TURN_LEFT() drive(0, 50, 0, 1)
 #define REVERSE() drive(255, 125, 128, 0)
 
 void drive(char highByteSpeed, char lowByteSpeed, char highByteRadius, char lowByteRadius);

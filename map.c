@@ -4,8 +4,8 @@
 #include "map.h"
 #include "lcd.h"
 
-char finalX = 0;
-char finalY = 0;
+char finalX = 3;
+char finalY = 1;
 char vicZone = 0;
 
 void findFinalDestination(char virtualWallX, char virtualWallY, orientation robotOrientation)

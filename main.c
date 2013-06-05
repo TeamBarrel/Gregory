@@ -44,9 +44,10 @@ volatile bit RTC_FLAG_10MS = 0;
 volatile bit RTC_FLAG_50MS = 0;
 volatile bit RTC_FLAG_500MS = 0;
 volatile bit goingHome, home = FALSE;
+volatile bit ready = FALSE;
 volatile bit rightWall, frontWall, leftWall = 0;
 
-volatile unsigned char victimZone = 0;
+volatile char victimZone = 0;
 volatile unsigned char xCoord = 1;
 volatile unsigned char yCoord = 3;
 volatile unsigned char node = 0;
@@ -136,7 +137,7 @@ void initIRobot()
 
 void checkForFinalDestination()
 {
-	if(!goingHome && (xCoord == getFinalX()) && (yCoord == getFinalY()))
+	if((xCoord == getFinalX()) && (yCoord == getFinalY()))
 	{		
 		play_iCreate_song(2);
 		goingHome = TRUE;
@@ -151,21 +152,21 @@ void lookForVictim()
 	ser_putch(17);
 	char victim = ser_getch();
 		
-	if(victim == 254)
+	if(victim > 241 && victim != 255)
 	{
-		//if(goingHome)
-		//{
+		if(goingHome)
+		{
 			play_iCreate_song(3);
 			victimZone = 0;
 			lcd_set_cursor(0x09);
 			lcd_write_data('V');
-		//}
-//		else
-//		{
-//			victimZone = getVictimZone(xCoord, yCoord);
-//			lcd_set_cursor(0x08);
-//			lcd_write_1_digit_bcd(victimZone);
-//		}
+		}
+		else
+		{
+			victimZone = getVictimZone(xCoord, yCoord);
+			lcd_set_cursor(0x08);
+			lcd_write_1_digit_bcd(victimZone);
+		}
 	}
 }
 
@@ -176,33 +177,25 @@ void findWalls()
 
 	leftWall = findWall();
 	if(leftWall)
-	{
 		lcd_write_data('L');
-	}
 	else
 		lcd_write_data(' ');
+
 	rotateIR(24, CW);
-	play_iCreate_song(5);
 	frontWall = findWall();
 	if(frontWall)
-	{
 		lcd_write_data('F');
-		//frontWallCorrect();
-	}
 	else
 		lcd_write_data(' ');
+
 	rotateIR(24, CW);
-	play_iCreate_song(5);
 	rightWall = findWall();
 	if(rightWall)
-	{
 		lcd_write_data('R');
-	//	rightWallCorrect();
-	}
 	else
 		lcd_write_data(' ');
-	rotateIR(36, CCW);
-	play_iCreate_song(5);	
+
+	rotateIR(36, CCW);	
 }
 
 void goParallel()
@@ -212,7 +205,7 @@ void goParallel()
 	int distance, shortestDistance = 999;
 	char stepsToWall;
 
-	for (int step = -12; step < 12; step++)
+	for (int step = -12; step <= 12; step++)
 	{
 		distance = readIR();
 		if(distance < shortestDistance)
@@ -222,50 +215,26 @@ void goParallel()
 		}
 		rotateIR(1, CCW);
 	}
-	play_iCreate_song(5);
-	rotateIR(12, CW);	
-	play_iCreate_song(5);
+	rotateIR(12, CW);
 
-	int angleParallelToWall = (int)((stepsToWall*HALF_STEP_RESOLUTION)*.944);
+	int angleParallelToWall = (int)((stepsToWall*HALF_STEP_RESOLUTION)-6); //6 is just for calibration, play with this value
 	char angleHighByte = 0;
 	char angleLowByte = (char) angleParallelToWall;
 	
 	if(angleParallelToWall < 0)																// If the angle is < 90
-		angleParallelToWall = 360 - angleParallelToWall;									// Find the reflex angle
+		angleParallelToWall = 360 + angleParallelToWall;									// Find the reflex angle
 
 	if(angleParallelToWall > 255)															// If the angle is > 255
 	{
 		angleHighByte = 1;																	/* Split it into high */
 		angleLowByte = (char)(angleParallelToWall - 255);									/* and low bytes      */
 	}
-	TURN_LEFT();																			/* Turn CCW on the spot   */
-	waitFor(ANGLE,angleHighByte,angleLowByte);												/* To go parallel to wall */
-	STOP();
-
-
-
-//	rotateIR(24, CW);
-//	play_iCreate_song(5);
-//	SCAN_IR_DEG(360, CCW, TRUE);															// Rotate CCW 360deg to find closest object
-//	play_iCreate_song(5);
-//	rotateIR(72, CW);
-//	play_iCreate_song(5);
-//	
-//	int angleParallelToWall = (int)(((stepsToPerpendicular*HALF_STEP_RESOLUTION)-90)*.944);
-//	char angleHighByte = 0;
-//	char angleLowByte = (char) angleParallelToWall;
-//	
-//	if(angleParallelToWall < 0)																// If the angle is < 90
-//		angleParallelToWall = 360 - angleParallelToWall;									// Find the reflex angle
-//
-//	if(angleParallelToWall > 255)															// If the angle is > 255
-//	{
-//		angleHighByte = 1;																	/* Split it into high */
-//		angleLowByte = (char)(angleParallelToWall - 255);									/* and low bytes      */
-//	}
-//	TURN_LEFT();																			/* Turn CCW on the spot   */
-//	waitFor(ANGLE,angleHighByte,angleLowByte);												/* To go parallel to wall */
-//	STOP();	
+	if((angleParallelToWall > 8) && (angleParallelToWall < 352))							// Only corrects if its out by more than 8deg (~1 step)
+	{
+		TURN_LEFT();																			/* Turn CCW on the spot   */
+		waitFor(ANGLE,angleHighByte,angleLowByte);												/* To go parallel to wall */
+		STOP();
+	}
 }
 
 void goToNextCell()
@@ -341,52 +310,105 @@ void main(void)
 	STOP();
 
 	lcd_set_cursor(0x00);
-	lcd_write_string("(-,-) E -- --- -"); //x/y of robot, explore/return, zone of victim/got victim, walls, way went
+	lcd_write_string("(-,-) - -- --- -"); //x/y of robot, explore/return, zone of victim/got victim, walls, way went
 	lcd_set_cursor(0x40);
-	lcd_write_string("- - - (0,0) GREG"); //orientation, cliff detected, v.wall detected, x/y of final destination
-
-	//play_iCreate_song(1);
-
+	lcd_write_string("- - - (3,1) GREG"); //orientation, cliff detected, v.wall detected, x/y of final destination
+		
 	while(!home)
 	{
-
-		if(start.pressed)
+		if(start.pressed && ready == FALSE)
+		{
+			findWalls();
+			if(leftWall && rightWall && frontWall) 		//if facing east
+				turnAround(); 							//turn to face west	
+			else if (rightWall && frontWall)			//if facing north
+				turnLeft90(); 							//turn to face west
+			else if(leftWall && frontWall)				//if facing south
+				turnRight90(); 							//turn to face west
+			ready = TRUE; 								//commence exploring the map
+			lcd_set_cursor(0x06);
+			lcd_write_data('E');						//Explore mode
+			play_iCreate_song(1);
+			rotateIR(12, CCW);										
+		}	
+		
+		if(start.pressed && ready == TRUE)
 		{
 			checkForFinalDestination();
+			play_iCreate_song(5);
 			lookForVictim();
+			play_iCreate_song(5);
 			findWalls();
+			play_iCreate_song(5);
 			if(leftWall)
 				goParallel();
 			else
 				rotateIR(12, CCW);
-			//switch(node)
-			//{
-			//	case 0:
+			play_iCreate_song(5);
+			if(frontWall)
+				frontWallCorrect();
+			play_iCreate_song(5);
+			switch(node)
+			{
+				case 0:
 					goToNextCell();
-			//		break;
-			//	case 1:
-			//		goToNextCell();
-			//		break;
-			//	case 2:
-			//		goToNextCell();
-			//		break;
-			//	case 3:
-			//		goToNextCell();
-			//		break;
-			//	default:
-			//		break;
-			//}
+					break;
+				case 1:
+					if (goingHome)
+					{
+						if (victimZone == 1)
+							goRight();
+						else if (getOrientation() == EAST)
+							goForward();
+						else if (getOrientation() == SOUTH)
+							goRight();
+					}
+					else
+						goToNextCell();
+					break;
+				case 2:
+					if (goingHome)
+					{
+						if (victimZone == 2)
+							goForward();
+						else if (getOrientation() == SOUTH)
+							goRight();
+						else if (getOrientation() == NORTH)
+							goLeft();
+					}
+					else
+						goToNextCell();
+					break;
+				case 3:
+					if (goingHome)
+					{
+						if (victimZone == 3)
+							goRight();
+						else if (getOrientation() == EAST)
+							goForward();
+						else if (getOrientation() == SOUTH)
+						goLeft();
+					}
+					else
+						goToNextCell();
+					break;
+				default:
+					break;
+			}
+			play_iCreate_song(5);
 			//sendEEPROMData();
+			//play_iCreate_song(5);
 			if(getSuccessfulDrive())
 			{
 				updateLocation();
-				updateNode();
+				updateNode();		
 				if(goingHome)
 					checkIfHome();
+				play_iCreate_song(5);
 			}
 		}
 	}
-	//Turn off
+	//Turn off the create!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 }
 
 /******** SUB-FUNCTIONS ********/
@@ -408,44 +430,6 @@ char getCurrentX()
 char getCurrentY()
 {
 	return yCoord;
-}
-
-/* Rotates the stepper a given direction           */
-/* Reads the IR over a given number of steps       */
-/* Writes to the LCD the closest object if desired */
-void scanIR(char steps, int motorDirection, char updateClosestObject)
-{
-
-	closestObject.position = 0;																/* Initialise the closest object to step 0 */
-	closestObject.distance = 999;															/* At 999cm away                           */
-
-	SSPBUF = motorDirection;																// Write to SSPBUF the desired direction to rotate stepper motor
-	__delay_ms(200);
-
-	for (char stepNum = 1; stepNum <= steps; ++stepNum)										// For the amount of steps desired
-	{
-		PORTC |= 0b00000100;																/* Pulse SM_STEP */
-		PORTC &= 0b11111011;																/* once          */
-
-		if(motorDirection == CCW)															/* If the direction is CCW      */
-			++stepPosition;																	/* Increment step position by 1 */
-		else																				/* Otherwise (i.e. CW)          */
-			--stepPosition;																	/* Decrement step position by 1 */
-
-		int distanceRead = readIR();														// Read distance detected by IR sensor
-
-		// If it is desired to update the closest object, and the read distance is closer than the distance of the current closest object
-		
-		if((updateClosestObject == TRUE)&&(distanceRead < closestObject.distance))
-		{
-			closestObject.distance = distanceRead;											/* Update the distance            */
-			closestObject.position = stepPosition;											/* and position of closest object */	
-		}
-	}
-	stepsToPerpendicular = closestObject.position;											// Once closest object is found, calculate the number of steps away it is
-	
-	SSPBUF = 0b00000000;																	// Clear SSPBUF so that the stepper motor direction may be changed
-	__delay_ms(200);
 }
 
 #endif

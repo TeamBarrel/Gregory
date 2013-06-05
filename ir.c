@@ -39,7 +39,7 @@ void rotateIR(char steps, char direction)
 {
 	PORTC |= 0b00000011; // Set CPLD to SM mode
 	SSPBUF = direction; // Clockwise half-steps
-	__delay_ms(200);
+	//__delay_ms(200);
 
 	for (char stepNum = 1; stepNum <= steps; ++stepNum)										// For the amount of steps desired
 	{
@@ -49,7 +49,7 @@ void rotateIR(char steps, char direction)
 	}
 
 	SSPBUF = 0b00000000; // Clear SSPBUF
-	__delay_ms(200);
+	__delay_ms(20);
 	
 }
 

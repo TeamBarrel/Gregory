@@ -1,7 +1,7 @@
 
-# 1 "C:\Users\11000294\Desktop\COMPETITIONv0.6\main.c"
+# 1 "C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.7\main.c"
 
-# 82 "C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f877a.h"
+# 82 "C:\Program Files\HI-TECH Software\PICC\9.82\include\pic16f877a.h"
 volatile unsigned char INDF @ 0x000;
 
 
@@ -1072,30 +1072,30 @@ unsigned EEPGD : 1;
 volatile unsigned char EECON2 @ 0x18D;
 
 
-# 27 "C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic.h"
+# 27 "C:\Program Files\HI-TECH Software\PICC\9.82\include\pic.h"
 #pragma inline(_nop)
 extern void _nop(void);
 
 # 80
 extern unsigned int flash_read(unsigned short addr);
 
-# 41 "C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\eeprom_routines.h"
+# 41 "C:\Program Files\HI-TECH Software\PICC\9.82\include\eeprom_routines.h"
 extern unsigned char eeprom_write(unsigned char addr, unsigned char value);
 extern unsigned char eeprom_read(unsigned char addr);
 extern void eecpymem(volatile unsigned char *to, eeprom unsigned char *from, unsigned char size);
 extern void memcpyee(eeprom unsigned char *to, const unsigned char *from, unsigned char size);
 
 
-# 153 "C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic.h"
+# 153 "C:\Program Files\HI-TECH Software\PICC\9.82\include\pic.h"
 #pragma inline(_delay)
 extern void _delay(unsigned long);
 
-# 7 "C:\Users\11000294\Desktop\COMPETITIONv0.6\adc.h"
+# 7 "C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.7\adc.h"
 void init_adc(void);
 int adc_read(void);
 int adc_read_channel(unsigned char channel);
 
-# 8 "C:\Users\11000294\Desktop\COMPETITIONv0.6\drive.h"
+# 8 "C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.7\drive.h"
 typedef enum {
 FORWARD = 0,
 LEFT = 1,
@@ -1130,17 +1130,21 @@ void waitFor(char type, char highByte, char lowByte);
 void rightWallCorrect(void);
 void frontWallCorrect(void);
 
-# 4 "C:\Users\11000294\Desktop\COMPETITIONv0.6\eeprom.h"
+# 4 "C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.7\eeprom.h"
 void writeEEPROM(char data, char addressH, char addressL);
 char readEEPROM(char addressH, char addressL);
 void testEEPROM(void);
+void addNewData(char data);
+void writeEEPROMTestData(void);
+void updateMapData(char virtualW, char virtualS,char virtualE, char virtualN, char victim, char move);
+void EEPROMToSerial(void);
 
-# 8 "C:\Users\11000294\Desktop\COMPETITIONv0.6\ir.h"
+# 8 "C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.7\ir.h"
 int convert(int adc_value);
 int readIR();
 void rotateIR(char steps, char direction);
 
-# 14 "C:\Users\11000294\Desktop\COMPETITIONv0.6\lcd.h"
+# 14 "C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.7\lcd.h"
 void lcd_write_control(unsigned char databyte);
 
 
@@ -1159,7 +1163,7 @@ void lcd_write_3_digit_bcd(int data);
 
 void lcd_init(void);
 
-# 18 "C:\Users\11000294\Desktop\COMPETITIONv0.6\main.h"
+# 18 "C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.7\main.h"
 typedef struct {
 char pressed;
 char released;
@@ -1183,19 +1187,19 @@ bit findWall();
 char getCurrentX();
 char getCurrentY();
 
-# 6 "C:\Users\11000294\Desktop\COMPETITIONv0.6\map.h"
+# 6 "C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.7\map.h"
 void findFinalDestination(char virtualWallX, char virtualWallY, orientation robotOrientation);
 char getFinalX();
 char getFinalY();
 char getVictimZone(char victimX, char victimY);
 
-# 6 "C:\Users\11000294\Desktop\COMPETITIONv0.6\sensors.h"
+# 6 "C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.7\sensors.h"
 void checkCliff();
 bit checkVirtualWall();
 bit checkVictim();
 bit getBit(char byte, int position);
 
-# 55 "C:\Users\11000294\Desktop\COMPETITIONv0.6\ser.h"
+# 55 "C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.7\ser.h"
 bit ser_isrx(void);
 unsigned char ser_getch(void);
 void ser_putch(unsigned char byte);
@@ -1211,11 +1215,11 @@ extern bank1 unsigned char txfifo[16];
 extern volatile unsigned char txiptr, txoptr;
 extern unsigned char ser_tmp;
 
-# 8 "C:\Users\11000294\Desktop\COMPETITIONv0.6\songs.h"
+# 8 "C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.7\songs.h"
 void play_iCreate_song(unsigned char);
 void initSongs();
 
-# 21 "C:\Users\11000294\Desktop\COMPETITIONv0.6\main.c"
+# 21 "C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.7\main.c"
 asm("\tpsect config,class=CONFIG,delta=2"); asm("\tdw ""0xFFFE & 0xFFFB & 0xFFFF & 0xFFBF & 0xFFF7 & 0xFFFF & 0xFF7F & 0xFFFF");
 
 # 29
@@ -1237,9 +1241,10 @@ volatile bit RTC_FLAG_10MS = 0;
 volatile bit RTC_FLAG_50MS = 0;
 volatile bit RTC_FLAG_500MS = 0;
 volatile bit goingHome, home = 0;
+volatile bit ready = 0;
 volatile bit rightWall, frontWall, leftWall = 0;
 
-volatile unsigned char victimZone = 0;
+volatile char victimZone = 0;
 volatile unsigned char xCoord = 1;
 volatile unsigned char yCoord = 3;
 volatile unsigned char node = 0;
@@ -1329,7 +1334,7 @@ ser_putch(132);
 
 void checkForFinalDestination()
 {
-if(!goingHome && (xCoord == getFinalX()) && (yCoord == getFinalY()))
+if((xCoord == getFinalX()) && (yCoord == getFinalY()))
 {
 play_iCreate_song(2);
 goingHome = 1;
@@ -1344,16 +1349,21 @@ ser_putch(142);
 ser_putch(17);
 char victim = ser_getch();
 
-if(victim == 254)
+if(victim > 241 && victim != 255)
 {
-
-
+if(goingHome)
+{
 play_iCreate_song(3);
 victimZone = 0;
 lcd_set_cursor(0x09);
 lcd_write_data('V');
-
-# 169
+}
+else
+{
+victimZone = getVictimZone(xCoord, yCoord);
+lcd_set_cursor(0x08);
+lcd_write_1_digit_bcd(victimZone);
+}
 }
 }
 
@@ -1364,33 +1374,25 @@ lcd_set_cursor(0x0B);
 
 leftWall = findWall();
 if(leftWall)
-{
 lcd_write_data('L');
-}
 else
 lcd_write_data(' ');
+
 rotateIR(24, 0b00001111);
-play_iCreate_song(5);
 frontWall = findWall();
 if(frontWall)
-{
 lcd_write_data('F');
-
-}
 else
 lcd_write_data(' ');
+
 rotateIR(24, 0b00001111);
-play_iCreate_song(5);
 rightWall = findWall();
 if(rightWall)
-{
 lcd_write_data('R');
-
-}
 else
 lcd_write_data(' ');
+
 rotateIR(36, 0b00001101);
-play_iCreate_song(5);
 }
 
 void goParallel()
@@ -1400,7 +1402,7 @@ PORTC |= 0b00000011;
 int distance, shortestDistance = 999;
 char stepsToWall;
 
-for (int step = -12; step < 12; step++)
+for (int step = -12; step <= 12; step++)
 {
 distance = readIR();
 if(distance < shortestDistance)
@@ -1410,27 +1412,26 @@ shortestDistance = distance;
 }
 rotateIR(1, 0b00001101);
 }
-play_iCreate_song(5);
 rotateIR(12, 0b00001111);
-play_iCreate_song(5);
 
-int angleParallelToWall = (int)((stepsToWall*3.75)*.944);
+int angleParallelToWall = (int)((stepsToWall*3.75)-6);
 char angleHighByte = 0;
 char angleLowByte = (char) angleParallelToWall;
 
 if(angleParallelToWall < 0)
-angleParallelToWall = 360 - angleParallelToWall;
+angleParallelToWall = 360 + angleParallelToWall;
 
 if(angleParallelToWall > 255)
 {
 angleHighByte = 1;
 angleLowByte = (char)(angleParallelToWall - 255);
 }
-drive(0, 25, 0, 1);
+if((angleParallelToWall > 8) && (angleParallelToWall < 352))
+{
+drive(0, 50, 0, 1);
 waitFor(157,angleHighByte,angleLowByte);
 drive(0, 0, 0, 0);
-
-# 269
+}
 }
 
 void goToNextCell()
@@ -1506,36 +1507,101 @@ init();
 drive(0, 0, 0, 0);
 
 lcd_set_cursor(0x00);
-lcd_write_string("(-,-) E -- --- -");
+lcd_write_string("(-,-) - -- --- -");
 lcd_set_cursor(0x40);
-lcd_write_string("- - - (0,0) GREG");
-
-
+lcd_write_string("- - - (3,1) GREG");
 
 while(!home)
 {
+if(start.pressed && ready == 0)
+{
+findWalls();
+if(leftWall && rightWall && frontWall)
+turnAround();
+else if (rightWall && frontWall)
+turnLeft90();
+else if(leftWall && frontWall)
+turnRight90();
+ready = 1;
+lcd_set_cursor(0x06);
+lcd_write_data('E');
+play_iCreate_song(1);
+rotateIR(12, 0b00001101);
+}
 
-if(start.pressed)
+if(start.pressed && ready == 1)
 {
 checkForFinalDestination();
+play_iCreate_song(5);
 lookForVictim();
+play_iCreate_song(5);
 findWalls();
+play_iCreate_song(5);
 if(leftWall)
 goParallel();
 else
 rotateIR(12, 0b00001101);
-
-
-
+play_iCreate_song(5);
+if(frontWall)
+frontWallCorrect();
+play_iCreate_song(5);
+switch(node)
+{
+case 0:
 goToNextCell();
+break;
+case 1:
+if (goingHome)
+{
+if (victimZone == 1)
+goRight();
+else if (getOrientation() == EAST)
+goForward();
+else if (getOrientation() == SOUTH)
+goRight();
+}
+else
+goToNextCell();
+break;
+case 2:
+if (goingHome)
+{
+if (victimZone == 2)
+goForward();
+else if (getOrientation() == SOUTH)
+goRight();
+else if (getOrientation() == NORTH)
+goLeft();
+}
+else
+goToNextCell();
+break;
+case 3:
+if (goingHome)
+{
+if (victimZone == 3)
+goRight();
+else if (getOrientation() == EAST)
+goForward();
+else if (getOrientation() == SOUTH)
+goLeft();
+}
+else
+goToNextCell();
+break;
+default:
+break;
+}
+play_iCreate_song(5);
 
-# 380
+
 if(getSuccessfulDrive())
 {
 updateLocation();
 updateNode();
 if(goingHome)
 checkIfHome();
+play_iCreate_song(5);
 }
 }
 }
@@ -1561,43 +1627,5 @@ return xCoord;
 char getCurrentY()
 {
 return yCoord;
-}
-
-
-
-
-void scanIR(char steps, int motorDirection, char updateClosestObject)
-{
-
-closestObject.position = 0;
-closestObject.distance = 999;
-
-SSPBUF = motorDirection;
-_delay((unsigned long)((200)*(20000000/4000.0)));
-
-for (char stepNum = 1; stepNum <= steps; ++stepNum)
-{
-PORTC |= 0b00000100;
-PORTC &= 0b11111011;
-
-if(motorDirection == 0b00001101)
-++stepPosition;
-else
---stepPosition;
-
-int distanceRead = readIR();
-
-
-
-if((updateClosestObject == 1)&&(distanceRead < closestObject.distance))
-{
-closestObject.distance = distanceRead;
-closestObject.position = stepPosition;
-}
-}
-stepsToPerpendicular = closestObject.position;
-
-SSPBUF = 0b00000000;
-_delay((unsigned long)((200)*(20000000/4000.0)));
 }
 

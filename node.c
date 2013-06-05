@@ -6,8 +6,8 @@
  *  Copyright 2013 __MyCompanyName__. All rights reserved.
  *
  */
-#define BUILD
-#if define(BUILD)
+//#define BUILD
+#if defined(BUILD)
 
 #include "node.h"
 #include "main.h"
@@ -15,9 +15,9 @@
 
 void node1()
 {
-	if (getGoingHome()) //Write this function
+	if (getGoingHome2()) //Write this function
 	{
-		if (getVictimCell() == 1) // Write this function
+		if (getVictimZone2() == 1) // Write this function
 			goRight();
 		else if (getOrientation() == EAST)
 			goForward();
@@ -30,9 +30,9 @@ void node1()
 
 void node2()
 {
-	if (getGoingHome()) //Write this function
+	if (getGoingHome2()) //Write this function
 	{
-		if (getVictimCell() == 2) // Write this function
+		if (getVictimZone2() == 2) // Write this function
 			goForward();
 		else if (getOrientation() == SOUTH)
 			goRight();
@@ -45,9 +45,9 @@ void node2()
 
 void node3()
 {
-	if (getGoingHome()) //Write this function
+	if (getGoingHome2()) //Write this function
 	{
-		if (getVictimCell() == 3) // Write this function
+		if (getVictimZone2() == 3) // Write this function
 			goRight();
 		else if (getOrientation() == EAST)
 			goForward();

@@ -187,10 +187,10 @@ void goReverse()
 {
 	lcd_set_cursor(0x0F);
 	lcd_write_data('!');
-	REVERSE();
-	waitFor(DISTANCE,254,12);
+	REVERSE();	
+	waitFor(DISTANCE,254,12);		//Twos complement of 50cm - change
 	STOP();
-	__delay_ms(2000);
+	__delay_ms(2000);				//Makes DSX wait until its stopped - change is waitFor is changed
 }
 
 // Go one cell right
@@ -209,8 +209,8 @@ void turnAround()
 	TURN_LEFT();																		// Turn CW on the spot
 	waitFor(ANGLE,0,170); 
 	STOP();
-	__delay_ms(6500);
-	__delay_ms(6500);
+	__delay_ms(6000);				//Makes DSX wait until its stopped - change is waitFor is changed
+	__delay_ms(6000);				//Makes DSX wait until its stopped - change is waitFor is changed
 }
 
 void turnLeft90()
@@ -218,7 +218,7 @@ void turnLeft90()
 	TURN_LEFT();																		// Turn CW on the spot
 	waitFor(ANGLE,0,85); 
 	STOP();
-	__delay_ms(6500);
+	__delay_ms(6000);				//Makes DSX wait until its stopped - change is waitFor is changed
 }
 
 void turnRight90()
@@ -226,7 +226,7 @@ void turnRight90()
 	TURN_RIGHT();																		// Turn CW on the spot
 	waitFor(ANGLE,255,169); 
 	STOP();
-	__delay_ms(6500);
+	__delay_ms(6000);				//Makes DSX wait until its stopped - change is waitFor is changed
 }
 
 void updateOrientation(direction moved)
@@ -263,17 +263,23 @@ void waitFor(char type, char highByte, char lowByte)
 
 void frontWallCorrect(void)
 {
-	while(readIR() < 50)
-		{
-			REVERSE();
-		}
-	STOP();
-	
-	while(readIR() > 55 && readIR() < 100)
-		{
-			DRIVE_STRAIGHT();
-		}
-	STOP();
+	rotateIR(24, CW);				//rotate IR from left to forward
+	int distToWall = readIR();		//find distance
+	if(distToWall < 45)				//correct only if its more than 5cm out
+	{
+		REVERSE();					//called only once now
+		while(distToWall < 51)		//Wait until its 50cm away
+			distToWall = readIR(); 
+		STOP();
+	}
+	else if(distToWall > 55) //I took the < 100 part out, the code only executes if there is a front wall already
+	{
+		DRIVE_STRAIGHT();			//called only once now
+		while(distToWall > 49)		//Wait until its 50cm away
+			distToWall = readIR();
+		STOP();
+	}
+	rotateIR(24, CCW);				//rotate IR from forward to left
 }	
 
 #endif
