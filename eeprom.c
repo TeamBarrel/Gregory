@@ -101,7 +101,7 @@ void addNewData(char data)
 //EMMVNESW
 void writeEEPROMTestData(void)
 {	
-	addNewData(17);
+	addNewData(0);
 	addNewData(32);
 	addNewData(64);
 	addNewData(64);
@@ -110,7 +110,7 @@ void writeEEPROMTestData(void)
 	addNewData(64);
 	addNewData(64);
 	addNewData(96);
-	addNewData(0);
+	addNewData(1);//0
 	addNewData(64);
 	addNewData(32);
 	addNewData(32);
@@ -125,8 +125,7 @@ void writeEEPROMTestData(void)
 	addNewData(96);
 	addNewData(0);
 	addNewData(32);
-	addNewData(96);
-	addNewData(96);	
+	addNewData(112);
 }
 
 //Create a new entry into EEPROM with appropriate flags set

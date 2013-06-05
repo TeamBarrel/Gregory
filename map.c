@@ -8,6 +8,7 @@ char finalX = 3;
 char finalY = 1;
 char vicZone = 0;
 
+// Updates the final destination of the map given the location and orientation of a virtual wall
 void findFinalDestination(char virtualWallX, char virtualWallY, orientation robotOrientation)
 {
 	switch (virtualWallX)
@@ -153,13 +154,15 @@ char getFinalY()
 	return finalY;
 }
 
-char getVictimZone(char victimX, char victimY)
-{
+// Returns the zone of the victim for a specific co-ordinate.
+// This is used for determining which 'zone' should be re-entered on its way back home
 // ZONE MAP
 // 00122
 // 00000
 // 44330
 // 44000
+char getVictimZone(char victimX, char victimY)
+{
 	switch (victimX)
 	{
 		case 0:

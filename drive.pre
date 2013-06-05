@@ -1,7 +1,7 @@
 
-# 1 "C:\Users\11014065\Desktop\30 May WORKING FILE\drive.c"
+# 1 "C:\Users\11014065\Desktop\30 MAY WORKING FILE\drive.c"
 
-# 55 "C:\Users\11014065\Desktop\30 May WORKING FILE\ser.h"
+# 55 "C:\Users\11014065\Desktop\30 MAY WORKING FILE\ser.h"
 bit ser_isrx(void);
 unsigned char ser_getch(void);
 void ser_putch(unsigned char byte);
@@ -1106,7 +1106,7 @@ extern void memcpyee(eeprom unsigned char *to, const unsigned char *from, unsign
 #pragma inline(_delay)
 extern void _delay(unsigned long);
 
-# 8 "C:\Users\11014065\Desktop\30 May WORKING FILE\drive.h"
+# 8 "C:\Users\11014065\Desktop\30 MAY WORKING FILE\drive.h"
 typedef enum {
 FORWARD = 0,
 LEFT = 1,
@@ -1143,13 +1143,13 @@ void frontWallCorrect(void);
 void leftAngleCorrect();
 void clearSuccessfulDrive(void);
 
-# 6 "C:\Users\11014065\Desktop\30 May WORKING FILE\sensors.h"
+# 6 "C:\Users\11014065\Desktop\30 MAY WORKING FILE\sensors.h"
 void checkCliff();
 bit checkVirtualWall();
 bit checkVictim();
 bit getBit(char byte, int position);
 
-# 14 "C:\Users\11014065\Desktop\30 May WORKING FILE\lcd.h"
+# 14 "C:\Users\11014065\Desktop\30 MAY WORKING FILE\lcd.h"
 void lcd_write_control(unsigned char databyte);
 
 
@@ -1168,13 +1168,13 @@ void lcd_write_3_digit_bcd(int data);
 
 void lcd_init(void);
 
-# 6 "C:\Users\11014065\Desktop\30 May WORKING FILE\map.h"
+# 6 "C:\Users\11014065\Desktop\30 MAY WORKING FILE\map.h"
 void findFinalDestination(char virtualWallX, char virtualWallY, orientation robotOrientation);
 char getFinalX();
 char getFinalY();
 char getVictimZone(char victimX, char victimY);
 
-# 19 "C:\Users\11014065\Desktop\30 May WORKING FILE\main.h"
+# 18 "C:\Users\11014065\Desktop\30 MAY WORKING FILE\main.h"
 typedef struct {
 char pressed;
 char released;
@@ -1198,22 +1198,23 @@ void wallFollow();
 bit findWall();
 char getCurrentX();
 char getCurrentY();
+void setVirtualLocation(char xV, char yV, char dV);
 
-# 7 "C:\Users\11014065\Desktop\30 May WORKING FILE\adc.h"
+# 7 "C:\Users\11014065\Desktop\30 MAY WORKING FILE\adc.h"
 void init_adc(void);
 int adc_read(void);
 int adc_read_channel(unsigned char channel);
 
-# 8 "C:\Users\11014065\Desktop\30 May WORKING FILE\ir.h"
+# 8 "C:\Users\11014065\Desktop\30 MAY WORKING FILE\ir.h"
 int convert(int adc_value);
 int readIR();
 void rotateIR(char steps, char direction);
 
-# 8 "C:\Users\11014065\Desktop\30 May WORKING FILE\songs.h"
+# 8 "C:\Users\11014065\Desktop\30 MAY WORKING FILE\songs.h"
 void play_iCreate_song(unsigned char);
 void initSongs();
 
-# 14 "C:\Users\11014065\Desktop\30 May WORKING FILE\drive.c"
+# 14 "C:\Users\11014065\Desktop\30 MAY WORKING FILE\drive.c"
 volatile bit successfulDrive = 0;
 volatile direction somethingInTheWay = BACKWARD;
 volatile bit moving = 0;
@@ -1253,10 +1254,20 @@ cliff = ser_getch();
 if(cliff == 0)
 {
 ser_putch(142);
-ser_putch(7);
+ser_putch(11);
 cliff = ser_getch();
-
-# 67
+if(cliff == 0)
+{
+ser_putch(142);
+ser_putch(9);
+cliff = ser_getch();
+if(cliff == 0)
+{
+ser_putch(142);
+ser_putch(12);
+cliff = ser_getch();
+}
+}
 }
 if(cliff != 0)
 {
@@ -1264,7 +1275,20 @@ drive(0, 0, 0, 0);
 goReverse();
 clearSuccessfulDrive();
 
-# 88
+if(lastMove == LEFT)
+{
+somethingInTheWay = LEFT;
+turnRight90();
+updateOrientation(RIGHT);
+}
+else if (lastMove == RIGHT)
+{
+somethingInTheWay = RIGHT;
+turnLeft90();
+updateOrientation(LEFT);
+}
+else
+somethingInTheWay = FORWARD;
 moving = 0;
 }
 }
@@ -1277,8 +1301,10 @@ if(virtualWall == 1)
 {
 drive(0, 0, 0, 0);
 findFinalDestination(getCurrentX(),getCurrentY(), currentOrientation);
+setVirtualLocation(getCurrentX(), getCurrentY(), currentOrientation);
 goReverse();
 clearSuccessfulDrive();
+
 if(lastMove == LEFT)
 {
 somethingInTheWay = LEFT;
@@ -1296,7 +1322,7 @@ somethingInTheWay = FORWARD;
 moving = 0;
 }
 
-# 161
+# 163
 ser_putch(142);
 ser_putch(19);
 high = ser_getch();
@@ -1380,7 +1406,7 @@ void goReverse()
 lcd_set_cursor(0x0F);
 lcd_write_data('!');
 drive(255, 125, 128, 0);
-waitFor(156,254,12);
+waitFor(156,254,212);
 drive(0, 0, 0, 0);
 _delay((unsigned long)((2000)*(20000000/4000.0)));
 }
@@ -1442,7 +1468,7 @@ ser_putch(highByte);
 ser_putch(lowByte);
 }
 
-# 323
+# 325
 void frontWallCorrect(void)
 {
 

@@ -18,6 +18,7 @@ volatile direction wayWent;
 volatile direction lastMove;
 volatile orientation currentOrientation = WEST;
 
+// Basic drive function for the Create
 void drive(char highByteSpeed, char lowByteSpeed, char highByteRadius, char lowByteRadius)
 {
 	__delay_ms(100);
@@ -28,13 +29,14 @@ void drive(char highByteSpeed, char lowByteSpeed, char highByteRadius, char lowB
 	ser_putch(lowByteRadius);
 }
 
+// Drives the Create forward for a specified distance, unless a cliff or virtual wall is detected
 void driveForDistance(int moveDistance)
 {
 	//Distance Counter
 	volatile char high, low, cliff, virtualWall;
 	int deltaDistance = 0;	
 	int distance = 0;
-
+	
 	moving = TRUE;
 	DRIVE_STRAIGHT();
 	successfulDrive = FALSE;
@@ -50,8 +52,8 @@ void driveForDistance(int moveDistance)
 			if(cliff == 0)
 			{
 				ser_putch(142);
-				ser_putch(7);
-				cliff = ser_getch();/*
+				ser_putch(11);
+				cliff = ser_getch();
 				if(cliff == 0)
 				{
 					ser_putch(142);
@@ -63,14 +65,14 @@ void driveForDistance(int moveDistance)
 						ser_putch(12);
 						cliff = ser_getch();
 					}
-				}*/
+				}
 			}
 			if(cliff != 0)
 			{
 				STOP();
 				goReverse();
 				clearSuccessfulDrive();
-	/*
+	
 				if(lastMove == LEFT)
 				{
 					somethingInTheWay = LEFT;
@@ -84,7 +86,7 @@ void driveForDistance(int moveDistance)
 					updateOrientation(LEFT);
 				}
 				else
-					somethingInTheWay = FORWARD;*/
+					somethingInTheWay = FORWARD;
 				moving = FALSE;
 			}	
 		}
@@ -97,8 +99,10 @@ void driveForDistance(int moveDistance)
 		{
 			STOP();
 			findFinalDestination(getCurrentX(),getCurrentY(), currentOrientation);
+			setVirtualLocation(getCurrentX(), getCurrentY(), currentOrientation);
 			goReverse();
 			clearSuccessfulDrive();
+			
 			if(lastMove == LEFT)
 			{
 				somethingInTheWay = LEFT;
@@ -115,48 +119,7 @@ void driveForDistance(int moveDistance)
 				somethingInTheWay = FORWARD;
 				moving = FALSE;
 		}
-
-		/*int dist = readIR();
-		if(dist <= 40)
-		{
-			STOP();
-			play_iCreate_song(6);
-			moving = FALSE;
-			rotateIR(24, CCW);
-			int left = readIR();
-			rotateIR(48, CW);
-			int right = readIR();
-			rotateIR(24, CCW);
-			if(left < 100 && right < 100)
-			{
-				if (left<right)
-				{
-					int angle = 0;
-					TURN_RIGHT();
-					waitFor(ANGLE,255,0b11111000);					
-					STOP();
-					__delay_ms(1000);
-				}
-				else
-				{
-					int angle = 0;
-					TURN_LEFT();
-					waitFor(ANGLE,0,8);
-					//while(findWall() || angle < 8)
-					//{
-					//	angle++;
-					//	__delay_ms(33);
-					//}					
-					STOP();
-					__delay_ms(1000);
-				}
-			}
-			distance -= 80;
-			DRIVE_STRAIGHT();	
-		}	
-		*/
-
-
+		
 		// Distance
 		ser_putch(142);
 		ser_putch(19);
@@ -169,31 +132,30 @@ void driveForDistance(int moveDistance)
 			STOP();
 			successfulDrive = TRUE;
 			moving = FALSE;
-			somethingInTheWay = BACKWARD;
+			somethingInTheWay = BACKWARD; // Nothing in the way
 		}
 	}	
 }
 
+// Returns the orientation of the Create
 orientation getOrientation()
 {
 	return currentOrientation;
 }
 
+// Returns the direction of a cliff or virtual wall
 direction getSomethingInTheWay()
 {
 	return somethingInTheWay;
 }
 
-void clearSuccessfulDrive(void)
-{
-	successfulDrive = 0;	
-}	
-
+// Returns whether the drive was successful (no virtual walls or cliffs encountered)
 bit getSuccessfulDrive()
 {
 	return successfulDrive;
 }
 
+// Returns the direction the Create moved
 direction getWayWent()
 {
 	return wayWent;
@@ -216,13 +178,7 @@ void goForward()
 	lcd_set_cursor(0x0F);
 	lcd_write_data('F');
 	lastMove = FORWARD;
-	if( (getCurrentX() == 1 && getCurrentY() == 2))
-	{
-		driveForDistance(800);
-	}else
-	{
-		driveForDistance(1000);
-	}
+	driveForDistance(1000);
 }
 
 // Go one cell left
@@ -236,14 +192,15 @@ void goLeft()
 	driveForDistance(1000);
 }
 
+// Reverses 30cm to back away from a cliff / virtual wall / wall
 void goReverse()
 {
 	lcd_set_cursor(0x0F);
 	lcd_write_data('!');
 	REVERSE();	
-	waitFor(DISTANCE,254,12);		//Twos complement of 50cm - change
+	waitFor(DISTANCE,254,212);
 	STOP();
-	__delay_ms(2000);				//Makes DSX wait until its stopped - change is waitFor is changed
+	__delay_ms(2000);
 }
 
 // Go one cell right
@@ -257,37 +214,35 @@ void goRight()
 	driveForDistance(1000);
 }
 
+// Turns around 180def
 void turnAround()
 {
-	TURN_LEFT();																		// Turn CW on the spot
+	TURN_LEFT();
 	waitFor(ANGLE,0,180); 
 	STOP();
-	__delay_ms(3000);				//Makes DSX wait until its stopped - change is waitFor is changed
-	__delay_ms(3000);				//Makes DSX wait until its stopped - change is waitFor is changed
+	__delay_ms(3000);				//Makes DSX wait until its stopped
+	__delay_ms(3000);				//Makes DSX wait until its stopped
 }
 
+// Turns left 90deg on the spot
 void turnLeft90()
 {
 	TURN_LEFT();
-	if( (getCurrentX() == 2 && getCurrentY() == 2))
-	{
-		waitFor(ANGLE,0,85); 
-	}else
-	{																		// Turn CW on the spot
-		waitFor(ANGLE,0,90); 
-	}
+	waitFor(ANGLE,0,90); 
 	STOP();
-	__delay_ms(3000);				//Makes DSX wait until its stopped - change is waitFor is changed
+	__delay_ms(3000);				//Makes DSX wait until its stopped
 }
 
+// Turns right 90deg on the spot
 void turnRight90()
 {
-	TURN_RIGHT();																		// Turn CW on the spot
+	TURN_RIGHT();
 	waitFor(ANGLE,255,174); 
 	STOP();
-	__delay_ms(3000);				//Makes DSX wait until its stopped - change is waitFor is changed
+	__delay_ms(3000);				//Makes DSX wait until its stopped
 }
 
+// Updates the orientation - uses enumerated types
 void updateOrientation(direction moved)
 {
 	currentOrientation += moved;
@@ -295,34 +250,20 @@ void updateOrientation(direction moved)
 		currentOrientation -= 4;
 }
 
+// Sends a wait command to the Create
 void waitFor(char type, char highByte, char lowByte)
 {
 	__delay_ms(100);
-	ser_putch(type);																		// Wait for angle of
-	ser_putch(highByte);																		/* -90 */
-	ser_putch(lowByte);																		/* deg */
+	ser_putch(type);
+	ser_putch(highByte);
+	ser_putch(lowByte);
 }
 
-//void rightWallCorrect(void)
-//{
-//	turnRight90();
-//	rotateIR(24, CCW);
-//	while(readIR() <45)
-//	{
-//		REVERSE();
-//	}
-//		while(readIR() >55)
-//	{
-//		DRIVE_STRAIGHT();
-//	}
-//	turnLeft90();
-//	rotateIR(24, CW);
-//	STOP();
-//}
 
+// Corrects the distance away from a front wall
 void frontWallCorrect(void)
 {
-	//rotateIR(24, CW);				//rotate IR from left to forward
+
 	int distToWall = readIR();		//find distance
 	if(distToWall < 45)				//correct only if its more than 5cm out
 	{
@@ -340,9 +281,10 @@ void frontWallCorrect(void)
 		STOP();
 		clearSuccessfulDrive();
 	}
-//	rotateIR(24, CCW);				//rotate IR from forward to left
+
 }	
 
+// Turns the create 8deg back towards the centre of the cell if it is more than 14cm away from the middle
 void leftAngleCorrect()
 {
 	int distanceToWall = readIR();

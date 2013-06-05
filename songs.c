@@ -28,6 +28,7 @@ void play_iCreate_song(unsigned char song)
 	ser_putch(song);
 }
 
+// Loads all the songs onto the Create
 void initSongs()
 {
 	ser_putArr(finalCountdown, 27);

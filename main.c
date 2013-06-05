@@ -20,23 +20,6 @@
 
 __CONFIG(FOSC_HS &  WDTE_OFF & CP_OFF & BOREN_OFF & PWRTE_ON & WRT_OFF & LVP_OFF & CPD_OFF);
 
-/* PUT #DEFINES AND PROTOTYPES IN HEADER FILE *************************************/
-// Stepper motor
-#define CW 0b00001111																		/* SSPBUF register to rotate CW */
-#define CCW 0b00001101																		/*                      and CCW */
-#define HALF_STEP_RESOLUTION 3.75
-#define SCAN_IR_DEG(angle, motorDirection, updateClosestObject) scanIR((int)((angle)/HALF_STEP_RESOLUTION), (motorDirection), (updateClosestObject))
-typedef struct {
-	volatile char position;																			// Denotes position (in steps) of object
-	volatile char distance;																			// Denotes distance (in cm) of object
-} Object;
-volatile char stepPosition = 0;											// Position of stepper motor (in CCW half-steps) since being turned on
-volatile char stepsToPerpendicular = 0;														// Position of closest object (in half-steps) from current position
-Object closestObject;
-
-void scanIR(char steps, int motorDirection, char updateClosestObject);
-void pointToObject();
-
 /********** GLOBAL VARIABLES **********/
 
 volatile bit RTC_FLAG_1MS = 0;
@@ -47,15 +30,21 @@ volatile bit goingHome, home = FALSE;
 volatile bit ready = FALSE;
 volatile bit rightWall, frontWall, leftWall = 0;
 
-volatile char victimZone = 0;
-volatile unsigned char xCoord = 1;
-volatile unsigned char yCoord = 3;
+volatile signed char xCoord = 1;
+volatile signed char yCoord = 3;
+volatile signed char xVictim = -10;
+volatile signed char yVictim = -10;
+volatile signed char xVirtual = -10;
+volatile signed char yVirtual = -10;
+volatile signed char dVirtual = WEST;
+
 volatile unsigned char node = 0;
+volatile unsigned char victimZone = 0;
 
 volatile unsigned int RTC_Counter = 0;
 
-
 PushButton start;
+PushButton eepromSerial;
 
 /********** INTERRUPT SERVICE ROUTINE **********/
 void interrupt isr1(void) 
@@ -65,17 +54,7 @@ void interrupt isr1(void)
 	{
 		TMR0IF = 0;
 		TMR0 = TMR0_VAL;
-//		
-//		RTC_Counter++;
-//		//set clock flags
-//		RTC_FLAG_1MS = 1;
-//
-//		if(RTC_Counter % 10 == 0) RTC_FLAG_10MS = 1;
-//		if(RTC_Counter % 50 == 0) RTC_FLAG_50MS = 1;
-//		if(RTC_Counter % 500 == 0) 
-//		{
-//			
-//		}		
+	
 
 		if(START_PB)																			// If PB1 has been pressed
 		{
@@ -92,9 +71,23 @@ void interrupt isr1(void)
 			start.released = TRUE;															// PB1 is therefore released
 		}
 
+		if(EEPROM_PB)																			// If PB1 has been pressed
+		{
+			eepromSerial.debounceCount++;															// Increment PB1 debounce count
+			if(eepromSerial.debounceCount >= DEBOUNCE_REQ_COUNT & eepromSerial.released)						// If signal has been debounced sufficiently and switch has been released
+			{
+				eepromSerial.pressed = TRUE;															/* PB1 has been pressed       */
+				eepromSerial.released = FALSE;														/* and therefore not released */
+			}
+		}
+		else																				// If PB1 has not been pressed
+		{
+			eepromSerial.debounceCount = 0;															// Set PB1 debounce count to 0
+			eepromSerial.released = TRUE;															// PB1 is therefore released
+		}
 		ser_int();
 	}
-}	
+}
 
 /******** INITIALISTIONS ********/
 
@@ -102,7 +95,9 @@ void init()
 {
 	start.pressed = FALSE;														/* Initialise all push buttons to not being pressed */
 	start.released = TRUE;														/* but rather released                              */
-
+	eepromSerial.pressed = FALSE;
+	eepromSerial.released = TRUE;
+	
 	init_adc();
 	lcd_init();
 	
@@ -135,6 +130,8 @@ void initIRobot()
 
 /********** FUNCTIONS **********/
 
+// Checks to see if the robot's current location is the pre-determined final destination
+// If it is, set the goingHome bit and display 'return mode' on LCD
 void checkForFinalDestination()
 {
 	if((xCoord == getFinalX()) && (yCoord == getFinalY()))
@@ -146,6 +143,9 @@ void checkForFinalDestination()
 	}
 }
 
+// Looks for any of the red buoy, green buoy, or force field emitted by the home base
+// If the Create is in explore mode, remember and display the zone of the victim
+// If the Create is in return mode, play a song and display victim found ('V'), and clear victim zone
 void lookForVictim()
 {
 	ser_putch(142);
@@ -156,13 +156,19 @@ void lookForVictim()
 	{
 		if(goingHome)
 		{
+			__delay_ms(1000);
 			play_iCreate_song(3);
+			__delay_ms(500);
 			victimZone = 0;
 			lcd_set_cursor(0x09);
 			lcd_write_data('V');
+			xVictim = xCoord;
+			yVictim = yCoord;
 		}
 		else
 		{
+			xVictim = xCoord;
+			yVictim = yCoord;
 			victimZone = getVictimZone(xCoord, yCoord);
 			lcd_set_cursor(0x08);
 			lcd_write_1_digit_bcd(victimZone);
@@ -203,45 +209,8 @@ void findWalls()
 	rotateIR(24, CCW);	
 }
 
-/*void goParallel()
-{
-	PORTC |= 0b00000011;																	// Set CPLD to stepper motor module
-
-	int distance, shortestDistance = 999;
-	char stepsToWall;
-
-	for (int step = -12; step <= 12; step++)
-	{
-		distance = readIR();
-		if(distance < shortestDistance)
-		{
-			stepsToWall = step;
-			shortestDistance = distance;
-		}
-		rotateIR(1, CCW);
-	}
-	rotateIR(12, CW);
-
-	int angleParallelToWall = (int)((stepsToWall*HALF_STEP_RESOLUTION)-6); //6 is just for calibration, play with this value
-	char angleHighByte = 0;
-	char angleLowByte = (char) angleParallelToWall;
-	
-	if(angleParallelToWall < 0)																// If the angle is < 90
-		angleParallelToWall = 360 + angleParallelToWall;									// Find the reflex angle
-
-	if(angleParallelToWall > 255)															// If the angle is > 255
-	{
-		angleHighByte = 1;																//	 Split it into high 
-		angleLowByte = (char)(angleParallelToWall - 255);								//	 and low bytes      
-	}
-	if((angleParallelToWall > 8) && (angleParallelToWall < 352))							// Only corrects if its out by more than 8deg (~1 step)
-	{
-		TURN_LEFT();																			// Turn CCW on the spot   
-		waitFor(ANGLE,angleHighByte,angleLowByte);												// To go parallel to wall 
-		STOP();
-	}
-}*/
-
+// Movement logic of the Create
+// Preference is: Left, forward, right, backwards
 void goToNextCell()
 {
 	if(!leftWall && (getSomethingInTheWay() != LEFT))
@@ -254,6 +223,8 @@ void goToNextCell()
 		goBackward();
 }
 
+// Updates the x-y co-ordinates of the Create
+// The orientation is indicative of the way it last moved
 void updateLocation()
 {
 	lcd_set_cursor(0x40);
@@ -285,6 +256,7 @@ void updateLocation()
 	lcd_write_1_digit_bcd(yCoord);	
 }
 
+// Updates the node the Create is on
 void updateNode()
 {
 	if((xCoord == 2) && (yCoord == 2))	
@@ -297,10 +269,13 @@ void updateNode()
 		node = 4;
 	else if((xCoord == 2) && (yCoord == 1))
 		node = 5;
+	else if((xCoord == 3) && (yCoord == 0))
+		node = 6;
 	else
 		node = 0;
 }
 
+// Plays a song if the Create is at its pre-determined starting location
 void checkIfHome()
 {
 	if((xCoord == 1) && (yCoord == 3))
@@ -322,10 +297,10 @@ void main(void)
 	lcd_write_string("(-,-) - -- --- -"); //x/y of robot, explore/return, zone of victim/got victim, walls, way went
 	lcd_set_cursor(0x40);
 	lcd_write_string("- - - (3,1) GREG"); //orientation, cliff detected, v.wall detected, x/y of final destination
-
+	char victimIndicator = 0;
 	while(!home)
 	{
-/*
+
 		if(start.pressed && ready == FALSE)
 		{
 			findWalls();
@@ -340,11 +315,25 @@ void main(void)
 			lcd_write_data('E');						//Explore mode
 			play_iCreate_song(1);										
 		}	
-		*/
-		ready = TRUE;
 		
-		if(start.pressed && ready == TRUE)
+
+		//EEPROM Serial Transfer
+		if(eepromSerial.pressed && ready == FALSE)
 		{
+			eepromSerial.pressed = FALSE;
+			lcd_set_cursor(0x00);
+			lcd_write_string("EEPROM Serial         ");
+			lcd_set_cursor(0x40);
+			lcd_write_string("Please Wait...        ");
+			writeEEPROMTestData();
+			EEPROMToSerial();
+			lcd_set_cursor(0x40);
+			lcd_write_string("Complete              ");
+		}
+		
+		if(start.pressed)
+		{
+			ready = TRUE;
 			checkForFinalDestination();
 
 			lookForVictim();
@@ -354,14 +343,14 @@ void main(void)
 			if(leftWall)
 			{
 				rotateIR(24,CCW);
-				wallFollow();
+				leftAngleCorrect();
 				rotateIR(24,CW);
 			}
 			play_iCreate_song(5);
 			if(frontWall)
 				frontWallCorrect();
 			play_iCreate_song(5);
-			switch(node)
+			switch(node) // Gives the Create specific movement instructions for certain squares to go shortest path home and collecting the victim
 			{
 				case 0:
 					goToNextCell();
@@ -375,7 +364,7 @@ void main(void)
 							goForward();
 						else if (getOrientation() == SOUTH)
 							goRight();
-						else//peter
+						else
 							goToNextCell();
 					}
 					else
@@ -390,7 +379,7 @@ void main(void)
 							goRight();
 						else if (getOrientation() == NORTH)
 							goLeft();
-						else//peter
+						else
 							goToNextCell();
 					}
 					else
@@ -405,7 +394,7 @@ void main(void)
 							goForward();
 						else if (getOrientation() == SOUTH)
 							goLeft();
-						else//peter
+						else
 							goToNextCell();
 					}
 					else
@@ -423,6 +412,15 @@ void main(void)
 					else
 						goToNextCell();
 					break;
+				case 6:
+					if (getOrientation() == WEST)
+					{
+						play_iCreate_song(6);
+						goForward();
+					}
+					else
+						goToNextCell();
+					break;
 				default:
 					break;
 			}
@@ -430,16 +428,50 @@ void main(void)
 			if(getSuccessfulDrive())
 			{
 				//Send EEPROM data for current cell
-				updateMapData(0,0,0,0,0,getOrientation());
+				if(xVictim == xCoord && yVictim == yCoord)
+				{
+					victimIndicator = 1;
+				}
+				/*if(xVirtual == xCoord && yVirtual == yCoord)
+				{
+					switch(dVirtual)
+					{
+						case WEST:
+						{
+							updateMapData(1,0,0,0,victimIndicator,getOrientation());
+							break;
+						}
+						case SOUTH:
+						{
+							updateMapData(0,1,0,0,victimIndicator,getOrientation());
+							break;
+						}
+						case EAST:
+						{
+							updateMapData(0,0,1,0,victimIndicator,getOrientation());
+							break;
+						}
+						case NORTH:
+						{
+							updateMapData(0,0,0,1,victimIndicator,getOrientation());
+							break;
+						}
+						default:
+							updateMapData(0,0,0,0,victimIndicator,getOrientation());
+					}
+				}*/
+				
+				updateMapData(0,0,0,0,victimIndicator,getOrientation());
+				
+				victimIndicator = 0;
+				
 				updateLocation();
 				updateNode();		
 				if(goingHome)
 					checkIfHome();
-				//play_iCreate_song(5);
 			}
 		}
 	}
-	//Turn off the create!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 }
 
 /******** SUB-FUNCTIONS ********/
@@ -453,34 +485,24 @@ bit findWall()
 		return TRUE;
 }
 
+// Returns current x co-ordinate of the Create
 char getCurrentX()
 {
 	return xCoord;
 }
 
+// Returns current y co-ordinate of the Create
 char getCurrentY()
 {
 	return yCoord;
 }
 
-void wallFollow()
+// Remembers the location and orientation of the virtual wall for EEPROM processing
+void setVirtualLocation(char xV, char yV, char dV)
 {
-	int distanceToWall = readIR();
-	if((distanceToWall > 86) && (distanceToWall < 100))
-	{
-		TURN_LEFT();
-		waitFor(ANGLE,0,8);
-		STOP();
-		__delay_ms(1000);
-	}
-	else if(distanceToWall < 36)
-	{
-
-		TURN_RIGHT();
-		waitFor(ANGLE,255,0b11111000);
-		STOP();
-		__delay_ms(1000);
-	}
+	xVirtual = xV;
+	yVirtual = yV;
+	dVirtual = dV;
 }
 
 #endif

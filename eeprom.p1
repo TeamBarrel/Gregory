@@ -881,16 +881,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _EECON1bits `VS99  1 e@396 ]
 "1167 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f877a.h
 [v _EECON2 `Vuc  1 e@397 ]
-"10 C:\Users\11014065\Desktop\30 May WORKING FILE\eeprom.c
+"10 C:\Users\11014065\Desktop\30 MAY WORKING FILE\eeprom.c
 [v _addressCount `uc  1 e ]
-"11 C:\Users\11014065\Desktop\30 May WORKING FILE\eeprom.c
+"11 C:\Users\11014065\Desktop\30 MAY WORKING FILE\eeprom.c
 [v _addressCurrent `uc  1 e ]
 "154 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic.h
 [v __delay `(v  0 ef1`ul ]
 [p i __delay ]
-"22 C:\Users\11014065\Desktop\30 May WORKING FILE\lcd.h
+"22 C:\Users\11014065\Desktop\30 MAY WORKING FILE\lcd.h
 [v _lcd_write_string `(v  0 ef1`*Cuc ]
-"57 C:\Users\11014065\Desktop\30 May WORKING FILE\ser.h
+"57 C:\Users\11014065\Desktop\30 MAY WORKING FILE\ser.h
 [v _ser_putch `(v  0 ef1`uc ]
 [; ;pic16f877a.h: 82: volatile unsigned char INDF @ 0x000;
 [; ;pic16f877a.h: 86: volatile unsigned char TMR0 @ 0x001;
@@ -1749,7 +1749,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ser.h: 66: extern bank1 unsigned char txfifo[16];
 [; ;ser.h: 67: extern volatile unsigned char txiptr, txoptr;
 [; ;ser.h: 68: extern unsigned char ser_tmp;
-"10 C:\Users\11014065\Desktop\30 May WORKING FILE\eeprom.c
+"10 C:\Users\11014065\Desktop\30 MAY WORKING FILE\eeprom.c
 [i _addressCount
 -> -> 0 `i `uc
 ]
@@ -1982,9 +1982,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eeprom.c: 103: {
 [e :U _writeEEPROMTestData ]
 [f ]
-[; ;eeprom.c: 104: addNewData(17);
+[; ;eeprom.c: 104: addNewData(0);
 "104
-[e ( _addNewData (1 -> -> 17 `i `uc ]
+[e ( _addNewData (1 -> -> 0 `i `uc ]
 [; ;eeprom.c: 105: addNewData(32);
 "105
 [e ( _addNewData (1 -> -> 32 `i `uc ]
@@ -2009,9 +2009,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eeprom.c: 112: addNewData(96);
 "112
 [e ( _addNewData (1 -> -> 96 `i `uc ]
-[; ;eeprom.c: 113: addNewData(0);
+[; ;eeprom.c: 113: addNewData(1);
 "113
-[e ( _addNewData (1 -> -> 0 `i `uc ]
+[e ( _addNewData (1 -> -> 1 `i `uc ]
 [; ;eeprom.c: 114: addNewData(64);
 "114
 [e ( _addNewData (1 -> -> 64 `i `uc ]
@@ -2054,21 +2054,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eeprom.c: 127: addNewData(32);
 "127
 [e ( _addNewData (1 -> -> 32 `i `uc ]
-[; ;eeprom.c: 128: addNewData(96);
+[; ;eeprom.c: 128: addNewData(112);
 "128
-[e ( _addNewData (1 -> -> 96 `i `uc ]
-[; ;eeprom.c: 129: addNewData(96);
+[e ( _addNewData (1 -> -> 112 `i `uc ]
+[; ;eeprom.c: 129: }
 "129
-[e ( _addNewData (1 -> -> 96 `i `uc ]
-[; ;eeprom.c: 130: }
-"130
 [e :UE 115 ]
 }
-"135
+"134
 [v _updateMapData `(v  1 ef6`uc`uc`uc`uc`uc`uc ]
 {
-[; ;eeprom.c: 134: void updateMapData(char virtualW, char virtualS,char virtualE, char virtualN, char victim, char move)
-[; ;eeprom.c: 135: {
+[; ;eeprom.c: 133: void updateMapData(char virtualW, char virtualS,char virtualE, char virtualN, char victim, char move)
+[; ;eeprom.c: 134: {
 [e :U _updateMapData ]
 [v _virtualW `uc  1 r1 ]
 [v _virtualS `uc  1 r2 ]
@@ -2077,108 +2074,108 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _victim `uc  1 r5 ]
 [v _move `uc  1 r6 ]
 [f ]
-"136
+"135
 [v _completeData `uc  1 a ]
-[; ;eeprom.c: 136: char completeData = 0;
+[; ;eeprom.c: 135: char completeData = 0;
 [e = _completeData -> -> 0 `i `uc ]
-[; ;eeprom.c: 137: completeData |= virtualW;
-"137
+[; ;eeprom.c: 136: completeData |= virtualW;
+"136
 [e =| _completeData _virtualW ]
-[; ;eeprom.c: 138: completeData |= virtualS << 1;
-"138
+[; ;eeprom.c: 137: completeData |= virtualS << 1;
+"137
 [e =| _completeData -> << -> _virtualS `i -> 1 `i `uc ]
-[; ;eeprom.c: 139: completeData |= virtualE << 2;
-"139
+[; ;eeprom.c: 138: completeData |= virtualE << 2;
+"138
 [e =| _completeData -> << -> _virtualE `i -> 2 `i `uc ]
-[; ;eeprom.c: 140: completeData |= virtualN << 3;
-"140
+[; ;eeprom.c: 139: completeData |= virtualN << 3;
+"139
 [e =| _completeData -> << -> _virtualN `i -> 3 `i `uc ]
-[; ;eeprom.c: 141: completeData |= victim << 4;
-"141
+[; ;eeprom.c: 140: completeData |= victim << 4;
+"140
 [e =| _completeData -> << -> _victim `i -> 4 `i `uc ]
-[; ;eeprom.c: 142: completeData |= move << 5;
-"142
+[; ;eeprom.c: 141: completeData |= move << 5;
+"141
 [e =| _completeData -> << -> _move `i -> 5 `i `uc ]
-[; ;eeprom.c: 143: completeData &= 0b01111111;
-"143
+[; ;eeprom.c: 142: completeData &= 0b01111111;
+"142
 [e =& _completeData -> -> 127 `i `uc ]
-[; ;eeprom.c: 144: addNewData(completeData);
-"144
+[; ;eeprom.c: 143: addNewData(completeData);
+"143
 [e ( _addNewData (1 _completeData ]
-[; ;eeprom.c: 145: }
-"145
+[; ;eeprom.c: 144: }
+"144
 [e :UE 116 ]
 }
-"149
+"148
 [v _EEPROMToSerial `(v  1 ef ]
 {
-[; ;eeprom.c: 148: void EEPROMToSerial(void)
-[; ;eeprom.c: 149: {
+[; ;eeprom.c: 147: void EEPROMToSerial(void)
+[; ;eeprom.c: 148: {
 [e :U _EEPROMToSerial ]
 [f ]
-"150
+"149
 [v _transferDone `uc  1 a ]
-[; ;eeprom.c: 150: char transferDone = 0;
+[; ;eeprom.c: 149: char transferDone = 0;
 [e = _transferDone -> -> 0 `i `uc ]
-[; ;eeprom.c: 151: addressCurrent = 0;
-"151
+[; ;eeprom.c: 150: addressCurrent = 0;
+"150
 [e = _addressCurrent -> -> 0 `i `uc ]
-[; ;eeprom.c: 152: addressCount = readEEPROM(0,0);
-"152
+[; ;eeprom.c: 151: addressCount = readEEPROM(0,0);
+"151
 [e = _addressCount ( _readEEPROM (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-[; ;eeprom.c: 153: _delay((unsigned long)((100)*(20000000/4000.0)));
-"153
+[; ;eeprom.c: 152: _delay((unsigned long)((100)*(20000000/4000.0)));
+"152
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-[; ;eeprom.c: 155: ser_putch(254);
-"155
+[; ;eeprom.c: 154: ser_putch(254);
+"154
 [e ( _ser_putch (1 -> -> 254 `i `uc ]
-[; ;eeprom.c: 157: while(!transferDone && addressCount > 0)
-"157
+[; ;eeprom.c: 156: while(!transferDone && addressCount > 0)
+"156
 [e $U 118  ]
 [e :U 119 ]
-[; ;eeprom.c: 158: {
+[; ;eeprom.c: 157: {
+"157
+{
+[; ;eeprom.c: 158: ser_putch(readEEPROM(0,1 + addressCurrent));
 "158
-{
-[; ;eeprom.c: 159: ser_putch(readEEPROM(0,1 + addressCurrent));
-"159
 [e ( _ser_putch (1 ( _readEEPROM (2 , -> -> 0 `i `uc -> + -> 1 `i -> _addressCurrent `i `uc ]
-[; ;eeprom.c: 160: _delay((unsigned long)((100)*(20000000/4000.0)));
-"160
+[; ;eeprom.c: 159: _delay((unsigned long)((100)*(20000000/4000.0)));
+"159
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-[; ;eeprom.c: 161: addressCurrent ++;
-"161
+[; ;eeprom.c: 160: addressCurrent ++;
+"160
 [e ++ _addressCurrent -> -> 1 `i `uc ]
-[; ;eeprom.c: 162: if(addressCurrent >= (addressCount))
-"162
+[; ;eeprom.c: 161: if(addressCurrent >= (addressCount))
+"161
 [e $ ! >= -> _addressCurrent `i -> _addressCount `i 121  ]
-[; ;eeprom.c: 163: {
-"163
+[; ;eeprom.c: 162: {
+"162
 {
-[; ;eeprom.c: 164: transferDone = 1;
-"164
+[; ;eeprom.c: 163: transferDone = 1;
+"163
 [e = _transferDone -> -> 1 `i `uc ]
-"165
+"164
 }
 [e :U 121 ]
-"166
+"165
 }
 [e :U 118 ]
-"157
+"156
 [e $ && ! != -> _transferDone `i -> -> -> 0 `i `uc `i > -> _addressCount `i -> 0 `i 119  ]
 [e :U 120 ]
+[; ;eeprom.c: 164: }
 [; ;eeprom.c: 165: }
-[; ;eeprom.c: 166: }
-[; ;eeprom.c: 168: ser_putch(255);
+[; ;eeprom.c: 167: ser_putch(255);
+"167
+[e ( _ser_putch (1 -> -> 255 `i `uc ]
+[; ;eeprom.c: 168: _delay((unsigned long)((100)*(20000000/4000.0)));
 "168
-[e ( _ser_putch (1 -> -> 255 `i `uc ]
-[; ;eeprom.c: 169: _delay((unsigned long)((100)*(20000000/4000.0)));
-"169
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-[; ;eeprom.c: 170: ser_putch(255);
-"170
+[; ;eeprom.c: 169: ser_putch(255);
+"169
 [e ( _ser_putch (1 -> -> 255 `i `uc ]
-[; ;eeprom.c: 171: }
-"171
+[; ;eeprom.c: 170: }
+"170
 [e :UE 117 ]
 }
 [a 1C 69 69 80 82 79 77 32 83 117 99 99 101 115 115 0 ]

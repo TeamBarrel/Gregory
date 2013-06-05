@@ -14,7 +14,6 @@
 #define CCW 0b00001101
 
 
-
 // A push button on the DSX board
 typedef struct {
 	char pressed;																			// Denotes if the push button is pressed
@@ -39,5 +38,6 @@ void wallFollow();
 bit findWall();
 char getCurrentX();
 char getCurrentY();
+void setVirtualLocation(char xV, char yV, char dV);
 
 #endif MAIN_H 

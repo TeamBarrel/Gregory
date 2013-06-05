@@ -1,5 +1,5 @@
 
-# 1 "C:\Users\11014065\Desktop\30 May WORKING FILE\main.c"
+# 1 "C:\Users\11014065\Desktop\30 MAY WORKING FILE\main.c"
 
 # 82 "C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f877a.h"
 volatile unsigned char INDF @ 0x000;
@@ -1090,12 +1090,12 @@ extern void memcpyee(eeprom unsigned char *to, const unsigned char *from, unsign
 #pragma inline(_delay)
 extern void _delay(unsigned long);
 
-# 7 "C:\Users\11014065\Desktop\30 May WORKING FILE\adc.h"
+# 7 "C:\Users\11014065\Desktop\30 MAY WORKING FILE\adc.h"
 void init_adc(void);
 int adc_read(void);
 int adc_read_channel(unsigned char channel);
 
-# 8 "C:\Users\11014065\Desktop\30 May WORKING FILE\drive.h"
+# 8 "C:\Users\11014065\Desktop\30 MAY WORKING FILE\drive.h"
 typedef enum {
 FORWARD = 0,
 LEFT = 1,
@@ -1132,7 +1132,7 @@ void frontWallCorrect(void);
 void leftAngleCorrect();
 void clearSuccessfulDrive(void);
 
-# 4 "C:\Users\11014065\Desktop\30 May WORKING FILE\eeprom.h"
+# 4 "C:\Users\11014065\Desktop\30 MAY WORKING FILE\eeprom.h"
 void writeEEPROM(char data, char addressH, char addressL);
 char readEEPROM(char addressH, char addressL);
 void testEEPROM(void);
@@ -1141,12 +1141,12 @@ void writeEEPROMTestData(void);
 void updateMapData(char virtualW, char virtualS,char virtualE, char virtualN, char victim, char move);
 void EEPROMToSerial(void);
 
-# 8 "C:\Users\11014065\Desktop\30 May WORKING FILE\ir.h"
+# 8 "C:\Users\11014065\Desktop\30 MAY WORKING FILE\ir.h"
 int convert(int adc_value);
 int readIR();
 void rotateIR(char steps, char direction);
 
-# 14 "C:\Users\11014065\Desktop\30 May WORKING FILE\lcd.h"
+# 14 "C:\Users\11014065\Desktop\30 MAY WORKING FILE\lcd.h"
 void lcd_write_control(unsigned char databyte);
 
 
@@ -1165,7 +1165,7 @@ void lcd_write_3_digit_bcd(int data);
 
 void lcd_init(void);
 
-# 19 "C:\Users\11014065\Desktop\30 May WORKING FILE\main.h"
+# 18 "C:\Users\11014065\Desktop\30 MAY WORKING FILE\main.h"
 typedef struct {
 char pressed;
 char released;
@@ -1189,20 +1189,21 @@ void wallFollow();
 bit findWall();
 char getCurrentX();
 char getCurrentY();
+void setVirtualLocation(char xV, char yV, char dV);
 
-# 6 "C:\Users\11014065\Desktop\30 May WORKING FILE\map.h"
+# 6 "C:\Users\11014065\Desktop\30 MAY WORKING FILE\map.h"
 void findFinalDestination(char virtualWallX, char virtualWallY, orientation robotOrientation);
 char getFinalX();
 char getFinalY();
 char getVictimZone(char victimX, char victimY);
 
-# 6 "C:\Users\11014065\Desktop\30 May WORKING FILE\sensors.h"
+# 6 "C:\Users\11014065\Desktop\30 MAY WORKING FILE\sensors.h"
 void checkCliff();
 bit checkVirtualWall();
 bit checkVictim();
 bit getBit(char byte, int position);
 
-# 55 "C:\Users\11014065\Desktop\30 May WORKING FILE\ser.h"
+# 55 "C:\Users\11014065\Desktop\30 MAY WORKING FILE\ser.h"
 bit ser_isrx(void);
 unsigned char ser_getch(void);
 void ser_putch(unsigned char byte);
@@ -1218,11 +1219,11 @@ extern bank1 unsigned char txfifo[16];
 extern volatile unsigned char txiptr, txoptr;
 extern unsigned char ser_tmp;
 
-# 8 "C:\Users\11014065\Desktop\30 May WORKING FILE\songs.h"
+# 8 "C:\Users\11014065\Desktop\30 MAY WORKING FILE\songs.h"
 void play_iCreate_song(unsigned char);
 void initSongs();
 
-# 21 "C:\Users\11014065\Desktop\30 May WORKING FILE\main.c"
+# 21 "C:\Users\11014065\Desktop\30 MAY WORKING FILE\main.c"
 asm("\tpsect config,class=CONFIG,delta=2"); asm("\tdw ""0xFFFE & 0xFFFB & 0xFFFF & 0xFFBF & 0xFFF7 & 0xFFFF & 0xFF7F & 0xFFFF");
 
 # 29
@@ -1248,14 +1249,22 @@ volatile bit ready = 0;
 volatile bit rightWall, frontWall, leftWall = 0;
 
 volatile char victimZone = 0;
-volatile unsigned char xCoord = 1;
-volatile unsigned char yCoord = 3;
+volatile signed char xCoord = 1;
+volatile signed char yCoord = 3;
+volatile signed char xVictim = -10;
+volatile signed char yVictim = -10;
+volatile signed char xVirtual = -10;
+volatile signed char yVirtual = -10;
+volatile signed char dVirtual = WEST;
+
+volatile
 volatile unsigned char node = 0;
 
 volatile unsigned int RTC_Counter = 0;
 
 
 PushButton start;
+PushButton eepromSerial;
 
 
 void interrupt isr1(void)
@@ -1266,7 +1275,7 @@ if(TMR0IF)
 TMR0IF = 0;
 TMR0 = 100;
 
-# 80
+# 88
 if(!RB0)
 {
 start.debounceCount++;
@@ -1282,6 +1291,20 @@ start.debounceCount = 0;
 start.released = 1;
 }
 
+if(!RB1)
+{
+eepromSerial.debounceCount++;
+if(eepromSerial.debounceCount >= 10 & eepromSerial.released)
+{
+eepromSerial.pressed = 1;
+eepromSerial.released = 0;
+}
+}
+else
+{
+eepromSerial.debounceCount = 0;
+eepromSerial.released = 1;
+}
 if (RCIF) { rxfifo[rxiptr]=RCREG; ser_tmp=(rxiptr+1) & (16-1); if (ser_tmp!=rxoptr) rxiptr=ser_tmp; } if (TXIF && TXIE) { TXREG = txfifo[txoptr]; ++txoptr; txoptr &= (16-1); if (txoptr==txiptr) { TXIE = 0; } };
 }
 }
@@ -1292,6 +1315,8 @@ void init()
 {
 start.pressed = 0;
 start.released = 1;
+eepromSerial.pressed = 0;
+eepromSerial.released = 1;
 
 init_adc();
 lcd_init();
@@ -1346,13 +1371,19 @@ if(victim > 241 && victim != 255)
 {
 if(goingHome)
 {
+_delay((unsigned long)((1000)*(20000000/4000.0)));
 play_iCreate_song(3);
+_delay((unsigned long)((500)*(20000000/4000.0)));
 victimZone = 0;
 lcd_set_cursor(0x09);
 lcd_write_data('V');
+xVictim = xCoord;
+yVictim = yCoord;
 }
 else
 {
+xVictim = xCoord;
+yVictim = yCoord;
 victimZone = getVictimZone(xCoord, yCoord);
 lcd_set_cursor(0x08);
 lcd_write_1_digit_bcd(victimZone);
@@ -1393,7 +1424,7 @@ lcd_write_data(' ');
 rotateIR(24, 0b00001101);
 }
 
-# 245
+# 275
 void goToNextCell()
 {
 if(!leftWall && (getSomethingInTheWay() != LEFT))
@@ -1431,6 +1462,24 @@ default:
 break;
 }
 
+if(xCoord < 0)
+{
+xCoord = 0;
+}
+if(xCoord > 4)
+{
+xCoord = 4;
+}
+
+if(yCoord < 0)
+{
+yCoord = 0;
+}
+if(yCoord > 3)
+{
+yCoord = 3;
+}
+
 lcd_set_cursor(0x01);
 lcd_write_1_digit_bcd(xCoord);
 lcd_set_cursor(0x03);
@@ -1449,6 +1498,8 @@ else if((xCoord == 4) && (yCoord == 3))
 node = 4;
 else if((xCoord == 2) && (yCoord == 1))
 node = 5;
+else if((xCoord == 3) && (yCoord == 0))
+node = 6;
 else
 node = 0;
 }
@@ -1474,15 +1525,43 @@ lcd_set_cursor(0x00);
 lcd_write_string("(-,-) - -- --- -");
 lcd_set_cursor(0x40);
 lcd_write_string("- - - (3,1) GREG");
-
+char victimIndicator = 0;
 while(!home)
 {
 
-# 344
-ready = 1;
-
-if(start.pressed && ready == 1)
+if(start.pressed && ready == 0)
 {
+findWalls();
+if(leftWall && rightWall && frontWall)
+turnAround();
+else if (rightWall && frontWall)
+turnLeft90();
+else if(leftWall && frontWall)
+turnRight90();
+ready = 1;
+lcd_set_cursor(0x06);
+lcd_write_data('E');
+play_iCreate_song(1);
+}
+
+
+
+if(eepromSerial.pressed && ready == 0)
+{
+eepromSerial.pressed = 0;
+lcd_set_cursor(0x00);
+lcd_write_string("EEPROM Serial         ");
+lcd_set_cursor(0x40);
+lcd_write_string("Please Wait...        ");
+writeEEPROMTestData();
+EEPROMToSerial();
+lcd_set_cursor(0x40);
+lcd_write_string("Complete              ");
+}
+
+if(start.pressed )
+{
+ready = 1;
 checkForFinalDestination();
 
 lookForVictim();
@@ -1561,6 +1640,15 @@ goRight();
 else
 goToNextCell();
 break;
+case 6:
+if (getOrientation() == WEST)
+{
+play_iCreate_song(6);
+goForward();
+}
+else
+goToNextCell();
+break;
 default:
 break;
 }
@@ -1568,12 +1656,20 @@ play_iCreate_song(5);
 if(getSuccessfulDrive())
 {
 
-updateMapData(0,0,0,0,0,getOrientation());
+if(xVictim == xCoord && yVictim == yCoord)
+{
+victimIndicator = 1;
+}
+
+# 539
+updateMapData(0,0,0,0,victimIndicator,getOrientation());
+
+victimIndicator = 0;
+
 updateLocation();
 updateNode();
 if(goingHome)
 checkIfHome();
-
 }
 }
 }
@@ -1601,6 +1697,13 @@ char getCurrentY()
 return yCoord;
 }
 
+void setVirtualLocation(char xV, char yV, char dV)
+{
+xVirtual = xV;
+yVirtual = yV;
+dVirtual = dV;
+}
+
 void wallFollow()
 {
 int distanceToWall = readIR();
@@ -1611,9 +1714,9 @@ waitFor(157,0,8);
 drive(0, 0, 0, 0);
 _delay((unsigned long)((1000)*(20000000/4000.0)));
 }
+
 else if(distanceToWall < 36)
 {
-
 drive(0, 50, 255, 255);
 waitFor(157,255,0b11111000);
 drive(0, 0, 0, 0);

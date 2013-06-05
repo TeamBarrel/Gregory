@@ -2,7 +2,7 @@
 [d version 1.1 ]
 [d edition pro ]
 [d chip 16F877A ]
-"103 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f877a.h
+"103 C:\Program Files\HI-TECH Software\PICC\9.81\include\pic16f877a.h
 [s S31 . 1 `uc 1 C 1 0 :1:0 
 `uc 1 DC 1 0 :1:1 
 `uc 1 Z 1 0 :1:2 
@@ -455,7 +455,7 @@
 `uc 1 EEPGD 1 0 :1:7 
 ]
 [u S1215 . 1 `S1208 1 . 1 0 ]
-"103
+"103 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f877a.h
 [s S1252 . 1 `uc 1 C 1 0 :1:0 
 `uc 1 DC 1 0 :1:1 
 `uc 1 Z 1 0 :1:2 
@@ -908,7 +908,7 @@
 `uc 1 EEPGD 1 0 :1:7 
 ]
 [u S2060 . 1 `S1208 1 . 1 0 ]
-"103
+"103 C:\Program Files\HI-TECH Software\PICC\9.81\include\pic16f877a.h
 [s S2120 . 1 `uc 1 C 1 0 :1:0 
 `uc 1 DC 1 0 :1:1 
 `uc 1 Z 1 0 :1:2 
@@ -1814,14 +1814,14 @@
 `uc 1 EEPGD 1 0 :1:7 
 ]
 [u S3769 . 1 `S1208 1 . 1 0 ]
-"9 C:\Users\11014065\Desktop\30 May WORKING FILE\map.c
-[e E1096 . `uc
+"9 C:\Documents and Settings\Administrator\Desktop\30 MAY WORKING FILE\map.c
+[e E1088 . `uc
 WEST 0
 SOUTH 1
 EAST 2
 NORTH 3
 ]
-"103 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f877a.h
+"103 C:\Program Files\HI-TECH Software\PICC\9.81\include\pic16f877a.h
 [s S3804 . 1 `uc 1 C 1 0 :1:0 
 `uc 1 DC 1 0 :1:1 
 `uc 1 Z 1 0 :1:2 
@@ -3180,7 +3180,7 @@ NORTH 3
 `uc 1 EEPGD 1 0 :1:7 
 ]
 [u S6296 . 1 `S1208 1 . 1 0 ]
-"103
+"103 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f877a.h
 [s S6322 . 1 `uc 1 C 1 0 :1:0 
 `uc 1 DC 1 0 :1:1 
 `uc 1 Z 1 0 :1:2 
@@ -3633,7 +3633,7 @@ NORTH 3
 `uc 1 EEPGD 1 0 :1:7 
 ]
 [u S7130 . 1 `S1208 1 . 1 0 ]
-"14 C:\Users\11014065\Desktop\30 May WORKING FILE\drive.c
+"14 C:\Users\11014065\Desktop\30 MAY WORKING FILE\drive.c
 [e E1111 . `uc
 FORWARD 0
 LEFT 1
@@ -3648,7 +3648,7 @@ EAST 2
 NORTH 3
 ]
 "103 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f877a.h
-[s S7245 . 1 `uc 1 C 1 0 :1:0 
+[s S7252 . 1 `uc 1 C 1 0 :1:0 
 `uc 1 DC 1 0 :1:1 
 `uc 1 Z 1 0 :1:2 
 `uc 1 nPD 1 0 :1:3 
@@ -3656,22 +3656,22 @@ NORTH 3
 `uc 1 RP 1 0 :2:5 
 `uc 1 IRP 1 0 :1:7 
 ]
-[s S7253 . 1 `uc 1 . 1 0 :5:0 
+[s S7260 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 RP0 1 0 :1:5 
 `uc 1 RP1 1 0 :1:6 
 ]
-[u S7257 . 1 `S31 1 . 1 0 `S39 1 . 1 0 ]
+[u S7264 . 1 `S31 1 . 1 0 `S39 1 . 1 0 ]
 "135
-[s S7269 . 1 `uc 1 RA0 1 0 :1:0 
+[s S7276 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
 `uc 1 RA4 1 0 :1:4 
 `uc 1 RA5 1 0 :1:5 
 ]
-[u S7276 . 1 `S67 1 . 1 0 ]
+[u S7283 . 1 `S67 1 . 1 0 ]
 "159
-[s S7288 . 1 `uc 1 RB0 1 0 :1:0 
+[s S7295 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -3680,9 +3680,9 @@ NORTH 3
 `uc 1 RB6 1 0 :1:6 
 `uc 1 RB7 1 0 :1:7 
 ]
-[u S7297 . 1 `S93 1 . 1 0 ]
+[u S7304 . 1 `S93 1 . 1 0 ]
 "185
-[s S7309 . 1 `uc 1 RC0 1 0 :1:0 
+[s S7316 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -3691,9 +3691,9 @@ NORTH 3
 `uc 1 RC6 1 0 :1:6 
 `uc 1 RC7 1 0 :1:7 
 ]
-[u S7318 . 1 `S123 1 . 1 0 ]
+[u S7325 . 1 `S123 1 . 1 0 ]
 "211
-[s S7330 . 1 `uc 1 RD0 1 0 :1:0 
+[s S7337 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
 `uc 1 RD3 1 0 :1:3 
@@ -3702,19 +3702,19 @@ NORTH 3
 `uc 1 RD6 1 0 :1:6 
 `uc 1 RD7 1 0 :1:7 
 ]
-[u S7339 . 1 `S153 1 . 1 0 ]
+[u S7346 . 1 `S153 1 . 1 0 ]
 "232
-[s S7346 . 1 `uc 1 RE0 1 0 :1:0 
+[s S7353 . 1 `uc 1 RE0 1 0 :1:0 
 `uc 1 RE1 1 0 :1:1 
 `uc 1 RE2 1 0 :1:2 
 ]
-[u S7350 . 1 `S178 1 . 1 0 ]
+[u S7357 . 1 `S178 1 . 1 0 ]
 "244
-[s S7354 . 1 `uc 1 PCLATH 1 0 :5:0 
+[s S7361 . 1 `uc 1 PCLATH 1 0 :5:0 
 ]
-[u S7356 . 1 `S190 1 . 1 0 ]
+[u S7363 . 1 `S190 1 . 1 0 ]
 "266
-[s S7370 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S7377 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -3723,14 +3723,14 @@ NORTH 3
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-[s S7379 . 1 `uc 1 . 1 0 :2:0 
+[s S7386 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 T0IE 1 0 :1:5 
 ]
-[u S7384 . 1 `S208 1 . 1 0 `S217 1 . 1 0 ]
+[u S7391 . 1 `S208 1 . 1 0 `S217 1 . 1 0 ]
 "298
-[s S7397 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[s S7404 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -3739,7 +3739,7 @@ NORTH 3
 `uc 1 ADIF 1 0 :1:6 
 `uc 1 PSPIF 1 0 :1:7 
 ]
-[s S7406 . 1 `uc 1 . 1 0 :1:0 
+[s S7413 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -3747,39 +3747,39 @@ NORTH 3
 `uc 1 . 1 0 :1:6 
 `uc 1 . 1 0 :1:7 
 ]
-[u S7414 . 1 `S249 1 . 1 0 `S258 1 . 1 0 ]
+[u S7421 . 1 `S249 1 . 1 0 `S258 1 . 1 0 ]
 "329
-[s S7423 . 1 `uc 1 CCP2IF 1 0 :1:0 
+[s S7430 . 1 `uc 1 CCP2IF 1 0 :1:0 
 `uc 1 . 1 0 :2:1 
 `uc 1 BCLIF 1 0 :1:3 
 `uc 1 EEIF 1 0 :1:4 
 `uc 1 . 1 0 :1:5 
 `uc 1 CMIF 1 0 :1:6 
 ]
-[u S7430 . 1 `S292 1 . 1 0 ]
+[u S7437 . 1 `S292 1 . 1 0 ]
 "365
-[s S7445 . 1 `uc 1 TMR1ON 1 0 :1:0 
+[s S7452 . 1 `uc 1 TMR1ON 1 0 :1:0 
 `uc 1 TMR1CS 1 0 :1:1 
 `uc 1 nT1SYNC 1 0 :1:2 
 `uc 1 T1OSCEN 1 0 :1:3 
 `uc 1 T1CKPS 1 0 :2:4 
 ]
-[s S7451 . 1 `uc 1 . 1 0 :2:0 
+[s S7458 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 T1SYNC 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
 `uc 1 T1CKPS0 1 0 :1:4 
 `uc 1 T1CKPS1 1 0 :1:5 
 ]
-[s S7457 . 1 `uc 1 . 1 0 :2:0 
+[s S7464 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 T1INSYNC 1 0 :1:2 
 ]
-[u S7460 . 1 `S321 1 . 1 0 `S327 1 . 1 0 `S333 1 . 1 0 ]
+[u S7467 . 1 `S321 1 . 1 0 `S327 1 . 1 0 `S333 1 . 1 0 ]
 "402
-[s S7474 . 1 `uc 1 T2CKPS 1 0 :2:0 
+[s S7481 . 1 `uc 1 T2CKPS 1 0 :2:0 
 `uc 1 TMR2ON 1 0 :1:2 
 `uc 1 TOUTPS 1 0 :4:3 
 ]
-[s S7478 . 1 `uc 1 T2CKPS0 1 0 :1:0 
+[s S7485 . 1 `uc 1 T2CKPS0 1 0 :1:0 
 `uc 1 T2CKPS1 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 TOUTPS0 1 0 :1:3 
@@ -3787,33 +3787,33 @@ NORTH 3
 `uc 1 TOUTPS2 1 0 :1:5 
 `uc 1 TOUTPS3 1 0 :1:6 
 ]
-[u S7486 . 1 `S365 1 . 1 0 `S369 1 . 1 0 ]
+[u S7493 . 1 `S365 1 . 1 0 `S369 1 . 1 0 ]
 "436
-[s S7500 . 1 `uc 1 SSPM 1 0 :4:0 
+[s S7507 . 1 `uc 1 SSPM 1 0 :4:0 
 `uc 1 CKP 1 0 :1:4 
 `uc 1 SSPEN 1 0 :1:5 
 `uc 1 SSPOV 1 0 :1:6 
 `uc 1 WCOL 1 0 :1:7 
 ]
-[s S7506 . 1 `uc 1 SSPM0 1 0 :1:0 
+[s S7513 . 1 `uc 1 SSPM0 1 0 :1:0 
 `uc 1 SSPM1 1 0 :1:1 
 `uc 1 SSPM2 1 0 :1:2 
 `uc 1 SSPM3 1 0 :1:3 
 ]
-[u S7511 . 1 `S403 1 . 1 0 `S409 1 . 1 0 ]
+[u S7518 . 1 `S403 1 . 1 0 `S409 1 . 1 0 ]
 "475
-[s S7525 . 1 `uc 1 CCP1M 1 0 :4:0 
+[s S7532 . 1 `uc 1 CCP1M 1 0 :4:0 
 `uc 1 CCP1Y 1 0 :1:4 
 `uc 1 CCP1X 1 0 :1:5 
 ]
-[s S7529 . 1 `uc 1 CCP1M0 1 0 :1:0 
+[s S7536 . 1 `uc 1 CCP1M0 1 0 :1:0 
 `uc 1 CCP1M1 1 0 :1:1 
 `uc 1 CCP1M2 1 0 :1:2 
 `uc 1 CCP1M3 1 0 :1:3 
 ]
-[u S7534 . 1 `S439 1 . 1 0 `S443 1 . 1 0 ]
+[u S7541 . 1 `S439 1 . 1 0 `S443 1 . 1 0 ]
 "506
-[s S7551 . 1 `uc 1 RX9D 1 0 :1:0 
+[s S7558 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -3822,42 +3822,42 @@ NORTH 3
 `uc 1 RX9 1 0 :1:6 
 `uc 1 SPEN 1 0 :1:7 
 ]
-[s S7560 . 1 `uc 1 RCD8 1 0 :1:0 
+[s S7567 . 1 `uc 1 RCD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 RC9 1 0 :1:6 
 ]
-[s S7564 . 1 `uc 1 . 1 0 :6:0 
+[s S7571 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 nRC8 1 0 :1:6 
 ]
-[s S7567 . 1 `uc 1 . 1 0 :6:0 
+[s S7574 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC8_9 1 0 :1:6 
 ]
-[u S7570 . 1 `S474 1 . 1 0 `S483 1 . 1 0 `S487 1 . 1 0 `S490 1 . 1 0 ]
+[u S7577 . 1 `S474 1 . 1 0 `S483 1 . 1 0 `S487 1 . 1 0 `S490 1 . 1 0 ]
 "563
-[s S7588 . 1 `uc 1 CCP2M 1 0 :4:0 
+[s S7595 . 1 `uc 1 CCP2M 1 0 :4:0 
 `uc 1 CCP2Y 1 0 :1:4 
 `uc 1 CCP2X 1 0 :1:5 
 ]
-[s S7592 . 1 `uc 1 CCP2M0 1 0 :1:0 
+[s S7599 . 1 `uc 1 CCP2M0 1 0 :1:0 
 `uc 1 CCP2M1 1 0 :1:1 
 `uc 1 CCP2M2 1 0 :1:2 
 `uc 1 CCP2M3 1 0 :1:3 
 ]
-[u S7597 . 1 `S530 1 . 1 0 `S534 1 . 1 0 ]
+[u S7604 . 1 `S530 1 . 1 0 `S534 1 . 1 0 ]
 "596
-[s S7613 . 1 `uc 1 ADON 1 0 :1:0 
+[s S7620 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 GO_nDONE 1 0 :1:2 
 `uc 1 CHS 1 0 :3:3 
 `uc 1 ADCS 1 0 :2:6 
 ]
-[s S7619 . 1 `uc 1 . 1 0 :1:0 
+[s S7626 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 . 1 0 :3:3 
 `uc 1 . 1 0 :2:6 
 ]
-[s S7625 . 1 `uc 1 . 1 0 :2:0 
+[s S7632 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 GO 1 0 :1:2 
 `uc 1 CHS0 1 0 :1:3 
 `uc 1 CHS1 1 0 :1:4 
@@ -3865,37 +3865,37 @@ NORTH 3
 `uc 1 ADCS0 1 0 :1:6 
 `uc 1 ADCS1 1 0 :1:7 
 ]
-[s S7633 . 1 `uc 1 . 1 0 :2:0 
+[s S7640 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nDONE 1 0 :1:2 
 ]
-[s S7636 . 1 `uc 1 . 1 0 :2:0 
+[s S7643 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 GO_DONE 1 0 :1:2 
 ]
-[u S7639 . 1 `S564 1 . 1 0 `S570 1 . 1 0 `S576 1 . 1 0 `S584 1 . 1 0 `S587 1 . 1 0 ]
+[u S7646 . 1 `S564 1 . 1 0 `S570 1 . 1 0 `S576 1 . 1 0 `S584 1 . 1 0 `S587 1 . 1 0 ]
 "648
-[s S7655 . 1 `uc 1 PS 1 0 :3:0 
+[s S7662 . 1 `uc 1 PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
 `uc 1 INTEDG 1 0 :1:6 
 `uc 1 nRBPU 1 0 :1:7 
 ]
-[s S7662 . 1 `uc 1 PS0 1 0 :1:0 
+[s S7669 . 1 `uc 1 PS0 1 0 :1:0 
 `uc 1 PS1 1 0 :1:1 
 `uc 1 PS2 1 0 :1:2 
 ]
-[u S7666 . 1 `S632 1 . 1 0 `S639 1 . 1 0 ]
+[u S7673 . 1 `S632 1 . 1 0 `S639 1 . 1 0 ]
 "675
-[s S7677 . 1 `uc 1 TRISA0 1 0 :1:0 
+[s S7684 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
 `uc 1 TRISA4 1 0 :1:4 
 `uc 1 TRISA5 1 0 :1:5 
 ]
-[u S7684 . 1 `S665 1 . 1 0 ]
+[u S7691 . 1 `S665 1 . 1 0 ]
 "699
-[s S7696 . 1 `uc 1 TRISB0 1 0 :1:0 
+[s S7703 . 1 `uc 1 TRISB0 1 0 :1:0 
 `uc 1 TRISB1 1 0 :1:1 
 `uc 1 TRISB2 1 0 :1:2 
 `uc 1 TRISB3 1 0 :1:3 
@@ -3904,9 +3904,9 @@ NORTH 3
 `uc 1 TRISB6 1 0 :1:6 
 `uc 1 TRISB7 1 0 :1:7 
 ]
-[u S7705 . 1 `S691 1 . 1 0 ]
+[u S7712 . 1 `S691 1 . 1 0 ]
 "725
-[s S7717 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S7724 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -3915,9 +3915,9 @@ NORTH 3
 `uc 1 TRISC6 1 0 :1:6 
 `uc 1 TRISC7 1 0 :1:7 
 ]
-[u S7726 . 1 `S721 1 . 1 0 ]
+[u S7733 . 1 `S721 1 . 1 0 ]
 "751
-[s S7738 . 1 `uc 1 TRISD0 1 0 :1:0 
+[s S7745 . 1 `uc 1 TRISD0 1 0 :1:0 
 `uc 1 TRISD1 1 0 :1:1 
 `uc 1 TRISD2 1 0 :1:2 
 `uc 1 TRISD3 1 0 :1:3 
@@ -3926,9 +3926,9 @@ NORTH 3
 `uc 1 TRISD6 1 0 :1:6 
 `uc 1 TRISD7 1 0 :1:7 
 ]
-[u S7747 . 1 `S751 1 . 1 0 ]
+[u S7754 . 1 `S751 1 . 1 0 ]
 "776
-[s S7758 . 1 `uc 1 TRISE0 1 0 :1:0 
+[s S7765 . 1 `uc 1 TRISE0 1 0 :1:0 
 `uc 1 TRISE1 1 0 :1:1 
 `uc 1 TRISE2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -3937,9 +3937,9 @@ NORTH 3
 `uc 1 OBF 1 0 :1:6 
 `uc 1 IBF 1 0 :1:7 
 ]
-[u S7767 . 1 `S780 1 . 1 0 ]
+[u S7774 . 1 `S780 1 . 1 0 ]
 "802
-[s S7779 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[s S7786 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSPIE 1 0 :1:3 
@@ -3948,25 +3948,25 @@ NORTH 3
 `uc 1 ADIE 1 0 :1:6 
 `uc 1 PSPIE 1 0 :1:7 
 ]
-[u S7788 . 1 `S810 1 . 1 0 ]
+[u S7795 . 1 `S810 1 . 1 0 ]
 "824
-[s S7796 . 1 `uc 1 CCP2IE 1 0 :1:0 
+[s S7803 . 1 `uc 1 CCP2IE 1 0 :1:0 
 `uc 1 . 1 0 :2:1 
 `uc 1 BCLIE 1 0 :1:3 
 `uc 1 EEIE 1 0 :1:4 
 `uc 1 . 1 0 :1:5 
 `uc 1 CMIE 1 0 :1:6 
 ]
-[u S7803 . 1 `S836 1 . 1 0 ]
+[u S7810 . 1 `S836 1 . 1 0 ]
 "843
-[s S7810 . 1 `uc 1 nBOR 1 0 :1:0 
+[s S7817 . 1 `uc 1 nBOR 1 0 :1:0 
 `uc 1 nPOR 1 0 :1:1 
 ]
-[s S7813 . 1 `uc 1 nBO 1 0 :1:0 
+[s S7820 . 1 `uc 1 nBO 1 0 :1:0 
 ]
-[u S7815 . 1 `S857 1 . 1 0 `S860 1 . 1 0 ]
+[u S7822 . 1 `S857 1 . 1 0 `S860 1 . 1 0 ]
 "866
-[s S7828 . 1 `uc 1 SEN 1 0 :1:0 
+[s S7835 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -3975,9 +3975,9 @@ NORTH 3
 `uc 1 ACKSTAT 1 0 :1:6 
 `uc 1 GCEN 1 0 :1:7 
 ]
-[u S7837 . 1 `S880 1 . 1 0 ]
+[u S7844 . 1 `S880 1 . 1 0 ]
 "914
-[s S7865 . 1 `uc 1 BF 1 0 :1:0 
+[s S7872 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -3986,7 +3986,7 @@ NORTH 3
 `uc 1 CKE 1 0 :1:6 
 `uc 1 SMP 1 0 :1:7 
 ]
-[s S7874 . 1 `uc 1 . 1 0 :1:0 
+[s S7881 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -3995,40 +3995,40 @@ NORTH 3
 `uc 1 . 1 0 :1:6 
 `uc 1 . 1 0 :1:7 
 ]
-[s S7883 . 1 `uc 1 . 1 0 :2:0 
+[s S7890 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D 1 0 :1:5 
 ]
-[s S7888 . 1 `uc 1 . 1 0 :2:0 
+[s S7895 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
 `uc 1 I2C_STOP 1 0 :1:4 
 `uc 1 I2C_DATA 1 0 :1:5 
 ]
-[s S7894 . 1 `uc 1 . 1 0 :2:0 
+[s S7901 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
-[s S7899 . 1 `uc 1 . 1 0 :2:0 
+[s S7906 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
-[s S7904 . 1 `uc 1 . 1 0 :2:0 
+[s S7911 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
-[s S7909 . 1 `uc 1 . 1 0 :2:0 
+[s S7916 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
-[u S7914 . 1 `S926 1 . 1 0 `S935 1 . 1 0 `S944 1 . 1 0 `S949 1 . 1 0 `S955 1 . 1 0 `S960 1 . 1 0 `S965 1 . 1 0 `S970 1 . 1 0 ]
+[u S7921 . 1 `S926 1 . 1 0 `S935 1 . 1 0 `S944 1 . 1 0 `S949 1 . 1 0 `S955 1 . 1 0 `S960 1 . 1 0 `S965 1 . 1 0 `S970 1 . 1 0 ]
 "989
-[s S7935 . 1 `uc 1 TX9D 1 0 :1:0 
+[s S7942 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -4037,89 +4037,143 @@ NORTH 3
 `uc 1 TX9 1 0 :1:6 
 `uc 1 CSRC 1 0 :1:7 
 ]
-[s S7944 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S7951 . 1 `uc 1 TXD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 nTX8 1 0 :1:6 
 ]
-[s S7948 . 1 `uc 1 . 1 0 :6:0 
+[s S7955 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[u S7951 . 1 `S1045 1 . 1 0 `S1054 1 . 1 0 `S1058 1 . 1 0 ]
+[u S7958 . 1 `S1045 1 . 1 0 `S1054 1 . 1 0 `S1058 1 . 1 0 ]
 "1028
-[s S7966 . 1 `uc 1 CM 1 0 :3:0 
+[s S7973 . 1 `uc 1 CM 1 0 :3:0 
 `uc 1 CIS 1 0 :1:3 
 `uc 1 C1INV 1 0 :1:4 
 `uc 1 C2INV 1 0 :1:5 
 `uc 1 C1OUT 1 0 :1:6 
 `uc 1 C2OUT 1 0 :1:7 
 ]
-[s S7973 . 1 `uc 1 CM0 1 0 :1:0 
+[s S7980 . 1 `uc 1 CM0 1 0 :1:0 
 `uc 1 CM1 1 0 :1:1 
 `uc 1 CM2 1 0 :1:2 
 ]
-[u S7977 . 1 `S1092 1 . 1 0 `S1099 1 . 1 0 ]
+[u S7984 . 1 `S1092 1 . 1 0 `S1099 1 . 1 0 ]
 "1056
-[s S7989 . 1 `uc 1 CVR 1 0 :4:0 
+[s S7996 . 1 `uc 1 CVR 1 0 :4:0 
 `uc 1 . 1 0 :1:4 
 `uc 1 CVRR 1 0 :1:5 
 `uc 1 CVROE 1 0 :1:6 
 `uc 1 CVREN 1 0 :1:7 
 ]
-[s S7995 . 1 `uc 1 CVR0 1 0 :1:0 
+[s S8002 . 1 `uc 1 CVR0 1 0 :1:0 
 `uc 1 CVR1 1 0 :1:1 
 `uc 1 CVR2 1 0 :1:2 
 `uc 1 CVR3 1 0 :1:3 
 ]
-[u S8000 . 1 `S1126 1 . 1 0 `S1132 1 . 1 0 ]
+[u S8007 . 1 `S1126 1 . 1 0 `S1132 1 . 1 0 ]
 "1087
-[s S8012 . 1 `uc 1 PCFG 1 0 :4:0 
+[s S8019 . 1 `uc 1 PCFG 1 0 :4:0 
 `uc 1 . 1 0 :2:4 
 `uc 1 ADCS2 1 0 :1:6 
 `uc 1 ADFM 1 0 :1:7 
 ]
-[s S8017 . 1 `uc 1 PCFG0 1 0 :1:0 
+[s S8024 . 1 `uc 1 PCFG0 1 0 :1:0 
 `uc 1 PCFG1 1 0 :1:1 
 `uc 1 PCFG2 1 0 :1:2 
 `uc 1 PCFG3 1 0 :1:3 
 ]
-[u S8022 . 1 `S1160 1 . 1 0 `S1165 1 . 1 0 ]
+[u S8029 . 1 `S1160 1 . 1 0 `S1165 1 . 1 0 ]
 "1119
-[s S8029 . 1 `uc 1 . 1 0 :6:0 
+[s S8036 . 1 `uc 1 . 1 0 :6:0 
 ]
-[u S8031 . 1 `S1187 1 . 1 0 ]
+[u S8038 . 1 `S1187 1 . 1 0 ]
 "1130
-[s S8035 . 1 `uc 1 . 1 0 :5:0 
+[s S8042 . 1 `uc 1 . 1 0 :5:0 
 ]
-[u S8037 . 1 `S1195 1 . 1 0 ]
+[u S8044 . 1 `S1195 1 . 1 0 ]
 "1152
-[s S8046 . 1 `uc 1 RD 1 0 :1:0 
+[s S8053 . 1 `uc 1 RD 1 0 :1:0 
 `uc 1 WR 1 0 :1:1 
 `uc 1 WREN 1 0 :1:2 
 `uc 1 WRERR 1 0 :1:3 
 `uc 1 . 1 0 :3:4 
 `uc 1 EEPGD 1 0 :1:7 
 ]
-[u S8053 . 1 `S1208 1 . 1 0 ]
-"34 C:\Users\11014065\Desktop\30 May WORKING FILE\main.c
-[s S8059 . 2 `VEuc 1 position 1 0 `VEuc 1 distance 1 1 ]
-"55
-[s S8080 . 3 `uc 1 pressed 1 0 `uc 1 released 1 1 `uc 1 debounceCount 1 2 ]
-"39 C:\Users\11014065\Desktop\30 May WORKING FILE\main.h
-[e E1096 . `uc
-FORWARD 0
-LEFT 1
-BACKWARD 2
-RIGHT 3
-]
-"39 C:\Users\11014065\Desktop\30 May WORKING FILE\drive.h
+[u S8060 . 1 `S1208 1 . 1 0 ]
+"34 C:\Users\11014065\Desktop\30 MAY WORKING FILE\main.c
+[s S8066 . 2 `VEuc 1 position 1 0 `VEuc 1 distance 1 1 ]
+"57
 [e E1102 . `uc
 WEST 0
 SOUTH 1
 EAST 2
 NORTH 3
 ]
-"62 C:\Users\11014065\Desktop\30 May WORKING FILE\main.c
-[v F1269 `(v  1 t 0 ]
+"62
+[s S8097 . 3 `uc 1 pressed 1 0 `uc 1 released 1 1 `uc 1 debounceCount 1 2 ]
+"38 C:\Users\11014065\Desktop\30 MAY WORKING FILE\main.h
+[e E1096 . `uc
+FORWARD 0
+LEFT 1
+BACKWARD 2
+RIGHT 3
+]
+"70 C:\Users\11014065\Desktop\30 MAY WORKING FILE\main.c
+[v F1279 `(v  1 t 0 ]
+"7 C:\Documents and Settings\Administrator\Desktop\30 MAY WORKING FILE\adc.c
+[v _adc_read_channel `(i  1 e 2 0 ]
+"48
+[v _init_adc `(v  1 e 0 0 ]
+"62
+[v _adc_read `(i  1 e 2 0 ]
+"11 C:\Documents and Settings\Administrator\Desktop\30 MAY WORKING FILE\ir.c
+[v _convert `(i  1 e 2 0 ]
+"33
+[v _readIR `(i  1 e 2 0 ]
+"39
+[v _rotateIR `(v  1 e 0 0 ]
+"8 C:\Documents and Settings\Administrator\Desktop\30 MAY WORKING FILE\lcd.c
+[v _lcd_write_control `(v  1 e 0 0 ]
+"20
+[v _lcd_write_data `(v  1 e 0 0 ]
+"32
+[v _lcd_set_cursor `(v  1 e 0 0 ]
+"38
+[v _lcd_write_string `(v  1 e 0 0 ]
+"44
+[v _lcd_write_1_digit_bcd `(v  1 e 0 0 ]
+"50
+[v _lcd_write_3_digit_bcd `(v  1 e 0 0 ]
+"78
+[v _lcd_init `(v  1 e 0 0 ]
+"12 C:\Documents and Settings\Administrator\Desktop\30 MAY WORKING FILE\map.c
+[v _findFinalDestination `(v  1 e 0 0 ]
+"147
+[v _getFinalX `(uc  1 e 1 0 ]
+"152
+[v _getFinalY `(uc  1 e 1 0 ]
+"157
+[v _getVictimZone `(uc  1 e 1 0 ]
+"48 C:\Documents and Settings\Administrator\Desktop\30 MAY WORKING FILE\ser.c
+[v _ser_isrx `(b  1 e 0 0 ]
+"58
+[v _ser_getch `(uc  1 e 1 0 ]
+"73
+[v _ser_putArr `(v  1 e 0 0 ]
+"81
+[v _ser_putch `(v  1 e 0 0 ]
+"92
+[v _ser_puts `(v  1 e 0 0 ]
+"98
+[v _ser_puts2 `(v  1 e 0 0 ]
+"104
+[v _ser_puthex `(v  1 e 0 0 ]
+"124
+[v _ser_init `(v  1 e 0 0 ]
+"26 C:\Documents and Settings\Administrator\Desktop\30 MAY WORKING FILE\songs.c
+[v _play_iCreate_song `(v  1 e 0 0 ]
+"32
+[v _initSongs `(v  1 e 0 0 ]
 "5 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\sources\abdiv.c
 [v ___abdiv `(c  1 e 1 0 ]
 "5 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\sources\abmod.c
@@ -4192,51 +4246,45 @@ NORTH 3
 [v ___tmul `(um  1 e 3 0 ]
 "3 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\sources\wmul.c
 [v ___wmul `(ui  1 e 2 0 ]
-"7 C:\Users\11014065\Desktop\30 May WORKING FILE\adc.c
-[v _adc_read_channel `(i  1 e 2 0 ]
-"48
-[v _init_adc `(v  1 e 0 0 ]
-"62
-[v _adc_read `(i  1 e 2 0 ]
-"22 C:\Users\11014065\Desktop\30 May WORKING FILE\drive.c
+"22 C:\Users\11014065\Desktop\30 MAY WORKING FILE\drive.c
 [v _drive `(v  1 e 0 0 ]
 "32
 [v _driveForDistance `(v  1 e 0 0 ]
-"178
+"180
 [v _getOrientation `(E1117  1 e 1 0 ]
-"183
+"185
 [v _getSomethingInTheWay `(E1111  1 e 1 0 ]
-"188
+"190
 [v _clearSuccessfulDrive `(v  1 e 0 0 ]
-"193
+"195
 [v _getSuccessfulDrive `(b  1 e 0 0 ]
-"198
+"200
 [v _getWayWent `(E1111  1 e 1 0 ]
-"204
+"206
 [v _goBackward `(v  1 e 0 0 ]
-"215
+"217
 [v _goForward `(v  1 e 0 0 ]
-"230
+"232
 [v _goLeft `(v  1 e 0 0 ]
-"240
+"242
 [v _goReverse `(v  1 e 0 0 ]
-"251
+"253
 [v _goRight `(v  1 e 0 0 ]
-"261
+"263
 [v _turnAround `(v  1 e 0 0 ]
-"270
+"272
 [v _turnLeft90 `(v  1 e 0 0 ]
-"284
+"286
 [v _turnRight90 `(v  1 e 0 0 ]
-"292
+"294
 [v _updateOrientation `(v  1 e 0 0 ]
-"299
+"301
 [v _waitFor `(v  1 e 0 0 ]
-"324
+"326
 [v _frontWallCorrect `(v  1 e 0 0 ]
-"347
+"349
 [v _leftAngleCorrect `(v  1 e 0 0 ]
-"14 C:\Users\11014065\Desktop\30 May WORKING FILE\eeprom.c
+"14 C:\Users\11014065\Desktop\30 MAY WORKING FILE\eeprom.c
 [v _writeSPIByte `(v  1 e 0 0 ]
 "21
 [v _initEEPROMMode `(v  1 e 0 0 ]
@@ -4250,88 +4298,42 @@ NORTH 3
 [v _addNewData `(v  1 e 0 0 ]
 "103
 [v _writeEEPROMTestData `(v  1 e 0 0 ]
-"135
+"134
 [v _updateMapData `(v  1 e 0 0 ]
-"149
+"148
 [v _EEPROMToSerial `(v  1 e 0 0 ]
-"11 C:\Users\11014065\Desktop\30 May WORKING FILE\ir.c
-[v _convert `(i  1 e 2 0 ]
-"33
-[v _readIR `(i  1 e 2 0 ]
-"39
-[v _rotateIR `(v  1 e 0 0 ]
-"8 C:\Users\11014065\Desktop\30 May WORKING FILE\lcd.c
-[v _lcd_write_control `(v  1 e 0 0 ]
-"20
-[v _lcd_write_data `(v  1 e 0 0 ]
-"32
-[v _lcd_set_cursor `(v  1 e 0 0 ]
-"38
-[v _lcd_write_string `(v  1 e 0 0 ]
-"44
-[v _lcd_write_1_digit_bcd `(v  1 e 0 0 ]
-"50
-[v _lcd_write_3_digit_bcd `(v  1 e 0 0 ]
-"78
-[v _lcd_init `(v  1 e 0 0 ]
-"62 C:\Users\11014065\Desktop\30 May WORKING FILE\main.c
+"70 C:\Users\11014065\Desktop\30 MAY WORKING FILE\main.c
 [v _isr1 `I(v  1 e 0 0 ]
-"102
-[v _init `(v  1 e 0 0 ]
-"130
-[v _initIRobot `(v  1 e 0 0 ]
-"139
-[v _checkForFinalDestination `(v  1 e 0 0 ]
-"150
-[v _lookForVictim `(v  1 e 0 0 ]
-"175
-[v _findWalls `(v  1 e 0 0 ]
-"246
-[v _goToNextCell `(v  1 e 0 0 ]
-"258
-[v _updateLocation `(v  1 e 0 0 ]
-"289
-[v _updateNode `(v  1 e 0 0 ]
-"305
-[v _checkIfHome `(v  1 e 0 0 ]
-"317
-[v _main `(v  1 e 0 0 ]
-"449
-[v _findWall `(b  1 e 0 0 ]
-"457
-[v _getCurrentX `(uc  1 e 1 0 ]
-"462
-[v _getCurrentY `(uc  1 e 1 0 ]
-"467
-[v _wallFollow `(v  1 e 0 0 ]
-"12 C:\Users\11014065\Desktop\30 May WORKING FILE\map.c
-[v _findFinalDestination `(v  1 e 0 0 ]
-"147
-[v _getFinalX `(uc  1 e 1 0 ]
-"152
-[v _getFinalY `(uc  1 e 1 0 ]
-"157
-[v _getVictimZone `(uc  1 e 1 0 ]
-"48 C:\Users\11014065\Desktop\30 May WORKING FILE\ser.c
-[v _ser_isrx `(b  1 e 0 0 ]
-"58
-[v _ser_getch `(uc  1 e 1 0 ]
-"73
-[v _ser_putArr `(v  1 e 0 0 ]
-"81
-[v _ser_putch `(v  1 e 0 0 ]
-"92
-[v _ser_puts `(v  1 e 0 0 ]
-"98
-[v _ser_puts2 `(v  1 e 0 0 ]
-"104
-[v _ser_puthex `(v  1 e 0 0 ]
 "124
-[v _ser_init `(v  1 e 0 0 ]
-"26 C:\Users\11014065\Desktop\30 May WORKING FILE\songs.c
-[v _play_iCreate_song `(v  1 e 0 0 ]
-"32
-[v _initSongs `(v  1 e 0 0 ]
+[v _init `(v  1 e 0 0 ]
+"154
+[v _initIRobot `(v  1 e 0 0 ]
+"163
+[v _checkForFinalDestination `(v  1 e 0 0 ]
+"174
+[v _lookForVictim `(v  1 e 0 0 ]
+"205
+[v _findWalls `(v  1 e 0 0 ]
+"276
+[v _goToNextCell `(v  1 e 0 0 ]
+"288
+[v _updateLocation `(v  1 e 0 0 ]
+"337
+[v _updateNode `(v  1 e 0 0 ]
+"355
+[v _checkIfHome `(v  1 e 0 0 ]
+"367
+[v _main `(v  1 e 0 0 ]
+"557
+[v _findWall `(b  1 e 0 0 ]
+"565
+[v _getCurrentX `(uc  1 e 1 0 ]
+"570
+[v _getCurrentY `(uc  1 e 1 0 ]
+"575
+[v _setVirtualLocation `(v  1 e 0 0 ]
+"582
+[v _wallFollow `(v  1 e 0 0 ]
 "7 eeprom.c
 [v _eecpymem `(v  1 e 0 0 ]
 "25
@@ -4972,6 +4974,36 @@ NORTH 3
 [v _EEPGD `VEb  1 e 0 @3175 ]
 "1167
 [v _EECON2 `VEuc  1 e 1 @397 ]
+"7 C:\Documents and Settings\Administrator\Desktop\30 MAY WORKING FILE\map.c
+[v _finalX `uc  1 e 1 0 ]
+"8
+[v _finalY `uc  1 e 1 0 ]
+"9
+[v _vicZone `uc  1 e 1 0 ]
+"41 C:\Documents and Settings\Administrator\Desktop\30 MAY WORKING FILE\ser.c
+[v _rxfifo `[16]uc  1 e 16 0 ]
+"42
+[v _rxiptr `VEuc  1 e 1 0 ]
+[v _rxoptr `VEuc  1 e 1 0 ]
+"43
+[v _txfifo `X[16]uc  1 e 16 0 ]
+"44
+[v _txiptr `VEuc  1 e 1 0 ]
+[v _txoptr `VEuc  1 e 1 0 ]
+"45
+[v _ser_tmp `uc  1 e 1 0 ]
+"10 C:\Documents and Settings\Administrator\Desktop\30 MAY WORKING FILE\songs.c
+[v _superMarioBros `[25]uc  1 e 25 0 ]
+"11
+[v _lookingForU2 `[29]uc  1 e 29 0 ]
+"12
+[v _finalCountdown `[27]uc  1 e 27 0 ]
+"13
+[v _champions `[21]uc  1 e 21 0 ]
+"14
+[v _beep `[5]uc  1 e 5 0 ]
+"15
+[v _longbeep `[5]uc  1 e 5 0 ]
 "120 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f877a.h
 [v _STATUSbits `VES43  1 e 1 @3 ]
 "146
@@ -5042,7 +5074,7 @@ NORTH 3
 [v _EEADRHbits `VES192  1 e 1 @271 ]
 "1163
 [v _EECON1bits `VES1215  1 e 1 @396 ]
-"14 C:\Users\11014065\Desktop\30 May WORKING FILE\drive.c
+"14 C:\Users\11014065\Desktop\30 MAY WORKING FILE\drive.c
 [v _successfulDrive `VEb  1 e 0 0 ]
 "15
 [v _somethingInTheWay `VEE1111  1 e 1 0 ]
@@ -5054,16 +5086,16 @@ NORTH 3
 [v _lastMove `VEE1111  1 e 1 0 ]
 "19
 [v _currentOrientation `VEE1117  1 e 1 0 ]
-"10 C:\Users\11014065\Desktop\30 May WORKING FILE\eeprom.c
+"10 C:\Users\11014065\Desktop\30 MAY WORKING FILE\eeprom.c
 [v _addressCount `uc  1 e 1 0 ]
 "11
 [v _addressCurrent `uc  1 e 1 0 ]
-"33 C:\Users\11014065\Desktop\30 May WORKING FILE\main.c
+"33 C:\Users\11014065\Desktop\30 MAY WORKING FILE\main.c
 [v _stepPosition `VEuc  1 e 1 0 ]
 "34
 [v _stepsToPerpendicular `VEuc  1 e 1 0 ]
 "35
-[v _closestObject `VES8059  1 e 2 0 ]
+[v _closestObject `VES8066  1 e 2 0 ]
 "42
 [v _RTC_FLAG_1MS `VEb  1 e 0 0 ]
 "43
@@ -5084,98 +5116,82 @@ NORTH 3
 "50
 [v _victimZone `VEuc  1 e 1 0 ]
 "51
-[v _xCoord `VEuc  1 e 1 0 ]
+[v _xCoord `VEc  1 e 1 0 ]
 "52
-[v _yCoord `VEuc  1 e 1 0 ]
+[v _yCoord `VEc  1 e 1 0 ]
 "53
-[v _node `VEuc  1 e 1 0 ]
+[v _xVictim `VEc  1 e 1 0 ]
+"54
+[v _yVictim `VEc  1 e 1 0 ]
 "55
+[v _xVirtual `VEc  1 e 1 0 ]
+"56
+[v _yVirtual `VEc  1 e 1 0 ]
+"57
+[v _dVirtual `VEc  1 e 1 0 ]
+"60
+[v _node `VEuc  1 e 1 0 ]
+"62
 [v _RTC_Counter `VEui  1 e 2 0 ]
-"58
-[v _start `S8080  1 e 3 0 ]
-"7 C:\Users\11014065\Desktop\30 May WORKING FILE\map.c
-[v _finalX `uc  1 e 1 0 ]
-"8
-[v _finalY `uc  1 e 1 0 ]
-"9
-[v _vicZone `uc  1 e 1 0 ]
-"41 C:\Users\11014065\Desktop\30 May WORKING FILE\ser.c
-[v _rxfifo `[16]uc  1 e 16 0 ]
-"42
-[v _rxiptr `VEuc  1 e 1 0 ]
-[v _rxoptr `VEuc  1 e 1 0 ]
-"43
-[v _txfifo `X[16]uc  1 e 16 0 ]
-"44
-[v _txiptr `VEuc  1 e 1 0 ]
-[v _txoptr `VEuc  1 e 1 0 ]
-"45
-[v _ser_tmp `uc  1 e 1 0 ]
-"10 C:\Users\11014065\Desktop\30 May WORKING FILE\songs.c
-[v _superMarioBros `[25]uc  1 e 25 0 ]
-"11
-[v _lookingForU2 `[29]uc  1 e 29 0 ]
-"12
-[v _finalCountdown `[27]uc  1 e 27 0 ]
-"13
-[v _champions `[21]uc  1 e 21 0 ]
-"14
-[v _beep `[5]uc  1 e 5 0 ]
-"15
-[v _longbeep `[5]uc  1 e 5 0 ]
-"317 C:\Users\11014065\Desktop\30 May WORKING FILE\main.c
+"65
+[v _start `S8097  1 e 3 0 ]
+"66
+[v _eepromSerial `S8097  1 e 3 0 ]
+"367
 [v _main `(v  1 e 0 0 ]
 {
-"443
+"375
+[v main@victimIndicator `uc  1 a 1 42 ]
+"551
 } 0
-"246
+"276
 [v _goToNextCell `(v  1 e 0 0 ]
 {
-"255
+"285
 } 0
-"175
+"205
 [v _findWalls `(v  1 e 0 0 ]
 {
-"204
+"234
 } 0
-"251 C:\Users\11014065\Desktop\30 May WORKING FILE\drive.c
+"253 C:\Users\11014065\Desktop\30 MAY WORKING FILE\drive.c
 [v _goRight `(v  1 e 0 0 ]
 {
-"258
+"260
 } 0
-"230
+"232
 [v _goLeft `(v  1 e 0 0 ]
 {
-"237
+"239
 } 0
-"215
+"217
 [v _goForward `(v  1 e 0 0 ]
 {
-"226
+"228
 } 0
-"204
+"206
 [v _goBackward `(v  1 e 0 0 ]
 {
-"211
+"213
 } 0
-"467 C:\Users\11014065\Desktop\30 May WORKING FILE\main.c
+"582 C:\Users\11014065\Desktop\30 MAY WORKING FILE\main.c
 [v _wallFollow `(v  1 e 0 0 ]
 {
-"468
+"583
 [v wallFollow@distanceToWall `i  1 a 2 38 ]
-"484
+"599
 } 0
-"449
+"557
 [v _findWall `(b  1 e 0 0 ]
 {
-"454
+"562
 } 0
-"324 C:\Users\11014065\Desktop\30 May WORKING FILE\drive.c
+"326 C:\Users\11014065\Desktop\30 MAY WORKING FILE\drive.c
 [v _frontWallCorrect `(v  1 e 0 0 ]
 {
-"326
+"328
 [v frontWallCorrect@distToWall `i  1 a 2 37 ]
-"344
+"346
 } 0
 "32
 [v _driveForDistance `(v  1 e 0 0 ]
@@ -5191,92 +5207,97 @@ NORTH 3
 [v driveForDistance@high `VEuc  1 a 1 20 ]
 "32
 [v driveForDistance@moveDistance `i  1 p 2 12 ]
-"175
+"177
 } 0
-"258 C:\Users\11014065\Desktop\30 May WORKING FILE\main.c
+"288 C:\Users\11014065\Desktop\30 MAY WORKING FILE\main.c
 [v _updateLocation `(v  1 e 0 0 ]
 {
-"286
+"334
 } 0
-"150
+"174
 [v _lookForVictim `(v  1 e 0 0 ]
 {
-"153
-[v lookForVictim@victim `uc  1 a 1 6 ]
-"171
+"177
+[v lookForVictim@victim `uc  1 a 1 7 ]
+"201
 } 0
-"139
+"163
 [v _checkForFinalDestination `(v  1 e 0 0 ]
 {
-"147
+"171
 } 0
-"102
+"124
 [v _init `(v  1 e 0 0 ]
 {
-"127
+"151
 } 0
-"240 C:\Users\11014065\Desktop\30 May WORKING FILE\drive.c
+"242 C:\Users\11014065\Desktop\30 MAY WORKING FILE\drive.c
 [v _goReverse `(v  1 e 0 0 ]
 {
-"247
+"249
 } 0
-"33 C:\Users\11014065\Desktop\30 May WORKING FILE\ir.c
+"33 C:\Documents and Settings\Administrator\Desktop\30 MAY WORKING FILE\ir.c
 [v _readIR `(i  1 e 2 0 ]
 {
 "34
 [v readIR@cm `i  1 a 2 33 ]
 "36
 } 0
-"12 C:\Users\11014065\Desktop\30 May WORKING FILE\map.c
+"12 C:\Documents and Settings\Administrator\Desktop\30 MAY WORKING FILE\map.c
 [v _findFinalDestination `(v  1 e 0 0 ]
 {
 [v findFinalDestination@virtualWallX `uc  1 a 1 wreg ]
 [v findFinalDestination@virtualWallX `uc  1 a 1 wreg ]
 [v findFinalDestination@virtualWallY `uc  1 p 1 4 ]
-[v findFinalDestination@robotOrientation `E1096  1 p 1 5 ]
+[v findFinalDestination@robotOrientation `E1088  1 p 1 5 ]
 "144
 } 0
-"135 C:\Users\11014065\Desktop\30 May WORKING FILE\eeprom.c
+"134 C:\Users\11014065\Desktop\30 MAY WORKING FILE\eeprom.c
 [v _updateMapData `(v  1 e 0 0 ]
 {
 [v updateMapData@virtualW `uc  1 a 1 wreg ]
-"136
-[v updateMapData@completeData `uc  1 a 1 17 ]
 "135
+[v updateMapData@completeData `uc  1 a 1 17 ]
+"134
 [v updateMapData@virtualW `uc  1 a 1 wreg ]
 [v updateMapData@virtualS `uc  1 p 1 9 ]
 [v updateMapData@virtualE `uc  1 p 1 10 ]
 [v updateMapData@virtualN `uc  1 p 1 11 ]
 [v updateMapData@victim `uc  1 p 1 12 ]
 [v updateMapData@move `uc  1 p 1 13 ]
-"145
+"144
 } 0
-"305 C:\Users\11014065\Desktop\30 May WORKING FILE\main.c
+"103
+[v _writeEEPROMTestData `(v  1 e 0 0 ]
+{
+"129
+} 0
+"355 C:\Users\11014065\Desktop\30 MAY WORKING FILE\main.c
 [v _checkIfHome `(v  1 e 0 0 ]
 {
-"312
+"362
 } 0
-"261 C:\Users\11014065\Desktop\30 May WORKING FILE\drive.c
+"263 C:\Users\11014065\Desktop\30 MAY WORKING FILE\drive.c
 [v _turnAround `(v  1 e 0 0 ]
 {
-"267
+"269
 } 0
-"270
+"272
 [v _turnLeft90 `(v  1 e 0 0 ]
 {
-"281
+"283
 } 0
-"284
+"286
 [v _turnRight90 `(v  1 e 0 0 ]
 {
-"289
+"291
 } 0
-"32 C:\Users\11014065\Desktop\30 May WORKING FILE\songs.c
+"32 C:\Documents and Settings\Administrator\Desktop\30 MAY WORKING FILE\songs.c
 [v _initSongs `(v  1 e 0 0 ]
 {
 "39
 } 0
-"78 C:\Users\11014065\Desktop\30 May WORKING FILE\lcd.c
+"78 C:\Documents and Settings\Administrator\Desktop\30 MAY WORKING FILE\lcd.c
 [v _lcd_init `(v  1 e 0 0 ]
 {
 "98
@@ -5295,40 +5316,47 @@ NORTH 3
 [v lcd_set_cursor@address `uc  1 a 1 wreg ]
 "35
 } 0
-"94 C:\Users\11014065\Desktop\30 May WORKING FILE\eeprom.c
+"148 C:\Users\11014065\Desktop\30 MAY WORKING FILE\eeprom.c
+[v _EEPROMToSerial `(v  1 e 0 0 ]
+{
+"149
+[v EEPROMToSerial@transferDone `uc  1 a 1 10 ]
+"170
+} 0
+"94
 [v _addNewData `(v  1 e 0 0 ]
 {
 [v addNewData@data `uc  1 a 1 wreg ]
 [v addNewData@data `uc  1 a 1 wreg ]
 "98
 } 0
-"38 C:\Users\11014065\Desktop\30 May WORKING FILE\lcd.c
+"38 C:\Documents and Settings\Administrator\Desktop\30 MAY WORKING FILE\lcd.c
 [v _lcd_write_string `(v  1 e 0 0 ]
 {
 [v lcd_write_string@s `*.cDCuc  1 a 1 wreg ]
 [v lcd_write_string@s `*.cDCuc  1 a 1 wreg ]
 "41
 } 0
-"7 C:\Users\11014065\Desktop\30 May WORKING FILE\adc.c
+"7 C:\Documents and Settings\Administrator\Desktop\30 MAY WORKING FILE\adc.c
 [v _adc_read_channel `(i  1 e 2 0 ]
 {
 [v adc_read_channel@channel `uc  1 a 1 wreg ]
 [v adc_read_channel@channel `uc  1 a 1 wreg ]
 "45
 } 0
-"130 C:\Users\11014065\Desktop\30 May WORKING FILE\main.c
+"154 C:\Users\11014065\Desktop\30 MAY WORKING FILE\main.c
 [v _initIRobot `(v  1 e 0 0 ]
 {
-"134
+"158
 } 0
-"299 C:\Users\11014065\Desktop\30 May WORKING FILE\drive.c
+"301 C:\Users\11014065\Desktop\30 MAY WORKING FILE\drive.c
 [v _waitFor `(v  1 e 0 0 ]
 {
 [v waitFor@type `uc  1 a 1 wreg ]
 [v waitFor@type `uc  1 a 1 wreg ]
 [v waitFor@highByte `uc  1 p 1 2 ]
 [v waitFor@lowByte `uc  1 p 1 3 ]
-"304
+"306
 } 0
 "22
 [v _drive `(v  1 e 0 0 ]
@@ -5340,7 +5368,7 @@ NORTH 3
 [v drive@lowByteRadius `uc  1 p 1 4 ]
 "29
 } 0
-"39 C:\Users\11014065\Desktop\30 May WORKING FILE\ir.c
+"39 C:\Documents and Settings\Administrator\Desktop\30 MAY WORKING FILE\ir.c
 [v _rotateIR `(v  1 e 0 0 ]
 {
 [v rotateIR@steps `uc  1 a 1 wreg ]
@@ -5357,14 +5385,14 @@ NORTH 3
 [v convert@adc_value `i  1 p 2 23 ]
 "27
 } 0
-"26 C:\Users\11014065\Desktop\30 May WORKING FILE\songs.c
+"26 C:\Documents and Settings\Administrator\Desktop\30 MAY WORKING FILE\songs.c
 [v _play_iCreate_song `(v  1 e 0 0 ]
 {
 [v play_iCreate_song@song `uc  1 a 1 wreg ]
 [v play_iCreate_song@song `uc  1 a 1 wreg ]
 "29
 } 0
-"73 C:\Users\11014065\Desktop\30 May WORKING FILE\ser.c
+"73 C:\Documents and Settings\Administrator\Desktop\30 MAY WORKING FILE\ser.c
 [v _ser_putArr `(v  1 e 0 0 ]
 {
 "74
@@ -5381,7 +5409,7 @@ NORTH 3
 [v ser_getch@c `uc  1 a 1 1 ]
 "70
 } 0
-"20 C:\Users\11014065\Desktop\30 May WORKING FILE\lcd.c
+"20 C:\Documents and Settings\Administrator\Desktop\30 MAY WORKING FILE\lcd.c
 [v _lcd_write_data `(v  1 e 0 0 ]
 {
 [v lcd_write_data@databyte `uc  1 a 1 wreg ]
@@ -5395,7 +5423,18 @@ NORTH 3
 [v lcd_write_control@databyte `uc  1 a 1 wreg ]
 "16
 } 0
-"27 C:\Users\11014065\Desktop\30 May WORKING FILE\eeprom.c
+"50 C:\Users\11014065\Desktop\30 MAY WORKING FILE\eeprom.c
+[v _readEEPROM `(uc  1 e 1 0 ]
+{
+[v readEEPROM@addressH `uc  1 a 1 wreg ]
+"53
+[v readEEPROM@returnData `uc  1 a 1 6 ]
+"50
+[v readEEPROM@addressH `uc  1 a 1 wreg ]
+[v readEEPROM@addressL `uc  1 p 1 1 ]
+"68
+} 0
+"27
 [v _writeEEPROM `(v  1 e 0 0 ]
 {
 [v writeEEPROM@data `uc  1 a 1 wreg ]
@@ -5404,7 +5443,7 @@ NORTH 3
 [v writeEEPROM@addressL `uc  1 p 1 2 ]
 "47
 } 0
-"48 C:\Users\11014065\Desktop\30 May WORKING FILE\adc.c
+"48 C:\Documents and Settings\Administrator\Desktop\30 MAY WORKING FILE\adc.c
 [v _init_adc `(v  1 e 0 0 ]
 {
 "58
@@ -5439,49 +5478,58 @@ NORTH 3
 [v ___wmul@multiplicand `ui  1 p 2 2 ]
 "13
 } 0
-"289 C:\Users\11014065\Desktop\30 May WORKING FILE\main.c
+"337 C:\Users\11014065\Desktop\30 MAY WORKING FILE\main.c
 [v _updateNode `(v  1 e 0 0 ]
 {
-"302
+"352
 } 0
-"193 C:\Users\11014065\Desktop\30 May WORKING FILE\drive.c
+"195 C:\Users\11014065\Desktop\30 MAY WORKING FILE\drive.c
 [v _getSuccessfulDrive `(b  1 e 0 0 ]
 {
-"195
+"197
 } 0
-"183
+"185
 [v _getSomethingInTheWay `(E1111  1 e 1 0 ]
 {
-"185
+"187
 } 0
-"178
+"180
 [v _getOrientation `(E1117  1 e 1 0 ]
 {
-"180
+"182
 } 0
-"292
+"575 C:\Users\11014065\Desktop\30 MAY WORKING FILE\main.c
+[v _setVirtualLocation `(v  1 e 0 0 ]
+{
+[v setVirtualLocation@xV `uc  1 a 1 wreg ]
+[v setVirtualLocation@xV `uc  1 a 1 wreg ]
+[v setVirtualLocation@yV `uc  1 p 1 0 ]
+[v setVirtualLocation@dV `uc  1 p 1 1 ]
+"579
+} 0
+"570
+[v _getCurrentY `(uc  1 e 1 0 ]
+{
+"572
+} 0
+"565
+[v _getCurrentX `(uc  1 e 1 0 ]
+{
+"567
+} 0
+"294 C:\Users\11014065\Desktop\30 MAY WORKING FILE\drive.c
 [v _updateOrientation `(v  1 e 0 0 ]
 {
 [v updateOrientation@moved `E1111  1 a 1 wreg ]
 [v updateOrientation@moved `E1111  1 a 1 wreg ]
-"296
+"298
 } 0
-"462 C:\Users\11014065\Desktop\30 May WORKING FILE\main.c
-[v _getCurrentY `(uc  1 e 1 0 ]
-{
-"464
-} 0
-"457
-[v _getCurrentX `(uc  1 e 1 0 ]
-{
-"459
-} 0
-"188 C:\Users\11014065\Desktop\30 May WORKING FILE\drive.c
+"190
 [v _clearSuccessfulDrive `(v  1 e 0 0 ]
 {
-"190
+"192
 } 0
-"124 C:\Users\11014065\Desktop\30 May WORKING FILE\ser.c
+"124 C:\Documents and Settings\Administrator\Desktop\30 MAY WORKING FILE\ser.c
 [v _ser_init `(v  1 e 0 0 ]
 {
 "144
@@ -5491,7 +5539,7 @@ NORTH 3
 {
 "55
 } 0
-"157 C:\Users\11014065\Desktop\30 May WORKING FILE\map.c
+"157 C:\Documents and Settings\Administrator\Desktop\30 MAY WORKING FILE\map.c
 [v _getVictimZone `(uc  1 e 1 0 ]
 {
 [v getVictimZone@victimX `uc  1 a 1 wreg ]
@@ -5509,14 +5557,14 @@ NORTH 3
 {
 "149
 } 0
-"81 C:\Users\11014065\Desktop\30 May WORKING FILE\ser.c
+"81 C:\Documents and Settings\Administrator\Desktop\30 MAY WORKING FILE\ser.c
 [v _ser_putch `(v  1 e 0 0 ]
 {
 [v ser_putch@c `uc  1 a 1 wreg ]
 [v ser_putch@c `uc  1 a 1 wreg ]
 "89
 } 0
-"21 C:\Users\11014065\Desktop\30 May WORKING FILE\eeprom.c
+"21 C:\Users\11014065\Desktop\30 MAY WORKING FILE\eeprom.c
 [v _initEEPROMMode `(v  1 e 0 0 ]
 {
 "24
@@ -5528,8 +5576,8 @@ NORTH 3
 [v writeSPIByte@data `uc  1 a 1 wreg ]
 "18
 } 0
-"62 C:\Users\11014065\Desktop\30 May WORKING FILE\main.c
+"70 C:\Users\11014065\Desktop\30 MAY WORKING FILE\main.c
 [v _isr1 `I(v  1 e 0 0 ]
 {
-"97
+"119
 } 0

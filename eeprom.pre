@@ -1,5 +1,5 @@
 
-# 1 "C:\Users\11014065\Desktop\30 May WORKING FILE\eeprom.c"
+# 1 "C:\Users\11014065\Desktop\30 MAY WORKING FILE\eeprom.c"
 
 # 82 "C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f877a.h"
 volatile unsigned char INDF @ 0x000;
@@ -1090,7 +1090,7 @@ extern void memcpyee(eeprom unsigned char *to, const unsigned char *from, unsign
 #pragma inline(_delay)
 extern void _delay(unsigned long);
 
-# 14 "C:\Users\11014065\Desktop\30 May WORKING FILE\lcd.h"
+# 14 "C:\Users\11014065\Desktop\30 MAY WORKING FILE\lcd.h"
 void lcd_write_control(unsigned char databyte);
 
 
@@ -1109,7 +1109,7 @@ void lcd_write_3_digit_bcd(int data);
 
 void lcd_init(void);
 
-# 4 "C:\Users\11014065\Desktop\30 May WORKING FILE\eeprom.h"
+# 4 "C:\Users\11014065\Desktop\30 MAY WORKING FILE\eeprom.h"
 void writeEEPROM(char data, char addressH, char addressL);
 char readEEPROM(char addressH, char addressL);
 void testEEPROM(void);
@@ -1118,7 +1118,7 @@ void writeEEPROMTestData(void);
 void updateMapData(char virtualW, char virtualS,char virtualE, char virtualN, char victim, char move);
 void EEPROMToSerial(void);
 
-# 55 "C:\Users\11014065\Desktop\30 May WORKING FILE\ser.h"
+# 55 "C:\Users\11014065\Desktop\30 MAY WORKING FILE\ser.h"
 bit ser_isrx(void);
 unsigned char ser_getch(void);
 void ser_putch(unsigned char byte);
@@ -1134,7 +1134,7 @@ extern bank1 unsigned char txfifo[16];
 extern volatile unsigned char txiptr, txoptr;
 extern unsigned char ser_tmp;
 
-# 10 "C:\Users\11014065\Desktop\30 May WORKING FILE\eeprom.c"
+# 10 "C:\Users\11014065\Desktop\30 MAY WORKING FILE\eeprom.c"
 char addressCount = 0;
 char addressCurrent = 0;
 
@@ -1229,7 +1229,7 @@ writeEEPROM(addressCount,0,0);
 
 void writeEEPROMTestData(void)
 {
-addNewData(17);
+addNewData(0);
 addNewData(32);
 addNewData(64);
 addNewData(64);
@@ -1238,7 +1238,7 @@ addNewData(32);
 addNewData(64);
 addNewData(64);
 addNewData(96);
-addNewData(0);
+addNewData(1);
 addNewData(64);
 addNewData(32);
 addNewData(32);
@@ -1253,8 +1253,7 @@ addNewData(0);
 addNewData(96);
 addNewData(0);
 addNewData(32);
-addNewData(96);
-addNewData(96);
+addNewData(112);
 }
 
 
