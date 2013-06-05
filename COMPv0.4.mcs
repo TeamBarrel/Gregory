@@ -262,6 +262,266 @@ ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
 [File020]
+Location=C:\Users\10999959\Desktop\COMPETITIONv0.5\sensors.p1
+Folder=Intermediary
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|sensors.c|adc.c|drive.c|eeprom.c|lcd.c|main.c|map.c|ser.c|songs.c|ir.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File021]
+Location=C:\Users\10999959\Desktop\COMPETITIONv0.5\adc.p1
+Folder=Intermediary
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|sensors.c|adc.c|drive.c|eeprom.c|lcd.c|main.c|map.c|ser.c|songs.c|ir.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File022]
+Location=C:\Users\10999959\Desktop\COMPETITIONv0.5\drive.p1
+Folder=Intermediary
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|sensors.c|adc.c|drive.c|eeprom.c|lcd.c|main.c|map.c|ser.c|songs.c|ir.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File023]
+Location=C:\Users\10999959\Desktop\COMPETITIONv0.5\eeprom.p1
+Folder=Intermediary
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|sensors.c|adc.c|drive.c|eeprom.c|lcd.c|main.c|map.c|ser.c|songs.c|ir.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File024]
+Location=C:\Users\10999959\Desktop\COMPETITIONv0.5\lcd.p1
+Folder=Intermediary
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|sensors.c|adc.c|drive.c|eeprom.c|lcd.c|main.c|map.c|ser.c|songs.c|ir.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File025]
+Location=C:\Users\10999959\Desktop\COMPETITIONv0.5\main.p1
+Folder=Intermediary
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|sensors.c|adc.c|drive.c|eeprom.c|lcd.c|main.c|map.c|ser.c|songs.c|ir.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File026]
+Location=C:\Users\10999959\Desktop\COMPETITIONv0.5\map.p1
+Folder=Intermediary
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|sensors.c|adc.c|drive.c|eeprom.c|lcd.c|main.c|map.c|ser.c|songs.c|ir.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File027]
+Location=C:\Users\10999959\Desktop\COMPETITIONv0.5\ser.p1
+Folder=Intermediary
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|sensors.c|adc.c|drive.c|eeprom.c|lcd.c|main.c|map.c|ser.c|songs.c|ir.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File028]
+Location=C:\Users\10999959\Desktop\COMPETITIONv0.5\songs.p1
+Folder=Intermediary
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|sensors.c|adc.c|drive.c|eeprom.c|lcd.c|main.c|map.c|ser.c|songs.c|ir.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File029]
+Location=C:\Users\10999959\Desktop\COMPETITIONv0.5\ir.p1
+Folder=Intermediary
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|sensors.c|adc.c|drive.c|eeprom.c|lcd.c|main.c|map.c|ser.c|songs.c|ir.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File030]
+Location=C:\Users\11000294\Desktop\COMPETITIONv0.6\adc.p1
+Folder=Intermediary
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|adc.c|eeprom.c|lcd.c|map.c|ser.c|songs.c|ir.c|C:\Users\11000294\Desktop\sensor variants\request at once\drive.c|C:\Users\11000294\Desktop\sensor variants\request at once\main.c|C:\Users\11000294\Desktop\sensor variants\request at once\sensors.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File031]
+Location=C:\Users\11000294\Desktop\COMPETITIONv0.6\eeprom.p1
+Folder=Intermediary
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|adc.c|eeprom.c|lcd.c|map.c|ser.c|songs.c|ir.c|C:\Users\11000294\Desktop\sensor variants\request at once\drive.c|C:\Users\11000294\Desktop\sensor variants\request at once\main.c|C:\Users\11000294\Desktop\sensor variants\request at once\sensors.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File032]
+Location=C:\Users\11000294\Desktop\COMPETITIONv0.6\lcd.p1
+Folder=Intermediary
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|adc.c|eeprom.c|lcd.c|map.c|ser.c|songs.c|ir.c|C:\Users\11000294\Desktop\sensor variants\request at once\drive.c|C:\Users\11000294\Desktop\sensor variants\request at once\main.c|C:\Users\11000294\Desktop\sensor variants\request at once\sensors.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File033]
+Location=C:\Users\11000294\Desktop\COMPETITIONv0.6\map.p1
+Folder=Intermediary
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|adc.c|eeprom.c|lcd.c|map.c|ser.c|songs.c|ir.c|C:\Users\11000294\Desktop\sensor variants\request at once\drive.c|C:\Users\11000294\Desktop\sensor variants\request at once\main.c|C:\Users\11000294\Desktop\sensor variants\request at once\sensors.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File034]
+Location=C:\Users\11000294\Desktop\COMPETITIONv0.6\ser.p1
+Folder=Intermediary
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|adc.c|eeprom.c|lcd.c|map.c|ser.c|songs.c|ir.c|C:\Users\11000294\Desktop\sensor variants\request at once\drive.c|C:\Users\11000294\Desktop\sensor variants\request at once\main.c|C:\Users\11000294\Desktop\sensor variants\request at once\sensors.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File035]
+Location=C:\Users\11000294\Desktop\COMPETITIONv0.6\songs.p1
+Folder=Intermediary
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|adc.c|eeprom.c|lcd.c|map.c|ser.c|songs.c|ir.c|C:\Users\11000294\Desktop\sensor variants\request at once\drive.c|C:\Users\11000294\Desktop\sensor variants\request at once\main.c|C:\Users\11000294\Desktop\sensor variants\request at once\sensors.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File036]
+Location=C:\Users\11000294\Desktop\COMPETITIONv0.6\ir.p1
+Folder=Intermediary
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|adc.c|eeprom.c|lcd.c|map.c|ser.c|songs.c|ir.c|C:\Users\11000294\Desktop\sensor variants\request at once\drive.c|C:\Users\11000294\Desktop\sensor variants\request at once\main.c|C:\Users\11000294\Desktop\sensor variants\request at once\sensors.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File037]
+Location=C:\Users\11000294\Desktop\COMPETITIONv0.6\drive.p1
+Folder=Intermediary
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|adc.c|eeprom.c|lcd.c|map.c|ser.c|songs.c|ir.c|C:\Users\11000294\Desktop\sensor variants\request at once\drive.c|C:\Users\11000294\Desktop\sensor variants\request at once\main.c|C:\Users\11000294\Desktop\sensor variants\request at once\sensors.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File038]
+Location=C:\Users\11000294\Desktop\COMPETITIONv0.6\main.p1
+Folder=Intermediary
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|adc.c|eeprom.c|lcd.c|map.c|ser.c|songs.c|ir.c|C:\Users\11000294\Desktop\sensor variants\request at once\drive.c|C:\Users\11000294\Desktop\sensor variants\request at once\main.c|C:\Users\11000294\Desktop\sensor variants\request at once\sensors.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File039]
+Location=C:\Users\11000294\Desktop\COMPETITIONv0.6\sensors.p1
+Folder=Intermediary
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|adc.c|eeprom.c|lcd.c|map.c|ser.c|songs.c|ir.c|C:\Users\11000294\Desktop\sensor variants\request at once\drive.c|C:\Users\11000294\Desktop\sensor variants\request at once\main.c|C:\Users\11000294\Desktop\sensor variants\request at once\sensors.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File040]
 Location=C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.4\COMPv0.4.cof
 Folder=Output
 DeviceName=PIC16F877A
@@ -274,7 +534,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File021]
+[File041]
 Location=C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.4\COMPv0.4.hex
 Folder=Output
 DeviceName=PIC16F877A
@@ -287,7 +547,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File022]
+[File042]
 Location=C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.4\COMPv0.4.sym
 Folder=Output
 DeviceName=PIC16F877A
@@ -300,7 +560,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File023]
+[File043]
 Location=C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.4\COMPv0.4.map
 Folder=Output
 DeviceName=PIC16F877A
@@ -313,7 +573,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File024]
+[File044]
 Location=C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.4\COMPv0.4.hxl
 Folder=Output
 DeviceName=PIC16F877A
@@ -326,7 +586,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File025]
+[File045]
 Location=C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.4\startup.lst
 Folder=Output
 DeviceName=PIC16F877A
@@ -339,7 +599,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File026]
+[File046]
 Location=C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.4\startup.rlf
 Folder=Output
 DeviceName=PIC16F877A
@@ -352,7 +612,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File027]
+[File047]
 Location=C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.4\doprnt.p1
 Folder=Output
 DeviceName=PIC16F877A
@@ -365,7 +625,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File028]
+[File048]
 Location=C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.4\doprnt.pre
 Folder=Output
 DeviceName=PIC16F877A
@@ -378,7 +638,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File029]
+[File049]
 Location=C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.4\COMPv0.4.obj
 Folder=Output
 DeviceName=PIC16F877A
@@ -391,7 +651,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File030]
+[File050]
 Location=C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.4\COMPv0.4.lst
 Folder=Output
 DeviceName=PIC16F877A
@@ -404,7 +664,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File031]
+[File051]
 Location=C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.4\COMPv0.4.rlf
 Folder=Output
 DeviceName=PIC16F877A
@@ -417,7 +677,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File032]
+[File052]
 Location=C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.4\COMPv0.4.sdb
 Folder=Output
 DeviceName=PIC16F877A
@@ -430,7 +690,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File033]
+[File053]
 Location=C:\Users\10999959\Desktop\COMPETITIONv0.4\COMPv0.4.cof
 Folder=Output
 DeviceName=PIC16F877A
@@ -443,7 +703,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File034]
+[File054]
 Location=C:\Users\10999959\Desktop\COMPETITIONv0.4\COMPv0.4.hex
 Folder=Output
 DeviceName=PIC16F877A
@@ -456,7 +716,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File035]
+[File055]
 Location=C:\Users\10999959\Desktop\COMPETITIONv0.4\COMPv0.4.sym
 Folder=Output
 DeviceName=PIC16F877A
@@ -469,7 +729,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File036]
+[File056]
 Location=C:\Users\10999959\Desktop\COMPETITIONv0.4\COMPv0.4.map
 Folder=Output
 DeviceName=PIC16F877A
@@ -482,7 +742,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File037]
+[File057]
 Location=C:\Users\10999959\Desktop\COMPETITIONv0.4\COMPv0.4.hxl
 Folder=Output
 DeviceName=PIC16F877A
@@ -495,7 +755,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File038]
+[File058]
 Location=C:\Users\10999959\Desktop\COMPETITIONv0.4\startup.lst
 Folder=Output
 DeviceName=PIC16F877A
@@ -508,7 +768,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File039]
+[File059]
 Location=C:\Users\10999959\Desktop\COMPETITIONv0.4\startup.rlf
 Folder=Output
 DeviceName=PIC16F877A
@@ -521,7 +781,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File040]
+[File060]
 Location=C:\Users\10999959\Desktop\COMPETITIONv0.4\doprnt.p1
 Folder=Output
 DeviceName=PIC16F877A
@@ -534,7 +794,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File041]
+[File061]
 Location=C:\Users\10999959\Desktop\COMPETITIONv0.4\doprnt.pre
 Folder=Output
 DeviceName=PIC16F877A
@@ -547,7 +807,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File042]
+[File062]
 Location=C:\Users\10999959\Desktop\COMPETITIONv0.4\COMPv0.4.obj
 Folder=Output
 DeviceName=PIC16F877A
@@ -560,7 +820,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File043]
+[File063]
 Location=C:\Users\10999959\Desktop\COMPETITIONv0.4\COMPv0.4.lst
 Folder=Output
 DeviceName=PIC16F877A
@@ -573,7 +833,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File044]
+[File064]
 Location=C:\Users\10999959\Desktop\COMPETITIONv0.4\COMPv0.4.rlf
 Folder=Output
 DeviceName=PIC16F877A
@@ -586,8 +846,177 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File045]
+[File065]
 Location=C:\Users\10999959\Desktop\COMPETITIONv0.4\COMPv0.4.sdb
+Folder=Output
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|sensors.c|adc.c|drive.c|eeprom.c|lcd.c|main.c|map.c|ser.c|songs.c|ir.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File066]
+Location=C:\Users\10999959\Desktop\COMPETITIONv0.5\COMPv0.4.cof
+Folder=Output
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|sensors.c|adc.c|drive.c|eeprom.c|lcd.c|main.c|map.c|ser.c|songs.c|ir.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File067]
+Location=C:\Users\10999959\Desktop\COMPETITIONv0.5\COMPv0.4.hex
+Folder=Output
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|sensors.c|adc.c|drive.c|eeprom.c|lcd.c|main.c|map.c|ser.c|songs.c|ir.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File068]
+Location=C:\Users\10999959\Desktop\COMPETITIONv0.5\COMPv0.4.sym
+Folder=Output
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|sensors.c|adc.c|drive.c|eeprom.c|lcd.c|main.c|map.c|ser.c|songs.c|ir.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File069]
+Location=C:\Users\10999959\Desktop\COMPETITIONv0.5\COMPv0.4.map
+Folder=Output
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|sensors.c|adc.c|drive.c|eeprom.c|lcd.c|main.c|map.c|ser.c|songs.c|ir.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File070]
+Location=C:\Users\10999959\Desktop\COMPETITIONv0.5\COMPv0.4.hxl
+Folder=Output
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|sensors.c|adc.c|drive.c|eeprom.c|lcd.c|main.c|map.c|ser.c|songs.c|ir.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File071]
+Location=C:\Users\10999959\Desktop\COMPETITIONv0.5\startup.lst
+Folder=Output
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|sensors.c|adc.c|drive.c|eeprom.c|lcd.c|main.c|map.c|ser.c|songs.c|ir.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File072]
+Location=C:\Users\10999959\Desktop\COMPETITIONv0.5\startup.rlf
+Folder=Output
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|sensors.c|adc.c|drive.c|eeprom.c|lcd.c|main.c|map.c|ser.c|songs.c|ir.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File073]
+Location=C:\Users\10999959\Desktop\COMPETITIONv0.5\doprnt.p1
+Folder=Output
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|sensors.c|adc.c|drive.c|eeprom.c|lcd.c|main.c|map.c|ser.c|songs.c|ir.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File074]
+Location=C:\Users\10999959\Desktop\COMPETITIONv0.5\doprnt.pre
+Folder=Output
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|sensors.c|adc.c|drive.c|eeprom.c|lcd.c|main.c|map.c|ser.c|songs.c|ir.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File075]
+Location=C:\Users\10999959\Desktop\COMPETITIONv0.5\COMPv0.4.obj
+Folder=Output
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|sensors.c|adc.c|drive.c|eeprom.c|lcd.c|main.c|map.c|ser.c|songs.c|ir.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File076]
+Location=C:\Users\10999959\Desktop\COMPETITIONv0.5\COMPv0.4.lst
+Folder=Output
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|sensors.c|adc.c|drive.c|eeprom.c|lcd.c|main.c|map.c|ser.c|songs.c|ir.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File077]
+Location=C:\Users\10999959\Desktop\COMPETITIONv0.5\COMPv0.4.rlf
+Folder=Output
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|sensors.c|adc.c|drive.c|eeprom.c|lcd.c|main.c|map.c|ser.c|songs.c|ir.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File078]
+Location=C:\Users\10999959\Desktop\COMPETITIONv0.5\COMPv0.4.sdb
 Folder=Output
 DeviceName=PIC16F877A
 LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}

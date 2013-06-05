@@ -1,5 +1,5 @@
 
-# 1 "C:\Users\10999959\Desktop\COMPETITIONv0.4\map.c"
+# 1 "C:\Users\11000294\Desktop\COMPETITIONv0.6\map.c"
 
 # 82 "C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f877a.h"
 volatile unsigned char INDF @ 0x000;
@@ -1090,7 +1090,7 @@ extern void memcpyee(eeprom unsigned char *to, const unsigned char *from, unsign
 #pragma inline(_delay)
 extern void _delay(unsigned long);
 
-# 8 "C:\Users\10999959\Desktop\COMPETITIONv0.4\drive.h"
+# 8 "C:\Users\11000294\Desktop\COMPETITIONv0.6\drive.h"
 typedef enum {
 FORWARD = 0,
 LEFT = 1,
@@ -1109,6 +1109,8 @@ NORTH = 3
 void drive(char highByteSpeed, char lowByteSpeed, char highByteRadius, char lowByteRadius);
 void driveForDistance(int moveDistance);
 orientation getOrientation();
+direction getSomethingInTheWay();
+bit getSuccessfulDrive();
 direction getWayWent();
 void goBackward();
 void goForward();
@@ -1123,13 +1125,13 @@ void waitFor(char type, char highByte, char lowByte);
 void rightWallCorrect(void);
 void frontWallCorrect(void);
 
-# 6 "C:\Users\10999959\Desktop\COMPETITIONv0.4\map.h"
+# 6 "C:\Users\11000294\Desktop\COMPETITIONv0.6\map.h"
 void findFinalDestination(char virtualWallX, char virtualWallY, orientation robotOrientation);
 char getFinalX();
 char getFinalY();
 char getVictimZone(char victimX, char victimY);
 
-# 14 "C:\Users\10999959\Desktop\COMPETITIONv0.4\lcd.h"
+# 14 "C:\Users\11000294\Desktop\COMPETITIONv0.6\lcd.h"
 void lcd_write_control(unsigned char databyte);
 
 
@@ -1148,7 +1150,7 @@ void lcd_write_3_digit_bcd(int data);
 
 void lcd_init(void);
 
-# 7 "C:\Users\10999959\Desktop\COMPETITIONv0.4\map.c"
+# 7 "C:\Users\11000294\Desktop\COMPETITIONv0.6\map.c"
 char finalX = 0;
 char finalY = 0;
 char vicZone = 0;
@@ -1283,9 +1285,9 @@ break;
 }
 
 lcd_set_cursor(0x47);
-lcd_write_1_bcd(finalX);
+lcd_write_1_digit_bcd(finalX);
 lcd_set_cursor(0x49);
-lcd_write_1_bcd(finalY);
+lcd_write_1_digit_bcd(finalY);
 }
 
 char getFinalX()

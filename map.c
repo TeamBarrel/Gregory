@@ -138,9 +138,9 @@ void findFinalDestination(char virtualWallX, char virtualWallY, orientation robo
 	}
 
 	lcd_set_cursor(0x47);
-	lcd_write_1_bcd(finalX);
+	lcd_write_1_digit_bcd(finalX);
 	lcd_set_cursor(0x49);
-	lcd_write_1_bcd(finalY);
+	lcd_write_1_digit_bcd(finalY);
 }
 
 char getFinalX()

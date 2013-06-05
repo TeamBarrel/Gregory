@@ -1,5 +1,5 @@
 
-# 1 "C:\Users\10999959\Desktop\COMPETITIONv0.4\songs.c"
+# 1 "C:\Users\11000294\Desktop\COMPETITIONv0.6\songs.c"
 
 # 82 "C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f877a.h"
 volatile unsigned char INDF @ 0x000;
@@ -1090,7 +1090,7 @@ extern void memcpyee(eeprom unsigned char *to, const unsigned char *from, unsign
 #pragma inline(_delay)
 extern void _delay(unsigned long);
 
-# 18 "C:\Users\10999959\Desktop\COMPETITIONv0.4\main.h"
+# 18 "C:\Users\11000294\Desktop\COMPETITIONv0.6\main.h"
 typedef struct {
 char pressed;
 char released;
@@ -1114,7 +1114,7 @@ bit findWall();
 char getCurrentX();
 char getCurrentY();
 
-# 55 "C:\Users\10999959\Desktop\COMPETITIONv0.4\ser.h"
+# 55 "C:\Users\11000294\Desktop\COMPETITIONv0.6\ser.h"
 bit ser_isrx(void);
 unsigned char ser_getch(void);
 void ser_putch(unsigned char byte);
@@ -1130,11 +1130,11 @@ extern bank1 unsigned char txfifo[16];
 extern volatile unsigned char txiptr, txoptr;
 extern unsigned char ser_tmp;
 
-# 8 "C:\Users\10999959\Desktop\COMPETITIONv0.4\songs.h"
+# 8 "C:\Users\11000294\Desktop\COMPETITIONv0.6\songs.h"
 void play_iCreate_song(unsigned char);
 void initSongs();
 
-# 6 "C:\Users\10999959\Desktop\COMPETITIONv0.4\songs.c"
+# 6 "C:\Users\11000294\Desktop\COMPETITIONv0.6\songs.c"
 void ser_putArr(unsigned char array[], int length);
 
 
@@ -1143,8 +1143,9 @@ unsigned char superMarioBros[] = {140, 1, 11, 76, 8, 128, 4, 76, 16, 128, 4, 76,
 unsigned char lookingForU2[] = {140, 2, 13, 72, 28, 72, 28, 79, 64, 128, 16, 77, 28, 76, 28, 72, 64, 128, 16, 69, 28, 69, 28, 69, 28, 72, 28, 72, 64};
 unsigned char finalCountdown[] = {140, 3, 12, 73, 8, 71, 8, 73, 32, 66, 64, 128, 32, 74, 8, 73, 8, 74, 8, 128, 12, 73, 6, 128, 12, 71, 48};
 unsigned char champions[] = {140, 4, 9, 74, 64, 73, 16, 74, 16, 73, 48, 69, 48, 128, 32, 66, 28, 71, 32 ,66, 48};
+unsigned char beep[] = {140, 5, 1, 72, 4};
 
-# 23
+# 24
 void play_iCreate_song(unsigned char song)
 {
 ser_putch(141);
@@ -1157,5 +1158,6 @@ ser_putArr(finalCountdown, 27);
 ser_putArr(superMarioBros, 25);
 ser_putArr(lookingForU2, 29);
 ser_putArr(champions, 21);
+ser_putArr(beep, 5);
 }
 

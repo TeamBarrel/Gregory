@@ -881,18 +881,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _EECON1bits `VS99  1 e@396 ]
 "1167 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f877a.h
 [v _EECON2 `Vuc  1 e@397 ]
-"7 C:\Users\10999959\Desktop\COMPETITIONv0.4\map.c
+"7 C:\Users\11000294\Desktop\COMPETITIONv0.6\map.c
 [v _finalX `uc  1 e ]
-"8 C:\Users\10999959\Desktop\COMPETITIONv0.4\map.c
+"8 C:\Users\11000294\Desktop\COMPETITIONv0.6\map.c
 [v _finalY `uc  1 e ]
-"9 C:\Users\10999959\Desktop\COMPETITIONv0.4\map.c
+"9 C:\Users\11000294\Desktop\COMPETITIONv0.6\map.c
 [v _vicZone `uc  1 e ]
 [c E1096 0 1 2 3 .. ]
 [n E1096 . WEST SOUTH EAST NORTH  ]
-"20 C:\Users\10999959\Desktop\COMPETITIONv0.4\lcd.h
+"20 C:\Users\11000294\Desktop\COMPETITIONv0.6\lcd.h
 [v _lcd_set_cursor `(v  0 ef1`uc ]
-"141 C:\Users\10999959\Desktop\COMPETITIONv0.4\map.c
-[v _lcd_write_1_bcd `(i  0 ef ]
+"24 C:\Users\11000294\Desktop\COMPETITIONv0.6\lcd.h
+[v _lcd_write_1_digit_bcd `(v  0 ef1`uc ]
 [; ;pic16f877a.h: 82: volatile unsigned char INDF @ 0x000;
 [; ;pic16f877a.h: 86: volatile unsigned char TMR0 @ 0x001;
 [; ;pic16f877a.h: 90: volatile unsigned char PCL @ 0x002;
@@ -1739,19 +1739,21 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;drive.h: 33: void drive(char highByteSpeed, char lowByteSpeed, char highByteRadius, char lowByteRadius);
 [; ;drive.h: 34: void driveForDistance(int moveDistance);
 [; ;drive.h: 35: orientation getOrientation();
-[; ;drive.h: 36: direction getWayWent();
-[; ;drive.h: 37: void goBackward();
-[; ;drive.h: 38: void goForward();
-[; ;drive.h: 39: void goLeft();
-[; ;drive.h: 40: void goReverse();
-[; ;drive.h: 41: void goRight();
-[; ;drive.h: 42: void turnAround();
-[; ;drive.h: 43: void turnLeft90();
-[; ;drive.h: 44: void turnRight90();
-[; ;drive.h: 45: void updateOrientation(direction moved);
-[; ;drive.h: 46: void waitFor(char type, char highByte, char lowByte);
-[; ;drive.h: 47: void rightWallCorrect(void);
-[; ;drive.h: 48: void frontWallCorrect(void);
+[; ;drive.h: 36: direction getSomethingInTheWay();
+[; ;drive.h: 37: bit getSuccessfulDrive();
+[; ;drive.h: 38: direction getWayWent();
+[; ;drive.h: 39: void goBackward();
+[; ;drive.h: 40: void goForward();
+[; ;drive.h: 41: void goLeft();
+[; ;drive.h: 42: void goReverse();
+[; ;drive.h: 43: void goRight();
+[; ;drive.h: 44: void turnAround();
+[; ;drive.h: 45: void turnLeft90();
+[; ;drive.h: 46: void turnRight90();
+[; ;drive.h: 47: void updateOrientation(direction moved);
+[; ;drive.h: 48: void waitFor(char type, char highByte, char lowByte);
+[; ;drive.h: 49: void rightWallCorrect(void);
+[; ;drive.h: 50: void frontWallCorrect(void);
 [; ;map.h: 6: void findFinalDestination(char virtualWallX, char virtualWallY, orientation robotOrientation);
 [; ;map.h: 7: char getFinalX();
 [; ;map.h: 8: char getFinalY();
@@ -1763,7 +1765,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;lcd.h: 24: void lcd_write_1_digit_bcd(unsigned char data);
 [; ;lcd.h: 27: void lcd_write_3_digit_bcd(int data);
 [; ;lcd.h: 30: void lcd_init(void);
-"7 C:\Users\10999959\Desktop\COMPETITIONv0.4\map.c
+"7 C:\Users\11000294\Desktop\COMPETITIONv0.6\map.c
 [i _finalX
 -> -> 0 `i `uc
 ]
@@ -2190,15 +2192,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;map.c: 140: lcd_set_cursor(0x47);
 "140
 [e ( _lcd_set_cursor (1 -> -> 71 `i `uc ]
-[; ;map.c: 141: lcd_write_1_bcd(finalX);
+[; ;map.c: 141: lcd_write_1_digit_bcd(finalX);
 "141
-[e ( _lcd_write_1_bcd -> _finalX `i ]
+[e ( _lcd_write_1_digit_bcd (1 _finalX ]
 [; ;map.c: 142: lcd_set_cursor(0x49);
 "142
 [e ( _lcd_set_cursor (1 -> -> 73 `i `uc ]
-[; ;map.c: 143: lcd_write_1_bcd(finalY);
+[; ;map.c: 143: lcd_write_1_digit_bcd(finalY);
 "143
-[e ( _lcd_write_1_bcd -> _finalY `i ]
+[e ( _lcd_write_1_digit_bcd (1 _finalY ]
 [; ;map.c: 144: }
 "144
 [e :UE 101 ]

@@ -28,11 +28,13 @@ typedef enum {
 #define STOP() drive(0, 0, 0, 0)
 #define TURN_RIGHT() drive(0, 25, 255, 255)
 #define TURN_LEFT() drive(0, 25, 0, 1)
-#define REVERSE() drive(255, 131, 128, 0)
+#define REVERSE() drive(255, 125, 128, 0)
 
 void drive(char highByteSpeed, char lowByteSpeed, char highByteRadius, char lowByteRadius);
 void driveForDistance(int moveDistance);
 orientation getOrientation();
+direction getSomethingInTheWay();
+bit getSuccessfulDrive();
 direction getWayWent();
 void goBackward();
 void goForward();

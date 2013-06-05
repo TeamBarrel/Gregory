@@ -1,7 +1,7 @@
 
-# 1 "C:\Users\10999959\Desktop\COMPETITIONv0.4\drive.c"
+# 1 "C:\Users\11000294\Desktop\COMPETITIONv0.6\drive.c"
 
-# 55 "C:\Users\10999959\Desktop\COMPETITIONv0.4\ser.h"
+# 55 "C:\Users\11000294\Desktop\COMPETITIONv0.6\ser.h"
 bit ser_isrx(void);
 unsigned char ser_getch(void);
 void ser_putch(unsigned char byte);
@@ -1106,7 +1106,7 @@ extern void memcpyee(eeprom unsigned char *to, const unsigned char *from, unsign
 #pragma inline(_delay)
 extern void _delay(unsigned long);
 
-# 8 "C:\Users\10999959\Desktop\COMPETITIONv0.4\drive.h"
+# 8 "C:\Users\11000294\Desktop\COMPETITIONv0.6\drive.h"
 typedef enum {
 FORWARD = 0,
 LEFT = 1,
@@ -1125,6 +1125,8 @@ NORTH = 3
 void drive(char highByteSpeed, char lowByteSpeed, char highByteRadius, char lowByteRadius);
 void driveForDistance(int moveDistance);
 orientation getOrientation();
+direction getSomethingInTheWay();
+bit getSuccessfulDrive();
 direction getWayWent();
 void goBackward();
 void goForward();
@@ -1139,11 +1141,13 @@ void waitFor(char type, char highByte, char lowByte);
 void rightWallCorrect(void);
 void frontWallCorrect(void);
 
-# 6 "C:\Users\10999959\Desktop\COMPETITIONv0.4\sensors.h"
-void checkSensors();
+# 6 "C:\Users\11000294\Desktop\COMPETITIONv0.6\sensors.h"
+void checkCliff();
+bit checkVirtualWall();
+bit checkVictim();
 bit getBit(char byte, int position);
 
-# 14 "C:\Users\10999959\Desktop\COMPETITIONv0.4\lcd.h"
+# 14 "C:\Users\11000294\Desktop\COMPETITIONv0.6\lcd.h"
 void lcd_write_control(unsigned char databyte);
 
 
@@ -1162,13 +1166,13 @@ void lcd_write_3_digit_bcd(int data);
 
 void lcd_init(void);
 
-# 6 "C:\Users\10999959\Desktop\COMPETITIONv0.4\map.h"
+# 6 "C:\Users\11000294\Desktop\COMPETITIONv0.6\map.h"
 void findFinalDestination(char virtualWallX, char virtualWallY, orientation robotOrientation);
 char getFinalX();
 char getFinalY();
 char getVictimZone(char victimX, char victimY);
 
-# 18 "C:\Users\10999959\Desktop\COMPETITIONv0.4\main.h"
+# 18 "C:\Users\11000294\Desktop\COMPETITIONv0.6\main.h"
 typedef struct {
 char pressed;
 char released;
@@ -1192,17 +1196,19 @@ bit findWall();
 char getCurrentX();
 char getCurrentY();
 
-# 7 "C:\Users\10999959\Desktop\COMPETITIONv0.4\adc.h"
+# 7 "C:\Users\11000294\Desktop\COMPETITIONv0.6\adc.h"
 void init_adc(void);
 int adc_read(void);
 int adc_read_channel(unsigned char channel);
 
-# 8 "C:\Users\10999959\Desktop\COMPETITIONv0.4\ir.h"
+# 8 "C:\Users\11000294\Desktop\COMPETITIONv0.6\ir.h"
 int convert(int adc_value);
 int readIR();
 void rotateIR(char steps, char direction);
 
-# 13 "C:\Users\10999959\Desktop\COMPETITIONv0.4\drive.c"
+# 13 "C:\Users\11000294\Desktop\COMPETITIONv0.6\drive.c"
+volatile bit successfulDrive = 0;
+volatile direction somethingInTheWay = BACKWARD;
 volatile bit moving = 0;
 volatile direction wayWent;
 volatile direction lastMove;
@@ -1221,32 +1227,121 @@ ser_putch(lowByteRadius);
 void driveForDistance(int moveDistance)
 {
 
-volatile char high, low;
+volatile char high, low, cliff, virtualWall;
 int deltaDistance = 0;
 int distance = 0;
 
 moving = 1;
 drive(0, 250, 128, 0);
+successfulDrive = 0;
 
 while(moving)
 {
+if(distance >= 100)
+{
+
+ser_putch(142);
+ser_putch(10);
+cliff = ser_getch();
+if(cliff == 0)
+{
+ser_putch(142);
+ser_putch(11);
+cliff = ser_getch();
+if(cliff == 0)
+{
+ser_putch(142);
+ser_putch(9);
+cliff = ser_getch();
+if(cliff == 0)
+{
+ser_putch(142);
+ser_putch(12);
+cliff = ser_getch();
+}
+}
+}
+if(cliff == 1)
+{
+drive(0, 0, 0, 0);
+goReverse();
+
+if(lastMove == LEFT)
+{
+somethingInTheWay = LEFT;
+turnRight90();
+updateOrientation(RIGHT);
+}
+else if (lastMove == RIGHT)
+{
+somethingInTheWay = RIGHT;
+turnLeft90();
+updateOrientation(LEFT);
+}
+else
+somethingInTheWay = FORWARD;
+moving = 0;
+}
+}
+
+
+ser_putch(142);
+ser_putch(13);
+virtualWall = ser_getch();
+if(virtualWall == 1)
+{
+drive(0, 0, 0, 0);
+findFinalDestination(getCurrentX(),getCurrentY(), currentOrientation);
+goReverse();
+
+if(lastMove == LEFT)
+{
+somethingInTheWay = LEFT;
+turnRight90();
+updateOrientation(RIGHT);
+}
+else if (lastMove == RIGHT)
+{
+somethingInTheWay = RIGHT;
+turnLeft90();
+updateOrientation(LEFT);
+}
+else
+somethingInTheWay = FORWARD;
+moving = 0;
+}
+
+
 ser_putch(142);
 ser_putch(19);
 high = ser_getch();
 low = ser_getch();
 deltaDistance = high*256 + low;
 distance += deltaDistance;
-
-# 64
 if(distance >= moveDistance)
-moving = 0;
-}
+{
 drive(0, 0, 0, 0);
+successfulDrive = 1;
+moving = 0;
+somethingInTheWay = BACKWARD;
+}
+}
 }
 
 orientation getOrientation()
 {
 return currentOrientation;
+}
+
+direction getSomethingInTheWay()
+{
+return somethingInTheWay;
+}
+
+
+bit getSuccessfulDrive()
+{
+return successfulDrive;
 }
 
 direction getWayWent()
@@ -1270,8 +1365,8 @@ void goForward()
 {
 lcd_set_cursor(0x0F);
 lcd_write_data('F');
-driveForDistance(1000);
 lastMove = FORWARD;
+driveForDistance(1000);
 }
 
 
@@ -1281,31 +1376,18 @@ lcd_set_cursor(0x0F);
 lcd_write_data('L');
 turnLeft90();
 updateOrientation(LEFT);
-driveForDistance(1000);
 lastMove = LEFT;
+driveForDistance(1000);
 }
 
 void goReverse()
 {
 lcd_set_cursor(0x0F);
 lcd_write_data('!');
-drive(255, 131, 128, 0);
-waitFor(156,1,244);
+drive(255, 125, 128, 0);
+waitFor(156,254,12);
 drive(0, 0, 0, 0);
-if(lastMove == LEFT)
-{
-lcd_set_cursor(0x0F);
-lcd_write_data('R');
-turnRight90();
-updateOrientation(RIGHT);
-}
-else if (lastMove == RIGHT)
-{
-lcd_set_cursor(0x0F);
-lcd_write_data('L');
-turnLeft90();
-updateOrientation(LEFT);
-}
+_delay((unsigned long)((2000)*(20000000/4000.0)));
 }
 
 
@@ -1315,8 +1397,8 @@ lcd_set_cursor(0x0F);
 lcd_write_data('R');
 turnRight90();
 updateOrientation(RIGHT);
-driveForDistance(1000);
 lastMove = RIGHT;
+driveForDistance(1000);
 }
 
 void turnAround()
@@ -1359,28 +1441,12 @@ ser_putch(highByte);
 ser_putch(lowByte);
 }
 
-void rightWallCorrect(void)
-{
-turnRight90();
-rotateIR(24, 0b00001101);
-while(readIR() <45)
-{
-drive(255, 131, 128, 0);
-}
-while(readIR() >55)
-{
-drive(0, 250, 128, 0);
-}
-turnLeft90();
-rotateIR(24, 0b00001111);
-drive(0, 0, 0, 0);
-}
-
+# 264
 void frontWallCorrect(void)
 {
 while(readIR() < 50)
 {
-drive(255, 131, 128, 0);
+drive(255, 125, 128, 0);
 }
 drive(0, 0, 0, 0);
 

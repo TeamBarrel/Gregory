@@ -881,110 +881,120 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _EECON1bits `VS99  1 e@396 ]
 "1167 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f877a.h
 [v _EECON2 `Vuc  1 e@397 ]
-"27 C:\Users\10999959\Desktop\COMPETITIONv0.4\main.c
+"33 C:\Users\11000294\Desktop\COMPETITIONv0.6\main.c
+[v _stepPosition `Vuc  1 e ]
+"34 C:\Users\11000294\Desktop\COMPETITIONv0.6\main.c
+[v _stepsToPerpendicular `Vuc  1 e ]
+[s S102 `Vuc 1 `Vuc 1 ]
+[n S102 . position distance ]
+"35 C:\Users\11000294\Desktop\COMPETITIONv0.6\main.c
+[v _closestObject `S102  1 e ]
+"42 C:\Users\11000294\Desktop\COMPETITIONv0.6\main.c
 [v _RTC_FLAG_1MS `Vb  1 e ]
-"28 C:\Users\10999959\Desktop\COMPETITIONv0.4\main.c
+"43 C:\Users\11000294\Desktop\COMPETITIONv0.6\main.c
 [v _RTC_FLAG_10MS `Vb  1 e ]
-"29 C:\Users\10999959\Desktop\COMPETITIONv0.4\main.c
+"44 C:\Users\11000294\Desktop\COMPETITIONv0.6\main.c
 [v _RTC_FLAG_50MS `Vb  1 e ]
-"30 C:\Users\10999959\Desktop\COMPETITIONv0.4\main.c
+"45 C:\Users\11000294\Desktop\COMPETITIONv0.6\main.c
 [v _RTC_FLAG_500MS `Vb  1 e ]
-"31 C:\Users\10999959\Desktop\COMPETITIONv0.4\main.c
+"46 C:\Users\11000294\Desktop\COMPETITIONv0.6\main.c
 [v _goingHome `Vb  1 e ]
-"31 C:\Users\10999959\Desktop\COMPETITIONv0.4\main.c
+"46 C:\Users\11000294\Desktop\COMPETITIONv0.6\main.c
 [v _home `Vb  1 e ]
-"32 C:\Users\10999959\Desktop\COMPETITIONv0.4\main.c
+"47 C:\Users\11000294\Desktop\COMPETITIONv0.6\main.c
 [v _rightWall `Vb  1 e ]
-"32 C:\Users\10999959\Desktop\COMPETITIONv0.4\main.c
+"47 C:\Users\11000294\Desktop\COMPETITIONv0.6\main.c
 [v _frontWall `Vb  1 e ]
-"32 C:\Users\10999959\Desktop\COMPETITIONv0.4\main.c
+"47 C:\Users\11000294\Desktop\COMPETITIONv0.6\main.c
 [v _leftWall `Vb  1 e ]
-"33 C:\Users\10999959\Desktop\COMPETITIONv0.4\main.c
-[v _victimFound `Vb  1 e ]
-"35 C:\Users\10999959\Desktop\COMPETITIONv0.4\main.c
+"49 C:\Users\11000294\Desktop\COMPETITIONv0.6\main.c
 [v _victimZone `Vuc  1 e ]
-"36 C:\Users\10999959\Desktop\COMPETITIONv0.4\main.c
+"50 C:\Users\11000294\Desktop\COMPETITIONv0.6\main.c
 [v _xCoord `Vuc  1 e ]
-"37 C:\Users\10999959\Desktop\COMPETITIONv0.4\main.c
+"51 C:\Users\11000294\Desktop\COMPETITIONv0.6\main.c
 [v _yCoord `Vuc  1 e ]
-"38 C:\Users\10999959\Desktop\COMPETITIONv0.4\main.c
+"52 C:\Users\11000294\Desktop\COMPETITIONv0.6\main.c
 [v _node `Vuc  1 e ]
-"40 C:\Users\10999959\Desktop\COMPETITIONv0.4\main.c
+"54 C:\Users\11000294\Desktop\COMPETITIONv0.6\main.c
 [v _RTC_Counter `Vui  1 e ]
 [s S101 `uc 1 `uc 1 `uc 1 ]
 [n S101 . pressed released debounceCount ]
-"43 C:\Users\10999959\Desktop\COMPETITIONv0.4\main.c
+"57 C:\Users\11000294\Desktop\COMPETITIONv0.6\main.c
 [v _start `S101  1 e ]
-"64 C:\Users\10999959\Desktop\COMPETITIONv0.4\ser.h
+"64 C:\Users\11000294\Desktop\COMPETITIONv0.6\ser.h
 [v _rxfifo `uc  -> 0 `x e ]
-"65 C:\Users\10999959\Desktop\COMPETITIONv0.4\ser.h
+"65 C:\Users\11000294\Desktop\COMPETITIONv0.6\ser.h
 [v _rxiptr `Vuc  0 e ]
-"68 C:\Users\10999959\Desktop\COMPETITIONv0.4\ser.h
+"68 C:\Users\11000294\Desktop\COMPETITIONv0.6\ser.h
 [v _ser_tmp `uc  0 e ]
-"65 C:\Users\10999959\Desktop\COMPETITIONv0.4\ser.h
+"65 C:\Users\11000294\Desktop\COMPETITIONv0.6\ser.h
 [v _rxoptr `Vuc  0 e ]
-"66 C:\Users\10999959\Desktop\COMPETITIONv0.4\ser.h
+"66 C:\Users\11000294\Desktop\COMPETITIONv0.6\ser.h
 [v _txfifo `Xuc  -> 0 `x e ]
-"67 C:\Users\10999959\Desktop\COMPETITIONv0.4\ser.h
+"67 C:\Users\11000294\Desktop\COMPETITIONv0.6\ser.h
 [v _txoptr `Vuc  0 e ]
-"67 C:\Users\10999959\Desktop\COMPETITIONv0.4\ser.h
+"67 C:\Users\11000294\Desktop\COMPETITIONv0.6\ser.h
 [v _txiptr `Vuc  0 e ]
-"7 C:\Users\10999959\Desktop\COMPETITIONv0.4\adc.h
+"7 C:\Users\11000294\Desktop\COMPETITIONv0.6\adc.h
 [v _init_adc `(v  0 ef ]
-"30 C:\Users\10999959\Desktop\COMPETITIONv0.4\lcd.h
+"30 C:\Users\11000294\Desktop\COMPETITIONv0.6\lcd.h
 [v _lcd_init `(v  0 ef ]
-"61 C:\Users\10999959\Desktop\COMPETITIONv0.4\ser.h
+"61 C:\Users\11000294\Desktop\COMPETITIONv0.6\ser.h
 [v _ser_init `(v  0 ef ]
-"27 C:\Users\10999959\Desktop\COMPETITIONv0.4\main.h
+"27 C:\Users\11000294\Desktop\COMPETITIONv0.6\main.h
 [v _initIRobot `(v  0 ef ]
-"9 C:\Users\10999959\Desktop\COMPETITIONv0.4\songs.h
+"9 C:\Users\11000294\Desktop\COMPETITIONv0.6\songs.h
 [v _initSongs `(v  0 ef ]
 "154 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic.h
 [v __delay `(v  0 ef1`ul ]
 [p i __delay ]
-"57 C:\Users\10999959\Desktop\COMPETITIONv0.4\ser.h
+"57 C:\Users\11000294\Desktop\COMPETITIONv0.6\ser.h
 [v _ser_putch `(v  0 ef1`uc ]
-"7 C:\Users\10999959\Desktop\COMPETITIONv0.4\map.h
+"7 C:\Users\11000294\Desktop\COMPETITIONv0.6\map.h
 [v _getFinalX `(uc  0 ef ]
-"8 C:\Users\10999959\Desktop\COMPETITIONv0.4\map.h
+"8 C:\Users\11000294\Desktop\COMPETITIONv0.6\map.h
 [v _getFinalY `(uc  0 ef ]
-"8 C:\Users\10999959\Desktop\COMPETITIONv0.4\songs.h
+"8 C:\Users\11000294\Desktop\COMPETITIONv0.6\songs.h
 [v _play_iCreate_song `(v  0 ef1`uc ]
-"20 C:\Users\10999959\Desktop\COMPETITIONv0.4\lcd.h
+"20 C:\Users\11000294\Desktop\COMPETITIONv0.6\lcd.h
 [v _lcd_set_cursor `(v  0 ef1`uc ]
-"17 C:\Users\10999959\Desktop\COMPETITIONv0.4\lcd.h
+"17 C:\Users\11000294\Desktop\COMPETITIONv0.6\lcd.h
 [v _lcd_write_data `(v  0 ef1`uc ]
-"9 C:\Users\10999959\Desktop\COMPETITIONv0.4\map.h
-[v _getVictimZone `(uc  0 ef2`uc`uc ]
-"24 C:\Users\10999959\Desktop\COMPETITIONv0.4\lcd.h
-[v _lcd_write_1_digit_bcd `(v  0 ef1`uc ]
-"37 C:\Users\10999959\Desktop\COMPETITIONv0.4\main.h
+"56 C:\Users\11000294\Desktop\COMPETITIONv0.6\ser.h
+[v _ser_getch `(uc  0 ef ]
+"37 C:\Users\11000294\Desktop\COMPETITIONv0.6\main.h
 [v _findWall `(b  0 ef ]
-"10 C:\Users\10999959\Desktop\COMPETITIONv0.4\ir.h
+"10 C:\Users\11000294\Desktop\COMPETITIONv0.6\ir.h
 [v _rotateIR `(v  0 ef2`uc`uc ]
-"48 C:\Users\10999959\Desktop\COMPETITIONv0.4\drive.h
-[v _frontWallCorrect `(v  0 ef ]
-"47 C:\Users\10999959\Desktop\COMPETITIONv0.4\drive.h
-[v _rightWallCorrect `(v  0 ef ]
-"39 C:\Users\10999959\Desktop\COMPETITIONv0.4\drive.h
+"9 C:\Users\11000294\Desktop\COMPETITIONv0.6\ir.h
+[v _readIR `(i  0 ef ]
+"33 C:\Users\11000294\Desktop\COMPETITIONv0.6\drive.h
+[v _drive `(v  0 ef4`uc`uc`uc`uc ]
+"48 C:\Users\11000294\Desktop\COMPETITIONv0.6\drive.h
+[v _waitFor `(v  0 ef3`uc`uc`uc ]
+[c E1096 0 1 2 3 .. ]
+[n E1096 . FORWARD LEFT BACKWARD RIGHT  ]
+"36 C:\Users\11000294\Desktop\COMPETITIONv0.6\drive.h
+[v _getSomethingInTheWay `(E1096  0 ef ]
+"41 C:\Users\11000294\Desktop\COMPETITIONv0.6\drive.h
 [v _goLeft `(v  0 ef ]
-"38 C:\Users\10999959\Desktop\COMPETITIONv0.4\drive.h
+"40 C:\Users\11000294\Desktop\COMPETITIONv0.6\drive.h
 [v _goForward `(v  0 ef ]
-"41 C:\Users\10999959\Desktop\COMPETITIONv0.4\drive.h
+"43 C:\Users\11000294\Desktop\COMPETITIONv0.6\drive.h
 [v _goRight `(v  0 ef ]
-"37 C:\Users\10999959\Desktop\COMPETITIONv0.4\drive.h
+"39 C:\Users\11000294\Desktop\COMPETITIONv0.6\drive.h
 [v _goBackward `(v  0 ef ]
 [c E1102 0 1 2 3 .. ]
 [n E1102 . WEST SOUTH EAST NORTH  ]
-"35 C:\Users\10999959\Desktop\COMPETITIONv0.4\drive.h
+"35 C:\Users\11000294\Desktop\COMPETITIONv0.6\drive.h
 [v _getOrientation `(E1102  0 ef ]
-"33 C:\Users\10999959\Desktop\COMPETITIONv0.4\drive.h
-[v _drive `(v  0 ef4`uc`uc`uc`uc ]
+"24 C:\Users\11000294\Desktop\COMPETITIONv0.6\lcd.h
+[v _lcd_write_1_digit_bcd `(v  0 ef1`uc ]
 [p mainexit ]
-"22 C:\Users\10999959\Desktop\COMPETITIONv0.4\lcd.h
+"22 C:\Users\11000294\Desktop\COMPETITIONv0.6\lcd.h
 [v _lcd_write_string `(v  0 ef1`*Cuc ]
-"9 C:\Users\10999959\Desktop\COMPETITIONv0.4\ir.h
-[v _readIR `(i  0 ef ]
+"37 C:\Users\11000294\Desktop\COMPETITIONv0.6\drive.h
+[v _getSuccessfulDrive `(b  0 ef ]
 [; ;pic16f877a.h: 82: volatile unsigned char INDF @ 0x000;
 [; ;pic16f877a.h: 86: volatile unsigned char TMR0 @ 0x001;
 [; ;pic16f877a.h: 90: volatile unsigned char PCL @ 0x002;
@@ -1834,19 +1844,21 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;drive.h: 33: void drive(char highByteSpeed, char lowByteSpeed, char highByteRadius, char lowByteRadius);
 [; ;drive.h: 34: void driveForDistance(int moveDistance);
 [; ;drive.h: 35: orientation getOrientation();
-[; ;drive.h: 36: direction getWayWent();
-[; ;drive.h: 37: void goBackward();
-[; ;drive.h: 38: void goForward();
-[; ;drive.h: 39: void goLeft();
-[; ;drive.h: 40: void goReverse();
-[; ;drive.h: 41: void goRight();
-[; ;drive.h: 42: void turnAround();
-[; ;drive.h: 43: void turnLeft90();
-[; ;drive.h: 44: void turnRight90();
-[; ;drive.h: 45: void updateOrientation(direction moved);
-[; ;drive.h: 46: void waitFor(char type, char highByte, char lowByte);
-[; ;drive.h: 47: void rightWallCorrect(void);
-[; ;drive.h: 48: void frontWallCorrect(void);
+[; ;drive.h: 36: direction getSomethingInTheWay();
+[; ;drive.h: 37: bit getSuccessfulDrive();
+[; ;drive.h: 38: direction getWayWent();
+[; ;drive.h: 39: void goBackward();
+[; ;drive.h: 40: void goForward();
+[; ;drive.h: 41: void goLeft();
+[; ;drive.h: 42: void goReverse();
+[; ;drive.h: 43: void goRight();
+[; ;drive.h: 44: void turnAround();
+[; ;drive.h: 45: void turnLeft90();
+[; ;drive.h: 46: void turnRight90();
+[; ;drive.h: 47: void updateOrientation(direction moved);
+[; ;drive.h: 48: void waitFor(char type, char highByte, char lowByte);
+[; ;drive.h: 49: void rightWallCorrect(void);
+[; ;drive.h: 50: void frontWallCorrect(void);
 [; ;eeprom.h: 4: void writeEEPROM(char data, char addressH, char addressL);
 [; ;eeprom.h: 5: char readEEPROM(char addressH, char addressL);
 [; ;eeprom.h: 6: void testEEPROM(void);
@@ -1881,8 +1893,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;map.h: 7: char getFinalX();
 [; ;map.h: 8: char getFinalY();
 [; ;map.h: 9: char getVictimZone(char victimX, char victimY);
-[; ;sensors.h: 6: void checkSensors();
-[; ;sensors.h: 7: bit getBit(char byte, int position);
+[; ;sensors.h: 6: void checkCliff();
+[; ;sensors.h: 7: bit checkVirtualWall();
+[; ;sensors.h: 8: bit checkVictim();
+[; ;sensors.h: 9: bit getBit(char byte, int position);
 [; ;ser.h: 55: bit ser_isrx(void);
 [; ;ser.h: 56: unsigned char ser_getch(void);
 [; ;ser.h: 57: void ser_putch(unsigned char byte);
@@ -1897,872 +1911,1046 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ser.h: 68: extern unsigned char ser_tmp;
 [; ;songs.h: 8: void play_iCreate_song(unsigned char);
 [; ;songs.h: 9: void initSongs();
-"21 C:\Users\10999959\Desktop\COMPETITIONv0.4\main.c
+"21 C:\Users\11000294\Desktop\COMPETITIONv0.6\main.c
 [; ;main.c: 21: asm("\tpsect config,class=CONFIG,delta=2"); asm("\tdw ""0xFFFE & 0xFFFB & 0xFFFF & 0xFFBF & 0xFFF7 & 0xFFFF & 0xFF7F & 0xFFFF");
 [; 	psect config,class=CONFIG,delta=2 ;#
 [; 	dw 0xFFFE & 0xFFFB & 0xFFFF & 0xFFBF & 0xFFF7 & 0xFFFF & 0xFF7F & 0xFFFF ;#
-"27
+[; ;main.c: 29: typedef struct {
+[; ;main.c: 30: volatile char position;
+[; ;main.c: 31: volatile char distance;
+[; ;main.c: 32: } Object;
+"33
+[i _stepPosition
+-> -> 0 `i `uc
+]
+[; ;main.c: 33: volatile char stepPosition = 0;
+"34
+[i _stepsToPerpendicular
+-> -> 0 `i `uc
+]
+[; ;main.c: 34: volatile char stepsToPerpendicular = 0;
+[; ;main.c: 35: Object closestObject;
+[; ;main.c: 37: void scanIR(char steps, int motorDirection, char updateClosestObject);
+[; ;main.c: 38: void pointToObject();
+"42
 [i _RTC_FLAG_1MS
 -> 0 `i
 ]
-[; ;main.c: 27: volatile bit RTC_FLAG_1MS = 0;
-"28
+[; ;main.c: 42: volatile bit RTC_FLAG_1MS = 0;
+"43
 [i _RTC_FLAG_10MS
 -> 0 `i
 ]
-[; ;main.c: 28: volatile bit RTC_FLAG_10MS = 0;
-"29
+[; ;main.c: 43: volatile bit RTC_FLAG_10MS = 0;
+"44
 [i _RTC_FLAG_50MS
 -> 0 `i
 ]
-[; ;main.c: 29: volatile bit RTC_FLAG_50MS = 0;
-"30
+[; ;main.c: 44: volatile bit RTC_FLAG_50MS = 0;
+"45
 [i _RTC_FLAG_500MS
 -> 0 `i
 ]
-[; ;main.c: 30: volatile bit RTC_FLAG_500MS = 0;
-"31
+[; ;main.c: 45: volatile bit RTC_FLAG_500MS = 0;
+"46
 [i _home
 -> 0 `i
 ]
-[; ;main.c: 31: volatile bit goingHome, home = 0;
-"32
+[; ;main.c: 46: volatile bit goingHome, home = 0;
+"47
 [i _leftWall
 -> 0 `i
 ]
-[; ;main.c: 32: volatile bit rightWall, frontWall, leftWall = 0;
-"33
-[i _victimFound
--> 0 `i
-]
-[; ;main.c: 33: volatile bit victimFound = 0;
-"35
+[; ;main.c: 47: volatile bit rightWall, frontWall, leftWall = 0;
+"49
 [i _victimZone
 -> -> 0 `i `uc
 ]
-[; ;main.c: 35: volatile unsigned char victimZone = 0;
-"36
+[; ;main.c: 49: volatile unsigned char victimZone = 0;
+"50
 [i _xCoord
 -> -> 1 `i `uc
 ]
-[; ;main.c: 36: volatile unsigned char xCoord = 1;
-"37
+[; ;main.c: 50: volatile unsigned char xCoord = 1;
+"51
 [i _yCoord
 -> -> 3 `i `uc
 ]
-[; ;main.c: 37: volatile unsigned char yCoord = 3;
-"38
+[; ;main.c: 51: volatile unsigned char yCoord = 3;
+"52
 [i _node
 -> -> 0 `i `uc
 ]
-[; ;main.c: 38: volatile unsigned char node = 0;
-"40
+[; ;main.c: 52: volatile unsigned char node = 0;
+"54
 [i _RTC_Counter
 -> -> 0 `i `ui
 ]
-[; ;main.c: 40: volatile unsigned int RTC_Counter = 0;
-[; ;main.c: 43: PushButton start;
-"47
-[v F1236 `(v  1 tf ]
-[v _isr1 `IF1236  1 e ]
+[; ;main.c: 54: volatile unsigned int RTC_Counter = 0;
+[; ;main.c: 57: PushButton start;
+"61
+[v F1251 `(v  1 tf ]
+[v _isr1 `IF1251  1 e ]
 {
-[; ;main.c: 46: void interrupt isr1(void)
-[; ;main.c: 47: {
+[; ;main.c: 60: void interrupt isr1(void)
+[; ;main.c: 61: {
 [e :U _isr1 ]
 [f ]
-[; ;main.c: 49: if(TMR0IF)
-"49
-[e $ ! _TMR0IF 103  ]
-[; ;main.c: 50: {
-"50
-{
-[; ;main.c: 51: TMR0IF = 0;
-"51
-[e = _TMR0IF -> -> 0 `i `b ]
-[; ;main.c: 52: TMR0 = 100;
-"52
-[e = _TMR0 -> -> 100 `i `uc ]
-[; ;main.c: 54: RTC_Counter++;
-"54
-[e ++ _RTC_Counter -> -> 1 `i `ui ]
-[; ;main.c: 56: RTC_FLAG_1MS = 1;
-"56
-[e = _RTC_FLAG_1MS -> -> 1 `i `b ]
-[; ;main.c: 58: if(RTC_Counter % 10 == 0) RTC_FLAG_10MS = 1;
-"58
-[e $ ! == % _RTC_Counter -> -> 10 `i `ui -> -> 0 `i `ui 104  ]
-[e = _RTC_FLAG_10MS -> -> 1 `i `b ]
-[e :U 104 ]
-[; ;main.c: 59: if(RTC_Counter % 50 == 0) RTC_FLAG_50MS = 1;
-"59
-[e $ ! == % _RTC_Counter -> -> 50 `i `ui -> -> 0 `i `ui 105  ]
-[e = _RTC_FLAG_50MS -> -> 1 `i `b ]
-[e :U 105 ]
-[; ;main.c: 60: if(RTC_Counter % 500 == 0)
-"60
-[e $ ! == % _RTC_Counter -> -> 500 `i `ui -> -> 0 `i `ui 106  ]
-[; ;main.c: 61: {
-"61
-{
+[; ;main.c: 63: if(TMR0IF)
 "63
-}
-[e :U 106 ]
-[; ;main.c: 63: }
-[; ;main.c: 65: if(!RB0)
+[e $ ! _TMR0IF 104  ]
+[; ;main.c: 64: {
+"64
+{
+[; ;main.c: 65: TMR0IF = 0;
 "65
-[e $ ! ! _RB0 107  ]
-[; ;main.c: 66: {
+[e = _TMR0IF -> -> 0 `i `b ]
+[; ;main.c: 66: TMR0 = 100;
 "66
-{
-[; ;main.c: 67: start.debounceCount++;
-"67
-[e ++ . _start 2 -> -> 1 `i `uc ]
-[; ;main.c: 68: if(start.debounceCount >= 10 & start.released)
+[e = _TMR0 -> -> 100 `i `uc ]
+[; ;main.c: 68: RTC_Counter++;
 "68
-[e $ ! != & -> >= -> . _start 2 `i -> 10 `i `i -> . _start 1 `i -> 0 `i 108  ]
-[; ;main.c: 69: {
-"69
-{
-[; ;main.c: 70: start.pressed = 1;
+[e ++ _RTC_Counter -> -> 1 `i `ui ]
+[; ;main.c: 70: RTC_FLAG_1MS = 1;
 "70
-[e = . _start 0 -> -> 1 `i `uc ]
-[; ;main.c: 71: start.released = 0;
-"71
-[e = . _start 1 -> -> 0 `i `uc ]
+[e = _RTC_FLAG_1MS -> -> 1 `i `b ]
+[; ;main.c: 72: if(RTC_Counter % 10 == 0) RTC_FLAG_10MS = 1;
 "72
-}
-[e :U 108 ]
+[e $ ! == % _RTC_Counter -> -> 10 `i `ui -> -> 0 `i `ui 105  ]
+[e = _RTC_FLAG_10MS -> -> 1 `i `b ]
+[e :U 105 ]
+[; ;main.c: 73: if(RTC_Counter % 50 == 0) RTC_FLAG_50MS = 1;
 "73
-}
-[; ;main.c: 72: }
-[; ;main.c: 73: }
-[e $U 109  ]
+[e $ ! == % _RTC_Counter -> -> 50 `i `ui -> -> 0 `i `ui 106  ]
+[e = _RTC_FLAG_50MS -> -> 1 `i `b ]
+[e :U 106 ]
+[; ;main.c: 74: if(RTC_Counter % 500 == 0)
 "74
-[e :U 107 ]
-[; ;main.c: 74: else
+[e $ ! == % _RTC_Counter -> -> 500 `i `ui -> -> 0 `i `ui 107  ]
 [; ;main.c: 75: {
 "75
 {
-[; ;main.c: 76: start.debounceCount = 0;
-"76
-[e = . _start 2 -> -> 0 `i `uc ]
-[; ;main.c: 77: start.released = 1;
 "77
-[e = . _start 1 -> -> 1 `i `uc ]
-"78
+}
+[e :U 107 ]
+[; ;main.c: 77: }
+[; ;main.c: 79: if(!RB0)
+"79
+[e $ ! ! _RB0 108  ]
+[; ;main.c: 80: {
+"80
+{
+[; ;main.c: 81: start.debounceCount++;
+"81
+[e ++ . _start 2 -> -> 1 `i `uc ]
+[; ;main.c: 82: if(start.debounceCount >= 10 & start.released)
+"82
+[e $ ! != & -> >= -> . _start 2 `i -> 10 `i `i -> . _start 1 `i -> 0 `i 109  ]
+[; ;main.c: 83: {
+"83
+{
+[; ;main.c: 84: start.pressed = 1;
+"84
+[e = . _start 0 -> -> 1 `i `uc ]
+[; ;main.c: 85: start.released = 0;
+"85
+[e = . _start 1 -> -> 0 `i `uc ]
+"86
 }
 [e :U 109 ]
-[; ;main.c: 78: }
-[; ;main.c: 80: if (RCIF) { rxfifo[rxiptr]=RCREG; ser_tmp=(rxiptr+1) & (16-1); if (ser_tmp!=rxoptr) rxiptr=ser_tmp; } if (TXIF && TXIE) { TXREG = txfifo[txoptr]; ++txoptr; txoptr &= (16-1); if (txoptr==txiptr) { TXIE = 0; } };
-"80
-[e $ ! _RCIF 110  ]
+"87
+}
+[; ;main.c: 86: }
+[; ;main.c: 87: }
+[e $U 110  ]
+"88
+[e :U 108 ]
+[; ;main.c: 88: else
+[; ;main.c: 89: {
+"89
+{
+[; ;main.c: 90: start.debounceCount = 0;
+"90
+[e = . _start 2 -> -> 0 `i `uc ]
+[; ;main.c: 91: start.released = 1;
+"91
+[e = . _start 1 -> -> 1 `i `uc ]
+"92
+}
+[e :U 110 ]
+[; ;main.c: 92: }
+[; ;main.c: 94: if (RCIF) { rxfifo[rxiptr]=RCREG; ser_tmp=(rxiptr+1) & (16-1); if (ser_tmp!=rxoptr) rxiptr=ser_tmp; } if (TXIF && TXIE) { TXREG = txfifo[txoptr]; ++txoptr; txoptr &= (16-1); if (txoptr==txiptr) { TXIE = 0; } };
+"94
+[e $ ! _RCIF 111  ]
 {
 [e = *U + &U _rxfifo * -> _rxiptr `ux -> -> # *U &U _rxfifo `ui `ux _RCREG ]
 [e = _ser_tmp -> & + -> _rxiptr `i -> 1 `i - -> 16 `i -> 1 `i `uc ]
-[e $ ! != -> _ser_tmp `i -> _rxoptr `i 111  ]
+[e $ ! != -> _ser_tmp `i -> _rxoptr `i 112  ]
 [e = _rxiptr _ser_tmp ]
-[e :U 111 ]
+[e :U 112 ]
 }
-[e :U 110 ]
-[e $ ! && _TXIF _TXIE 112  ]
+[e :U 111 ]
+[e $ ! && _TXIF _TXIE 113  ]
 {
 [e = _TXREG *U + &U _txfifo * -> _txoptr `ux -> -> # *U &U _txfifo `ui `ux ]
 [e =+ _txoptr -> -> 1 `i `uc ]
 [e =& _txoptr -> - -> 16 `i -> 1 `i `uc ]
-[e $ ! == -> _txoptr `i -> _txiptr `i 113  ]
+[e $ ! == -> _txoptr `i -> _txiptr `i 114  ]
 {
 [e = _TXIE -> -> 0 `i `b ]
 }
+[e :U 114 ]
+}
 [e :U 113 ]
+"95
 }
-[e :U 112 ]
-"81
+[e :U 104 ]
+[; ;main.c: 95: }
+[; ;main.c: 96: }
+"96
+[e :UE 103 ]
 }
-[e :U 103 ]
-[; ;main.c: 81: }
-[; ;main.c: 82: }
-"82
-[e :UE 102 ]
-}
-"87
+"101
 [v _init `(v  1 ef ]
 {
-[; ;main.c: 86: void init()
-[; ;main.c: 87: {
+[; ;main.c: 100: void init()
+[; ;main.c: 101: {
 [e :U _init ]
 [f ]
-[; ;main.c: 88: start.pressed = 0;
-"88
-[e = . _start 0 -> -> 0 `i `uc ]
-[; ;main.c: 89: start.released = 1;
-"89
-[e = . _start 1 -> -> 1 `i `uc ]
-[; ;main.c: 91: init_adc();
-"91
-[e ( _init_adc ..  ]
-[; ;main.c: 92: lcd_init();
-"92
-[e ( _lcd_init ..  ]
-[; ;main.c: 94: TRISB = 0b00000001;
-"94
-[e = _TRISB -> -> 1 `i `uc ]
-[; ;main.c: 97: OPTION_REG = 0b00000100;
-"97
-[e = _OPTION_REG -> -> 4 `i `uc ]
-[; ;main.c: 99: TMR0IE = 1;
-"99
-[e = _TMR0IE -> -> 1 `i `b ]
-[; ;main.c: 100: SSPSTAT = 0b01000000;
-"100
-[e = _SSPSTAT -> -> 64 `i `uc ]
-[; ;main.c: 101: SSPCON = 0b00100010;
-"101
-[e = _SSPCON -> -> 34 `i `uc ]
-[; ;main.c: 102: TRISC = 0b10010000;
+[; ;main.c: 102: start.pressed = 0;
 "102
-[e = _TRISC -> -> 144 `i `uc ]
-[; ;main.c: 103: PORTC = 0b00000000;
+[e = . _start 0 -> -> 0 `i `uc ]
+[; ;main.c: 103: start.released = 1;
 "103
-[e = _PORTC -> -> 0 `i `uc ]
-[; ;main.c: 106: PEIE = 1;
+[e = . _start 1 -> -> 1 `i `uc ]
+[; ;main.c: 105: init_adc();
+"105
+[e ( _init_adc ..  ]
+[; ;main.c: 106: lcd_init();
 "106
-[e = _PEIE -> -> 1 `i `b ]
-[; ;main.c: 107: GIE = 1;
-"107
-[e = _GIE -> -> 1 `i `b ]
-[; ;main.c: 109: ser_init();
-"109
-[e ( _ser_init ..  ]
-[; ;main.c: 110: initIRobot();
-"110
-[e ( _initIRobot ..  ]
-[; ;main.c: 111: initSongs();
+[e ( _lcd_init ..  ]
+[; ;main.c: 108: TRISB = 0b00000001;
+"108
+[e = _TRISB -> -> 1 `i `uc ]
+[; ;main.c: 111: OPTION_REG = 0b00000100;
 "111
-[e ( _initSongs ..  ]
-[; ;main.c: 112: }
-"112
-[e :UE 114 ]
-}
+[e = _OPTION_REG -> -> 4 `i `uc ]
+[; ;main.c: 113: TMR0IE = 1;
+"113
+[e = _TMR0IE -> -> 1 `i `b ]
+[; ;main.c: 114: SSPSTAT = 0b01000000;
+"114
+[e = _SSPSTAT -> -> 64 `i `uc ]
+[; ;main.c: 115: SSPCON = 0b00100010;
 "115
-[v _initIRobot `(v  1 ef ]
-{
-[; ;main.c: 114: void initIRobot()
-[; ;main.c: 115: {
-[e :U _initIRobot ]
-[f ]
-[; ;main.c: 116: _delay((unsigned long)((100)*(20000000/4000.0)));
+[e = _SSPCON -> -> 34 `i `uc ]
+[; ;main.c: 116: TRISC = 0b10010000;
 "116
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-[; ;main.c: 117: ser_putch(128);
+[e = _TRISC -> -> 144 `i `uc ]
+[; ;main.c: 117: PORTC = 0b00000000;
 "117
-[e ( _ser_putch (1 -> -> 128 `i `uc ]
-[; ;main.c: 118: ser_putch(132);
-"118
-[e ( _ser_putch (1 -> -> 132 `i `uc ]
-[; ;main.c: 119: }
-"119
+[e = _PORTC -> -> 0 `i `uc ]
+[; ;main.c: 120: PEIE = 1;
+"120
+[e = _PEIE -> -> 1 `i `b ]
+[; ;main.c: 121: GIE = 1;
+"121
+[e = _GIE -> -> 1 `i `b ]
+[; ;main.c: 123: ser_init();
+"123
+[e ( _ser_init ..  ]
+[; ;main.c: 124: initIRobot();
+"124
+[e ( _initIRobot ..  ]
+[; ;main.c: 125: initSongs();
+"125
+[e ( _initSongs ..  ]
+[; ;main.c: 126: }
+"126
 [e :UE 115 ]
 }
-"124
-[v _checkForFinalDestination `(v  1 ef ]
-{
-[; ;main.c: 123: void checkForFinalDestination()
-[; ;main.c: 124: {
-[e :U _checkForFinalDestination ]
-[f ]
-[; ;main.c: 125: if(!goingHome && (xCoord == getFinalX()) && (yCoord == getFinalY()))
-"125
-[e $ ! && && ! _goingHome == -> _xCoord `i -> ( _getFinalX ..  `i == -> _yCoord `i -> ( _getFinalY ..  `i 117  ]
-[; ;main.c: 126: {
-"126
-{
-[; ;main.c: 127: play_iCreate_song(2);
-"127
-[e ( _play_iCreate_song (1 -> -> 2 `i `uc ]
-[; ;main.c: 128: goingHome = 1;
-"128
-[e = _goingHome -> -> 1 `i `b ]
-[; ;main.c: 129: lcd_set_cursor(0x06);
 "129
-[e ( _lcd_set_cursor (1 -> -> 6 `i `uc ]
-[; ;main.c: 130: lcd_write_data('R');
+[v _initIRobot `(v  1 ef ]
+{
+[; ;main.c: 128: void initIRobot()
+[; ;main.c: 129: {
+[e :U _initIRobot ]
+[f ]
+[; ;main.c: 130: _delay((unsigned long)((100)*(20000000/4000.0)));
 "130
-[e ( _lcd_write_data (1 -> -> 82 `ui `uc ]
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;main.c: 131: ser_putch(128);
 "131
-}
-[e :U 117 ]
-[; ;main.c: 131: }
-[; ;main.c: 132: }
+[e ( _ser_putch (1 -> -> 128 `i `uc ]
+[; ;main.c: 132: ser_putch(132);
 "132
+[e ( _ser_putch (1 -> -> 132 `i `uc ]
+[; ;main.c: 133: }
+"133
 [e :UE 116 ]
 }
-"135
-[v _lookForVictim `(v  1 ef ]
-{
-[; ;main.c: 134: void lookForVictim()
-[; ;main.c: 135: {
-[e :U _lookForVictim ]
-[f ]
-[; ;main.c: 137: if(victimFound)
-"137
-[e $ ! _victimFound 119  ]
-[; ;main.c: 138: {
 "138
+[v _checkForFinalDestination `(v  1 ef ]
 {
-[; ;main.c: 139: if(goingHome)
+[; ;main.c: 137: void checkForFinalDestination()
+[; ;main.c: 138: {
+[e :U _checkForFinalDestination ]
+[f ]
+[; ;main.c: 139: if(!goingHome && (xCoord == getFinalX()) && (yCoord == getFinalY()))
 "139
-[e $ ! _goingHome 120  ]
+[e $ ! && && ! _goingHome == -> _xCoord `i -> ( _getFinalX ..  `i == -> _yCoord `i -> ( _getFinalY ..  `i 118  ]
 [; ;main.c: 140: {
 "140
 {
-[; ;main.c: 141: play_iCreate_song(3);
+[; ;main.c: 141: play_iCreate_song(2);
 "141
-[e ( _play_iCreate_song (1 -> -> 3 `i `uc ]
-[; ;main.c: 142: victimZone = 0;
+[e ( _play_iCreate_song (1 -> -> 2 `i `uc ]
+[; ;main.c: 142: goingHome = 1;
 "142
-[e = _victimZone -> -> 0 `i `uc ]
-[; ;main.c: 143: lcd_set_cursor(0x09);
+[e = _goingHome -> -> 1 `i `b ]
+[; ;main.c: 143: lcd_set_cursor(0x06);
 "143
-[e ( _lcd_set_cursor (1 -> -> 9 `i `uc ]
-[; ;main.c: 144: lcd_write_data('V');
+[e ( _lcd_set_cursor (1 -> -> 6 `i `uc ]
+[; ;main.c: 144: lcd_write_data('R');
 "144
-[e ( _lcd_write_data (1 -> -> 86 `ui `uc ]
+[e ( _lcd_write_data (1 -> -> 82 `ui `uc ]
 "145
 }
+[e :U 118 ]
 [; ;main.c: 145: }
-[e $U 121  ]
+[; ;main.c: 146: }
 "146
-[e :U 120 ]
-[; ;main.c: 146: else
-[; ;main.c: 147: {
-"147
-{
-[; ;main.c: 148: victimZone = getVictimZone(xCoord, yCoord);
-"148
-[e = _victimZone ( _getVictimZone (2 , _xCoord _yCoord ]
-[; ;main.c: 149: lcd_set_cursor(0x08);
+[e :UE 117 ]
+}
 "149
-[e ( _lcd_set_cursor (1 -> -> 8 `i `uc ]
-[; ;main.c: 150: lcd_write_1_digit_bcd(victimZone);
+[v _lookForVictim `(v  1 ef ]
+{
+[; ;main.c: 148: void lookForVictim()
+[; ;main.c: 149: {
+[e :U _lookForVictim ]
+[f ]
+[; ;main.c: 150: ser_putch(142);
 "150
-[e ( _lcd_write_1_digit_bcd (1 _victimZone ]
+[e ( _ser_putch (1 -> -> 142 `i `uc ]
+[; ;main.c: 151: ser_putch(17);
 "151
-}
-[e :U 121 ]
+[e ( _ser_putch (1 -> -> 17 `i `uc ]
 "152
+[v _victim `uc  1 a ]
+[; ;main.c: 152: char victim = ser_getch();
+[e = _victim ( _ser_getch ..  ]
+[; ;main.c: 154: if(victim == 254)
+"154
+[e $ ! == -> _victim `i -> 254 `i 120  ]
+[; ;main.c: 155: {
+"155
+{
+[; ;main.c: 158: play_iCreate_song(3);
+"158
+[e ( _play_iCreate_song (1 -> -> 3 `i `uc ]
+[; ;main.c: 159: victimZone = 0;
+"159
+[e = _victimZone -> -> 0 `i `uc ]
+[; ;main.c: 160: lcd_set_cursor(0x09);
+"160
+[e ( _lcd_set_cursor (1 -> -> 9 `i `uc ]
+[; ;main.c: 161: lcd_write_data('V');
+"161
+[e ( _lcd_write_data (1 -> -> 86 `ui `uc ]
+"169
 }
-[e :U 119 ]
-[; ;main.c: 151: }
-[; ;main.c: 152: }
-[; ;main.c: 153: }
-"153
-[e :UE 118 ]
+[e :U 120 ]
+[; ;main.c: 169: }
+[; ;main.c: 170: }
+"170
+[e :UE 119 ]
 }
-"157
+"174
 [v _findWalls `(v  1 ef ]
 {
-[; ;main.c: 156: void findWalls()
-[; ;main.c: 157: {
+[; ;main.c: 173: void findWalls()
+[; ;main.c: 174: {
 [e :U _findWalls ]
 [f ]
-[; ;main.c: 158: lcd_set_cursor(0x0B);
-"158
-[e ( _lcd_set_cursor (1 -> -> 11 `i `uc ]
-[; ;main.c: 160: leftWall = findWall();
-"160
-[e = _leftWall ( _findWall ..  ]
-[; ;main.c: 161: if(leftWall)
-"161
-[e $ ! _leftWall 123  ]
-[; ;main.c: 162: {
-"162
-{
-[; ;main.c: 163: lcd_write_data('L');
-"163
-[e ( _lcd_write_data (1 -> -> 76 `ui `uc ]
-"164
-}
-[; ;main.c: 164: }
-[e $U 124  ]
-"165
-[e :U 123 ]
-[; ;main.c: 165: else
-[; ;main.c: 166: lcd_write_data(' ');
-"166
-[e ( _lcd_write_data (1 -> -> 32 `ui `uc ]
-[e :U 124 ]
-[; ;main.c: 167: rotateIR(24, 0b00001111);
-"167
-[e ( _rotateIR (2 , -> -> 24 `i `uc -> -> 15 `i `uc ]
-[; ;main.c: 169: frontWall = findWall();
-"169
-[e = _frontWall ( _findWall ..  ]
-[; ;main.c: 170: if(frontWall)
-"170
-[e $ ! _frontWall 125  ]
-[; ;main.c: 171: {
-"171
-{
-[; ;main.c: 172: lcd_write_data('F');
-"172
-[e ( _lcd_write_data (1 -> -> 70 `ui `uc ]
-[; ;main.c: 173: frontWallCorrect();
-"173
-[e ( _frontWallCorrect ..  ]
-"174
-}
-[; ;main.c: 174: }
-[e $U 126  ]
+[; ;main.c: 175: lcd_set_cursor(0x0B);
 "175
-[e :U 125 ]
-[; ;main.c: 175: else
-[; ;main.c: 176: lcd_write_data(' ');
-"176
-[e ( _lcd_write_data (1 -> -> 32 `ui `uc ]
-[e :U 126 ]
-[; ;main.c: 177: rotateIR(24, 0b00001111);
+[e ( _lcd_set_cursor (1 -> -> 11 `i `uc ]
+[; ;main.c: 177: leftWall = findWall();
 "177
-[e ( _rotateIR (2 , -> -> 24 `i `uc -> -> 15 `i `uc ]
-[; ;main.c: 179: rightWall = findWall();
+[e = _leftWall ( _findWall ..  ]
+[; ;main.c: 178: if(leftWall)
+"178
+[e $ ! _leftWall 122  ]
+[; ;main.c: 179: {
 "179
-[e = _rightWall ( _findWall ..  ]
-[; ;main.c: 180: if(rightWall)
-"180
-[e $ ! _rightWall 127  ]
-[; ;main.c: 181: {
-"181
 {
-[; ;main.c: 182: lcd_write_data('R');
+[; ;main.c: 180: lcd_write_data('L');
+"180
+[e ( _lcd_write_data (1 -> -> 76 `ui `uc ]
+"181
+}
+[; ;main.c: 181: }
+[e $U 123  ]
 "182
-[e ( _lcd_write_data (1 -> -> 82 `ui `uc ]
-[; ;main.c: 183: rightWallCorrect();
+[e :U 122 ]
+[; ;main.c: 182: else
+[; ;main.c: 183: lcd_write_data(' ');
 "183
-[e ( _rightWallCorrect ..  ]
-"184
-}
-[; ;main.c: 184: }
-[e $U 128  ]
-"185
-[e :U 127 ]
-[; ;main.c: 185: else
-[; ;main.c: 186: lcd_write_data(' ');
-"186
 [e ( _lcd_write_data (1 -> -> 32 `ui `uc ]
-[e :U 128 ]
-[; ;main.c: 187: rotateIR(48, 0b00001101);
+[e :U 123 ]
+[; ;main.c: 184: rotateIR(24, 0b00001111);
+"184
+[e ( _rotateIR (2 , -> -> 24 `i `uc -> -> 15 `i `uc ]
+[; ;main.c: 185: play_iCreate_song(5);
+"185
+[e ( _play_iCreate_song (1 -> -> 5 `i `uc ]
+[; ;main.c: 186: frontWall = findWall();
+"186
+[e = _frontWall ( _findWall ..  ]
+[; ;main.c: 187: if(frontWall)
 "187
-[e ( _rotateIR (2 , -> -> 48 `i `uc -> -> 13 `i `uc ]
-[; ;main.c: 188: }
+[e $ ! _frontWall 124  ]
+[; ;main.c: 188: {
 "188
-[e :UE 122 ]
-}
+{
+[; ;main.c: 189: lcd_write_data('F');
+"189
+[e ( _lcd_write_data (1 -> -> 70 `ui `uc ]
 "191
+}
+[; ;main.c: 191: }
+[e $U 125  ]
+"192
+[e :U 124 ]
+[; ;main.c: 192: else
+[; ;main.c: 193: lcd_write_data(' ');
+"193
+[e ( _lcd_write_data (1 -> -> 32 `ui `uc ]
+[e :U 125 ]
+[; ;main.c: 194: rotateIR(24, 0b00001111);
+"194
+[e ( _rotateIR (2 , -> -> 24 `i `uc -> -> 15 `i `uc ]
+[; ;main.c: 195: play_iCreate_song(5);
+"195
+[e ( _play_iCreate_song (1 -> -> 5 `i `uc ]
+[; ;main.c: 196: rightWall = findWall();
+"196
+[e = _rightWall ( _findWall ..  ]
+[; ;main.c: 197: if(rightWall)
+"197
+[e $ ! _rightWall 126  ]
+[; ;main.c: 198: {
+"198
+{
+[; ;main.c: 199: lcd_write_data('R');
+"199
+[e ( _lcd_write_data (1 -> -> 82 `ui `uc ]
+"201
+}
+[; ;main.c: 201: }
+[e $U 127  ]
+"202
+[e :U 126 ]
+[; ;main.c: 202: else
+[; ;main.c: 203: lcd_write_data(' ');
+"203
+[e ( _lcd_write_data (1 -> -> 32 `ui `uc ]
+[e :U 127 ]
+[; ;main.c: 204: rotateIR(36, 0b00001101);
+"204
+[e ( _rotateIR (2 , -> -> 36 `i `uc -> -> 13 `i `uc ]
+[; ;main.c: 205: play_iCreate_song(5);
+"205
+[e ( _play_iCreate_song (1 -> -> 5 `i `uc ]
+[; ;main.c: 206: }
+"206
+[e :UE 121 ]
+}
+"209
+[v _goParallel `(v  1 ef ]
+{
+[; ;main.c: 208: void goParallel()
+[; ;main.c: 209: {
+[e :U _goParallel ]
+[f ]
+[; ;main.c: 210: PORTC |= 0b00000011;
+"210
+[e =| _PORTC -> -> 3 `i `uc ]
+"212
+[v _distance `i  1 a ]
+[v _shortestDistance `i  1 a ]
+[; ;main.c: 212: int distance, shortestDistance = 999;
+[e = _shortestDistance -> 999 `i ]
+"213
+[v _stepsToWall `uc  1 a ]
+[; ;main.c: 213: char stepsToWall;
+[; ;main.c: 215: for (int step = -12; step < 12; step++)
+"215
+{
+[v _step `i  1 a ]
+[e = _step -U -> 12 `i ]
+[e $ < _step -> 12 `i 129  ]
+[e $U 130  ]
+"216
+[e :U 129 ]
+[; ;main.c: 216: {
+{
+[; ;main.c: 217: distance = readIR();
+"217
+[e = _distance ( _readIR ..  ]
+[; ;main.c: 218: if(distance < shortestDistance)
+"218
+[e $ ! < _distance _shortestDistance 132  ]
+[; ;main.c: 219: {
+"219
+{
+[; ;main.c: 220: stepsToWall = step;
+"220
+[e = _stepsToWall -> _step `uc ]
+[; ;main.c: 221: shortestDistance = distance;
+"221
+[e = _shortestDistance _distance ]
+"222
+}
+[e :U 132 ]
+[; ;main.c: 222: }
+[; ;main.c: 223: rotateIR(1, 0b00001101);
+"223
+[e ( _rotateIR (2 , -> -> 1 `i `uc -> -> 13 `i `uc ]
+"224
+}
+"215
+[e ++ _step -> 1 `i ]
+[e $ < _step -> 12 `i 129  ]
+[e :U 130 ]
+"224
+}
+[; ;main.c: 224: }
+[; ;main.c: 225: play_iCreate_song(5);
+"225
+[e ( _play_iCreate_song (1 -> -> 5 `i `uc ]
+[; ;main.c: 226: rotateIR(12, 0b00001111);
+"226
+[e ( _rotateIR (2 , -> -> 12 `i `uc -> -> 15 `i `uc ]
+[; ;main.c: 227: play_iCreate_song(5);
+"227
+[e ( _play_iCreate_song (1 -> -> 5 `i `uc ]
+"229
+[v _angleParallelToWall `i  1 a ]
+[; ;main.c: 229: int angleParallelToWall = (int)((stepsToWall*3.75)*.944);
+[e = _angleParallelToWall -> * * -> _stepsToWall `d .3.75 .0.944 `i ]
+"230
+[v _angleHighByte `uc  1 a ]
+[; ;main.c: 230: char angleHighByte = 0;
+[e = _angleHighByte -> -> 0 `i `uc ]
+"231
+[v _angleLowByte `uc  1 a ]
+[; ;main.c: 231: char angleLowByte = (char) angleParallelToWall;
+[e = _angleLowByte -> _angleParallelToWall `uc ]
+[; ;main.c: 233: if(angleParallelToWall < 0)
+"233
+[e $ ! < _angleParallelToWall -> 0 `i 133  ]
+[; ;main.c: 234: angleParallelToWall = 360 - angleParallelToWall;
+"234
+[e = _angleParallelToWall - -> 360 `i _angleParallelToWall ]
+[e :U 133 ]
+[; ;main.c: 236: if(angleParallelToWall > 255)
+"236
+[e $ ! > _angleParallelToWall -> 255 `i 134  ]
+[; ;main.c: 237: {
+"237
+{
+[; ;main.c: 238: angleHighByte = 1;
+"238
+[e = _angleHighByte -> -> 1 `i `uc ]
+[; ;main.c: 239: angleLowByte = (char)(angleParallelToWall - 255);
+"239
+[e = _angleLowByte -> - _angleParallelToWall -> 255 `i `uc ]
+"240
+}
+[e :U 134 ]
+[; ;main.c: 240: }
+[; ;main.c: 241: drive(0, 25, 0, 1);
+"241
+[e ( _drive (4 , , , -> -> 0 `i `uc -> -> 25 `i `uc -> -> 0 `i `uc -> -> 1 `i `uc ]
+[; ;main.c: 242: waitFor(157,angleHighByte,angleLowByte);
+"242
+[e ( _waitFor (3 , , -> -> 157 `i `uc _angleHighByte _angleLowByte ]
+[; ;main.c: 243: drive(0, 0, 0, 0);
+"243
+[e ( _drive (4 , , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;main.c: 269: }
+"269
+[e :UE 128 ]
+}
+"272
 [v _goToNextCell `(v  1 ef ]
 {
-[; ;main.c: 190: void goToNextCell()
-[; ;main.c: 191: {
+[; ;main.c: 271: void goToNextCell()
+[; ;main.c: 272: {
 [e :U _goToNextCell ]
 [f ]
-[; ;main.c: 192: if(!leftWall)
-"192
-[e $ ! ! _leftWall 130  ]
-[; ;main.c: 193: goLeft();
-"193
+[; ;main.c: 273: if(!leftWall && (getSomethingInTheWay() != LEFT))
+"273
+[e $ ! && ! _leftWall != -> ( _getSomethingInTheWay ..  `i -> . `E1096 1 `i 136  ]
+[; ;main.c: 274: goLeft();
+"274
 [e ( _goLeft ..  ]
-[e $U 131  ]
-"194
-[e :U 130 ]
-[; ;main.c: 194: else if(!frontWall)
-[e $ ! ! _frontWall 132  ]
-[; ;main.c: 195: goForward();
-"195
+[e $U 137  ]
+"275
+[e :U 136 ]
+[; ;main.c: 275: else if(!frontWall && (getSomethingInTheWay() != FORWARD))
+[e $ ! && ! _frontWall != -> ( _getSomethingInTheWay ..  `i -> . `E1096 0 `i 138  ]
+[; ;main.c: 276: goForward();
+"276
 [e ( _goForward ..  ]
-[e $U 133  ]
-"196
-[e :U 132 ]
-[; ;main.c: 196: else if(!rightWall)
-[e $ ! ! _rightWall 134  ]
-[; ;main.c: 197: goRight();
-"197
+[e $U 139  ]
+"277
+[e :U 138 ]
+[; ;main.c: 277: else if(!rightWall && (getSomethingInTheWay() != RIGHT))
+[e $ ! && ! _rightWall != -> ( _getSomethingInTheWay ..  `i -> . `E1096 3 `i 140  ]
+[; ;main.c: 278: goRight();
+"278
 [e ( _goRight ..  ]
-[e $U 135  ]
-"198
-[e :U 134 ]
-[; ;main.c: 198: else
-[; ;main.c: 199: goBackward();
-"199
+[e $U 141  ]
+"279
+[e :U 140 ]
+[; ;main.c: 279: else
+[; ;main.c: 280: goBackward();
+"280
 [e ( _goBackward ..  ]
-[e :U 135 ]
-[e :U 133 ]
-[e :U 131 ]
-[; ;main.c: 200: }
-"200
-[e :UE 129 ]
+[e :U 141 ]
+[e :U 139 ]
+[e :U 137 ]
+[; ;main.c: 281: }
+"281
+[e :UE 135 ]
 }
-"203
+"284
 [v _updateLocation `(v  1 ef ]
 {
-[; ;main.c: 202: void updateLocation()
-[; ;main.c: 203: {
+[; ;main.c: 283: void updateLocation()
+[; ;main.c: 284: {
 [e :U _updateLocation ]
 [f ]
-[; ;main.c: 204: lcd_set_cursor(0x40);
-"204
-[e ( _lcd_set_cursor (1 -> -> 64 `i `uc ]
-[; ;main.c: 205: switch(getOrientation())
-"205
-[e $U 138  ]
-[; ;main.c: 206: {
-"206
-{
-[; ;main.c: 207: case NORTH:
-"207
-[e :U 139 ]
-[; ;main.c: 208: ++yCoord;
-"208
-[e =+ _yCoord -> -> 1 `i `uc ]
-[; ;main.c: 209: lcd_write_data('N');
-"209
-[e ( _lcd_write_data (1 -> -> 78 `ui `uc ]
-[; ;main.c: 210: break;
-"210
-[e $U 137  ]
-[; ;main.c: 211: case SOUTH:
-"211
-[e :U 140 ]
-[; ;main.c: 212: --yCoord;
-"212
-[e =- _yCoord -> -> 1 `i `uc ]
-[; ;main.c: 213: lcd_write_data('S');
-"213
-[e ( _lcd_write_data (1 -> -> 83 `ui `uc ]
-[; ;main.c: 214: break;
-"214
-[e $U 137  ]
-[; ;main.c: 215: case EAST:
-"215
-[e :U 141 ]
-[; ;main.c: 216: ++xCoord;
-"216
-[e =+ _xCoord -> -> 1 `i `uc ]
-[; ;main.c: 217: lcd_write_data('E');
-"217
-[e ( _lcd_write_data (1 -> -> 69 `ui `uc ]
-[; ;main.c: 218: break;
-"218
-[e $U 137  ]
-[; ;main.c: 219: case WEST:
-"219
-[e :U 142 ]
-[; ;main.c: 220: --xCoord;
-"220
-[e =- _xCoord -> -> 1 `i `uc ]
-[; ;main.c: 221: lcd_write_data('W');
-"221
-[e ( _lcd_write_data (1 -> -> 87 `ui `uc ]
-[; ;main.c: 222: break;
-"222
-[e $U 137  ]
-[; ;main.c: 223: default:
-"223
-[e :U 143 ]
-[; ;main.c: 224: break;
-"224
-[e $U 137  ]
-"225
-}
-[; ;main.c: 225: }
-[e $U 137  ]
-"205
-[e :U 138 ]
-[e [\ ( _getOrientation ..  , $ . `E1102 3 139
- , $ . `E1102 1 140
- , $ . `E1102 2 141
- , $ . `E1102 0 142
- 143 ]
-"225
-[e :U 137 ]
-[; ;main.c: 227: lcd_set_cursor(0x01);
-"227
-[e ( _lcd_set_cursor (1 -> -> 1 `i `uc ]
-[; ;main.c: 228: lcd_write_1_digit_bcd(xCoord);
-"228
-[e ( _lcd_write_1_digit_bcd (1 _xCoord ]
-[; ;main.c: 229: lcd_set_cursor(0x03);
-"229
-[e ( _lcd_set_cursor (1 -> -> 3 `i `uc ]
-[; ;main.c: 230: lcd_write_1_digit_bcd(yCoord);
-"230
-[e ( _lcd_write_1_digit_bcd (1 _yCoord ]
-[; ;main.c: 231: }
-"231
-[e :UE 136 ]
-}
-"234
-[v _updateNode `(v  1 ef ]
-{
-[; ;main.c: 233: void updateNode()
-[; ;main.c: 234: {
-[e :U _updateNode ]
-[f ]
-[; ;main.c: 235: if((xCoord == 2) && (yCoord == 2))
-"235
-[e $ ! && == -> _xCoord `i -> 2 `i == -> _yCoord `i -> 2 `i 145  ]
-[; ;main.c: 236: node = 1;
-"236
-[e = _node -> -> 1 `i `uc ]
-[e $U 146  ]
-"237
-[e :U 145 ]
-[; ;main.c: 237: else if((xCoord == 4) && (yCoord == 2))
-[e $ ! && == -> _xCoord `i -> 4 `i == -> _yCoord `i -> 2 `i 147  ]
-[; ;main.c: 238: node = 2;
-"238
-[e = _node -> -> 2 `i `uc ]
-[e $U 148  ]
-"239
-[e :U 147 ]
-[; ;main.c: 239: else if((xCoord == 2) && (yCoord == 0))
-[e $ ! && == -> _xCoord `i -> 2 `i == -> _yCoord `i -> 0 `i 149  ]
-[; ;main.c: 240: node = 3;
-"240
-[e = _node -> -> 3 `i `uc ]
-[e $U 150  ]
-"241
-[e :U 149 ]
-[; ;main.c: 241: else
-[; ;main.c: 242: node = 0;
-"242
-[e = _node -> -> 0 `i `uc ]
-[e :U 150 ]
-[e :U 148 ]
-[e :U 146 ]
-[; ;main.c: 243: }
-"243
-[e :UE 144 ]
-}
-"246
-[v _checkIfHome `(v  1 ef ]
-{
-[; ;main.c: 245: void checkIfHome()
-[; ;main.c: 246: {
-[e :U _checkIfHome ]
-[f ]
-[; ;main.c: 247: if((xCoord == 1) && (yCoord == 3))
-"247
-[e $ ! && == -> _xCoord `i -> 1 `i == -> _yCoord `i -> 3 `i 152  ]
-[; ;main.c: 248: {
-"248
-{
-[; ;main.c: 249: drive(0, 0, 0, 0);
-"249
-[e ( _drive (4 , , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-[; ;main.c: 250: play_iCreate_song(4);
-"250
-[e ( _play_iCreate_song (1 -> -> 4 `i `uc ]
-[; ;main.c: 251: home = 1;
-"251
-[e = _home -> -> 1 `i `b ]
-"252
-}
-[e :U 152 ]
-[; ;main.c: 252: }
-[; ;main.c: 253: }
-"253
-[e :UE 151 ]
-}
-"258
-[v _main `(v  1 ef ]
-{
-[; ;main.c: 257: void main(void)
-[; ;main.c: 258: {
-[e :U _main ]
-[f ]
-[; ;main.c: 259: init();
-"259
-[e ( _init ..  ]
-[; ;main.c: 260: drive(0, 0, 0, 0);
-"260
-[e ( _drive (4 , , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-[; ;main.c: 262: lcd_set_cursor(0x00);
-"262
-[e ( _lcd_set_cursor (1 -> -> 0 `i `uc ]
-[; ;main.c: 263: lcd_write_string("(-,-) E -- --- -");
-"263
-[e ( _lcd_write_string (1 :s 1C ]
-[; ;main.c: 264: lcd_set_cursor(0x40);
-"264
-[e ( _lcd_set_cursor (1 -> -> 64 `i `uc ]
-[; ;main.c: 265: lcd_write_string("- - - (0,0) GREG");
-"265
-[e ( _lcd_write_string (1 :s 2C ]
-[; ;main.c: 269: while(!home)
-"269
-[e $U 154  ]
-[e :U 155 ]
-[; ;main.c: 270: {
-"270
-{
-[; ;main.c: 271: if(start.pressed)
-"271
-[e $ ! != -> . _start 0 `i -> -> -> 0 `i `uc `i 157  ]
-[; ;main.c: 272: {
-"272
-{
-[; ;main.c: 273: checkForFinalDestination();
-"273
-[e ( _checkForFinalDestination ..  ]
-[; ;main.c: 274: lookForVictim();
-"274
-[e ( _lookForVictim ..  ]
-[; ;main.c: 275: findWalls();
-"275
-[e ( _findWalls ..  ]
-[; ;main.c: 276: switch(node)
-"276
-[e $U 159  ]
-[; ;main.c: 277: {
-"277
-{
-[; ;main.c: 278: case 0:
-"278
-[e :U 160 ]
-[; ;main.c: 279: goToNextCell();
-"279
-[e ( _goToNextCell ..  ]
-[; ;main.c: 280: break;
-"280
-[e $U 158  ]
-[; ;main.c: 281: case 1:
-"281
-[e :U 161 ]
-[; ;main.c: 282: goToNextCell();
-"282
-[e ( _goToNextCell ..  ]
-[; ;main.c: 283: break;
-"283
-[e $U 158  ]
-[; ;main.c: 284: case 2:
-"284
-[e :U 162 ]
-[; ;main.c: 285: goToNextCell();
+[; ;main.c: 285: lcd_set_cursor(0x40);
 "285
-[e ( _goToNextCell ..  ]
-[; ;main.c: 286: break;
+[e ( _lcd_set_cursor (1 -> -> 64 `i `uc ]
+[; ;main.c: 286: switch(getOrientation())
 "286
-[e $U 158  ]
-[; ;main.c: 287: case 3:
+[e $U 144  ]
+[; ;main.c: 287: {
 "287
-[e :U 163 ]
-[; ;main.c: 288: goToNextCell();
+{
+[; ;main.c: 288: case NORTH:
 "288
-[e ( _goToNextCell ..  ]
-[; ;main.c: 289: break;
+[e :U 145 ]
+[; ;main.c: 289: ++yCoord;
 "289
-[e $U 158  ]
-[; ;main.c: 290: default:
+[e =+ _yCoord -> -> 1 `i `uc ]
+[; ;main.c: 290: lcd_write_data('N');
 "290
-[e :U 164 ]
+[e ( _lcd_write_data (1 -> -> 78 `ui `uc ]
 [; ;main.c: 291: break;
 "291
-[e $U 158  ]
+[e $U 143  ]
+[; ;main.c: 292: case SOUTH:
 "292
-}
-[; ;main.c: 292: }
-[e $U 158  ]
-"276
-[e :U 159 ]
-[e [\ _node , $ -> -> 0 `i `uc 160
- , $ -> -> 1 `i `uc 161
- , $ -> -> 2 `i `uc 162
- , $ -> -> 3 `i `uc 163
- 164 ]
-"292
-[e :U 158 ]
-[; ;main.c: 294: updateLocation();
+[e :U 146 ]
+[; ;main.c: 293: --yCoord;
+"293
+[e =- _yCoord -> -> 1 `i `uc ]
+[; ;main.c: 294: lcd_write_data('S');
 "294
-[e ( _updateLocation ..  ]
-[; ;main.c: 295: updateNode();
+[e ( _lcd_write_data (1 -> -> 83 `ui `uc ]
+[; ;main.c: 295: break;
 "295
-[e ( _updateNode ..  ]
-[; ;main.c: 296: if(goingHome)
+[e $U 143  ]
+[; ;main.c: 296: case EAST:
 "296
-[e $ ! _goingHome 165  ]
-[; ;main.c: 297: checkIfHome();
+[e :U 147 ]
+[; ;main.c: 297: ++xCoord;
 "297
-[e ( _checkIfHome ..  ]
-[e :U 165 ]
+[e =+ _xCoord -> -> 1 `i `uc ]
+[; ;main.c: 298: lcd_write_data('E');
 "298
-}
-[e :U 157 ]
+[e ( _lcd_write_data (1 -> -> 69 `ui `uc ]
+[; ;main.c: 299: break;
 "299
-}
-[e :U 154 ]
-"269
-[e $ ! _home 155  ]
-[e :U 156 ]
-[; ;main.c: 298: }
-[; ;main.c: 299: }
-[; ;main.c: 301: }
+[e $U 143  ]
+[; ;main.c: 300: case WEST:
+"300
+[e :U 148 ]
+[; ;main.c: 301: --xCoord;
 "301
-[e :UE 153 ]
+[e =- _xCoord -> -> 1 `i `uc ]
+[; ;main.c: 302: lcd_write_data('W');
+"302
+[e ( _lcd_write_data (1 -> -> 87 `ui `uc ]
+[; ;main.c: 303: break;
+"303
+[e $U 143  ]
+[; ;main.c: 304: default:
+"304
+[e :U 149 ]
+[; ;main.c: 305: break;
+"305
+[e $U 143  ]
+"306
 }
-"307
-[v _findWall `(b  1 ef ]
-{
-[; ;main.c: 306: bit findWall()
-[; ;main.c: 307: {
-[e :U _findWall ]
-[f ]
-[; ;main.c: 308: if(readIR() > 100)
+[; ;main.c: 306: }
+[e $U 143  ]
+"286
+[e :U 144 ]
+[e [\ ( _getOrientation ..  , $ . `E1102 3 145
+ , $ . `E1102 1 146
+ , $ . `E1102 2 147
+ , $ . `E1102 0 148
+ 149 ]
+"306
+[e :U 143 ]
+[; ;main.c: 308: lcd_set_cursor(0x01);
 "308
-[e $ ! > ( _readIR ..  -> 100 `i 167  ]
-[; ;main.c: 309: return 0;
+[e ( _lcd_set_cursor (1 -> -> 1 `i `uc ]
+[; ;main.c: 309: lcd_write_1_digit_bcd(xCoord);
 "309
-[e ) -> -> 0 `i `b ]
-[e $UE 166  ]
-[e $U 168  ]
+[e ( _lcd_write_1_digit_bcd (1 _xCoord ]
+[; ;main.c: 310: lcd_set_cursor(0x03);
 "310
-[e :U 167 ]
-[; ;main.c: 310: else
-[; ;main.c: 311: return 1;
+[e ( _lcd_set_cursor (1 -> -> 3 `i `uc ]
+[; ;main.c: 311: lcd_write_1_digit_bcd(yCoord);
 "311
-[e ) -> -> 1 `i `b ]
-[e $UE 166  ]
-[e :U 168 ]
+[e ( _lcd_write_1_digit_bcd (1 _yCoord ]
 [; ;main.c: 312: }
 "312
-[e :UE 166 ]
+[e :UE 142 ]
 }
 "315
+[v _updateNode `(v  1 ef ]
+{
+[; ;main.c: 314: void updateNode()
+[; ;main.c: 315: {
+[e :U _updateNode ]
+[f ]
+[; ;main.c: 316: if((xCoord == 2) && (yCoord == 2))
+"316
+[e $ ! && == -> _xCoord `i -> 2 `i == -> _yCoord `i -> 2 `i 151  ]
+[; ;main.c: 317: node = 1;
+"317
+[e = _node -> -> 1 `i `uc ]
+[e $U 152  ]
+"318
+[e :U 151 ]
+[; ;main.c: 318: else if((xCoord == 4) && (yCoord == 2))
+[e $ ! && == -> _xCoord `i -> 4 `i == -> _yCoord `i -> 2 `i 153  ]
+[; ;main.c: 319: node = 2;
+"319
+[e = _node -> -> 2 `i `uc ]
+[e $U 154  ]
+"320
+[e :U 153 ]
+[; ;main.c: 320: else if((xCoord == 2) && (yCoord == 0))
+[e $ ! && == -> _xCoord `i -> 2 `i == -> _yCoord `i -> 0 `i 155  ]
+[; ;main.c: 321: node = 3;
+"321
+[e = _node -> -> 3 `i `uc ]
+[e $U 156  ]
+"322
+[e :U 155 ]
+[; ;main.c: 322: else
+[; ;main.c: 323: node = 0;
+"323
+[e = _node -> -> 0 `i `uc ]
+[e :U 156 ]
+[e :U 154 ]
+[e :U 152 ]
+[; ;main.c: 324: }
+"324
+[e :UE 150 ]
+}
+"327
+[v _checkIfHome `(v  1 ef ]
+{
+[; ;main.c: 326: void checkIfHome()
+[; ;main.c: 327: {
+[e :U _checkIfHome ]
+[f ]
+[; ;main.c: 328: if((xCoord == 1) && (yCoord == 3))
+"328
+[e $ ! && == -> _xCoord `i -> 1 `i == -> _yCoord `i -> 3 `i 158  ]
+[; ;main.c: 329: {
+"329
+{
+[; ;main.c: 330: drive(0, 0, 0, 0);
+"330
+[e ( _drive (4 , , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;main.c: 331: play_iCreate_song(4);
+"331
+[e ( _play_iCreate_song (1 -> -> 4 `i `uc ]
+[; ;main.c: 332: home = 1;
+"332
+[e = _home -> -> 1 `i `b ]
+"333
+}
+[e :U 158 ]
+[; ;main.c: 333: }
+[; ;main.c: 334: }
+"334
+[e :UE 157 ]
+}
+"339
+[v _main `(v  1 ef ]
+{
+[; ;main.c: 338: void main(void)
+[; ;main.c: 339: {
+[e :U _main ]
+[f ]
+[; ;main.c: 340: init();
+"340
+[e ( _init ..  ]
+[; ;main.c: 341: drive(0, 0, 0, 0);
+"341
+[e ( _drive (4 , , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;main.c: 343: lcd_set_cursor(0x00);
+"343
+[e ( _lcd_set_cursor (1 -> -> 0 `i `uc ]
+[; ;main.c: 344: lcd_write_string("(-,-) E -- --- -");
+"344
+[e ( _lcd_write_string (1 :s 1C ]
+[; ;main.c: 345: lcd_set_cursor(0x40);
+"345
+[e ( _lcd_set_cursor (1 -> -> 64 `i `uc ]
+[; ;main.c: 346: lcd_write_string("- - - (0,0) GREG");
+"346
+[e ( _lcd_write_string (1 :s 2C ]
+[; ;main.c: 350: while(!home)
+"350
+[e $U 160  ]
+[e :U 161 ]
+[; ;main.c: 351: {
+"351
+{
+[; ;main.c: 353: if(start.pressed)
+"353
+[e $ ! != -> . _start 0 `i -> -> -> 0 `i `uc `i 163  ]
+[; ;main.c: 354: {
+"354
+{
+[; ;main.c: 355: checkForFinalDestination();
+"355
+[e ( _checkForFinalDestination ..  ]
+[; ;main.c: 356: lookForVictim();
+"356
+[e ( _lookForVictim ..  ]
+[; ;main.c: 357: findWalls();
+"357
+[e ( _findWalls ..  ]
+[; ;main.c: 358: if(leftWall)
+"358
+[e $ ! _leftWall 164  ]
+[; ;main.c: 359: goParallel();
+"359
+[e ( _goParallel ..  ]
+[e $U 165  ]
+"360
+[e :U 164 ]
+[; ;main.c: 360: else
+[; ;main.c: 361: rotateIR(12, 0b00001101);
+"361
+[e ( _rotateIR (2 , -> -> 12 `i `uc -> -> 13 `i `uc ]
+[e :U 165 ]
+[; ;main.c: 365: goToNextCell();
+"365
+[e ( _goToNextCell ..  ]
+[; ;main.c: 380: if(getSuccessfulDrive())
+"380
+[e $ ! ( _getSuccessfulDrive ..  166  ]
+[; ;main.c: 381: {
+"381
+{
+[; ;main.c: 382: updateLocation();
+"382
+[e ( _updateLocation ..  ]
+[; ;main.c: 383: updateNode();
+"383
+[e ( _updateNode ..  ]
+[; ;main.c: 384: if(goingHome)
+"384
+[e $ ! _goingHome 167  ]
+[; ;main.c: 385: checkIfHome();
+"385
+[e ( _checkIfHome ..  ]
+[e :U 167 ]
+"386
+}
+[e :U 166 ]
+"387
+}
+[e :U 163 ]
+"388
+}
+[e :U 160 ]
+"350
+[e $ ! _home 161  ]
+[e :U 162 ]
+[; ;main.c: 386: }
+[; ;main.c: 387: }
+[; ;main.c: 388: }
+[; ;main.c: 390: }
+"390
+[e :UE 159 ]
+}
+"396
+[v _findWall `(b  1 ef ]
+{
+[; ;main.c: 395: bit findWall()
+[; ;main.c: 396: {
+[e :U _findWall ]
+[f ]
+[; ;main.c: 397: if(readIR() > 100)
+"397
+[e $ ! > ( _readIR ..  -> 100 `i 169  ]
+[; ;main.c: 398: return 0;
+"398
+[e ) -> -> 0 `i `b ]
+[e $UE 168  ]
+[e $U 170  ]
+"399
+[e :U 169 ]
+[; ;main.c: 399: else
+[; ;main.c: 400: return 1;
+"400
+[e ) -> -> 1 `i `b ]
+[e $UE 168  ]
+[e :U 170 ]
+[; ;main.c: 401: }
+"401
+[e :UE 168 ]
+}
+"404
 [v _getCurrentX `(uc  1 ef ]
 {
-[; ;main.c: 314: char getCurrentX()
-[; ;main.c: 315: {
+[; ;main.c: 403: char getCurrentX()
+[; ;main.c: 404: {
 [e :U _getCurrentX ]
 [f ]
-[; ;main.c: 316: return xCoord;
-"316
+[; ;main.c: 405: return xCoord;
+"405
 [e ) _xCoord ]
-[e $UE 169  ]
-[; ;main.c: 317: }
-"317
-[e :UE 169 ]
+[e $UE 171  ]
+[; ;main.c: 406: }
+"406
+[e :UE 171 ]
 }
-"320
+"409
 [v _getCurrentY `(uc  1 ef ]
 {
-[; ;main.c: 319: char getCurrentY()
-[; ;main.c: 320: {
+[; ;main.c: 408: char getCurrentY()
+[; ;main.c: 409: {
 [e :U _getCurrentY ]
 [f ]
-[; ;main.c: 321: return yCoord;
-"321
+[; ;main.c: 410: return yCoord;
+"410
 [e ) _yCoord ]
-[e $UE 170  ]
-[; ;main.c: 322: }
-"322
-[e :UE 170 ]
+[e $UE 172  ]
+[; ;main.c: 411: }
+"411
+[e :UE 172 ]
+}
+"417
+[v _scanIR `(v  1 ef3`uc`i`uc ]
+{
+[; ;main.c: 416: void scanIR(char steps, int motorDirection, char updateClosestObject)
+[; ;main.c: 417: {
+[e :U _scanIR ]
+[v _steps `uc  1 r1 ]
+[v _motorDirection `i  1 r2 ]
+[v _updateClosestObject `uc  1 r3 ]
+[f ]
+[; ;main.c: 419: closestObject.position = 0;
+"419
+[e = . _closestObject 0 -> -> 0 `i `uc ]
+[; ;main.c: 420: closestObject.distance = 999;
+"420
+[e = . _closestObject 1 -> -> 999 `i `uc ]
+[; ;main.c: 422: SSPBUF = motorDirection;
+"422
+[e = _SSPBUF -> _motorDirection `uc ]
+[; ;main.c: 423: _delay((unsigned long)((200)*(20000000/4000.0)));
+"423
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;main.c: 425: for (char stepNum = 1; stepNum <= steps; ++stepNum)
+"425
+{
+[v _stepNum `uc  1 a ]
+[e = _stepNum -> -> 1 `i `uc ]
+[e $U 177  ]
+"426
+[e :U 174 ]
+[; ;main.c: 426: {
+{
+[; ;main.c: 427: PORTC |= 0b00000100;
+"427
+[e =| _PORTC -> -> 4 `i `uc ]
+[; ;main.c: 428: PORTC &= 0b11111011;
+"428
+[e =& _PORTC -> -> 251 `i `uc ]
+[; ;main.c: 430: if(motorDirection == 0b00001101)
+"430
+[e $ ! == _motorDirection -> 13 `i 178  ]
+[; ;main.c: 431: ++stepPosition;
+"431
+[e =+ _stepPosition -> -> 1 `i `uc ]
+[e $U 179  ]
+"432
+[e :U 178 ]
+[; ;main.c: 432: else
+[; ;main.c: 433: --stepPosition;
+"433
+[e =- _stepPosition -> -> 1 `i `uc ]
+[e :U 179 ]
+"435
+[v _distanceRead `i  1 a ]
+[; ;main.c: 435: int distanceRead = readIR();
+[e = _distanceRead ( _readIR ..  ]
+[; ;main.c: 439: if((updateClosestObject == 1)&&(distanceRead < closestObject.distance))
+"439
+[e $ ! && == -> _updateClosestObject `i -> 1 `i < _distanceRead -> . _closestObject 1 `i 180  ]
+[; ;main.c: 440: {
+"440
+{
+[; ;main.c: 441: closestObject.distance = distanceRead;
+"441
+[e = . _closestObject 1 -> _distanceRead `uc ]
+[; ;main.c: 442: closestObject.position = stepPosition;
+"442
+[e = . _closestObject 0 _stepPosition ]
+"443
+}
+[e :U 180 ]
+"444
+}
+"425
+[e =+ _stepNum -> -> 1 `i `uc ]
+[e :U 177 ]
+[e $ <= -> _stepNum `i -> _steps `i 174  ]
+[e :U 175 ]
+"444
+}
+[; ;main.c: 443: }
+[; ;main.c: 444: }
+[; ;main.c: 445: stepsToPerpendicular = closestObject.position;
+"445
+[e = _stepsToPerpendicular . _closestObject 0 ]
+[; ;main.c: 447: SSPBUF = 0b00000000;
+"447
+[e = _SSPBUF -> -> 0 `i `uc ]
+[; ;main.c: 448: _delay((unsigned long)((200)*(20000000/4000.0)));
+"448
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;main.c: 449: }
+"449
+[e :UE 173 ]
 }
 [a 2C 45 32 45 32 45 32 40 48 44 48 41 32 71 82 69 71 0 ]
 [a 1C 40 45 44 45 41 32 69 32 45 45 32 45 45 45 32 45 0 ]

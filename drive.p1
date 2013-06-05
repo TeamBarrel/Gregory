@@ -881,42 +881,52 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _EECON1bits `VS99  1 e@396 ]
 "1167 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f877a.h
 [v _EECON2 `Vuc  1 e@397 ]
-"13 C:\Users\10999959\Desktop\COMPETITIONv0.4\drive.c
-[v _moving `Vb  1 e ]
+"13 C:\Users\11000294\Desktop\COMPETITIONv0.6\drive.c
+[v _successfulDrive `Vb  1 e ]
 [c E1111 0 1 2 3 .. ]
 [n E1111 . FORWARD LEFT BACKWARD RIGHT  ]
-"14 C:\Users\10999959\Desktop\COMPETITIONv0.4\drive.c
+"14 C:\Users\11000294\Desktop\COMPETITIONv0.6\drive.c
+[v _somethingInTheWay `VE1111  1 e ]
+"15 C:\Users\11000294\Desktop\COMPETITIONv0.6\drive.c
+[v _moving `Vb  1 e ]
+"16 C:\Users\11000294\Desktop\COMPETITIONv0.6\drive.c
 [v _wayWent `VE1111  1 e ]
-"15 C:\Users\10999959\Desktop\COMPETITIONv0.4\drive.c
+"17 C:\Users\11000294\Desktop\COMPETITIONv0.6\drive.c
 [v _lastMove `VE1111  1 e ]
 [c E1117 0 1 2 3 .. ]
 [n E1117 . WEST SOUTH EAST NORTH  ]
-"16 C:\Users\10999959\Desktop\COMPETITIONv0.4\drive.c
+"18 C:\Users\11000294\Desktop\COMPETITIONv0.6\drive.c
 [v _currentOrientation `VE1117  1 e ]
 "154 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic.h
 [v __delay `(v  0 ef1`ul ]
 [p i __delay ]
-"57 C:\Users\10999959\Desktop\COMPETITIONv0.4\ser.h
+"57 C:\Users\11000294\Desktop\COMPETITIONv0.6\ser.h
 [v _ser_putch `(v  0 ef1`uc ]
-"56 C:\Users\10999959\Desktop\COMPETITIONv0.4\ser.h
+"56 C:\Users\11000294\Desktop\COMPETITIONv0.6\ser.h
 [v _ser_getch `(uc  0 ef ]
-"20 C:\Users\10999959\Desktop\COMPETITIONv0.4\lcd.h
-[v _lcd_set_cursor `(v  0 ef1`uc ]
-"17 C:\Users\10999959\Desktop\COMPETITIONv0.4\lcd.h
-[v _lcd_write_data `(v  0 ef1`uc ]
-"42 C:\Users\10999959\Desktop\COMPETITIONv0.4\drive.h
-[v _turnAround `(v  0 ef ]
-"45 C:\Users\10999959\Desktop\COMPETITIONv0.4\drive.h
-[v _updateOrientation `(v  0 ef1`E1111 ]
-"43 C:\Users\10999959\Desktop\COMPETITIONv0.4\drive.h
-[v _turnLeft90 `(v  0 ef ]
-"46 C:\Users\10999959\Desktop\COMPETITIONv0.4\drive.h
-[v _waitFor `(v  0 ef3`uc`uc`uc ]
-"44 C:\Users\10999959\Desktop\COMPETITIONv0.4\drive.h
+"42 C:\Users\11000294\Desktop\COMPETITIONv0.6\drive.h
+[v _goReverse `(v  0 ef ]
+"46 C:\Users\11000294\Desktop\COMPETITIONv0.6\drive.h
 [v _turnRight90 `(v  0 ef ]
-"10 C:\Users\10999959\Desktop\COMPETITIONv0.4\ir.h
-[v _rotateIR `(v  0 ef2`uc`uc ]
-"9 C:\Users\10999959\Desktop\COMPETITIONv0.4\ir.h
+"47 C:\Users\11000294\Desktop\COMPETITIONv0.6\drive.h
+[v _updateOrientation `(v  0 ef1`E1111 ]
+"45 C:\Users\11000294\Desktop\COMPETITIONv0.6\drive.h
+[v _turnLeft90 `(v  0 ef ]
+"6 C:\Users\11000294\Desktop\COMPETITIONv0.6\map.h
+[v _findFinalDestination `(v  0 ef3`uc`uc`E1117 ]
+"38 C:\Users\11000294\Desktop\COMPETITIONv0.6\main.h
+[v _getCurrentX `(uc  0 ef ]
+"39 C:\Users\11000294\Desktop\COMPETITIONv0.6\main.h
+[v _getCurrentY `(uc  0 ef ]
+"20 C:\Users\11000294\Desktop\COMPETITIONv0.6\lcd.h
+[v _lcd_set_cursor `(v  0 ef1`uc ]
+"17 C:\Users\11000294\Desktop\COMPETITIONv0.6\lcd.h
+[v _lcd_write_data `(v  0 ef1`uc ]
+"44 C:\Users\11000294\Desktop\COMPETITIONv0.6\drive.h
+[v _turnAround `(v  0 ef ]
+"48 C:\Users\11000294\Desktop\COMPETITIONv0.6\drive.h
+[v _waitFor `(v  0 ef3`uc`uc`uc ]
+"9 C:\Users\11000294\Desktop\COMPETITIONv0.6\ir.h
 [v _readIR `(i  0 ef ]
 [; ;ser.h: 55: bit ser_isrx(void);
 [; ;ser.h: 56: unsigned char ser_getch(void);
@@ -1776,21 +1786,25 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;drive.h: 33: void drive(char highByteSpeed, char lowByteSpeed, char highByteRadius, char lowByteRadius);
 [; ;drive.h: 34: void driveForDistance(int moveDistance);
 [; ;drive.h: 35: orientation getOrientation();
-[; ;drive.h: 36: direction getWayWent();
-[; ;drive.h: 37: void goBackward();
-[; ;drive.h: 38: void goForward();
-[; ;drive.h: 39: void goLeft();
-[; ;drive.h: 40: void goReverse();
-[; ;drive.h: 41: void goRight();
-[; ;drive.h: 42: void turnAround();
-[; ;drive.h: 43: void turnLeft90();
-[; ;drive.h: 44: void turnRight90();
-[; ;drive.h: 45: void updateOrientation(direction moved);
-[; ;drive.h: 46: void waitFor(char type, char highByte, char lowByte);
-[; ;drive.h: 47: void rightWallCorrect(void);
-[; ;drive.h: 48: void frontWallCorrect(void);
-[; ;sensors.h: 6: void checkSensors();
-[; ;sensors.h: 7: bit getBit(char byte, int position);
+[; ;drive.h: 36: direction getSomethingInTheWay();
+[; ;drive.h: 37: bit getSuccessfulDrive();
+[; ;drive.h: 38: direction getWayWent();
+[; ;drive.h: 39: void goBackward();
+[; ;drive.h: 40: void goForward();
+[; ;drive.h: 41: void goLeft();
+[; ;drive.h: 42: void goReverse();
+[; ;drive.h: 43: void goRight();
+[; ;drive.h: 44: void turnAround();
+[; ;drive.h: 45: void turnLeft90();
+[; ;drive.h: 46: void turnRight90();
+[; ;drive.h: 47: void updateOrientation(direction moved);
+[; ;drive.h: 48: void waitFor(char type, char highByte, char lowByte);
+[; ;drive.h: 49: void rightWallCorrect(void);
+[; ;drive.h: 50: void frontWallCorrect(void);
+[; ;sensors.h: 6: void checkCliff();
+[; ;sensors.h: 7: bit checkVirtualWall();
+[; ;sensors.h: 8: bit checkVictim();
+[; ;sensors.h: 9: bit getBit(char byte, int position);
 [; ;lcd.h: 14: void lcd_write_control(unsigned char databyte);
 [; ;lcd.h: 17: void lcd_write_data(unsigned char databyte);
 [; ;lcd.h: 20: void lcd_set_cursor(unsigned char address);
@@ -1825,563 +1839,737 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ir.h: 8: int convert(int adc_value);
 [; ;ir.h: 9: int readIR();
 [; ;ir.h: 10: void rotateIR(char steps, char direction);
-"13 C:\Users\10999959\Desktop\COMPETITIONv0.4\drive.c
+"13 C:\Users\11000294\Desktop\COMPETITIONv0.6\drive.c
+[i _successfulDrive
+-> 0 `i
+]
+[; ;drive.c: 13: volatile bit successfulDrive = 0;
+"14
+[i _somethingInTheWay
+. `E1111 2
+]
+[; ;drive.c: 14: volatile direction somethingInTheWay = BACKWARD;
+"15
 [i _moving
 -> 0 `i
 ]
-[; ;drive.c: 13: volatile bit moving = 0;
-[; ;drive.c: 14: volatile direction wayWent;
-[; ;drive.c: 15: volatile direction lastMove;
-"16
+[; ;drive.c: 15: volatile bit moving = 0;
+[; ;drive.c: 16: volatile direction wayWent;
+[; ;drive.c: 17: volatile direction lastMove;
+"18
 [i _currentOrientation
 . `E1117 0
 ]
-[; ;drive.c: 16: volatile orientation currentOrientation = WEST;
-"19
+[; ;drive.c: 18: volatile orientation currentOrientation = WEST;
+"21
 [v _drive `(v  1 ef4`uc`uc`uc`uc ]
 {
-[; ;drive.c: 18: void drive(char highByteSpeed, char lowByteSpeed, char highByteRadius, char lowByteRadius)
-[; ;drive.c: 19: {
+[; ;drive.c: 20: void drive(char highByteSpeed, char lowByteSpeed, char highByteRadius, char lowByteRadius)
+[; ;drive.c: 21: {
 [e :U _drive ]
 [v _highByteSpeed `uc  1 r1 ]
 [v _lowByteSpeed `uc  1 r2 ]
 [v _highByteRadius `uc  1 r3 ]
 [v _lowByteRadius `uc  1 r4 ]
 [f ]
-[; ;drive.c: 20: _delay((unsigned long)((100)*(20000000/4000.0)));
-"20
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-[; ;drive.c: 21: ser_putch(137);
-"21
-[e ( _ser_putch (1 -> -> 137 `i `uc ]
-[; ;drive.c: 22: ser_putch(highByteSpeed);
+[; ;drive.c: 22: _delay((unsigned long)((100)*(20000000/4000.0)));
 "22
-[e ( _ser_putch (1 _highByteSpeed ]
-[; ;drive.c: 23: ser_putch(lowByteSpeed);
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;drive.c: 23: ser_putch(137);
 "23
-[e ( _ser_putch (1 _lowByteSpeed ]
-[; ;drive.c: 24: ser_putch(highByteRadius);
+[e ( _ser_putch (1 -> -> 137 `i `uc ]
+[; ;drive.c: 24: ser_putch(highByteSpeed);
 "24
-[e ( _ser_putch (1 _highByteRadius ]
-[; ;drive.c: 25: ser_putch(lowByteRadius);
+[e ( _ser_putch (1 _highByteSpeed ]
+[; ;drive.c: 25: ser_putch(lowByteSpeed);
 "25
-[e ( _ser_putch (1 _lowByteRadius ]
-[; ;drive.c: 26: }
+[e ( _ser_putch (1 _lowByteSpeed ]
+[; ;drive.c: 26: ser_putch(highByteRadius);
 "26
+[e ( _ser_putch (1 _highByteRadius ]
+[; ;drive.c: 27: ser_putch(lowByteRadius);
+"27
+[e ( _ser_putch (1 _lowByteRadius ]
+[; ;drive.c: 28: }
+"28
 [e :UE 102 ]
 }
-"29
+"31
 [v _driveForDistance `(v  1 ef1`i ]
 {
-[; ;drive.c: 28: void driveForDistance(int moveDistance)
-[; ;drive.c: 29: {
+[; ;drive.c: 30: void driveForDistance(int moveDistance)
+[; ;drive.c: 31: {
 [e :U _driveForDistance ]
 [v _moveDistance `i  1 r1 ]
 [f ]
-"31
+"33
 [v _high `Vuc  1 a ]
 [v _low `Vuc  1 a ]
-"32
+[v _cliff `Vuc  1 a ]
+[v _virtualWall `Vuc  1 a ]
+"34
 [v _deltaDistance `i  1 a ]
-[; ;drive.c: 31: volatile char high, low;
-[; ;drive.c: 32: int deltaDistance = 0;
+[; ;drive.c: 33: volatile char high, low, cliff, virtualWall;
+[; ;drive.c: 34: int deltaDistance = 0;
 [e = _deltaDistance -> 0 `i ]
-"33
-[v _distance `i  1 a ]
-[; ;drive.c: 33: int distance = 0;
-[e = _distance -> 0 `i ]
-[; ;drive.c: 35: moving = 1;
 "35
+[v _distance `i  1 a ]
+[; ;drive.c: 35: int distance = 0;
+[e = _distance -> 0 `i ]
+[; ;drive.c: 37: moving = 1;
+"37
 [e = _moving -> -> 1 `i `b ]
-[; ;drive.c: 36: drive(0, 250, 128, 0);
-"36
-[e ( _drive (4 , , , -> -> 0 `i `uc -> -> 250 `i `uc -> -> 128 `i `uc -> -> 0 `i `uc ]
-[; ;drive.c: 38: while(moving)
+[; ;drive.c: 38: drive(0, 250, 128, 0);
 "38
+[e ( _drive (4 , , , -> -> 0 `i `uc -> -> 250 `i `uc -> -> 128 `i `uc -> -> 0 `i `uc ]
+[; ;drive.c: 39: successfulDrive = 0;
+"39
+[e = _successfulDrive -> -> 0 `i `b ]
+[; ;drive.c: 41: while(moving)
+"41
 [e $U 104  ]
 [e :U 105 ]
-[; ;drive.c: 39: {
-"39
-{
-[; ;drive.c: 40: ser_putch(142);
-"40
-[e ( _ser_putch (1 -> -> 142 `i `uc ]
-[; ;drive.c: 41: ser_putch(19);
-"41
-[e ( _ser_putch (1 -> -> 19 `i `uc ]
-[; ;drive.c: 42: high = ser_getch();
+[; ;drive.c: 42: {
 "42
-[e = _high ( _ser_getch ..  ]
-[; ;drive.c: 43: low = ser_getch();
+{
+[; ;drive.c: 43: if(distance >= 100)
 "43
-[e = _low ( _ser_getch ..  ]
-[; ;drive.c: 44: deltaDistance = high*256 + low;
+[e $ ! >= _distance -> 100 `i 107  ]
+[; ;drive.c: 44: {
 "44
-[e = _deltaDistance + * -> _high `i -> 256 `i -> _low `i ]
-[; ;drive.c: 45: distance += deltaDistance;
-"45
-[e =+ _distance _deltaDistance ]
-[; ;drive.c: 64: if(distance >= moveDistance)
+{
+[; ;drive.c: 46: ser_putch(142);
+"46
+[e ( _ser_putch (1 -> -> 142 `i `uc ]
+[; ;drive.c: 47: ser_putch(10);
+"47
+[e ( _ser_putch (1 -> -> 10 `i `uc ]
+[; ;drive.c: 48: cliff = ser_getch();
+"48
+[e = _cliff ( _ser_getch ..  ]
+[; ;drive.c: 49: if(cliff == 0)
+"49
+[e $ ! == -> _cliff `i -> 0 `i 108  ]
+[; ;drive.c: 50: {
+"50
+{
+[; ;drive.c: 51: ser_putch(142);
+"51
+[e ( _ser_putch (1 -> -> 142 `i `uc ]
+[; ;drive.c: 52: ser_putch(11);
+"52
+[e ( _ser_putch (1 -> -> 11 `i `uc ]
+[; ;drive.c: 53: cliff = ser_getch();
+"53
+[e = _cliff ( _ser_getch ..  ]
+[; ;drive.c: 54: if(cliff == 0)
+"54
+[e $ ! == -> _cliff `i -> 0 `i 109  ]
+[; ;drive.c: 55: {
+"55
+{
+[; ;drive.c: 56: ser_putch(142);
+"56
+[e ( _ser_putch (1 -> -> 142 `i `uc ]
+[; ;drive.c: 57: ser_putch(9);
+"57
+[e ( _ser_putch (1 -> -> 9 `i `uc ]
+[; ;drive.c: 58: cliff = ser_getch();
+"58
+[e = _cliff ( _ser_getch ..  ]
+[; ;drive.c: 59: if(cliff == 0)
+"59
+[e $ ! == -> _cliff `i -> 0 `i 110  ]
+[; ;drive.c: 60: {
+"60
+{
+[; ;drive.c: 61: ser_putch(142);
+"61
+[e ( _ser_putch (1 -> -> 142 `i `uc ]
+[; ;drive.c: 62: ser_putch(12);
+"62
+[e ( _ser_putch (1 -> -> 12 `i `uc ]
+[; ;drive.c: 63: cliff = ser_getch();
+"63
+[e = _cliff ( _ser_getch ..  ]
 "64
-[e $ ! >= _distance _moveDistance 107  ]
-[; ;drive.c: 65: moving = 0;
+}
+[e :U 110 ]
 "65
-[e = _moving -> -> 0 `i `b ]
-[e :U 107 ]
+}
+[e :U 109 ]
 "66
 }
-[e :U 104 ]
-"38
-[e $ _moving 105  ]
-[e :U 106 ]
+[e :U 108 ]
+[; ;drive.c: 64: }
+[; ;drive.c: 65: }
 [; ;drive.c: 66: }
-[; ;drive.c: 67: drive(0, 0, 0, 0);
+[; ;drive.c: 67: if(cliff == 1)
 "67
-[e ( _drive (4 , , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-[; ;drive.c: 68: }
+[e $ ! == -> _cliff `i -> 1 `i 111  ]
+[; ;drive.c: 68: {
 "68
-[e :UE 103 ]
-}
-"71
-[v _getOrientation `(E1117  1 ef ]
 {
-[; ;drive.c: 70: orientation getOrientation()
-[; ;drive.c: 71: {
-[e :U _getOrientation ]
-[f ]
-[; ;drive.c: 72: return currentOrientation;
-"72
-[e ) _currentOrientation ]
-[e $UE 108  ]
-[; ;drive.c: 73: }
-"73
-[e :UE 108 ]
-}
-"76
-[v _getWayWent `(E1111  1 ef ]
-{
-[; ;drive.c: 75: direction getWayWent()
-[; ;drive.c: 76: {
-[e :U _getWayWent ]
-[f ]
-[; ;drive.c: 77: return wayWent;
-"77
-[e ) _wayWent ]
-[e $UE 109  ]
-[; ;drive.c: 78: }
-"78
-[e :UE 109 ]
-}
-"82
-[v _goBackward `(v  1 ef ]
-{
-[; ;drive.c: 81: void goBackward()
-[; ;drive.c: 82: {
-[e :U _goBackward ]
-[f ]
-[; ;drive.c: 83: lcd_set_cursor(0x0F);
-"83
-[e ( _lcd_set_cursor (1 -> -> 15 `i `uc ]
-[; ;drive.c: 84: lcd_write_data('B');
-"84
-[e ( _lcd_write_data (1 -> -> 66 `ui `uc ]
-[; ;drive.c: 85: turnAround();
-"85
-[e ( _turnAround ..  ]
-[; ;drive.c: 86: updateOrientation(BACKWARD);
-"86
-[e ( _updateOrientation (1 . `E1111 2 ]
-[; ;drive.c: 87: driveForDistance(1000);
-"87
-[e ( _driveForDistance (1 -> 1000 `i ]
-[; ;drive.c: 88: lastMove = BACKWARD;
-"88
-[e = _lastMove . `E1111 2 ]
-[; ;drive.c: 89: }
-"89
-[e :UE 110 ]
-}
-"93
-[v _goForward `(v  1 ef ]
-{
-[; ;drive.c: 92: void goForward()
-[; ;drive.c: 93: {
-[e :U _goForward ]
-[f ]
-[; ;drive.c: 94: lcd_set_cursor(0x0F);
-"94
-[e ( _lcd_set_cursor (1 -> -> 15 `i `uc ]
-[; ;drive.c: 95: lcd_write_data('F');
-"95
-[e ( _lcd_write_data (1 -> -> 70 `ui `uc ]
-[; ;drive.c: 96: driveForDistance(1000);
-"96
-[e ( _driveForDistance (1 -> 1000 `i ]
-[; ;drive.c: 97: lastMove = FORWARD;
-"97
-[e = _lastMove . `E1111 0 ]
-[; ;drive.c: 98: }
-"98
-[e :UE 111 ]
-}
-"102
-[v _goLeft `(v  1 ef ]
-{
-[; ;drive.c: 101: void goLeft()
-[; ;drive.c: 102: {
-[e :U _goLeft ]
-[f ]
-[; ;drive.c: 103: lcd_set_cursor(0x0F);
-"103
-[e ( _lcd_set_cursor (1 -> -> 15 `i `uc ]
-[; ;drive.c: 104: lcd_write_data('L');
-"104
-[e ( _lcd_write_data (1 -> -> 76 `ui `uc ]
-[; ;drive.c: 105: turnLeft90();
-"105
-[e ( _turnLeft90 ..  ]
-[; ;drive.c: 106: updateOrientation(LEFT);
-"106
-[e ( _updateOrientation (1 . `E1111 1 ]
-[; ;drive.c: 107: driveForDistance(1000);
-"107
-[e ( _driveForDistance (1 -> 1000 `i ]
-[; ;drive.c: 108: lastMove = LEFT;
-"108
-[e = _lastMove . `E1111 1 ]
-[; ;drive.c: 109: }
-"109
-[e :UE 112 ]
-}
-"112
-[v _goReverse `(v  1 ef ]
-{
-[; ;drive.c: 111: void goReverse()
-[; ;drive.c: 112: {
-[e :U _goReverse ]
-[f ]
-[; ;drive.c: 113: lcd_set_cursor(0x0F);
-"113
-[e ( _lcd_set_cursor (1 -> -> 15 `i `uc ]
-[; ;drive.c: 114: lcd_write_data('!');
-"114
-[e ( _lcd_write_data (1 -> -> 33 `ui `uc ]
-[; ;drive.c: 115: drive(255, 131, 128, 0);
-"115
-[e ( _drive (4 , , , -> -> 255 `i `uc -> -> 131 `i `uc -> -> 128 `i `uc -> -> 0 `i `uc ]
-[; ;drive.c: 116: waitFor(156,1,244);
-"116
-[e ( _waitFor (3 , , -> -> 156 `i `uc -> -> 1 `i `uc -> -> 244 `i `uc ]
-[; ;drive.c: 117: drive(0, 0, 0, 0);
-"117
+[; ;drive.c: 69: drive(0, 0, 0, 0);
+"69
 [e ( _drive (4 , , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-[; ;drive.c: 118: if(lastMove == LEFT)
-"118
-[e $ ! == -> _lastMove `i -> . `E1111 1 `i 114  ]
-[; ;drive.c: 119: {
-"119
+[; ;drive.c: 70: goReverse();
+"70
+[e ( _goReverse ..  ]
+[; ;drive.c: 72: if(lastMove == LEFT)
+"72
+[e $ ! == -> _lastMove `i -> . `E1111 1 `i 112  ]
+[; ;drive.c: 73: {
+"73
 {
-[; ;drive.c: 120: lcd_set_cursor(0x0F);
-"120
-[e ( _lcd_set_cursor (1 -> -> 15 `i `uc ]
-[; ;drive.c: 121: lcd_write_data('R');
-"121
-[e ( _lcd_write_data (1 -> -> 82 `ui `uc ]
-[; ;drive.c: 122: turnRight90();
-"122
+[; ;drive.c: 74: somethingInTheWay = LEFT;
+"74
+[e = _somethingInTheWay . `E1111 1 ]
+[; ;drive.c: 75: turnRight90();
+"75
 [e ( _turnRight90 ..  ]
-[; ;drive.c: 123: updateOrientation(RIGHT);
-"123
+[; ;drive.c: 76: updateOrientation(RIGHT);
+"76
 [e ( _updateOrientation (1 . `E1111 3 ]
-"124
+"77
 }
-[; ;drive.c: 124: }
-[e $U 115  ]
-"125
-[e :U 114 ]
-[; ;drive.c: 125: else if (lastMove == RIGHT)
-[e $ ! == -> _lastMove `i -> . `E1111 3 `i 116  ]
-[; ;drive.c: 126: {
-"126
+[; ;drive.c: 77: }
+[e $U 113  ]
+"78
+[e :U 112 ]
+[; ;drive.c: 78: else if (lastMove == RIGHT)
+[e $ ! == -> _lastMove `i -> . `E1111 3 `i 114  ]
+[; ;drive.c: 79: {
+"79
 {
-[; ;drive.c: 127: lcd_set_cursor(0x0F);
-"127
-[e ( _lcd_set_cursor (1 -> -> 15 `i `uc ]
-[; ;drive.c: 128: lcd_write_data('L');
-"128
-[e ( _lcd_write_data (1 -> -> 76 `ui `uc ]
-[; ;drive.c: 129: turnLeft90();
-"129
+[; ;drive.c: 80: somethingInTheWay = RIGHT;
+"80
+[e = _somethingInTheWay . `E1111 3 ]
+[; ;drive.c: 81: turnLeft90();
+"81
 [e ( _turnLeft90 ..  ]
-[; ;drive.c: 130: updateOrientation(LEFT);
-"130
+[; ;drive.c: 82: updateOrientation(LEFT);
+"82
 [e ( _updateOrientation (1 . `E1111 1 ]
-"131
+"83
+}
+[; ;drive.c: 83: }
+[e $U 115  ]
+"84
+[e :U 114 ]
+[; ;drive.c: 84: else
+[; ;drive.c: 85: somethingInTheWay = FORWARD;
+"85
+[e = _somethingInTheWay . `E1111 0 ]
+[e :U 115 ]
+[e :U 113 ]
+[; ;drive.c: 86: moving = 0;
+"86
+[e = _moving -> -> 0 `i `b ]
+"87
+}
+[e :U 111 ]
+"88
+}
+[e :U 107 ]
+[; ;drive.c: 87: }
+[; ;drive.c: 88: }
+[; ;drive.c: 91: ser_putch(142);
+"91
+[e ( _ser_putch (1 -> -> 142 `i `uc ]
+[; ;drive.c: 92: ser_putch(13);
+"92
+[e ( _ser_putch (1 -> -> 13 `i `uc ]
+[; ;drive.c: 93: virtualWall = ser_getch();
+"93
+[e = _virtualWall ( _ser_getch ..  ]
+[; ;drive.c: 94: if(virtualWall == 1)
+"94
+[e $ ! == -> _virtualWall `i -> 1 `i 116  ]
+[; ;drive.c: 95: {
+"95
+{
+[; ;drive.c: 96: drive(0, 0, 0, 0);
+"96
+[e ( _drive (4 , , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;drive.c: 97: findFinalDestination(getCurrentX(),getCurrentY(), currentOrientation);
+"97
+[e ( _findFinalDestination (3 , , ( _getCurrentX ..  ( _getCurrentY ..  _currentOrientation ]
+[; ;drive.c: 98: goReverse();
+"98
+[e ( _goReverse ..  ]
+[; ;drive.c: 100: if(lastMove == LEFT)
+"100
+[e $ ! == -> _lastMove `i -> . `E1111 1 `i 117  ]
+[; ;drive.c: 101: {
+"101
+{
+[; ;drive.c: 102: somethingInTheWay = LEFT;
+"102
+[e = _somethingInTheWay . `E1111 1 ]
+[; ;drive.c: 103: turnRight90();
+"103
+[e ( _turnRight90 ..  ]
+[; ;drive.c: 104: updateOrientation(RIGHT);
+"104
+[e ( _updateOrientation (1 . `E1111 3 ]
+"105
+}
+[; ;drive.c: 105: }
+[e $U 118  ]
+"106
+[e :U 117 ]
+[; ;drive.c: 106: else if (lastMove == RIGHT)
+[e $ ! == -> _lastMove `i -> . `E1111 3 `i 119  ]
+[; ;drive.c: 107: {
+"107
+{
+[; ;drive.c: 108: somethingInTheWay = RIGHT;
+"108
+[e = _somethingInTheWay . `E1111 3 ]
+[; ;drive.c: 109: turnLeft90();
+"109
+[e ( _turnLeft90 ..  ]
+[; ;drive.c: 110: updateOrientation(LEFT);
+"110
+[e ( _updateOrientation (1 . `E1111 1 ]
+"111
+}
+[; ;drive.c: 111: }
+[e $U 120  ]
+"112
+[e :U 119 ]
+[; ;drive.c: 112: else
+[; ;drive.c: 113: somethingInTheWay = FORWARD;
+"113
+[e = _somethingInTheWay . `E1111 0 ]
+[e :U 120 ]
+[e :U 118 ]
+[; ;drive.c: 114: moving = 0;
+"114
+[e = _moving -> -> 0 `i `b ]
+"115
 }
 [e :U 116 ]
-"132
-[e :U 115 ]
+[; ;drive.c: 115: }
+[; ;drive.c: 118: ser_putch(142);
+"118
+[e ( _ser_putch (1 -> -> 142 `i `uc ]
+[; ;drive.c: 119: ser_putch(19);
+"119
+[e ( _ser_putch (1 -> -> 19 `i `uc ]
+[; ;drive.c: 120: high = ser_getch();
+"120
+[e = _high ( _ser_getch ..  ]
+[; ;drive.c: 121: low = ser_getch();
+"121
+[e = _low ( _ser_getch ..  ]
+[; ;drive.c: 122: deltaDistance = high*256 + low;
+"122
+[e = _deltaDistance + * -> _high `i -> 256 `i -> _low `i ]
+[; ;drive.c: 123: distance += deltaDistance;
+"123
+[e =+ _distance _deltaDistance ]
+[; ;drive.c: 124: if(distance >= moveDistance)
+"124
+[e $ ! >= _distance _moveDistance 121  ]
+[; ;drive.c: 125: {
+"125
+{
+[; ;drive.c: 126: drive(0, 0, 0, 0);
+"126
+[e ( _drive (4 , , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;drive.c: 127: successfulDrive = 1;
+"127
+[e = _successfulDrive -> -> 1 `i `b ]
+[; ;drive.c: 128: moving = 0;
+"128
+[e = _moving -> -> 0 `i `b ]
+[; ;drive.c: 129: somethingInTheWay = BACKWARD;
+"129
+[e = _somethingInTheWay . `E1111 2 ]
+"130
+}
+[e :U 121 ]
+"131
+}
+[e :U 104 ]
+"41
+[e $ _moving 105  ]
+[e :U 106 ]
+[; ;drive.c: 130: }
 [; ;drive.c: 131: }
 [; ;drive.c: 132: }
-[e :UE 113 ]
+"132
+[e :UE 103 ]
 }
-"136
-[v _goRight `(v  1 ef ]
+"135
+[v _getOrientation `(E1117  1 ef ]
 {
-[; ;drive.c: 135: void goRight()
-[; ;drive.c: 136: {
-[e :U _goRight ]
+[; ;drive.c: 134: orientation getOrientation()
+[; ;drive.c: 135: {
+[e :U _getOrientation ]
 [f ]
-[; ;drive.c: 137: lcd_set_cursor(0x0F);
+[; ;drive.c: 136: return currentOrientation;
+"136
+[e ) _currentOrientation ]
+[e $UE 122  ]
+[; ;drive.c: 137: }
 "137
-[e ( _lcd_set_cursor (1 -> -> 15 `i `uc ]
-[; ;drive.c: 138: lcd_write_data('R');
-"138
-[e ( _lcd_write_data (1 -> -> 82 `ui `uc ]
-[; ;drive.c: 139: turnRight90();
-"139
-[e ( _turnRight90 ..  ]
-[; ;drive.c: 140: updateOrientation(RIGHT);
+[e :UE 122 ]
+}
 "140
-[e ( _updateOrientation (1 . `E1111 3 ]
-[; ;drive.c: 141: driveForDistance(1000);
+[v _getSomethingInTheWay `(E1111  1 ef ]
+{
+[; ;drive.c: 139: direction getSomethingInTheWay()
+[; ;drive.c: 140: {
+[e :U _getSomethingInTheWay ]
+[f ]
+[; ;drive.c: 141: return somethingInTheWay;
 "141
-[e ( _driveForDistance (1 -> 1000 `i ]
-[; ;drive.c: 142: lastMove = RIGHT;
+[e ) _somethingInTheWay ]
+[e $UE 123  ]
+[; ;drive.c: 142: }
 "142
-[e = _lastMove . `E1111 3 ]
-[; ;drive.c: 143: }
-"143
-[e :UE 117 ]
+[e :UE 123 ]
 }
 "146
+[v _getSuccessfulDrive `(b  1 ef ]
+{
+[; ;drive.c: 145: bit getSuccessfulDrive()
+[; ;drive.c: 146: {
+[e :U _getSuccessfulDrive ]
+[f ]
+[; ;drive.c: 147: return successfulDrive;
+"147
+[e ) -> -> _successfulDrive `i `b ]
+[e $UE 124  ]
+[; ;drive.c: 148: }
+"148
+[e :UE 124 ]
+}
+"151
+[v _getWayWent `(E1111  1 ef ]
+{
+[; ;drive.c: 150: direction getWayWent()
+[; ;drive.c: 151: {
+[e :U _getWayWent ]
+[f ]
+[; ;drive.c: 152: return wayWent;
+"152
+[e ) _wayWent ]
+[e $UE 125  ]
+[; ;drive.c: 153: }
+"153
+[e :UE 125 ]
+}
+"157
+[v _goBackward `(v  1 ef ]
+{
+[; ;drive.c: 156: void goBackward()
+[; ;drive.c: 157: {
+[e :U _goBackward ]
+[f ]
+[; ;drive.c: 158: lcd_set_cursor(0x0F);
+"158
+[e ( _lcd_set_cursor (1 -> -> 15 `i `uc ]
+[; ;drive.c: 159: lcd_write_data('B');
+"159
+[e ( _lcd_write_data (1 -> -> 66 `ui `uc ]
+[; ;drive.c: 160: turnAround();
+"160
+[e ( _turnAround ..  ]
+[; ;drive.c: 161: updateOrientation(BACKWARD);
+"161
+[e ( _updateOrientation (1 . `E1111 2 ]
+[; ;drive.c: 162: driveForDistance(1000);
+"162
+[e ( _driveForDistance (1 -> 1000 `i ]
+[; ;drive.c: 163: lastMove = BACKWARD;
+"163
+[e = _lastMove . `E1111 2 ]
+[; ;drive.c: 164: }
+"164
+[e :UE 126 ]
+}
+"168
+[v _goForward `(v  1 ef ]
+{
+[; ;drive.c: 167: void goForward()
+[; ;drive.c: 168: {
+[e :U _goForward ]
+[f ]
+[; ;drive.c: 169: lcd_set_cursor(0x0F);
+"169
+[e ( _lcd_set_cursor (1 -> -> 15 `i `uc ]
+[; ;drive.c: 170: lcd_write_data('F');
+"170
+[e ( _lcd_write_data (1 -> -> 70 `ui `uc ]
+[; ;drive.c: 171: lastMove = FORWARD;
+"171
+[e = _lastMove . `E1111 0 ]
+[; ;drive.c: 172: driveForDistance(1000);
+"172
+[e ( _driveForDistance (1 -> 1000 `i ]
+[; ;drive.c: 173: }
+"173
+[e :UE 127 ]
+}
+"177
+[v _goLeft `(v  1 ef ]
+{
+[; ;drive.c: 176: void goLeft()
+[; ;drive.c: 177: {
+[e :U _goLeft ]
+[f ]
+[; ;drive.c: 178: lcd_set_cursor(0x0F);
+"178
+[e ( _lcd_set_cursor (1 -> -> 15 `i `uc ]
+[; ;drive.c: 179: lcd_write_data('L');
+"179
+[e ( _lcd_write_data (1 -> -> 76 `ui `uc ]
+[; ;drive.c: 180: turnLeft90();
+"180
+[e ( _turnLeft90 ..  ]
+[; ;drive.c: 181: updateOrientation(LEFT);
+"181
+[e ( _updateOrientation (1 . `E1111 1 ]
+[; ;drive.c: 182: lastMove = LEFT;
+"182
+[e = _lastMove . `E1111 1 ]
+[; ;drive.c: 183: driveForDistance(1000);
+"183
+[e ( _driveForDistance (1 -> 1000 `i ]
+[; ;drive.c: 184: }
+"184
+[e :UE 128 ]
+}
+"187
+[v _goReverse `(v  1 ef ]
+{
+[; ;drive.c: 186: void goReverse()
+[; ;drive.c: 187: {
+[e :U _goReverse ]
+[f ]
+[; ;drive.c: 188: lcd_set_cursor(0x0F);
+"188
+[e ( _lcd_set_cursor (1 -> -> 15 `i `uc ]
+[; ;drive.c: 189: lcd_write_data('!');
+"189
+[e ( _lcd_write_data (1 -> -> 33 `ui `uc ]
+[; ;drive.c: 190: drive(255, 125, 128, 0);
+"190
+[e ( _drive (4 , , , -> -> 255 `i `uc -> -> 125 `i `uc -> -> 128 `i `uc -> -> 0 `i `uc ]
+[; ;drive.c: 191: waitFor(156,254,12);
+"191
+[e ( _waitFor (3 , , -> -> 156 `i `uc -> -> 254 `i `uc -> -> 12 `i `uc ]
+[; ;drive.c: 192: drive(0, 0, 0, 0);
+"192
+[e ( _drive (4 , , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;drive.c: 193: _delay((unsigned long)((2000)*(20000000/4000.0)));
+"193
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;drive.c: 194: }
+"194
+[e :UE 129 ]
+}
+"198
+[v _goRight `(v  1 ef ]
+{
+[; ;drive.c: 197: void goRight()
+[; ;drive.c: 198: {
+[e :U _goRight ]
+[f ]
+[; ;drive.c: 199: lcd_set_cursor(0x0F);
+"199
+[e ( _lcd_set_cursor (1 -> -> 15 `i `uc ]
+[; ;drive.c: 200: lcd_write_data('R');
+"200
+[e ( _lcd_write_data (1 -> -> 82 `ui `uc ]
+[; ;drive.c: 201: turnRight90();
+"201
+[e ( _turnRight90 ..  ]
+[; ;drive.c: 202: updateOrientation(RIGHT);
+"202
+[e ( _updateOrientation (1 . `E1111 3 ]
+[; ;drive.c: 203: lastMove = RIGHT;
+"203
+[e = _lastMove . `E1111 3 ]
+[; ;drive.c: 204: driveForDistance(1000);
+"204
+[e ( _driveForDistance (1 -> 1000 `i ]
+[; ;drive.c: 205: }
+"205
+[e :UE 130 ]
+}
+"208
 [v _turnAround `(v  1 ef ]
 {
-[; ;drive.c: 145: void turnAround()
-[; ;drive.c: 146: {
+[; ;drive.c: 207: void turnAround()
+[; ;drive.c: 208: {
 [e :U _turnAround ]
 [f ]
-[; ;drive.c: 147: drive(0, 25, 0, 1);
-"147
+[; ;drive.c: 209: drive(0, 25, 0, 1);
+"209
 [e ( _drive (4 , , , -> -> 0 `i `uc -> -> 25 `i `uc -> -> 0 `i `uc -> -> 1 `i `uc ]
-[; ;drive.c: 148: waitFor(157,0,170);
-"148
+[; ;drive.c: 210: waitFor(157,0,170);
+"210
 [e ( _waitFor (3 , , -> -> 157 `i `uc -> -> 0 `i `uc -> -> 170 `i `uc ]
-[; ;drive.c: 149: drive(0, 0, 0, 0);
-"149
+[; ;drive.c: 211: drive(0, 0, 0, 0);
+"211
 [e ( _drive (4 , , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-[; ;drive.c: 150: _delay((unsigned long)((6500)*(20000000/4000.0)));
-"150
+[; ;drive.c: 212: _delay((unsigned long)((6500)*(20000000/4000.0)));
+"212
 [e ( __delay (1 -> * -> -> 6500 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-[; ;drive.c: 151: _delay((unsigned long)((6500)*(20000000/4000.0)));
-"151
+[; ;drive.c: 213: _delay((unsigned long)((6500)*(20000000/4000.0)));
+"213
 [e ( __delay (1 -> * -> -> 6500 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-[; ;drive.c: 152: }
-"152
-[e :UE 118 ]
+[; ;drive.c: 214: }
+"214
+[e :UE 131 ]
 }
-"155
+"217
 [v _turnLeft90 `(v  1 ef ]
 {
-[; ;drive.c: 154: void turnLeft90()
-[; ;drive.c: 155: {
+[; ;drive.c: 216: void turnLeft90()
+[; ;drive.c: 217: {
 [e :U _turnLeft90 ]
 [f ]
-[; ;drive.c: 156: drive(0, 25, 0, 1);
-"156
+[; ;drive.c: 218: drive(0, 25, 0, 1);
+"218
 [e ( _drive (4 , , , -> -> 0 `i `uc -> -> 25 `i `uc -> -> 0 `i `uc -> -> 1 `i `uc ]
-[; ;drive.c: 157: waitFor(157,0,85);
-"157
+[; ;drive.c: 219: waitFor(157,0,85);
+"219
 [e ( _waitFor (3 , , -> -> 157 `i `uc -> -> 0 `i `uc -> -> 85 `i `uc ]
-[; ;drive.c: 158: drive(0, 0, 0, 0);
-"158
+[; ;drive.c: 220: drive(0, 0, 0, 0);
+"220
 [e ( _drive (4 , , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-[; ;drive.c: 159: _delay((unsigned long)((6500)*(20000000/4000.0)));
-"159
+[; ;drive.c: 221: _delay((unsigned long)((6500)*(20000000/4000.0)));
+"221
 [e ( __delay (1 -> * -> -> 6500 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-[; ;drive.c: 160: }
-"160
-[e :UE 119 ]
+[; ;drive.c: 222: }
+"222
+[e :UE 132 ]
 }
-"163
+"225
 [v _turnRight90 `(v  1 ef ]
 {
-[; ;drive.c: 162: void turnRight90()
-[; ;drive.c: 163: {
+[; ;drive.c: 224: void turnRight90()
+[; ;drive.c: 225: {
 [e :U _turnRight90 ]
 [f ]
-[; ;drive.c: 164: drive(0, 25, 255, 255);
-"164
+[; ;drive.c: 226: drive(0, 25, 255, 255);
+"226
 [e ( _drive (4 , , , -> -> 0 `i `uc -> -> 25 `i `uc -> -> 255 `i `uc -> -> 255 `i `uc ]
-[; ;drive.c: 165: waitFor(157,255,169);
-"165
+[; ;drive.c: 227: waitFor(157,255,169);
+"227
 [e ( _waitFor (3 , , -> -> 157 `i `uc -> -> 255 `i `uc -> -> 169 `i `uc ]
-[; ;drive.c: 166: drive(0, 0, 0, 0);
-"166
+[; ;drive.c: 228: drive(0, 0, 0, 0);
+"228
 [e ( _drive (4 , , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-[; ;drive.c: 167: _delay((unsigned long)((6500)*(20000000/4000.0)));
-"167
+[; ;drive.c: 229: _delay((unsigned long)((6500)*(20000000/4000.0)));
+"229
 [e ( __delay (1 -> * -> -> 6500 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-[; ;drive.c: 168: }
-"168
-[e :UE 120 ]
+[; ;drive.c: 230: }
+"230
+[e :UE 133 ]
 }
-"171
+"233
 [v _updateOrientation `(v  1 ef1`E1111 ]
 {
-[; ;drive.c: 170: void updateOrientation(direction moved)
-[; ;drive.c: 171: {
+[; ;drive.c: 232: void updateOrientation(direction moved)
+[; ;drive.c: 233: {
 [e :U _updateOrientation ]
 [v _moved `E1111  1 r1 ]
 [f ]
-[; ;drive.c: 172: currentOrientation += moved;
-"172
+[; ;drive.c: 234: currentOrientation += moved;
+"234
 [e =+ _currentOrientation -> _moved `VE1117 ]
-[; ;drive.c: 173: if(currentOrientation >= 4)
-"173
-[e $ ! >= -> _currentOrientation `i -> 4 `i 122  ]
-[; ;drive.c: 174: currentOrientation -= 4;
-"174
+[; ;drive.c: 235: if(currentOrientation >= 4)
+"235
+[e $ ! >= -> _currentOrientation `i -> 4 `i 135  ]
+[; ;drive.c: 236: currentOrientation -= 4;
+"236
 [e =- _currentOrientation -> -> 4 `i `VE1117 ]
-[e :U 122 ]
-[; ;drive.c: 175: }
-"175
-[e :UE 121 ]
+[e :U 135 ]
+[; ;drive.c: 237: }
+"237
+[e :UE 134 ]
 }
-"178
+"240
 [v _waitFor `(v  1 ef3`uc`uc`uc ]
 {
-[; ;drive.c: 177: void waitFor(char type, char highByte, char lowByte)
-[; ;drive.c: 178: {
+[; ;drive.c: 239: void waitFor(char type, char highByte, char lowByte)
+[; ;drive.c: 240: {
 [e :U _waitFor ]
 [v _type `uc  1 r1 ]
 [v _highByte `uc  1 r2 ]
 [v _lowByte `uc  1 r3 ]
 [f ]
-[; ;drive.c: 179: _delay((unsigned long)((100)*(20000000/4000.0)));
-"179
+[; ;drive.c: 241: _delay((unsigned long)((100)*(20000000/4000.0)));
+"241
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-[; ;drive.c: 180: ser_putch(type);
-"180
+[; ;drive.c: 242: ser_putch(type);
+"242
 [e ( _ser_putch (1 _type ]
-[; ;drive.c: 181: ser_putch(highByte);
-"181
+[; ;drive.c: 243: ser_putch(highByte);
+"243
 [e ( _ser_putch (1 _highByte ]
-[; ;drive.c: 182: ser_putch(lowByte);
-"182
+[; ;drive.c: 244: ser_putch(lowByte);
+"244
 [e ( _ser_putch (1 _lowByte ]
-[; ;drive.c: 183: }
-"183
-[e :UE 123 ]
+[; ;drive.c: 245: }
+"245
+[e :UE 136 ]
 }
-"186
-[v _rightWallCorrect `(v  1 ef ]
-{
-[; ;drive.c: 185: void rightWallCorrect(void)
-[; ;drive.c: 186: {
-[e :U _rightWallCorrect ]
-[f ]
-[; ;drive.c: 187: turnRight90();
-"187
-[e ( _turnRight90 ..  ]
-[; ;drive.c: 188: rotateIR(24, 0b00001101);
-"188
-[e ( _rotateIR (2 , -> -> 24 `i `uc -> -> 13 `i `uc ]
-[; ;drive.c: 189: while(readIR() <45)
-"189
-[e $U 125  ]
-[e :U 126 ]
-[; ;drive.c: 190: {
-"190
-{
-[; ;drive.c: 191: drive(255, 131, 128, 0);
-"191
-[e ( _drive (4 , , , -> -> 255 `i `uc -> -> 131 `i `uc -> -> 128 `i `uc -> -> 0 `i `uc ]
-"192
-}
-[e :U 125 ]
-"189
-[e $ < ( _readIR ..  -> 45 `i 126  ]
-[e :U 127 ]
-[; ;drive.c: 192: }
-[; ;drive.c: 193: while(readIR() >55)
-"193
-[e $U 128  ]
-[e :U 129 ]
-[; ;drive.c: 194: {
-"194
-{
-[; ;drive.c: 195: drive(0, 250, 128, 0);
-"195
-[e ( _drive (4 , , , -> -> 0 `i `uc -> -> 250 `i `uc -> -> 128 `i `uc -> -> 0 `i `uc ]
-"196
-}
-[e :U 128 ]
-"193
-[e $ > ( _readIR ..  -> 55 `i 129  ]
-[e :U 130 ]
-[; ;drive.c: 196: }
-[; ;drive.c: 197: turnLeft90();
-"197
-[e ( _turnLeft90 ..  ]
-[; ;drive.c: 198: rotateIR(24, 0b00001111);
-"198
-[e ( _rotateIR (2 , -> -> 24 `i `uc -> -> 15 `i `uc ]
-[; ;drive.c: 199: drive(0, 0, 0, 0);
-"199
-[e ( _drive (4 , , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-[; ;drive.c: 200: }
-"200
-[e :UE 124 ]
-}
-"203
+"265
 [v _frontWallCorrect `(v  1 ef ]
 {
-[; ;drive.c: 202: void frontWallCorrect(void)
-[; ;drive.c: 203: {
+[; ;drive.c: 264: void frontWallCorrect(void)
+[; ;drive.c: 265: {
 [e :U _frontWallCorrect ]
 [f ]
-[; ;drive.c: 204: while(readIR() < 50)
-"204
-[e $U 132  ]
-[e :U 133 ]
-[; ;drive.c: 205: {
-"205
+[; ;drive.c: 266: while(readIR() < 50)
+"266
+[e $U 138  ]
+[e :U 139 ]
+[; ;drive.c: 267: {
+"267
 {
-[; ;drive.c: 206: drive(255, 131, 128, 0);
-"206
-[e ( _drive (4 , , , -> -> 255 `i `uc -> -> 131 `i `uc -> -> 128 `i `uc -> -> 0 `i `uc ]
-"207
+[; ;drive.c: 268: drive(255, 125, 128, 0);
+"268
+[e ( _drive (4 , , , -> -> 255 `i `uc -> -> 125 `i `uc -> -> 128 `i `uc -> -> 0 `i `uc ]
+"269
 }
-[e :U 132 ]
-"204
-[e $ < ( _readIR ..  -> 50 `i 133  ]
-[e :U 134 ]
-[; ;drive.c: 207: }
-[; ;drive.c: 208: drive(0, 0, 0, 0);
-"208
+[e :U 138 ]
+"266
+[e $ < ( _readIR ..  -> 50 `i 139  ]
+[e :U 140 ]
+[; ;drive.c: 269: }
+[; ;drive.c: 270: drive(0, 0, 0, 0);
+"270
 [e ( _drive (4 , , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-[; ;drive.c: 210: while(readIR() > 55 && readIR() < 100)
-"210
-[e $U 135  ]
-[e :U 136 ]
-[; ;drive.c: 211: {
-"211
+[; ;drive.c: 272: while(readIR() > 55 && readIR() < 100)
+"272
+[e $U 141  ]
+[e :U 142 ]
+[; ;drive.c: 273: {
+"273
 {
-[; ;drive.c: 212: drive(0, 250, 128, 0);
-"212
+[; ;drive.c: 274: drive(0, 250, 128, 0);
+"274
 [e ( _drive (4 , , , -> -> 0 `i `uc -> -> 250 `i `uc -> -> 128 `i `uc -> -> 0 `i `uc ]
-"213
+"275
 }
-[e :U 135 ]
-"210
-[e $ && > ( _readIR ..  -> 55 `i < ( _readIR ..  -> 100 `i 136  ]
-[e :U 137 ]
-[; ;drive.c: 213: }
-[; ;drive.c: 214: drive(0, 0, 0, 0);
-"214
+[e :U 141 ]
+"272
+[e $ && > ( _readIR ..  -> 55 `i < ( _readIR ..  -> 100 `i 142  ]
+[e :U 143 ]
+[; ;drive.c: 275: }
+[; ;drive.c: 276: drive(0, 0, 0, 0);
+"276
 [e ( _drive (4 , , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-[; ;drive.c: 215: }
-"215
-[e :UE 131 ]
+[; ;drive.c: 277: }
+"277
+[e :UE 137 ]
 }

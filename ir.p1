@@ -881,7 +881,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _EECON1bits `VS99  1 e@396 ]
 "1167 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f877a.h
 [v _EECON2 `Vuc  1 e@397 ]
-"9 C:\Users\10999959\Desktop\COMPETITIONv0.4\adc.h
+"9 C:\Users\11000294\Desktop\COMPETITIONv0.6\adc.h
 [v _adc_read_channel `(i  0 ef1`uc ]
 "154 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic.h
 [v __delay `(v  0 ef1`ul ]
@@ -1723,7 +1723,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ir.h: 8: int convert(int adc_value);
 [; ;ir.h: 9: int readIR();
 [; ;ir.h: 10: void rotateIR(char steps, char direction);
-"11 C:\Users\10999959\Desktop\COMPETITIONv0.4\ir.c
+"11 C:\Users\11000294\Desktop\COMPETITIONv0.6\ir.c
 [v _convert `(i  1 ef1`i ]
 {
 [; ;ir.c: 10: int convert(int adc_value)

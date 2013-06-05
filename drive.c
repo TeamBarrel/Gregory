@@ -10,6 +10,8 @@
 #include "main.h"
 #include "ir.h"
 
+volatile bit successfulDrive = 0;
+volatile direction somethingInTheWay = BACKWARD;
 volatile bit moving = FALSE;
 volatile direction wayWent;
 volatile direction lastMove;
@@ -28,48 +30,121 @@ void drive(char highByteSpeed, char lowByteSpeed, char highByteRadius, char lowB
 void driveForDistance(int moveDistance)
 {
 	//Distance Counter
-	volatile char high, low;
+	volatile char high, low, cliff, virtualWall;
 	int deltaDistance = 0;	
 	int distance = 0;
 
-	moving = 1;
+	moving = TRUE;
 	DRIVE_STRAIGHT();
-
+	successfulDrive = FALSE;
+	
 	while(moving)
 	{
+		if(distance >= 100)
+		{
+			//Cliff	
+			ser_putch(142);
+			ser_putch(10);
+			cliff = ser_getch();
+			if(cliff == 0)
+			{
+				ser_putch(142);
+				ser_putch(11);
+				cliff = ser_getch();
+				if(cliff == 0)
+				{
+					ser_putch(142);
+					ser_putch(9);
+					cliff = ser_getch();
+					if(cliff == 0)
+					{
+						ser_putch(142);
+						ser_putch(12);
+						cliff = ser_getch();
+					}
+				}
+			}
+			if(cliff == 1)
+			{
+				STOP();
+				goReverse();
+	
+				if(lastMove == LEFT)
+				{
+					somethingInTheWay = LEFT;
+					turnRight90();
+					updateOrientation(RIGHT);
+				}
+				else if (lastMove == RIGHT)
+				{
+					somethingInTheWay = RIGHT;
+					turnLeft90();
+					updateOrientation(LEFT);
+				}
+				else
+					somethingInTheWay = FORWARD;
+				moving = FALSE;
+			}	
+		}
+
+		// Virtual Wall
+		ser_putch(142);
+		ser_putch(13);
+		virtualWall = ser_getch();
+		if(virtualWall == 1)
+		{
+			STOP();
+			findFinalDestination(getCurrentX(),getCurrentY(), currentOrientation);
+			goReverse();
+
+			if(lastMove == LEFT)
+			{
+				somethingInTheWay = LEFT;
+				turnRight90();
+				updateOrientation(RIGHT);
+			}
+			else if (lastMove == RIGHT)
+			{
+				somethingInTheWay = RIGHT;
+				turnLeft90();
+				updateOrientation(LEFT);
+			}
+			else
+				somethingInTheWay = FORWARD;
+			moving = FALSE;
+		}
+
+		// Distance
 		ser_putch(142);
 		ser_putch(19);
 		high = ser_getch();
 		low = ser_getch();
 		deltaDistance = high*256 + low;
-		distance += deltaDistance;
-
-//		if(cliff is detected)
-//		{
-//			STOP();
-//			goReverse();
-//			signal not to try again
-//			break;
-//		}
-
-//		if(virtual wall is detected)
-//		{
-//			STOP();
-//			findFinalDestination(getCurrentX(),getCurrentY(), currentOrientation);
-//			goReverse();
-//			signal not to try again
-//			break;
-//		}
-
+		distance += deltaDistance;	
 		if(distance >= moveDistance)
+		{
+			STOP();
+			successfulDrive = TRUE;
 			moving = FALSE;
-	}
-	STOP();
+			somethingInTheWay = BACKWARD;
+		}
+	}	
 }
 
 orientation getOrientation()
 {
 	return currentOrientation;
+}
+
+direction getSomethingInTheWay()
+{
+	return somethingInTheWay;
+}
+
+
+bit getSuccessfulDrive()
+{
+	return successfulDrive;
 }
 
 direction getWayWent()
@@ -93,8 +168,8 @@ void goForward()
 {
 	lcd_set_cursor(0x0F);
 	lcd_write_data('F');
-	driveForDistance(1000);
 	lastMove = FORWARD;
+	driveForDistance(1000);
 }
 
 // Go one cell left
@@ -104,8 +179,8 @@ void goLeft()
 	lcd_write_data('L');
 	turnLeft90();
 	updateOrientation(LEFT);
-	driveForDistance(1000);
 	lastMove = LEFT;
+	driveForDistance(1000);
 }
 
 void goReverse()
@@ -113,22 +188,9 @@ void goReverse()
 	lcd_set_cursor(0x0F);
 	lcd_write_data('!');
 	REVERSE();
-	waitFor(DISTANCE,1,244);
+	waitFor(DISTANCE,254,12);
 	STOP();
-	if(lastMove == LEFT)
-	{
-		lcd_set_cursor(0x0F);
-		lcd_write_data('R');
-		turnRight90();
-		updateOrientation(RIGHT);
-	}
-	else if (lastMove == RIGHT)
-	{
-		lcd_set_cursor(0x0F);
-		lcd_write_data('L');
-		turnLeft90();
-		updateOrientation(LEFT);
-	}
+	__delay_ms(2000);
 }
 
 // Go one cell right
@@ -138,8 +200,8 @@ void goRight()
 	lcd_write_data('R');
 	turnRight90();
 	updateOrientation(RIGHT);
-	driveForDistance(1000);
 	lastMove = RIGHT;
+	driveForDistance(1000);
 }
 
 void turnAround()
@@ -182,22 +244,22 @@ void waitFor(char type, char highByte, char lowByte)
 	ser_putch(lowByte);																		/* deg */
 }
 
-void rightWallCorrect(void)
-{
-	turnRight90();
-	rotateIR(24, CCW);
-	while(readIR() <45)
-	{
-		REVERSE();
-	}
-		while(readIR() >55)
-	{
-		DRIVE_STRAIGHT();
-	}
-	turnLeft90();
-	rotateIR(24, CW);
-	STOP();
-}
+//void rightWallCorrect(void)
+//{
+//	turnRight90();
+//	rotateIR(24, CCW);
+//	while(readIR() <45)
+//	{
+//		REVERSE();
+//	}
+//		while(readIR() >55)
+//	{
+//		DRIVE_STRAIGHT();
+//	}
+//	turnLeft90();
+//	rotateIR(24, CW);
+//	STOP();
+//}
 
 void frontWallCorrect(void)
 {

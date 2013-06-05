@@ -1,5 +1,5 @@
 
-# 1 "C:\Users\10999959\Desktop\COMPETITIONv0.4\ir.c"
+# 1 "C:\Users\11000294\Desktop\COMPETITIONv0.6\ir.c"
 
 # 82 "C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f877a.h"
 volatile unsigned char INDF @ 0x000;
@@ -1090,17 +1090,17 @@ extern void memcpyee(eeprom unsigned char *to, const unsigned char *from, unsign
 #pragma inline(_delay)
 extern void _delay(unsigned long);
 
-# 7 "C:\Users\10999959\Desktop\COMPETITIONv0.4\adc.h"
+# 7 "C:\Users\11000294\Desktop\COMPETITIONv0.6\adc.h"
 void init_adc(void);
 int adc_read(void);
 int adc_read_channel(unsigned char channel);
 
-# 8 "C:\Users\10999959\Desktop\COMPETITIONv0.4\ir.h"
+# 8 "C:\Users\11000294\Desktop\COMPETITIONv0.6\ir.h"
 int convert(int adc_value);
 int readIR();
 void rotateIR(char steps, char direction);
 
-# 10 "C:\Users\10999959\Desktop\COMPETITIONv0.4\ir.c"
+# 10 "C:\Users\11000294\Desktop\COMPETITIONv0.6\ir.c"
 int convert(int adc_value)
 {
 if(adc_value < 82)

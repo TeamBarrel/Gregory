@@ -1722,7 +1722,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;lcd.h: 24: void lcd_write_1_digit_bcd(unsigned char data);
 [; ;lcd.h: 27: void lcd_write_3_digit_bcd(int data);
 [; ;lcd.h: 30: void lcd_init(void);
-"8 C:\Users\10999959\Desktop\COMPETITIONv0.4\lcd.c
+"8 C:\Users\11000294\Desktop\COMPETITIONv0.6\lcd.c
 [v _lcd_write_control `(v  1 ef1`uc ]
 {
 [; ;lcd.c: 7: void lcd_write_control(unsigned char databyte)

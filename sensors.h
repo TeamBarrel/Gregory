@@ -3,7 +3,9 @@
 
 #include <htc.h>
 
-void checkSensors();
+void checkCliff();
+bit checkVirtualWall();
+bit checkVictim();
 bit getBit(char byte, int position);
 
 #endif

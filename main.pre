@@ -1,5 +1,5 @@
 
-# 1 "C:\Users\10999959\Desktop\COMPETITIONv0.4\main.c"
+# 1 "C:\Users\11000294\Desktop\COMPETITIONv0.6\main.c"
 
 # 82 "C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f877a.h"
 volatile unsigned char INDF @ 0x000;
@@ -1090,12 +1090,12 @@ extern void memcpyee(eeprom unsigned char *to, const unsigned char *from, unsign
 #pragma inline(_delay)
 extern void _delay(unsigned long);
 
-# 7 "C:\Users\10999959\Desktop\COMPETITIONv0.4\adc.h"
+# 7 "C:\Users\11000294\Desktop\COMPETITIONv0.6\adc.h"
 void init_adc(void);
 int adc_read(void);
 int adc_read_channel(unsigned char channel);
 
-# 8 "C:\Users\10999959\Desktop\COMPETITIONv0.4\drive.h"
+# 8 "C:\Users\11000294\Desktop\COMPETITIONv0.6\drive.h"
 typedef enum {
 FORWARD = 0,
 LEFT = 1,
@@ -1114,6 +1114,8 @@ NORTH = 3
 void drive(char highByteSpeed, char lowByteSpeed, char highByteRadius, char lowByteRadius);
 void driveForDistance(int moveDistance);
 orientation getOrientation();
+direction getSomethingInTheWay();
+bit getSuccessfulDrive();
 direction getWayWent();
 void goBackward();
 void goForward();
@@ -1128,17 +1130,17 @@ void waitFor(char type, char highByte, char lowByte);
 void rightWallCorrect(void);
 void frontWallCorrect(void);
 
-# 4 "C:\Users\10999959\Desktop\COMPETITIONv0.4\eeprom.h"
+# 4 "C:\Users\11000294\Desktop\COMPETITIONv0.6\eeprom.h"
 void writeEEPROM(char data, char addressH, char addressL);
 char readEEPROM(char addressH, char addressL);
 void testEEPROM(void);
 
-# 8 "C:\Users\10999959\Desktop\COMPETITIONv0.4\ir.h"
+# 8 "C:\Users\11000294\Desktop\COMPETITIONv0.6\ir.h"
 int convert(int adc_value);
 int readIR();
 void rotateIR(char steps, char direction);
 
-# 14 "C:\Users\10999959\Desktop\COMPETITIONv0.4\lcd.h"
+# 14 "C:\Users\11000294\Desktop\COMPETITIONv0.6\lcd.h"
 void lcd_write_control(unsigned char databyte);
 
 
@@ -1157,7 +1159,7 @@ void lcd_write_3_digit_bcd(int data);
 
 void lcd_init(void);
 
-# 18 "C:\Users\10999959\Desktop\COMPETITIONv0.4\main.h"
+# 18 "C:\Users\11000294\Desktop\COMPETITIONv0.6\main.h"
 typedef struct {
 char pressed;
 char released;
@@ -1181,17 +1183,19 @@ bit findWall();
 char getCurrentX();
 char getCurrentY();
 
-# 6 "C:\Users\10999959\Desktop\COMPETITIONv0.4\map.h"
+# 6 "C:\Users\11000294\Desktop\COMPETITIONv0.6\map.h"
 void findFinalDestination(char virtualWallX, char virtualWallY, orientation robotOrientation);
 char getFinalX();
 char getFinalY();
 char getVictimZone(char victimX, char victimY);
 
-# 6 "C:\Users\10999959\Desktop\COMPETITIONv0.4\sensors.h"
-void checkSensors();
+# 6 "C:\Users\11000294\Desktop\COMPETITIONv0.6\sensors.h"
+void checkCliff();
+bit checkVirtualWall();
+bit checkVictim();
 bit getBit(char byte, int position);
 
-# 55 "C:\Users\10999959\Desktop\COMPETITIONv0.4\ser.h"
+# 55 "C:\Users\11000294\Desktop\COMPETITIONv0.6\ser.h"
 bit ser_isrx(void);
 unsigned char ser_getch(void);
 void ser_putch(unsigned char byte);
@@ -1207,21 +1211,33 @@ extern bank1 unsigned char txfifo[16];
 extern volatile unsigned char txiptr, txoptr;
 extern unsigned char ser_tmp;
 
-# 8 "C:\Users\10999959\Desktop\COMPETITIONv0.4\songs.h"
+# 8 "C:\Users\11000294\Desktop\COMPETITIONv0.6\songs.h"
 void play_iCreate_song(unsigned char);
 void initSongs();
 
-# 21 "C:\Users\10999959\Desktop\COMPETITIONv0.4\main.c"
+# 21 "C:\Users\11000294\Desktop\COMPETITIONv0.6\main.c"
 asm("\tpsect config,class=CONFIG,delta=2"); asm("\tdw ""0xFFFE & 0xFFFB & 0xFFFF & 0xFFBF & 0xFFF7 & 0xFFFF & 0xFF7F & 0xFFFF");
 
-# 27
+# 29
+typedef struct {
+volatile char position;
+volatile char distance;
+} Object;
+volatile char stepPosition = 0;
+volatile char stepsToPerpendicular = 0;
+Object closestObject;
+
+void scanIR(char steps, int motorDirection, char updateClosestObject);
+void pointToObject();
+
+
+
 volatile bit RTC_FLAG_1MS = 0;
 volatile bit RTC_FLAG_10MS = 0;
 volatile bit RTC_FLAG_50MS = 0;
 volatile bit RTC_FLAG_500MS = 0;
 volatile bit goingHome, home = 0;
 volatile bit rightWall, frontWall, leftWall = 0;
-volatile bit victimFound = 0;
 
 volatile unsigned char victimZone = 0;
 volatile unsigned char xCoord = 1;
@@ -1324,22 +1340,20 @@ lcd_write_data('R');
 
 void lookForVictim()
 {
+ser_putch(142);
+ser_putch(17);
+char victim = ser_getch();
 
-if(victimFound)
+if(victim == 254)
 {
-if(goingHome)
-{
+
+
 play_iCreate_song(3);
 victimZone = 0;
 lcd_set_cursor(0x09);
 lcd_write_data('V');
-}
-else
-{
-victimZone = getVictimZone(xCoord, yCoord);
-lcd_set_cursor(0x08);
-lcd_write_1_digit_bcd(victimZone);
-}
+
+# 169
 }
 }
 
@@ -1356,35 +1370,76 @@ lcd_write_data('L');
 else
 lcd_write_data(' ');
 rotateIR(24, 0b00001111);
-
+play_iCreate_song(5);
 frontWall = findWall();
 if(frontWall)
 {
 lcd_write_data('F');
-frontWallCorrect();
+
 }
 else
 lcd_write_data(' ');
 rotateIR(24, 0b00001111);
-
+play_iCreate_song(5);
 rightWall = findWall();
 if(rightWall)
 {
 lcd_write_data('R');
-rightWallCorrect();
+
 }
 else
 lcd_write_data(' ');
-rotateIR(48, 0b00001101);
+rotateIR(36, 0b00001101);
+play_iCreate_song(5);
+}
+
+void goParallel()
+{
+PORTC |= 0b00000011;
+
+int distance, shortestDistance = 999;
+char stepsToWall;
+
+for (int step = -12; step < 12; step++)
+{
+distance = readIR();
+if(distance < shortestDistance)
+{
+stepsToWall = step;
+shortestDistance = distance;
+}
+rotateIR(1, 0b00001101);
+}
+play_iCreate_song(5);
+rotateIR(12, 0b00001111);
+play_iCreate_song(5);
+
+int angleParallelToWall = (int)((stepsToWall*3.75)*.944);
+char angleHighByte = 0;
+char angleLowByte = (char) angleParallelToWall;
+
+if(angleParallelToWall < 0)
+angleParallelToWall = 360 - angleParallelToWall;
+
+if(angleParallelToWall > 255)
+{
+angleHighByte = 1;
+angleLowByte = (char)(angleParallelToWall - 255);
+}
+drive(0, 25, 0, 1);
+waitFor(157,angleHighByte,angleLowByte);
+drive(0, 0, 0, 0);
+
+# 269
 }
 
 void goToNextCell()
 {
-if(!leftWall)
+if(!leftWall && (getSomethingInTheWay() != LEFT))
 goLeft();
-else if(!frontWall)
+else if(!frontWall && (getSomethingInTheWay() != FORWARD))
 goForward();
-else if(!rightWall)
+else if(!rightWall && (getSomethingInTheWay() != RIGHT))
 goRight();
 else
 goBackward();
@@ -1459,33 +1514,29 @@ lcd_write_string("- - - (0,0) GREG");
 
 while(!home)
 {
+
 if(start.pressed)
 {
 checkForFinalDestination();
 lookForVictim();
 findWalls();
-switch(node)
-{
-case 0:
-goToNextCell();
-break;
-case 1:
-goToNextCell();
-break;
-case 2:
-goToNextCell();
-break;
-case 3:
-goToNextCell();
-break;
-default:
-break;
-}
+if(leftWall)
+goParallel();
+else
+rotateIR(12, 0b00001101);
 
+
+
+goToNextCell();
+
+# 380
+if(getSuccessfulDrive())
+{
 updateLocation();
 updateNode();
 if(goingHome)
 checkIfHome();
+}
 }
 }
 
@@ -1510,5 +1561,43 @@ return xCoord;
 char getCurrentY()
 {
 return yCoord;
+}
+
+
+
+
+void scanIR(char steps, int motorDirection, char updateClosestObject)
+{
+
+closestObject.position = 0;
+closestObject.distance = 999;
+
+SSPBUF = motorDirection;
+_delay((unsigned long)((200)*(20000000/4000.0)));
+
+for (char stepNum = 1; stepNum <= steps; ++stepNum)
+{
+PORTC |= 0b00000100;
+PORTC &= 0b11111011;
+
+if(motorDirection == 0b00001101)
+++stepPosition;
+else
+--stepPosition;
+
+int distanceRead = readIR();
+
+
+
+if((updateClosestObject == 1)&&(distanceRead < closestObject.distance))
+{
+closestObject.distance = distanceRead;
+closestObject.position = stepPosition;
+}
+}
+stepsToPerpendicular = closestObject.position;
+
+SSPBUF = 0b00000000;
+_delay((unsigned long)((200)*(20000000/4000.0)));
 }
 
