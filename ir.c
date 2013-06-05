@@ -2,6 +2,7 @@
 #if defined(BUILD)
 
 #include "ir.h"
+#include "xtal.h"
 
 /* Converts ADC value into cm 											   */
 /* Uses linear approximation between chosen points of known ADC/cm values  */
@@ -24,6 +25,15 @@ int convert(int adc_value)
 	else if(adc_value < 522)
 		return (20 + (30-20)*(522 - adc_value)/(522 - 410) - 2);
 	else return 0;
+}
+
+// Returns true if the IR sensor detects something less than 100cm away
+bit findWall()
+{
+	if(readIR() > 100)
+		return 0;
+	else
+		return 1;
 }
 
 /* Reads analogue voltage from IR sensor   */

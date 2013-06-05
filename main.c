@@ -4,15 +4,15 @@
 /********** #INCLUDES **********/
 
 #include <htc.h>
-#include "adc.h"
+//#include "adc.h"
 #include "drive.h"
-#include "eeprom.h"
+//#include "eeprom.h"
 #include "ir.h"
 #include "lcd.h"
 #include "main.h"
 #include "map.h"
-#include "sensors.h"
-#include "ser.h"
+//#include "sensors.h"
+//#include "ser.h"
 #include "songs.h"
 #include "xtal.h"
 
@@ -28,21 +28,16 @@ volatile bit RTC_FLAG_1MS = 0;
 volatile bit RTC_FLAG_10MS = 0;
 volatile bit RTC_FLAG_50MS = 0;
 volatile bit RTC_FLAG_500MS = 0;
-volatile bit rightWall = 0;
-volatile bit leftWall = 0;
-volatile bit frontWall = 0;
+volatile bit goingHome, home = FALSE;
+volatile bit rightWall, frontWall, leftWall = 0;
+volatile bit victimFound = FALSE;
 
-volatile char walls[4] = {1,1,1,0};
-
-volatile direction directionMoved;
-
-volatile orientation currentOrientation = WEST;
-
+volatile unsigned char victimZone = 0;
 volatile unsigned char xCoord = 1;
-volatile unsigned char yCoord = 4;
+volatile unsigned char yCoord = 3;
+volatile unsigned char node = 0;
 
 volatile unsigned int RTC_Counter = 0;
-
 
 PushButton start;
 
@@ -63,10 +58,8 @@ void interrupt isr1(void)
 		if(RTC_Counter % 50 == 0) RTC_FLAG_50MS = 1;
 		if(RTC_Counter % 500 == 0) 
 		{
-			RTC_FLAG_500MS = 1;
-			RTC_Counter = 0;	//reset RTC Counter
-			//checkSensors();
-		}
+
+		}		
 
 		if(START_PB)																			// If PB1 has been pressed
 		{
@@ -96,7 +89,6 @@ void init()
 	
 	init_adc();
 	lcd_init();
-	//initCellData();
 	
 	TRISB = 0b00000001; 																	/* PORTB I/O designation */
 
@@ -127,124 +119,89 @@ void initIRobot()
 
 /********** FUNCTIONS **********/
 
-
-// Returns true if the IR sensor detects something less than 100cm away
-bit findWall()
+void checkForFinalDestination()
 {
-	if(readIR() > 100)
-		return FALSE;
-	else
-		return TRUE;
+	if(!goingHome && (xCoord == getFinalX()) && (yCoord == getFinalY()))
+	{		
+		play_iCreate_song(2);
+		goingHome = TRUE;
+		lcd_set_cursor(0x06);
+		lcd_write_data('R');
+	}
+}
+
+void lookForVictim()
+{
+	//request home base data
+	if(victimFound)
+	{
+		if(goingHome)
+		{
+			play_iCreate_song(3);
+			victimZone = 0;
+			lcd_set_cursor(0x09);
+			lcd_write_data('V');
+		}
+		else
+		{
+			victimZone = getVictimZone(xCoord, yCoord);
+			lcd_set_cursor(0x08);
+			lcd_write_1_digit_bcd(victimZone);
+		}
+	}
 }
 
 // Finds where there are walls around the Create's location
 void findWalls()
 {
+	lcd_set_cursor(0x0B);
 
-
-	rotateIR(24, CW); // Rotate 90deg CW
-	rightWall = findWall();
-	rotateIR(24, CCW); // Rotate 180deg CCW
-	frontWall = findWall();
-	rotateIR(24, CCW); // Rotate 180deg CCW
 	leftWall = findWall();
-	rotateIR(24, CW); // Rotate 90deg CW
-	
-	int wallAtOrientation = 0;
-	lcd_set_cursor(0x07);
-	if(rightWall)
-	{
-		lcd_write_data('R');
-		wallAtOrientation = RIGHT + currentOrientation;
-		if(wallAtOrientation >= 4)
-			wallAtOrientation -= 4;
-		walls[wallAtOrientation] = 1;
-	}
-	else
-	{
-		lcd_write_data(' ');
-	}
-	if(frontWall)
-	{
-		lcd_write_data('F');
-		walls[FORWARD+currentOrientation] = 1; // FORWARD = 0 therefore will never overflow
-	}
-	else
-		lcd_write_data(' ');
 	if(leftWall)
 	{
 		lcd_write_data('L');
-		wallAtOrientation = LEFT + currentOrientation;
-		if(wallAtOrientation >= 4)
-			wallAtOrientation -= 4;
-		walls[wallAtOrientation] = 1;
 	}
 	else
-		lcd_write_data(' ');		
+		lcd_write_data(' ');
+	rotateIR(24, CW); // Rotate 180deg CCW
+
+	frontWall = findWall();
+	if(frontWall)
+	{
+		lcd_write_data('F');
+		frontWallCorrect();
+	}
+	else
+		lcd_write_data(' ');
+	rotateIR(24, CW); // Rotate 180deg CCW
+
+	rightWall = findWall();
+	if(rightWall)
+	{
+		lcd_write_data('R');
+		rightWallCorrect();
+	}
+	else
+		lcd_write_data(' ');
+	rotateIR(48, CCW); // Rotate 90deg CW		
 }
 
-
-// Go one cell backwards
-void goBackward()
-{
-	turnAround();
-	driveForDistance(1000);
-	directionMoved = BACKWARD;
-	lcd_set_cursor(0x4F);
-	lcd_write_data('B');
-}
-
-// Go one cell forwards
-void goForward()
-{
-	driveForDistance(1000);
-	directionMoved = FORWARD;
-	lcd_set_cursor(0x4F);
-	lcd_write_data('F');
-}
-
-// Go one cell left
-void goLeft()
-{
-	turnLeft90();
-	driveForDistance(1000);
-	directionMoved = LEFT;
-	lcd_set_cursor(0x4F);
-	lcd_write_data('L');
-}
-
-// Determine which cell to go to next and go there
 void goToNextCell()
 {
-	if(!rightWall)
-		goRight();
+	if(!leftWall)
+		goLeft();
 	else if(!frontWall)
 		goForward();
-	else if(!leftWall)
-		goLeft();
+	else if(!rightWall)
+		goRight();
 	else
 		goBackward();
 }
 
-// Go one cell right
-void goRight()
-{
-	turnRight90();
-	driveForDistance(1000);
-	directionMoved = RIGHT;
-	lcd_set_cursor(0x4F);
-	lcd_write_data('R');
-}
-
 void updateLocation()
 {
-	currentOrientation += directionMoved;
-
-	if(currentOrientation >= 4)
-		currentOrientation -= 4;
-
-	lcd_set_cursor(0x46);
-	switch(currentOrientation)
+	lcd_set_cursor(0x40);
+	switch(getOrientation())
 	{
 		case NORTH:
 			++yCoord;
@@ -266,39 +223,93 @@ void updateLocation()
 			break;
 	}
 
-	lcd_set_cursor(0x0C);
+	lcd_set_cursor(0x01);
 	lcd_write_1_digit_bcd(xCoord);
-	lcd_set_cursor(0x0E);
-	lcd_write_1_digit_bcd(yCoord);
-	
+	lcd_set_cursor(0x03);
+	lcd_write_1_digit_bcd(yCoord);	
 }
+
+void updateNode()
+{
+	if((xCoord == 2) && (yCoord == 2))	
+		node = 1;
+	else if((xCoord == 4) && (yCoord == 2))
+		node = 2;
+	else if((xCoord == 2) && (yCoord == 0))
+		node = 3;
+	else
+		node = 0;
+}
+
+void checkIfHome()
+{
+	if((xCoord == 1) && (yCoord == 3))
+	{		
+		STOP();
+		play_iCreate_song(4);
+		home = TRUE;
+	}	
+}
+
+/************ MAIN ************/
 
 void main(void)
 {
 	init();
 	STOP();
-	//testEEPROM();
-	//__delay_ms(5000);
-	
+
 	lcd_set_cursor(0x00);
-	lcd_write_string("Walls@ --- (1,0)");
+	lcd_write_string("(-,-) E -- --- -"); //x/y of robot, explore/return, zone of victim/got victim, walls, way went
 	lcd_set_cursor(0x40);
-	lcd_write_string("cuOr: - dirMo: -");
-	play_iCreate_song(4);
-	while(1)
+	lcd_write_string("- - - (0,0) GREG"); //orientation, cliff detected, v.wall detected, x/y of final destination
+
+	//play_iCreate_song(1);
+
+	while(!home)
 	{
 		if(start.pressed)
 		{
-			//if(!isMoving())
-			//{
+			checkForFinalDestination();
+			lookForVictim();
 			findWalls();
-			//writeCellData();
-			goToNextCell();
-			updateLocation();
-			//__delay_ms(5000);
-			//}
+			switch(node)
+			{
+				case 1:
+					//moveFromNode1();
+					break;
+				case 2:
+					//moveFromNode2();
+					break;
+				case 3:
+					//moveFromNode3();
+					break;
+				default:
+					goToNextCell();
+					break;
+			}
+			if(getSuccessfulDrive());
+			{
+				//sendEEPROMData();
+				updateLocation();
+				updateNode();
+				if(goingHome)
+					checkIfHome();
+			}
 		}
 	}
+	//Turn off
+}
+
+/******** SUB-FUNCTIONS ********/
+
+char getCurrentX()
+{
+	return xCoord;
+}
+
+char getCurrentY()
+{
+	return yCoord;
 }
 
 #endif

@@ -5,8 +5,16 @@
 #include "drive.h"
 #include "xtal.h"
 #include "sensors.h"
+#include "lcd.h"
+#include "map.h"
+#include "main.h"
+#include "ir.h"
 
-volatile bit moving = 0;
+volatile bit successfulDrive;
+volatile bit moving = FALSE;
+volatile direction wayWent;
+volatile direction lastMove;
+volatile orientation currentOrientation = WEST;
 
 void drive(char highByteSpeed, char lowByteSpeed, char highByteRadius, char lowByteRadius)
 {
@@ -18,6 +26,11 @@ void drive(char highByteSpeed, char lowByteSpeed, char highByteRadius, char lowB
 	ser_putch(lowByteRadius);
 }
 
+bit getSuccessfulDrive()
+{
+	return successfulDrive;
+}
+
 void driveForDistance(int moveDistance)
 {
 	//Distance Counter
@@ -27,30 +40,117 @@ void driveForDistance(int moveDistance)
 
 	moving = 1;
 	DRIVE_STRAIGHT();
-//	waitFor(DISTANCE,0x03,0xE8);	
-//	STOP();
+
 	while(moving)
 	{
-//		//checkSensors();
-//		__delay_ms(50);
 		ser_putch(142);
 		ser_putch(19);
 		high = ser_getch();
 		low = ser_getch();
 		deltaDistance = high*256 + low;
 		distance += deltaDistance;
-//		__delay_ms(50);
+
+		if(detectCliff())
+		{
+			STOP();
+			goReverse();
+//			signal not to try again
+			successfulDrive = FALSE;
+			break;
+		}
+
+//		if(virtual wall is detected)
+//		{
+//			STOP();
+//			findFinalDestination(getCurrentX(),getCurrentY(), currentOrientation);
+//			goReverse();
+//			signal not to try again
+//			successfulDrive = FALSE;
+//			break;
+//		}
+
 		if(distance >= moveDistance)
 		{
 			STOP();
-			moving = 0;
+			moving = FALSE;
+			successfulDrive = TRUE;
 		}
 	}
 }
 
-bit isMoving()
+orientation getOrientation()
 {
-	return moving;
+	return currentOrientation;
+}
+
+direction getWayWent()
+{
+	return wayWent;
+}
+
+// Go one cell backwards
+void goBackward()
+{
+	lcd_set_cursor(0x0F);
+	lcd_write_data('B');
+	turnAround();
+	updateOrientation(BACKWARD);
+	driveForDistance(1000);
+	lastMove = BACKWARD;
+}
+
+// Go one cell forwards
+void goForward()
+{
+	lcd_set_cursor(0x0F);
+	lcd_write_data('F');
+	driveForDistance(1000);
+	lastMove = FORWARD;
+}
+
+// Go one cell left
+void goLeft()
+{
+	lcd_set_cursor(0x0F);
+	lcd_write_data('L');
+	turnLeft90();
+	updateOrientation(LEFT);
+	driveForDistance(1000);
+	lastMove = LEFT;
+}
+
+void goReverse()
+{
+	lcd_set_cursor(0x0F);
+	lcd_write_data('!');
+	REVERSE();
+	waitFor(DISTANCE,1,244);
+	STOP();
+	if(lastMove == LEFT)
+	{
+		lcd_set_cursor(0x0F);
+		lcd_write_data('R');
+		//turnRight90();
+		updateOrientation(RIGHT);
+	}
+	else if (lastMove == RIGHT)
+	{
+		lcd_set_cursor(0x0F);
+		lcd_write_data('L');
+//		turnLeft90();
+		updateOrientation(LEFT);
+	}
+}
+
+// Go one cell right
+void goRight()
+{
+	lcd_set_cursor(0x0F);
+	lcd_write_data('R');
+	turnRight90();
+	updateOrientation(RIGHT);
+	driveForDistance(1000);
+	lastMove = RIGHT;
 }
 
 void turnAround()
@@ -78,6 +178,13 @@ void turnRight90()
 	__delay_ms(6500);
 }
 
+void updateOrientation(direction moved)
+{
+	currentOrientation += moved;
+	if(currentOrientation >= 4)
+		currentOrientation -= 4;
+}
+
 void waitFor(char type, char highByte, char lowByte)
 {
 	__delay_ms(100);
@@ -85,5 +192,37 @@ void waitFor(char type, char highByte, char lowByte)
 	ser_putch(highByte);																		/* -90 */
 	ser_putch(lowByte);																		/* deg */
 }
+
+void rightWallCorrect(void)
+{
+	turnRight90();
+	rotateIR(24, CCW);
+	while(readIR() <45)
+	{
+		REVERSE();
+	}
+		while(readIR() >55)
+	{
+		DRIVE_STRAIGHT();
+	}
+	turnLeft90();
+	rotateIR(24, CW);
+	STOP();
+}
+
+void frontWallCorrect(void)
+{
+	while(readIR() < 50)
+		{
+			REVERSE();
+		}
+	STOP();
+	
+	while(readIR() > 55 && readIR() < 100)
+		{
+			DRIVE_STRAIGHT();
+		}
+	STOP();
+}	
 
 #endif

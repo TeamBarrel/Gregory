@@ -1,7 +1,7 @@
 
 
 HI-TECH Software PIC Macro Assembler V9.82 build 9453 
-                                                                                                           Mon May 20 22:26:35 2013
+                                                                                                           Wed May 22 23:59:02 2013
 
 
      1                           
@@ -13,7 +13,7 @@ HI-TECH Software PIC Macro Assembler V9.82 build 9453
      7                           	;
      8                           	; Compiler options:
      9                           	;
-    10                           	; -oCOMPv0.1.cof -mCOMPv0.1.map --summary=default --output=default \
+    10                           	; -oCOMPv0.4.cof -mCOMPv0.4.map --summary=default --output=default \
     11                           	; sensors.p1 adc.p1 drive.p1 eeprom.p1 lcd.p1 main.p1 map.p1 ser.p1 \
     12                           	; songs.p1 ir.p1 --chip=16F877A -P --runtime=default --opt=default \
     13                           	; -D__DEBUG=1 --rom=default --ram=default -g --asmlist \
@@ -73,12 +73,12 @@ HI-TECH Software PIC Macro Assembler V9.82 build 9453
     67  0012                     _exit
     68                           	psect	end_init
     69                           	global start_initialization
-    70  0012  120A  118A  2D56   	ljmp start_initialization	;jump to C runtime clear & initialization
+    70  0012  120A  158A  2EF0   	ljmp start_initialization	;jump to C runtime clear & initialization
 
 
 HI-TECH Software PICC Macro Assembler V9.82 build 9453 
-Symbol Table                                                                                               Mon May 20 22:26:35 2013
+Symbol Table                                                                                               Wed May 22 23:59:02 2013
 
-               _main 050C                 _exit 0012                 start 0012  start_initialization 0556  
+               _main 05DF                 _exit 0012                 start 0012  start_initialization 0EF0  
            intlevel0 0000             intlevel1 0000             intlevel2 0000             intlevel3 0000  
            intlevel4 0000             intlevel5 0000             reset_vec 0000  

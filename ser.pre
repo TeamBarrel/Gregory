@@ -1,5 +1,5 @@
 
-# 1 "C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.3\ser.c"
+# 1 "C:\Users\10999959\Desktop\COMPETITIONv0.4\ser.c"
 
 # 82 "C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f877a.h"
 volatile unsigned char INDF @ 0x000;
@@ -1090,7 +1090,7 @@ extern void memcpyee(eeprom unsigned char *to, const unsigned char *from, unsign
 #pragma inline(_delay)
 extern void _delay(unsigned long);
 
-# 55 "C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.3\ser.h"
+# 55 "C:\Users\10999959\Desktop\COMPETITIONv0.4\ser.h"
 bit ser_isrx(void);
 unsigned char ser_getch(void);
 void ser_putch(unsigned char byte);
@@ -1106,7 +1106,7 @@ extern bank1 unsigned char txfifo[16];
 extern volatile unsigned char txiptr, txoptr;
 extern unsigned char ser_tmp;
 
-# 41 "C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.3\ser.c"
+# 41 "C:\Users\10999959\Desktop\COMPETITIONv0.4\ser.c"
 unsigned char rxfifo[16];
 volatile unsigned char rxiptr, rxoptr;
 bank1 unsigned char txfifo[16];

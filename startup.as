@@ -7,7 +7,7 @@
 	;
 	; Compiler options:
 	;
-	; -oCOMPv0.1.cof -mCOMPv0.1.map --summary=default --output=default \
+	; -oCOMPv0.4.cof -mCOMPv0.4.map --summary=default --output=default \
 	; sensors.p1 adc.p1 drive.p1 eeprom.p1 lcd.p1 main.p1 map.p1 ser.p1 \
 	; songs.p1 ir.p1 --chip=16F877A -P --runtime=default --opt=default \
 	; -D__DEBUG=1 --rom=default --ram=default -g --asmlist \

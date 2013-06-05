@@ -1,54 +1,40 @@
-//#define BUILD // Comment this line out to omit from build
+#define BUILD // Comment this line out to omit from build
 #if defined(BUILD)
 
 #include "sensors.h"
 #include "ser.h"
-//#include "main.h"
 #include "drive.h"
 
-bit check;
+char sensorData = 0;
+bit sensorDetected = 0;
 
-void checkSensors()
+bit detectCliff()
 {
-
-//	while(!done)
-//	{
-//		__delay_ms(100);
-		ser_putch(149);
-		ser_putch(5);
-		ser_putch(7);
-		ser_putch(9);
-		ser_putch(10);
-		ser_putch(11);
-		ser_putch(12);
+	sensorDetected = 0;
+	ser_putch(149);
+	ser_putch(4);
+	ser_putch(9);
+	ser_putch(10);
+	ser_putch(11);
+	ser_putch(12);
 		
-		//Bump Sensors
-		check = ser_getch();
-		if(getBit(check,0) || getBit(check,1)){
-			STOP();
-//			done = 1;
-		}
-		//Cliff Sensors
-		check = ser_getch();
-		if(check == 1){
-			STOP();
-//			done = 1;
-		}
-		check = ser_getch();
-		if(check == 1){
-			STOP();
-//			done = 1;
-		}
-		check = ser_getch();
-		if(check == 1){
-			STOP();
-//			done = 1;
-		}
-		check = ser_getch();
-		if(check == 1){
-			STOP();
-//			done = 1;
-		}
+	sensorData = ser_getch();
+	if(sensorData == 1)
+		sensorDetected = 1;
+
+	sensorData = ser_getch();
+	if(sensorData == 1 && !sensorDetected)
+		sensorDetected = 1;
+
+	sensorData = ser_getch();
+	if(sensorData == 1 && !sensorDetected)
+		sensorDetected = 1;
+
+	sensorData = ser_getch();
+	if(sensorData == 1 && !sensorDetected)
+		sensorDetected = 1;
+	
+	return sensorDetected;
 }
 
 // Return the bit at a position of a char

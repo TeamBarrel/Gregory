@@ -12,21 +12,7 @@
 #define CW 0b00001111
 #define CCW 0b00001101
 
-/*********** TYPEDEFS ***********/
 
-typedef enum {
-	FORWARD = 0,
-	LEFT = 1,
-	BACKWARD = 2,
-	RIGHT = 3
-} direction;
-
-typedef enum {
-	WEST = 0,
-	SOUTH = 1,
-	EAST = 2,
-	NORTH = 3
-} orientation;
 
 // A push button on the DSX board
 typedef struct {
@@ -39,16 +25,16 @@ typedef struct {
 
 void init();
 void initIRobot();
-bit findWall();
+void checkForFinalDestination();
+void lookForVictim();
 void findWalls();
-//bit getBit(char byte, int position);
-void goBackward();
-void goForward();
-void goLeft();
 void goToNextCell();
-void goRight();
-void run();
+//void sendEEPROMData();
 void updateLocation();
-void updateOrientation();
+void updateNode();
+void checkIfHome();
+
+char getCurrentX();
+char getCurrentY();
 
 #endif MAIN_H 
