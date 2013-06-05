@@ -10,7 +10,6 @@
 #include "main.h"
 #include "ir.h"
 
-volatile bit successfulDrive;
 volatile bit moving = FALSE;
 volatile direction wayWent;
 volatile direction lastMove;
@@ -24,11 +23,6 @@ void drive(char highByteSpeed, char lowByteSpeed, char highByteRadius, char lowB
 	ser_putch(lowByteSpeed);
 	ser_putch(highByteRadius);
 	ser_putch(lowByteRadius);
-}
-
-bit getSuccessfulDrive()
-{
-	return successfulDrive;
 }
 
 void driveForDistance(int moveDistance)
@@ -50,14 +44,13 @@ void driveForDistance(int moveDistance)
 		deltaDistance = high*256 + low;
 		distance += deltaDistance;
 
-		if(detectCliff())
-		{
-			STOP();
-			goReverse();
+//		if(cliff is detected)
+//		{
+//			STOP();
+//			goReverse();
 //			signal not to try again
-			successfulDrive = FALSE;
-			break;
-		}
+//			break;
+//		}
 
 //		if(virtual wall is detected)
 //		{
@@ -65,17 +58,13 @@ void driveForDistance(int moveDistance)
 //			findFinalDestination(getCurrentX(),getCurrentY(), currentOrientation);
 //			goReverse();
 //			signal not to try again
-//			successfulDrive = FALSE;
 //			break;
 //		}
 
 		if(distance >= moveDistance)
-		{
-			STOP();
 			moving = FALSE;
-			successfulDrive = TRUE;
-		}
 	}
+	STOP();
 }
 
 orientation getOrientation()
@@ -130,14 +119,14 @@ void goReverse()
 	{
 		lcd_set_cursor(0x0F);
 		lcd_write_data('R');
-		//turnRight90();
+		turnRight90();
 		updateOrientation(RIGHT);
 	}
 	else if (lastMove == RIGHT)
 	{
 		lcd_set_cursor(0x0F);
 		lcd_write_data('L');
-//		turnLeft90();
+		turnLeft90();
 		updateOrientation(LEFT);
 	}
 }

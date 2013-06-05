@@ -3,7 +3,7 @@
 
 #include <htc.h>
 
-bit detectCliff();
+void checkSensors();
 bit getBit(char byte, int position);
 
 #endif

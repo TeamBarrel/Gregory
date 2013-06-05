@@ -4,15 +4,15 @@
 /********** #INCLUDES **********/
 
 #include <htc.h>
-//#include "adc.h"
+#include "adc.h"
 #include "drive.h"
-//#include "eeprom.h"
+#include "eeprom.h"
 #include "ir.h"
 #include "lcd.h"
 #include "main.h"
 #include "map.h"
-//#include "sensors.h"
-//#include "ser.h"
+#include "sensors.h"
+#include "ser.h"
 #include "songs.h"
 #include "xtal.h"
 
@@ -38,6 +38,7 @@ volatile unsigned char yCoord = 3;
 volatile unsigned char node = 0;
 
 volatile unsigned int RTC_Counter = 0;
+
 
 PushButton start;
 
@@ -274,33 +275,41 @@ void main(void)
 			findWalls();
 			switch(node)
 			{
-				case 1:
-					//moveFromNode1();
-					break;
-				case 2:
-					//moveFromNode2();
-					break;
-				case 3:
-					//moveFromNode3();
-					break;
-				default:
+				case 0:
 					goToNextCell();
 					break;
+				case 1:
+					goToNextCell();
+					break;
+				case 2:
+					goToNextCell();
+					break;
+				case 3:
+					goToNextCell();
+					break;
+				default:
+					break;
 			}
-			if(getSuccessfulDrive());
-			{
-				//sendEEPROMData();
-				updateLocation();
-				updateNode();
-				if(goingHome)
-					checkIfHome();
-			}
+			//sendEEPROMData();
+			updateLocation();
+			updateNode();
+			if(goingHome)
+				checkIfHome();
 		}
 	}
 	//Turn off
 }
 
 /******** SUB-FUNCTIONS ********/
+
+// Returns true if the IR sensor detects something less than 100cm away
+bit findWall()
+{
+	if(readIR() > 100)
+		return FALSE;
+	else
+		return TRUE;
+}
 
 char getCurrentX()
 {

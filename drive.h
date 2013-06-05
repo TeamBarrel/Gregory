@@ -33,7 +33,6 @@ typedef enum {
 void drive(char highByteSpeed, char lowByteSpeed, char highByteRadius, char lowByteRadius);
 void driveForDistance(int moveDistance);
 orientation getOrientation();
-bit getSuccessfulDrive();
 direction getWayWent();
 void goBackward();
 void goForward();

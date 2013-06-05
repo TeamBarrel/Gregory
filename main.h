@@ -34,6 +34,7 @@ void updateLocation();
 void updateNode();
 void checkIfHome();
 
+bit findWall();
 char getCurrentX();
 char getCurrentY();
 
