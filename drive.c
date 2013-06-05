@@ -9,6 +9,7 @@
 #include "map.h"
 #include "main.h"
 #include "ir.h"
+#include "songs.h"
 
 volatile bit successfulDrive = 0;
 volatile direction somethingInTheWay = BACKWARD;
@@ -40,7 +41,7 @@ void driveForDistance(int moveDistance)
 	
 	while(moving)
 	{
-		if(distance >= 100)
+	if(distance >= 100)
 		{
 			//Cliff	
 			ser_putch(142);
@@ -49,8 +50,8 @@ void driveForDistance(int moveDistance)
 			if(cliff == 0)
 			{
 				ser_putch(142);
-				ser_putch(11);
-				cliff = ser_getch();
+				ser_putch(7);
+				cliff = ser_getch();/*
 				if(cliff == 0)
 				{
 					ser_putch(142);
@@ -62,13 +63,14 @@ void driveForDistance(int moveDistance)
 						ser_putch(12);
 						cliff = ser_getch();
 					}
-				}
+				}*/
 			}
-			if(cliff == 1)
+			if(cliff != 0)
 			{
 				STOP();
 				goReverse();
-	
+				clearSuccessfulDrive();
+	/*
 				if(lastMove == LEFT)
 				{
 					somethingInTheWay = LEFT;
@@ -82,7 +84,7 @@ void driveForDistance(int moveDistance)
 					updateOrientation(LEFT);
 				}
 				else
-					somethingInTheWay = FORWARD;
+					somethingInTheWay = FORWARD;*/
 				moving = FALSE;
 			}	
 		}
@@ -96,7 +98,7 @@ void driveForDistance(int moveDistance)
 			STOP();
 			findFinalDestination(getCurrentX(),getCurrentY(), currentOrientation);
 			goReverse();
-
+			clearSuccessfulDrive();
 			if(lastMove == LEFT)
 			{
 				somethingInTheWay = LEFT;
@@ -111,9 +113,50 @@ void driveForDistance(int moveDistance)
 			}
 			else
 				somethingInTheWay = FORWARD;
-			moving = FALSE;
+				moving = FALSE;
 		}
-	
+
+		/*int dist = readIR();
+		if(dist <= 40)
+		{
+			STOP();
+			play_iCreate_song(6);
+			moving = FALSE;
+			rotateIR(24, CCW);
+			int left = readIR();
+			rotateIR(48, CW);
+			int right = readIR();
+			rotateIR(24, CCW);
+			if(left < 100 && right < 100)
+			{
+				if (left<right)
+				{
+					int angle = 0;
+					TURN_RIGHT();
+					waitFor(ANGLE,255,0b11111000);					
+					STOP();
+					__delay_ms(1000);
+				}
+				else
+				{
+					int angle = 0;
+					TURN_LEFT();
+					waitFor(ANGLE,0,8);
+					//while(findWall() || angle < 8)
+					//{
+					//	angle++;
+					//	__delay_ms(33);
+					//}					
+					STOP();
+					__delay_ms(1000);
+				}
+			}
+			distance -= 80;
+			DRIVE_STRAIGHT();	
+		}	
+		*/
+
+
 		// Distance
 		ser_putch(142);
 		ser_putch(19);
@@ -141,6 +184,10 @@ direction getSomethingInTheWay()
 	return somethingInTheWay;
 }
 
+void clearSuccessfulDrive(void)
+{
+	successfulDrive = 0;	
+}	
 
 bit getSuccessfulDrive()
 {
@@ -275,7 +322,7 @@ void waitFor(char type, char highByte, char lowByte)
 
 void frontWallCorrect(void)
 {
-	rotateIR(24, CW);				//rotate IR from left to forward
+	//rotateIR(24, CW);				//rotate IR from left to forward
 	int distToWall = readIR();		//find distance
 	if(distToWall < 45)				//correct only if its more than 5cm out
 	{
@@ -283,6 +330,7 @@ void frontWallCorrect(void)
 		while(distToWall < 51)		//Wait until its 50cm away
 			distToWall = readIR(); 
 		STOP();
+		clearSuccessfulDrive();
 	}
 	else if(distToWall > 55) //I took the < 100 part out, the code only executes if there is a front wall already
 	{
@@ -290,8 +338,30 @@ void frontWallCorrect(void)
 		while(distToWall > 49)		//Wait until its 50cm away
 			distToWall = readIR();
 		STOP();
+		clearSuccessfulDrive();
 	}
-	rotateIR(24, CCW);				//rotate IR from forward to left
+//	rotateIR(24, CCW);				//rotate IR from forward to left
 }	
+
+void leftAngleCorrect()
+{
+	int distanceToWall = readIR();
+	if((distanceToWall > 86) && (distanceToWall < 100))
+	{
+		TURN_LEFT();
+		waitFor(ANGLE,0,8);
+		STOP();
+		__delay_ms(1000);
+	}
+	else if(distanceToWall < 36)
+	{
+
+		TURN_RIGHT();
+		waitFor(ANGLE,255,0b11111000);
+		STOP();
+		__delay_ms(1000);
+	}
+}
+
 
 #endif

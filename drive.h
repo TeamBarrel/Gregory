@@ -48,5 +48,6 @@ void updateOrientation(direction moved);
 void waitFor(char type, char highByte, char lowByte);
 void rightWallCorrect(void);
 void frontWallCorrect(void);
-
+void leftAngleCorrect();
+void clearSuccessfulDrive(void);
 #endif

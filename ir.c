@@ -45,11 +45,11 @@ void rotateIR(char steps, char direction)
 	{
 		PORTC |= 0b00000100;																/* Pulse SM_STEP */
 		PORTC &= 0b11111011;	
-		__delay_ms(20);
+		__delay_ms(50);
 	}
 
 	SSPBUF = 0b00000000; // Clear SSPBUF
-	__delay_ms(20);
+	__delay_ms(100);
 	
 }
 

@@ -1,24 +1,24 @@
 
 
-HI-TECH Software PIC Macro Assembler V9.81 build 7503 
-                                                                                                           Wed May 29 18:34:28 2013
+HI-TECH Software PIC Macro Assembler V9.82 build 9453 
+                                                                                                           Thu May 30 21:06:40 2013
 
 
      1                           
-     2                           	; HI-TECH C Compiler for PIC10/12/16 MCUs V9.81
-     3                           	; Copyright (C) 1984-2010 HI-TECH Software
+     2                           	; HI-TECH C Compiler for PIC10/12/16 MCUs V9.82
+     3                           	; Copyright (C) 1984-2011 HI-TECH Software
      4                           
      5                           	; Auto-generated runtime startup code for final link stage.
      6                           
      7                           	;
      8                           	; Compiler options:
      9                           	;
-    10                           	; -oCOMPETITIONv0.7.cof -mCOMPETITIONv0.7.map --summary=default \
+    10                           	; -oWORKING_FILE.cof -mWORKING_FILE.map --summary=default \
     11                           	; --output=default adc.p1 eeprom.p1 lcd.p1 map.p1 ser.p1 songs.p1 ir.p1 \
     12                           	; drive.p1 main.p1 sensors.p1 node.p1 --chip=16F877A -P \
-    13                           	; --runtime=default --opt=default -D__DEBUG=1 -g --asmlist \
-    14                           	; --errformat=Error   [%n] %f; %l.%c %s --msgformat=Advisory[%n] %s \
-    15                           	; --warnformat=Warning [%n] %f; %l.%c %s
+    13                           	; --runtime=default --opt=default -D__DEBUG=1 --rom=default \
+    14                           	; --ram=default -g --asmlist --errformat=Error   [%n] %f; %l.%c %s \
+    15                           	; --msgformat=Advisory[%n] %s --warnformat=Warning [%n] %f; %l.%c %s
     16                           	;
     17                           
     18                           
@@ -73,12 +73,12 @@ HI-TECH Software PIC Macro Assembler V9.81 build 7503
     67  0012                     _exit
     68                           	psect	end_init
     69                           	global start_initialization
-    70  0012  160A  118A  2E78   	ljmp start_initialization	;jump to C runtime clear & initialization
+    70  0012  120A  158A  2B0E   	ljmp start_initialization	;jump to C runtime clear & initialization
 
 
-HI-TECH Software PICC Macro Assembler V9.81 build 7503 
-Symbol Table                                                                                               Wed May 29 18:34:28 2013
+HI-TECH Software PICC Macro Assembler V9.82 build 9453 
+Symbol Table                                                                                               Thu May 30 21:06:40 2013
 
-               _main 005A                 _exit 0012                 start 0012  start_initialization 1678  
+               _main 0015                 _exit 0012                 start 0012  start_initialization 0B0E  
            intlevel0 0000             intlevel1 0000             intlevel2 0000             intlevel3 0000  
            intlevel4 0000             intlevel5 0000             reset_vec 0000  

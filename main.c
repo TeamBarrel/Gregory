@@ -55,7 +55,7 @@ volatile unsigned char node = 0;
 volatile unsigned int RTC_Counter = 0;
 
 
-PushButton start,eeprom;
+PushButton start;
 
 /********** INTERRUPT SERVICE ROUTINE **********/
 void interrupt isr1(void) 
@@ -65,17 +65,17 @@ void interrupt isr1(void)
 	{
 		TMR0IF = 0;
 		TMR0 = TMR0_VAL;
-		
-		RTC_Counter++;
-		//set clock flags
-		RTC_FLAG_1MS = 1;
-
-		if(RTC_Counter % 10 == 0) RTC_FLAG_10MS = 1;
-		if(RTC_Counter % 50 == 0) RTC_FLAG_50MS = 1;
-		if(RTC_Counter % 500 == 0) 
-		{
-			
-		}		
+//		
+//		RTC_Counter++;
+//		//set clock flags
+//		RTC_FLAG_1MS = 1;
+//
+//		if(RTC_Counter % 10 == 0) RTC_FLAG_10MS = 1;
+//		if(RTC_Counter % 50 == 0) RTC_FLAG_50MS = 1;
+//		if(RTC_Counter % 500 == 0) 
+//		{
+//			
+//		}		
 
 		if(START_PB)																			// If PB1 has been pressed
 		{
@@ -92,21 +92,6 @@ void interrupt isr1(void)
 			start.released = TRUE;															// PB1 is therefore released
 		}
 
-		if(EEPROM_PB)																			// If PB1 has been pressed
-		{
-			eeprom.debounceCount++;															// Increment PB1 debounce count
-			if(eeprom.debounceCount >= DEBOUNCE_REQ_COUNT & eeprom.released)						// If signal has been debounced sufficiently and switch has been released
-			{
-				eeprom.pressed = TRUE;															/* PB1 has been pressed       */
-				eeprom.released = FALSE;														/* and therefore not released */
-			}
-		}
-		else																				// If PB1 has not been pressed
-		{
-			eeprom.debounceCount = 0;															// Set PB1 debounce count to 0
-			eeprom.released = TRUE;															// PB1 is therefore released
-		}
-
 		ser_int();
 	}
 }	
@@ -117,8 +102,6 @@ void init()
 {
 	start.pressed = FALSE;														/* Initialise all push buttons to not being pressed */
 	start.released = TRUE;														/* but rather released                              */
-	eeprom.pressed = FALSE;
-	eeprom.released = TRUE;
 
 	init_adc();
 	lcd_init();
@@ -190,6 +173,7 @@ void lookForVictim()
 // Finds where there are walls around the Create's location
 void findWalls()
 {
+	rotateIR(24, CCW);	
 	lcd_set_cursor(0x0B);
 
 	leftWall = findWall();
@@ -200,11 +184,7 @@ void findWalls()
 
 	rotateIR(24, CW);
 	frontWall = findWall();
-	//Cliff
-	if(xCoord == 2 && yCoord == 1)
-	{
-		frontWall = 1;
-	}	
+
 	if(frontWall)
 		lcd_write_data('F');
 	else
@@ -220,10 +200,10 @@ void findWalls()
 	}else
 		lcd_write_data(' ');
 
-	rotateIR(36, CCW);	
+	rotateIR(24, CCW);	
 }
 
-void goParallel()
+/*void goParallel()
 {
 	PORTC |= 0b00000011;																	// Set CPLD to stepper motor module
 
@@ -251,16 +231,16 @@ void goParallel()
 
 	if(angleParallelToWall > 255)															// If the angle is > 255
 	{
-		angleHighByte = 1;																	/* Split it into high */
-		angleLowByte = (char)(angleParallelToWall - 255);									/* and low bytes      */
+		angleHighByte = 1;																//	 Split it into high 
+		angleLowByte = (char)(angleParallelToWall - 255);								//	 and low bytes      
 	}
 	if((angleParallelToWall > 8) && (angleParallelToWall < 352))							// Only corrects if its out by more than 8deg (~1 step)
 	{
-		TURN_LEFT();																			/* Turn CCW on the spot   */
-		waitFor(ANGLE,angleHighByte,angleLowByte);												/* To go parallel to wall */
+		TURN_LEFT();																			// Turn CCW on the spot   
+		waitFor(ANGLE,angleHighByte,angleLowByte);												// To go parallel to wall 
 		STOP();
 	}
-}
+}*/
 
 void goToNextCell()
 {
@@ -312,7 +292,11 @@ void updateNode()
 	else if((xCoord == 4) && (yCoord == 2))
 		node = 2;
 	else if((xCoord == 2) && (yCoord == 0))
-		node = 3;
+		node = 3;		
+	else if((xCoord == 4) && (yCoord == 3))
+		node = 4;
+	else if((xCoord == 2) && (yCoord == 1))
+		node = 5;
 	else
 		node = 0;
 }
@@ -341,13 +325,7 @@ void main(void)
 
 	while(!home)
 	{
-		//Send accumulated data in EEPROM through serial
-		if(eeprom.pressed && ready == FALSE)
-		{
-			EEPROMToSerial();
-			eeprom.pressed = FALSE;
-		}
-
+/*
 		if(start.pressed && ready == FALSE)
 		{
 			findWalls();
@@ -360,22 +338,25 @@ void main(void)
 			ready = TRUE; 								//commence exploring the map
 			lcd_set_cursor(0x06);
 			lcd_write_data('E');						//Explore mode
-			play_iCreate_song(1);
-			rotateIR(12, CCW);										
+			play_iCreate_song(1);										
 		}	
+		*/
+		ready = TRUE;
 		
 		if(start.pressed && ready == TRUE)
 		{
 			checkForFinalDestination();
-			play_iCreate_song(5);
+
 			lookForVictim();
-			play_iCreate_song(5);
+
 			findWalls();
 			play_iCreate_song(5);
 			if(leftWall)
-				goParallel();
-			else
-				rotateIR(12, CCW);
+			{
+				rotateIR(24,CCW);
+				wallFollow();
+				rotateIR(24,CW);
+			}
 			play_iCreate_song(5);
 			if(frontWall)
 				frontWallCorrect();
@@ -394,6 +375,8 @@ void main(void)
 							goForward();
 						else if (getOrientation() == SOUTH)
 							goRight();
+						else//peter
+							goToNextCell();
 					}
 					else
 						goToNextCell();
@@ -407,6 +390,8 @@ void main(void)
 							goRight();
 						else if (getOrientation() == NORTH)
 							goLeft();
+						else//peter
+							goToNextCell();
 					}
 					else
 						goToNextCell();
@@ -419,8 +404,22 @@ void main(void)
 						else if (getOrientation() == EAST)
 							goForward();
 						else if (getOrientation() == SOUTH)
-						goLeft();
+							goLeft();
+						else//peter
+							goToNextCell();
 					}
+					else
+						goToNextCell();
+					break;
+				case 4:
+					if (getOrientation() == EAST)
+						goRight(); 
+					else
+						goToNextCell();
+					break;
+				case 5:
+					if (getOrientation() == NORTH)
+						goRight(); 
 					else
 						goToNextCell();
 					break;
@@ -436,7 +435,7 @@ void main(void)
 				updateNode();		
 				if(goingHome)
 					checkIfHome();
-				play_iCreate_song(5);
+				//play_iCreate_song(5);
 			}
 		}
 	}
@@ -462,6 +461,26 @@ char getCurrentX()
 char getCurrentY()
 {
 	return yCoord;
+}
+
+void wallFollow()
+{
+	int distanceToWall = readIR();
+	if((distanceToWall > 86) && (distanceToWall < 100))
+	{
+		TURN_LEFT();
+		waitFor(ANGLE,0,8);
+		STOP();
+		__delay_ms(1000);
+	}
+	else if(distanceToWall < 36)
+	{
+
+		TURN_RIGHT();
+		waitFor(ANGLE,255,0b11111000);
+		STOP();
+		__delay_ms(1000);
+	}
 }
 
 #endif

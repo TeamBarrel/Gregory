@@ -34,6 +34,7 @@ void goToNextCell();
 void updateLocation();
 void updateNode();
 void checkIfHome();
+void wallFollow();
 
 bit findWall();
 char getCurrentX();

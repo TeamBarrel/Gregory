@@ -1,7 +1,7 @@
 
-# 1 "C:\Documents and Settings\Administrator\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.8\COMPETITIONv0.8\drive.c"
+# 1 "C:\Users\11014065\Desktop\30 May WORKING FILE\drive.c"
 
-# 55 "C:\Documents and Settings\Administrator\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.8\COMPETITIONv0.8\ser.h"
+# 55 "C:\Users\11014065\Desktop\30 May WORKING FILE\ser.h"
 bit ser_isrx(void);
 unsigned char ser_getch(void);
 void ser_putch(unsigned char byte);
@@ -17,7 +17,7 @@ extern bank1 unsigned char txfifo[16];
 extern volatile unsigned char txiptr, txoptr;
 extern unsigned char ser_tmp;
 
-# 82 "C:\Program Files\HI-TECH Software\PICC\9.81\include\pic16f877a.h"
+# 82 "C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f877a.h"
 volatile unsigned char INDF @ 0x000;
 
 
@@ -1088,23 +1088,25 @@ unsigned EEPGD : 1;
 volatile unsigned char EECON2 @ 0x18D;
 
 
-# 21 "C:\Program Files\HI-TECH Software\PICC\9.81\include\pic.h"
+# 27 "C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic.h"
 #pragma inline(_nop)
 extern void _nop(void);
 
-# 74
+# 80
 extern unsigned int flash_read(unsigned short addr);
 
-# 41 "C:\Program Files\HI-TECH Software\PICC\9.81\include\eeprom_routines.h"
-extern void eeprom_write(unsigned char addr, unsigned char value);
+# 41 "C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\eeprom_routines.h"
+extern unsigned char eeprom_write(unsigned char addr, unsigned char value);
 extern unsigned char eeprom_read(unsigned char addr);
+extern void eecpymem(volatile unsigned char *to, eeprom unsigned char *from, unsigned char size);
+extern void memcpyee(eeprom unsigned char *to, const unsigned char *from, unsigned char size);
 
 
-# 147 "C:\Program Files\HI-TECH Software\PICC\9.81\include\pic.h"
+# 153 "C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic.h"
 #pragma inline(_delay)
 extern void _delay(unsigned long);
 
-# 8 "C:\Documents and Settings\Administrator\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.8\COMPETITIONv0.8\drive.h"
+# 8 "C:\Users\11014065\Desktop\30 May WORKING FILE\drive.h"
 typedef enum {
 FORWARD = 0,
 LEFT = 1,
@@ -1138,14 +1140,16 @@ void updateOrientation(direction moved);
 void waitFor(char type, char highByte, char lowByte);
 void rightWallCorrect(void);
 void frontWallCorrect(void);
+void leftAngleCorrect();
+void clearSuccessfulDrive(void);
 
-# 6 "C:\Documents and Settings\Administrator\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.8\COMPETITIONv0.8\sensors.h"
+# 6 "C:\Users\11014065\Desktop\30 May WORKING FILE\sensors.h"
 void checkCliff();
 bit checkVirtualWall();
 bit checkVictim();
 bit getBit(char byte, int position);
 
-# 14 "C:\Documents and Settings\Administrator\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.8\COMPETITIONv0.8\lcd.h"
+# 14 "C:\Users\11014065\Desktop\30 May WORKING FILE\lcd.h"
 void lcd_write_control(unsigned char databyte);
 
 
@@ -1164,13 +1168,13 @@ void lcd_write_3_digit_bcd(int data);
 
 void lcd_init(void);
 
-# 6 "C:\Documents and Settings\Administrator\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.8\COMPETITIONv0.8\map.h"
+# 6 "C:\Users\11014065\Desktop\30 May WORKING FILE\map.h"
 void findFinalDestination(char virtualWallX, char virtualWallY, orientation robotOrientation);
 char getFinalX();
 char getFinalY();
 char getVictimZone(char victimX, char victimY);
 
-# 19 "C:\Documents and Settings\Administrator\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.8\COMPETITIONv0.8\main.h"
+# 19 "C:\Users\11014065\Desktop\30 May WORKING FILE\main.h"
 typedef struct {
 char pressed;
 char released;
@@ -1189,22 +1193,27 @@ void goToNextCell();
 void updateLocation();
 void updateNode();
 void checkIfHome();
+void wallFollow();
 
 bit findWall();
 char getCurrentX();
 char getCurrentY();
 
-# 7 "C:\Documents and Settings\Administrator\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.8\COMPETITIONv0.8\adc.h"
+# 7 "C:\Users\11014065\Desktop\30 May WORKING FILE\adc.h"
 void init_adc(void);
 int adc_read(void);
 int adc_read_channel(unsigned char channel);
 
-# 8 "C:\Documents and Settings\Administrator\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.8\COMPETITIONv0.8\ir.h"
+# 8 "C:\Users\11014065\Desktop\30 May WORKING FILE\ir.h"
 int convert(int adc_value);
 int readIR();
 void rotateIR(char steps, char direction);
 
-# 13 "C:\Documents and Settings\Administrator\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.8\COMPETITIONv0.8\drive.c"
+# 8 "C:\Users\11014065\Desktop\30 May WORKING FILE\songs.h"
+void play_iCreate_song(unsigned char);
+void initSongs();
+
+# 14 "C:\Users\11014065\Desktop\30 May WORKING FILE\drive.c"
 volatile bit successfulDrive = 0;
 volatile direction somethingInTheWay = BACKWARD;
 volatile bit moving = 0;
@@ -1244,40 +1253,18 @@ cliff = ser_getch();
 if(cliff == 0)
 {
 ser_putch(142);
-ser_putch(11);
+ser_putch(7);
 cliff = ser_getch();
-if(cliff == 0)
-{
-ser_putch(142);
-ser_putch(9);
-cliff = ser_getch();
-if(cliff == 0)
-{
-ser_putch(142);
-ser_putch(12);
-cliff = ser_getch();
+
+# 67
 }
-}
-}
-if(cliff == 1)
+if(cliff != 0)
 {
 drive(0, 0, 0, 0);
 goReverse();
+clearSuccessfulDrive();
 
-if(lastMove == LEFT)
-{
-somethingInTheWay = LEFT;
-turnRight90();
-updateOrientation(RIGHT);
-}
-else if (lastMove == RIGHT)
-{
-somethingInTheWay = RIGHT;
-turnLeft90();
-updateOrientation(LEFT);
-}
-else
-somethingInTheWay = FORWARD;
+# 88
 moving = 0;
 }
 }
@@ -1291,7 +1278,7 @@ if(virtualWall == 1)
 drive(0, 0, 0, 0);
 findFinalDestination(getCurrentX(),getCurrentY(), currentOrientation);
 goReverse();
-
+clearSuccessfulDrive();
 if(lastMove == LEFT)
 {
 somethingInTheWay = LEFT;
@@ -1309,7 +1296,7 @@ somethingInTheWay = FORWARD;
 moving = 0;
 }
 
-
+# 161
 ser_putch(142);
 ser_putch(19);
 high = ser_getch();
@@ -1336,6 +1323,10 @@ direction getSomethingInTheWay()
 return somethingInTheWay;
 }
 
+void clearSuccessfulDrive(void)
+{
+successfulDrive = 0;
+}
 
 bit getSuccessfulDrive()
 {
@@ -1451,10 +1442,10 @@ ser_putch(highByte);
 ser_putch(lowByte);
 }
 
-# 276
+# 323
 void frontWallCorrect(void)
 {
-rotateIR(24, 0b00001111);
+
 int distToWall = readIR();
 if(distToWall < 45)
 {
@@ -1462,6 +1453,7 @@ drive(255, 125, 128, 0);
 while(distToWall < 51)
 distToWall = readIR();
 drive(0, 0, 0, 0);
+clearSuccessfulDrive();
 }
 else if(distToWall > 55)
 {
@@ -1469,7 +1461,28 @@ drive(0, 250, 128, 0);
 while(distToWall > 49)
 distToWall = readIR();
 drive(0, 0, 0, 0);
+clearSuccessfulDrive();
 }
-rotateIR(24, 0b00001101);
+
+}
+
+void leftAngleCorrect()
+{
+int distanceToWall = readIR();
+if((distanceToWall > 86) && (distanceToWall < 100))
+{
+drive(0, 50, 0, 1);
+waitFor(157,0,8);
+drive(0, 0, 0, 0);
+_delay((unsigned long)((1000)*(20000000/4000.0)));
+}
+else if(distanceToWall < 36)
+{
+
+drive(0, 50, 255, 255);
+waitFor(157,255,0b11111000);
+drive(0, 0, 0, 0);
+_delay((unsigned long)((1000)*(20000000/4000.0)));
+}
 }
 
