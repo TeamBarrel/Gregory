@@ -55,7 +55,7 @@ volatile unsigned char node = 0;
 volatile unsigned int RTC_Counter = 0;
 
 
-PushButton start;
+PushButton start,eeprom;
 
 /********** INTERRUPT SERVICE ROUTINE **********/
 void interrupt isr1(void) 
@@ -92,6 +92,21 @@ void interrupt isr1(void)
 			start.released = TRUE;															// PB1 is therefore released
 		}
 
+		if(EEPROM_PB)																			// If PB1 has been pressed
+		{
+			eeprom.debounceCount++;															// Increment PB1 debounce count
+			if(eeprom.debounceCount >= DEBOUNCE_REQ_COUNT & eeprom.released)						// If signal has been debounced sufficiently and switch has been released
+			{
+				eeprom.pressed = TRUE;															/* PB1 has been pressed       */
+				eeprom.released = FALSE;														/* and therefore not released */
+			}
+		}
+		else																				// If PB1 has not been pressed
+		{
+			eeprom.debounceCount = 0;															// Set PB1 debounce count to 0
+			eeprom.released = TRUE;															// PB1 is therefore released
+		}
+
 		ser_int();
 	}
 }	
@@ -102,11 +117,13 @@ void init()
 {
 	start.pressed = FALSE;														/* Initialise all push buttons to not being pressed */
 	start.released = TRUE;														/* but rather released                              */
-	
+	eeprom.pressed = FALSE;
+	eeprom.released = TRUE;
+
 	init_adc();
 	lcd_init();
 	
-	TRISB = 0b00000001; 																	/* PORTB I/O designation */
+	TRISB = 0b00000011; 																	/* PORTB I/O designation */
 
 	//timer0
 	OPTION_REG = 0b00000100;
@@ -183,16 +200,24 @@ void findWalls()
 
 	rotateIR(24, CW);
 	frontWall = findWall();
+	//Cliff
+	if(xCoord == 2 && yCoord == 1)
+	{
+		frontWall = 1;
+	}	
 	if(frontWall)
 		lcd_write_data('F');
 	else
 		lcd_write_data(' ');
-
+	
 	rotateIR(24, CW);
 	rightWall = findWall();
+	
 	if(rightWall)
+	{
+		play_iCreate_song(5);
 		lcd_write_data('R');
-	else
+	}else
 		lcd_write_data(' ');
 
 	rotateIR(36, CCW);	
@@ -313,9 +338,16 @@ void main(void)
 	lcd_write_string("(-,-) - -- --- -"); //x/y of robot, explore/return, zone of victim/got victim, walls, way went
 	lcd_set_cursor(0x40);
 	lcd_write_string("- - - (3,1) GREG"); //orientation, cliff detected, v.wall detected, x/y of final destination
-		
+
 	while(!home)
 	{
+		//Send accumulated data in EEPROM through serial
+		if(eeprom.pressed && ready == FALSE)
+		{
+			EEPROMToSerial();
+			eeprom.pressed = FALSE;
+		}
+
 		if(start.pressed && ready == FALSE)
 		{
 			findWalls();
@@ -396,10 +428,10 @@ void main(void)
 					break;
 			}
 			play_iCreate_song(5);
-			//sendEEPROMData();
-			//play_iCreate_song(5);
 			if(getSuccessfulDrive())
 			{
+				//Send EEPROM data for current cell
+				updateMapData(0,0,0,0,0,getOrientation());
 				updateLocation();
 				updateNode();		
 				if(goingHome)

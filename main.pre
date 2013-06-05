@@ -1,7 +1,7 @@
 
-# 1 "C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.7\main.c"
+# 1 "C:\Documents and Settings\Administrator\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.8\COMPETITIONv0.8\main.c"
 
-# 82 "C:\Program Files\HI-TECH Software\PICC\9.82\include\pic16f877a.h"
+# 82 "C:\Program Files\HI-TECH Software\PICC\9.81\include\pic16f877a.h"
 volatile unsigned char INDF @ 0x000;
 
 
@@ -1072,30 +1072,28 @@ unsigned EEPGD : 1;
 volatile unsigned char EECON2 @ 0x18D;
 
 
-# 27 "C:\Program Files\HI-TECH Software\PICC\9.82\include\pic.h"
+# 21 "C:\Program Files\HI-TECH Software\PICC\9.81\include\pic.h"
 #pragma inline(_nop)
 extern void _nop(void);
 
-# 80
+# 74
 extern unsigned int flash_read(unsigned short addr);
 
-# 41 "C:\Program Files\HI-TECH Software\PICC\9.82\include\eeprom_routines.h"
-extern unsigned char eeprom_write(unsigned char addr, unsigned char value);
+# 41 "C:\Program Files\HI-TECH Software\PICC\9.81\include\eeprom_routines.h"
+extern void eeprom_write(unsigned char addr, unsigned char value);
 extern unsigned char eeprom_read(unsigned char addr);
-extern void eecpymem(volatile unsigned char *to, eeprom unsigned char *from, unsigned char size);
-extern void memcpyee(eeprom unsigned char *to, const unsigned char *from, unsigned char size);
 
 
-# 153 "C:\Program Files\HI-TECH Software\PICC\9.82\include\pic.h"
+# 147 "C:\Program Files\HI-TECH Software\PICC\9.81\include\pic.h"
 #pragma inline(_delay)
 extern void _delay(unsigned long);
 
-# 7 "C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.7\adc.h"
+# 7 "C:\Documents and Settings\Administrator\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.8\COMPETITIONv0.8\adc.h"
 void init_adc(void);
 int adc_read(void);
 int adc_read_channel(unsigned char channel);
 
-# 8 "C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.7\drive.h"
+# 8 "C:\Documents and Settings\Administrator\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.8\COMPETITIONv0.8\drive.h"
 typedef enum {
 FORWARD = 0,
 LEFT = 1,
@@ -1130,7 +1128,7 @@ void waitFor(char type, char highByte, char lowByte);
 void rightWallCorrect(void);
 void frontWallCorrect(void);
 
-# 4 "C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.7\eeprom.h"
+# 4 "C:\Documents and Settings\Administrator\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.8\COMPETITIONv0.8\eeprom.h"
 void writeEEPROM(char data, char addressH, char addressL);
 char readEEPROM(char addressH, char addressL);
 void testEEPROM(void);
@@ -1139,12 +1137,12 @@ void writeEEPROMTestData(void);
 void updateMapData(char virtualW, char virtualS,char virtualE, char virtualN, char victim, char move);
 void EEPROMToSerial(void);
 
-# 8 "C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.7\ir.h"
+# 8 "C:\Documents and Settings\Administrator\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.8\COMPETITIONv0.8\ir.h"
 int convert(int adc_value);
 int readIR();
 void rotateIR(char steps, char direction);
 
-# 14 "C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.7\lcd.h"
+# 14 "C:\Documents and Settings\Administrator\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.8\COMPETITIONv0.8\lcd.h"
 void lcd_write_control(unsigned char databyte);
 
 
@@ -1163,7 +1161,7 @@ void lcd_write_3_digit_bcd(int data);
 
 void lcd_init(void);
 
-# 18 "C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.7\main.h"
+# 19 "C:\Documents and Settings\Administrator\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.8\COMPETITIONv0.8\main.h"
 typedef struct {
 char pressed;
 char released;
@@ -1187,19 +1185,19 @@ bit findWall();
 char getCurrentX();
 char getCurrentY();
 
-# 6 "C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.7\map.h"
+# 6 "C:\Documents and Settings\Administrator\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.8\COMPETITIONv0.8\map.h"
 void findFinalDestination(char virtualWallX, char virtualWallY, orientation robotOrientation);
 char getFinalX();
 char getFinalY();
 char getVictimZone(char victimX, char victimY);
 
-# 6 "C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.7\sensors.h"
+# 6 "C:\Documents and Settings\Administrator\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.8\COMPETITIONv0.8\sensors.h"
 void checkCliff();
 bit checkVirtualWall();
 bit checkVictim();
 bit getBit(char byte, int position);
 
-# 55 "C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.7\ser.h"
+# 55 "C:\Documents and Settings\Administrator\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.8\COMPETITIONv0.8\ser.h"
 bit ser_isrx(void);
 unsigned char ser_getch(void);
 void ser_putch(unsigned char byte);
@@ -1215,11 +1213,11 @@ extern bank1 unsigned char txfifo[16];
 extern volatile unsigned char txiptr, txoptr;
 extern unsigned char ser_tmp;
 
-# 8 "C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.7\songs.h"
+# 8 "C:\Documents and Settings\Administrator\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.8\COMPETITIONv0.8\songs.h"
 void play_iCreate_song(unsigned char);
 void initSongs();
 
-# 21 "C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.7\main.c"
+# 21 "C:\Documents and Settings\Administrator\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.8\COMPETITIONv0.8\main.c"
 asm("\tpsect config,class=CONFIG,delta=2"); asm("\tdw ""0xFFFE & 0xFFFB & 0xFFFF & 0xFFBF & 0xFFF7 & 0xFFFF & 0xFF7F & 0xFFFF");
 
 # 29
@@ -1252,7 +1250,7 @@ volatile unsigned char node = 0;
 volatile unsigned int RTC_Counter = 0;
 
 
-PushButton start;
+PushButton start,eeprom;
 
 
 void interrupt isr1(void)
@@ -1289,6 +1287,21 @@ start.debounceCount = 0;
 start.released = 1;
 }
 
+if(!RB1)
+{
+eeprom.debounceCount++;
+if(eeprom.debounceCount >= 10 & eeprom.released)
+{
+eeprom.pressed = 1;
+eeprom.released = 0;
+}
+}
+else
+{
+eeprom.debounceCount = 0;
+eeprom.released = 1;
+}
+
 if (RCIF) { rxfifo[rxiptr]=RCREG; ser_tmp=(rxiptr+1) & (16-1); if (ser_tmp!=rxoptr) rxiptr=ser_tmp; } if (TXIF && TXIE) { TXREG = txfifo[txoptr]; ++txoptr; txoptr &= (16-1); if (txoptr==txiptr) { TXIE = 0; } };
 }
 }
@@ -1299,11 +1312,13 @@ void init()
 {
 start.pressed = 0;
 start.released = 1;
+eeprom.pressed = 0;
+eeprom.released = 1;
 
 init_adc();
 lcd_init();
 
-TRISB = 0b00000001;
+TRISB = 0b00000011;
 
 
 OPTION_REG = 0b00000100;
@@ -1380,6 +1395,11 @@ lcd_write_data(' ');
 
 rotateIR(24, 0b00001111);
 frontWall = findWall();
+
+if(xCoord == 2 && yCoord == 1)
+{
+frontWall = 1;
+}
 if(frontWall)
 lcd_write_data('F');
 else
@@ -1387,9 +1407,12 @@ lcd_write_data(' ');
 
 rotateIR(24, 0b00001111);
 rightWall = findWall();
+
 if(rightWall)
+{
+play_iCreate_song(5);
 lcd_write_data('R');
-else
+}else
 lcd_write_data(' ');
 
 rotateIR(36, 0b00001101);
@@ -1513,6 +1536,13 @@ lcd_write_string("- - - (3,1) GREG");
 
 while(!home)
 {
+
+if(eeprom.pressed && ready == 0)
+{
+EEPROMToSerial();
+eeprom.pressed = 0;
+}
+
 if(start.pressed && ready == 0)
 {
 findWalls();
@@ -1597,6 +1627,8 @@ play_iCreate_song(5);
 
 if(getSuccessfulDrive())
 {
+
+updateMapData(0,0,0,0,0,getOrientation());
 updateLocation();
 updateNode();
 if(goingHome)

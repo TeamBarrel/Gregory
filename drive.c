@@ -86,7 +86,7 @@ void driveForDistance(int moveDistance)
 				moving = FALSE;
 			}	
 		}
-
+		
 		// Virtual Wall
 		ser_putch(142);
 		ser_putch(13);
@@ -113,7 +113,7 @@ void driveForDistance(int moveDistance)
 				somethingInTheWay = FORWARD;
 			moving = FALSE;
 		}
-
+	
 		// Distance
 		ser_putch(142);
 		ser_putch(19);
@@ -169,7 +169,13 @@ void goForward()
 	lcd_set_cursor(0x0F);
 	lcd_write_data('F');
 	lastMove = FORWARD;
-	driveForDistance(1000);
+	if( (getCurrentX() == 1 && getCurrentY() == 2))
+	{
+		driveForDistance(800);
+	}else
+	{
+		driveForDistance(1000);
+	}
 }
 
 // Go one cell left
@@ -207,26 +213,32 @@ void goRight()
 void turnAround()
 {
 	TURN_LEFT();																		// Turn CW on the spot
-	waitFor(ANGLE,0,170); 
+	waitFor(ANGLE,0,180); 
 	STOP();
-	__delay_ms(6000);				//Makes DSX wait until its stopped - change is waitFor is changed
-	__delay_ms(6000);				//Makes DSX wait until its stopped - change is waitFor is changed
+	__delay_ms(3000);				//Makes DSX wait until its stopped - change is waitFor is changed
+	__delay_ms(3000);				//Makes DSX wait until its stopped - change is waitFor is changed
 }
 
 void turnLeft90()
 {
-	TURN_LEFT();																		// Turn CW on the spot
-	waitFor(ANGLE,0,85); 
+	TURN_LEFT();
+	if( (getCurrentX() == 2 && getCurrentY() == 2))
+	{
+		waitFor(ANGLE,0,85); 
+	}else
+	{																		// Turn CW on the spot
+		waitFor(ANGLE,0,90); 
+	}
 	STOP();
-	__delay_ms(6000);				//Makes DSX wait until its stopped - change is waitFor is changed
+	__delay_ms(3000);				//Makes DSX wait until its stopped - change is waitFor is changed
 }
 
 void turnRight90()
 {
 	TURN_RIGHT();																		// Turn CW on the spot
-	waitFor(ANGLE,255,169); 
+	waitFor(ANGLE,255,174); 
 	STOP();
-	__delay_ms(6000);				//Makes DSX wait until its stopped - change is waitFor is changed
+	__delay_ms(3000);				//Makes DSX wait until its stopped - change is waitFor is changed
 }
 
 void updateOrientation(direction moved)

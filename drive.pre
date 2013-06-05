@@ -1,7 +1,7 @@
 
-# 1 "C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.7\drive.c"
+# 1 "C:\Documents and Settings\Administrator\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.8\COMPETITIONv0.8\drive.c"
 
-# 55 "C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.7\ser.h"
+# 55 "C:\Documents and Settings\Administrator\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.8\COMPETITIONv0.8\ser.h"
 bit ser_isrx(void);
 unsigned char ser_getch(void);
 void ser_putch(unsigned char byte);
@@ -17,7 +17,7 @@ extern bank1 unsigned char txfifo[16];
 extern volatile unsigned char txiptr, txoptr;
 extern unsigned char ser_tmp;
 
-# 82 "C:\Program Files\HI-TECH Software\PICC\9.82\include\pic16f877a.h"
+# 82 "C:\Program Files\HI-TECH Software\PICC\9.81\include\pic16f877a.h"
 volatile unsigned char INDF @ 0x000;
 
 
@@ -1088,25 +1088,23 @@ unsigned EEPGD : 1;
 volatile unsigned char EECON2 @ 0x18D;
 
 
-# 27 "C:\Program Files\HI-TECH Software\PICC\9.82\include\pic.h"
+# 21 "C:\Program Files\HI-TECH Software\PICC\9.81\include\pic.h"
 #pragma inline(_nop)
 extern void _nop(void);
 
-# 80
+# 74
 extern unsigned int flash_read(unsigned short addr);
 
-# 41 "C:\Program Files\HI-TECH Software\PICC\9.82\include\eeprom_routines.h"
-extern unsigned char eeprom_write(unsigned char addr, unsigned char value);
+# 41 "C:\Program Files\HI-TECH Software\PICC\9.81\include\eeprom_routines.h"
+extern void eeprom_write(unsigned char addr, unsigned char value);
 extern unsigned char eeprom_read(unsigned char addr);
-extern void eecpymem(volatile unsigned char *to, eeprom unsigned char *from, unsigned char size);
-extern void memcpyee(eeprom unsigned char *to, const unsigned char *from, unsigned char size);
 
 
-# 153 "C:\Program Files\HI-TECH Software\PICC\9.82\include\pic.h"
+# 147 "C:\Program Files\HI-TECH Software\PICC\9.81\include\pic.h"
 #pragma inline(_delay)
 extern void _delay(unsigned long);
 
-# 8 "C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.7\drive.h"
+# 8 "C:\Documents and Settings\Administrator\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.8\COMPETITIONv0.8\drive.h"
 typedef enum {
 FORWARD = 0,
 LEFT = 1,
@@ -1141,13 +1139,13 @@ void waitFor(char type, char highByte, char lowByte);
 void rightWallCorrect(void);
 void frontWallCorrect(void);
 
-# 6 "C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.7\sensors.h"
+# 6 "C:\Documents and Settings\Administrator\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.8\COMPETITIONv0.8\sensors.h"
 void checkCliff();
 bit checkVirtualWall();
 bit checkVictim();
 bit getBit(char byte, int position);
 
-# 14 "C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.7\lcd.h"
+# 14 "C:\Documents and Settings\Administrator\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.8\COMPETITIONv0.8\lcd.h"
 void lcd_write_control(unsigned char databyte);
 
 
@@ -1166,13 +1164,13 @@ void lcd_write_3_digit_bcd(int data);
 
 void lcd_init(void);
 
-# 6 "C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.7\map.h"
+# 6 "C:\Documents and Settings\Administrator\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.8\COMPETITIONv0.8\map.h"
 void findFinalDestination(char virtualWallX, char virtualWallY, orientation robotOrientation);
 char getFinalX();
 char getFinalY();
 char getVictimZone(char victimX, char victimY);
 
-# 18 "C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.7\main.h"
+# 19 "C:\Documents and Settings\Administrator\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.8\COMPETITIONv0.8\main.h"
 typedef struct {
 char pressed;
 char released;
@@ -1196,17 +1194,17 @@ bit findWall();
 char getCurrentX();
 char getCurrentY();
 
-# 7 "C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.7\adc.h"
+# 7 "C:\Documents and Settings\Administrator\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.8\COMPETITIONv0.8\adc.h"
 void init_adc(void);
 int adc_read(void);
 int adc_read_channel(unsigned char channel);
 
-# 8 "C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.7\ir.h"
+# 8 "C:\Documents and Settings\Administrator\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.8\COMPETITIONv0.8\ir.h"
 int convert(int adc_value);
 int readIR();
 void rotateIR(char steps, char direction);
 
-# 13 "C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.7\drive.c"
+# 13 "C:\Documents and Settings\Administrator\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.8\COMPETITIONv0.8\drive.c"
 volatile bit successfulDrive = 0;
 volatile direction somethingInTheWay = BACKWARD;
 volatile bit moving = 0;
@@ -1366,7 +1364,13 @@ void goForward()
 lcd_set_cursor(0x0F);
 lcd_write_data('F');
 lastMove = FORWARD;
+if( (getCurrentX() == 1 && getCurrentY() == 2))
+{
+driveForDistance(800);
+}else
+{
 driveForDistance(1000);
+}
 }
 
 
@@ -1404,26 +1408,32 @@ driveForDistance(1000);
 void turnAround()
 {
 drive(0, 50, 0, 1);
-waitFor(157,0,170);
+waitFor(157,0,180);
 drive(0, 0, 0, 0);
-_delay((unsigned long)((6000)*(20000000/4000.0)));
-_delay((unsigned long)((6000)*(20000000/4000.0)));
+_delay((unsigned long)((3000)*(20000000/4000.0)));
+_delay((unsigned long)((3000)*(20000000/4000.0)));
 }
 
 void turnLeft90()
 {
 drive(0, 50, 0, 1);
+if( (getCurrentX() == 2 && getCurrentY() == 2))
+{
 waitFor(157,0,85);
+}else
+{
+waitFor(157,0,90);
+}
 drive(0, 0, 0, 0);
-_delay((unsigned long)((6000)*(20000000/4000.0)));
+_delay((unsigned long)((3000)*(20000000/4000.0)));
 }
 
 void turnRight90()
 {
 drive(0, 50, 255, 255);
-waitFor(157,255,169);
+waitFor(157,255,174);
 drive(0, 0, 0, 0);
-_delay((unsigned long)((6000)*(20000000/4000.0)));
+_delay((unsigned long)((3000)*(20000000/4000.0)));
 }
 
 void updateOrientation(direction moved)
@@ -1441,7 +1451,7 @@ ser_putch(highByte);
 ser_putch(lowByte);
 }
 
-# 264
+# 276
 void frontWallCorrect(void)
 {
 rotateIR(24, 0b00001111);
@@ -1449,13 +1459,15 @@ int distToWall = readIR();
 if(distToWall < 45)
 {
 drive(255, 125, 128, 0);
-while(readIR() < 51){}
+while(distToWall < 51)
+distToWall = readIR();
 drive(0, 0, 0, 0);
 }
 else if(distToWall > 55)
 {
 drive(0, 250, 128, 0);
-while(readIR() > 51){}
+while(distToWall > 49)
+distToWall = readIR();
 drive(0, 0, 0, 0);
 }
 rotateIR(24, 0b00001101);

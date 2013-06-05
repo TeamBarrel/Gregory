@@ -1,6 +1,6 @@
 
-	; HI-TECH C Compiler for PIC10/12/16 MCUs V9.82
-	; Copyright (C) 1984-2011 HI-TECH Software
+	; HI-TECH C Compiler for PIC10/12/16 MCUs V9.81
+	; Copyright (C) 1984-2010 HI-TECH Software
 
 	; Auto-generated runtime startup code for final link stage.
 
@@ -10,9 +10,9 @@
 	; -oCOMPETITIONv0.7.cof -mCOMPETITIONv0.7.map --summary=default \
 	; --output=default adc.p1 eeprom.p1 lcd.p1 map.p1 ser.p1 songs.p1 ir.p1 \
 	; drive.p1 main.p1 sensors.p1 node.p1 --chip=16F877A -P \
-	; --runtime=default --opt=default -D__DEBUG=1 --rom=default \
-	; --ram=default -g --asmlist --errformat=Error   [%n] %f; %l.%c %s \
-	; --msgformat=Advisory[%n] %s --warnformat=Warning [%n] %f; %l.%c %s
+	; --runtime=default --opt=default -D__DEBUG=1 -g --asmlist \
+	; --errformat=Error   [%n] %f; %l.%c %s --msgformat=Advisory[%n] %s \
+	; --warnformat=Warning [%n] %f; %l.%c %s
 	;
 
 

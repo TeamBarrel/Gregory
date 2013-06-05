@@ -92,8 +92,9 @@ void testEEPROM(void)
 //Express way of adding new data to EEPROM
 void addNewData(char data)
 {
-	writeEEPROM(data,0,addressCount);
+	writeEEPROM(data,0,addressCount + 1);
 	addressCount ++;
+	writeEEPROM(addressCount,0,0);
 }
 
 //Write some EEPROM test data
@@ -148,13 +149,14 @@ void EEPROMToSerial(void)
 {
 	char transferDone = 0;
 	addressCurrent = 0;
-	//writeEEPROMTestData();
+	addressCount = readEEPROM(0,0);
+	__delay_ms(100);
 	//write the start char
 	ser_putch(254);
 	//transfer EEPROM data
 	while(!transferDone && addressCount > 0)
 	{
-		ser_putch(readEEPROM(0,addressCurrent));
+		ser_putch(readEEPROM(0,1 + addressCurrent));
 		__delay_ms(100);
 		addressCurrent ++;
 		if(addressCurrent >= (addressCount))
