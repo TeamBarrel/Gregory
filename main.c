@@ -32,16 +32,17 @@ volatile bit rightWall = 0;
 volatile bit leftWall = 0;
 volatile bit frontWall = 0;
 
-volatile bit walls[4] = {1,1,1,0};
+volatile char walls[4] = {1,1,1,0};
 
 volatile direction directionMoved;
 
 volatile orientation currentOrientation = WEST;
 
 volatile unsigned char xCoord = 1;
-volatile unsigned char yCoord = 0;
+volatile unsigned char yCoord = 4;
 
 volatile unsigned int RTC_Counter = 0;
+
 
 PushButton start;
 
@@ -64,7 +65,7 @@ void interrupt isr1(void)
 		{
 			RTC_FLAG_500MS = 1;
 			RTC_Counter = 0;	//reset RTC Counter
-			//RB0 ^= 1;
+			//checkSensors();
 		}
 
 		if(START_PB)																			// If PB1 has been pressed
@@ -95,9 +96,9 @@ void init()
 	
 	init_adc();
 	lcd_init();
-	initCellData();
+	//initCellData();
 	
-	TRISB = 0b00011110; 																	/* PORTB I/O designation */
+	TRISB = 0b00000001; 																	/* PORTB I/O designation */
 
 	//timer0
 	OPTION_REG = 0b00000100;
@@ -114,6 +115,7 @@ void init()
 
 	ser_init(); 																			//initialize UART
 	initIRobot();
+	initSongs();
 }
 
 void initIRobot()
@@ -138,19 +140,18 @@ bit findWall()
 // Finds where there are walls around the Create's location
 void findWalls()
 {
-	PORTC |= 0b00000011; // Set CPLD to SM mode
-	SSPBUF = 0b00001111; // Clockwise half-steps
-	__delay_ms(200);
-	
-	frontWall = findWall();
-	rotateIR(24); // Rotate 90deg
+
+
+	rotateIR(24, CW); // Rotate 90deg CW
 	rightWall = findWall();
-	rotateIR(48); // Rotate 180deg
+	rotateIR(24, CCW); // Rotate 180deg CCW
+	frontWall = findWall();
+	rotateIR(24, CCW); // Rotate 180deg CCW
 	leftWall = findWall();
-	rotateIR(24); // Rotate 90deg
+	rotateIR(24, CW); // Rotate 90deg CW
 	
 	int wallAtOrientation = 0;
-
+	lcd_set_cursor(0x07);
 	if(rightWall)
 	{
 		lcd_write_data('R');
@@ -182,11 +183,6 @@ void findWalls()
 		lcd_write_data(' ');		
 }
 
-// Return the bit at a position of a char
-bit getBit(char byte, int position)
-{
-   return (byte >> position) & 1;
-}
 
 // Go one cell backwards
 void goBackward()
@@ -239,20 +235,6 @@ void goRight()
 	lcd_set_cursor(0x4F);
 	lcd_write_data('R');
 }
-	
-void run()
-{
-	lcd_set_cursor(0x00);
-	lcd_write_string("Walls@ R L (1,0)");
-	lcd_write_string("cuOr: W dirMo: -");
-	while(1)
-	{
-		findWalls();
-		writeCellData();
-		goToNextCell();
-		updateLocation();
-	}
-}
 
 void updateLocation()
 {
@@ -261,15 +243,15 @@ void updateLocation()
 	if(currentOrientation >= 4)
 		currentOrientation -= 4;
 
-	lcd_set_cursor(0x06);
+	lcd_set_cursor(0x46);
 	switch(currentOrientation)
 	{
 		case NORTH:
-			--yCoord;
+			++yCoord;
 			lcd_write_data('N');		
 			break;
 		case SOUTH:
-			++yCoord;
+			--yCoord;
 			lcd_write_data('S');
 			break;
 		case EAST:
@@ -286,7 +268,7 @@ void updateLocation()
 
 	lcd_set_cursor(0x0C);
 	lcd_write_1_digit_bcd(xCoord);
-	lcd_set_cursor(0x03);
+	lcd_set_cursor(0x0E);
 	lcd_write_1_digit_bcd(yCoord);
 	
 }
@@ -295,10 +277,27 @@ void main(void)
 {
 	init();
 	STOP();
+	//testEEPROM();
+	//__delay_ms(5000);
+	
+	lcd_set_cursor(0x00);
+	lcd_write_string("Walls@ --- (1,0)");
+	lcd_set_cursor(0x40);
+	lcd_write_string("cuOr: - dirMo: -");
+	play_iCreate_song(4);
 	while(1)
 	{
-		if(start.pressed) 
-			run();
+		if(start.pressed)
+		{
+			//if(!isMoving())
+			//{
+			findWalls();
+			//writeCellData();
+			goToNextCell();
+			updateLocation();
+			//__delay_ms(5000);
+			//}
+		}
 	}
 }
 

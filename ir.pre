@@ -1,5 +1,5 @@
 
-# 1 "C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.2\ir.c"
+# 1 "C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.3\ir.c"
 
 # 82 "C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f877a.h"
 volatile unsigned char INDF @ 0x000;
@@ -1090,17 +1090,17 @@ extern void memcpyee(eeprom unsigned char *to, const unsigned char *from, unsign
 #pragma inline(_delay)
 extern void _delay(unsigned long);
 
-# 7 "C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.2\adc.h"
+# 7 "C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.3\adc.h"
 void init_adc(void);
 int adc_read(void);
 int adc_read_channel(unsigned char channel);
 
-# 8 "C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.2\ir.h"
+# 8 "C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.3\ir.h"
 int convert(int adc_value);
 int readIR();
-void rotateIR(char steps);
+void rotateIR(char steps, char direction);
 
-# 10 "C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.2\ir.c"
+# 10 "C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.3\ir.c"
 int convert(int adc_value)
 {
 if(adc_value < 82)
@@ -1129,13 +1129,21 @@ int cm = convert(adc_read_channel(0));
 return cm;
 }
 
-void rotateIR(char steps)
+void rotateIR(char steps, char direction)
 {
+PORTC |= 0b00000011;
+SSPBUF = direction;
+_delay((unsigned long)((200)*(20000000/4000.0)));
+
 for (char stepNum = 1; stepNum <= steps; ++stepNum)
 {
 PORTC |= 0b00000100;
 PORTC &= 0b11111011;
-_delay((unsigned long)((100)*(20000000/4000.0)));
+_delay((unsigned long)((20)*(20000000/4000.0)));
 }
+
+SSPBUF = 0b00000000;
+_delay((unsigned long)((200)*(20000000/4000.0)));
+
 }
 

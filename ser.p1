@@ -881,20 +881,22 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _EECON1bits `VS99  1 e@396 ]
 "1167 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f877a.h
 [v _EECON2 `Vuc  1 e@397 ]
-"41 C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.2\ser.c
+"41 C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.3\ser.c
 [v _rxfifo `uc  -> 16 `i e ]
-"42 C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.2\ser.c
+"42 C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.3\ser.c
 [v _rxiptr `Vuc  1 e ]
-"42 C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.2\ser.c
+"42 C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.3\ser.c
 [v _rxoptr `Vuc  1 e ]
-"43 C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.2\ser.c
+"43 C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.3\ser.c
 [v _txfifo `Xuc  -> 16 `i e ]
-"44 C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.2\ser.c
+"44 C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.3\ser.c
 [v _txiptr `Vuc  1 e ]
-"44 C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.2\ser.c
+"44 C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.3\ser.c
 [v _txoptr `Vuc  1 e ]
-"45 C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.2\ser.c
+"45 C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.3\ser.c
 [v _ser_tmp `uc  1 e ]
+"57 C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.3\ser.h
+[v _ser_putch `(v  0 ef1`uc ]
 [; ;pic16f877a.h: 82: volatile unsigned char INDF @ 0x000;
 [; ;pic16f877a.h: 86: volatile unsigned char TMR0 @ 0x001;
 [; ;pic16f877a.h: 90: volatile unsigned char PCL @ 0x002;
@@ -1743,7 +1745,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ser.c: 43: bank1 unsigned char txfifo[16];
 [; ;ser.c: 44: volatile unsigned char txiptr, txoptr;
 [; ;ser.c: 45: unsigned char ser_tmp;
-"48 C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.2\ser.c
+"48 C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.3\ser.c
 [v _ser_isrx `(b  1 ef ]
 {
 [; ;ser.c: 47: bit ser_isrx(void)
@@ -1821,197 +1823,233 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 103 ]
 }
 "73
+[v _ser_putArr `(v  1 ef2`*uc`i ]
+{
+[; ;ser.c: 72: void ser_putArr(unsigned char array[], int length)
+[; ;ser.c: 73: {
+[e :U _ser_putArr ]
+[v _array `*uc  1 r1 ]
+[v _length `i  1 r2 ]
+[f ]
+[; ;ser.c: 74: for(int i =0; i< length; i++)
+"74
+{
+[v _i `i  1 a ]
+[e = _i -> 0 `i ]
+[e $U 111  ]
+"75
+[e :U 108 ]
+[; ;ser.c: 75: {
+{
+[; ;ser.c: 76: ser_putch(array[i]);
+"76
+[e ( _ser_putch (1 *U + _array * -> _i `x -> -> # *U _array `i `x ]
+"77
+}
+"74
+[e ++ _i -> 1 `i ]
+[e :U 111 ]
+[e $ < _i _length 108  ]
+[e :U 109 ]
+"77
+}
+[; ;ser.c: 77: }
+[; ;ser.c: 78: }
+"78
+[e :UE 107 ]
+}
+"81
 [v _ser_putch `(v  1 ef1`uc ]
 {
-[; ;ser.c: 72: void ser_putch(unsigned char c)
-[; ;ser.c: 73: {
+[; ;ser.c: 80: void ser_putch(unsigned char c)
+[; ;ser.c: 81: {
 [e :U _ser_putch ]
 [v _c `uc  1 r1 ]
 [f ]
-[; ;ser.c: 74: while (((txiptr+1) & (16-1))==txoptr)
-"74
-[e $U 108  ]
-[e :U 109 ]
-[; ;ser.c: 75: continue;
-"75
-[e $U 108  ]
-[e :U 108 ]
-"74
-[e $ == & + -> _txiptr `i -> 1 `i - -> 16 `i -> 1 `i -> _txoptr `i 109  ]
-[e :U 110 ]
-[; ;ser.c: 76: GIE=0;
-"76
-[e = _GIE -> -> 0 `i `b ]
-[; ;ser.c: 77: txfifo[txiptr] = c;
-"77
-[e = *U + &U _txfifo * -> _txiptr `ux -> -> # *U &U _txfifo `ui `ux _c ]
-[; ;ser.c: 78: txiptr=(txiptr+1) & (16-1);
-"78
-[e = _txiptr -> & + -> _txiptr `i -> 1 `i - -> 16 `i -> 1 `i `uc ]
-[; ;ser.c: 79: TXIE=1;
-"79
-[e = _TXIE -> -> 1 `i `b ]
-[; ;ser.c: 80: GIE=1;
-"80
-[e = _GIE -> -> 1 `i `b ]
-[; ;ser.c: 81: }
-"81
-[e :UE 107 ]
-}
+[; ;ser.c: 82: while (((txiptr+1) & (16-1))==txoptr)
+"82
+[e $U 113  ]
+[e :U 114 ]
+[; ;ser.c: 83: continue;
+"83
+[e $U 113  ]
+[e :U 113 ]
+"82
+[e $ == & + -> _txiptr `i -> 1 `i - -> 16 `i -> 1 `i -> _txoptr `i 114  ]
+[e :U 115 ]
+[; ;ser.c: 84: GIE=0;
 "84
+[e = _GIE -> -> 0 `i `b ]
+[; ;ser.c: 85: txfifo[txiptr] = c;
+"85
+[e = *U + &U _txfifo * -> _txiptr `ux -> -> # *U &U _txfifo `ui `ux _c ]
+[; ;ser.c: 86: txiptr=(txiptr+1) & (16-1);
+"86
+[e = _txiptr -> & + -> _txiptr `i -> 1 `i - -> 16 `i -> 1 `i `uc ]
+[; ;ser.c: 87: TXIE=1;
+"87
+[e = _TXIE -> -> 1 `i `b ]
+[; ;ser.c: 88: GIE=1;
+"88
+[e = _GIE -> -> 1 `i `b ]
+[; ;ser.c: 89: }
+"89
+[e :UE 112 ]
+}
+"92
 [v _ser_puts `(v  1 ef1`*Cuc ]
 {
-[; ;ser.c: 83: void ser_puts(const unsigned char * s)
-[; ;ser.c: 84: {
+[; ;ser.c: 91: void ser_puts(const unsigned char * s)
+[; ;ser.c: 92: {
 [e :U _ser_puts ]
 [v _s `*Cuc  1 r1 ]
 [f ]
-[; ;ser.c: 85: while(*s)
-"85
-[e $U 112  ]
-[e :U 113 ]
-[; ;ser.c: 86: ser_putch(*s++);
-"86
+[; ;ser.c: 93: while(*s)
+"93
+[e $U 117  ]
+[e :U 118 ]
+[; ;ser.c: 94: ser_putch(*s++);
+"94
 [e ( _ser_putch (1 *U ++ _s * -> -> 1 `i `x -> -> # *U _s `i `x ]
-[e :U 112 ]
-"85
-[e $ != -> *U _s `i -> -> -> 0 `i `Cuc `i 113  ]
-[e :U 114 ]
-[; ;ser.c: 87: }
-"87
-[e :UE 111 ]
+[e :U 117 ]
+"93
+[e $ != -> *U _s `i -> -> -> 0 `i `Cuc `i 118  ]
+[e :U 119 ]
+[; ;ser.c: 95: }
+"95
+[e :UE 116 ]
 }
-"90
+"98
 [v _ser_puts2 `(v  1 ef1`*uc ]
 {
-[; ;ser.c: 89: void ser_puts2(unsigned char * s)
-[; ;ser.c: 90: {
+[; ;ser.c: 97: void ser_puts2(unsigned char * s)
+[; ;ser.c: 98: {
 [e :U _ser_puts2 ]
 [v _s `*uc  1 r1 ]
 [f ]
-[; ;ser.c: 91: while(*s)
-"91
-[e $U 116  ]
-[e :U 117 ]
-[; ;ser.c: 92: ser_putch(*s++);
-"92
+[; ;ser.c: 99: while(*s)
+"99
+[e $U 121  ]
+[e :U 122 ]
+[; ;ser.c: 100: ser_putch(*s++);
+"100
 [e ( _ser_putch (1 *U ++ _s * -> -> 1 `i `x -> -> # *U _s `i `x ]
-[e :U 116 ]
-"91
-[e $ != -> *U _s `i -> -> -> 0 `i `uc `i 117  ]
-[e :U 118 ]
-[; ;ser.c: 93: }
-"93
-[e :UE 115 ]
+[e :U 121 ]
+"99
+[e $ != -> *U _s `i -> -> -> 0 `i `uc `i 122  ]
+[e :U 123 ]
+[; ;ser.c: 101: }
+"101
+[e :UE 120 ]
 }
-"96
+"104
 [v _ser_puthex `(v  1 ef1`uc ]
 {
-[; ;ser.c: 95: void ser_puthex(unsigned char v)
-[; ;ser.c: 96: {
+[; ;ser.c: 103: void ser_puthex(unsigned char v)
+[; ;ser.c: 104: {
 [e :U _ser_puthex ]
 [v _v `uc  1 r1 ]
 [f ]
-"97
+"105
 [v _c `uc  1 a ]
-[; ;ser.c: 97: unsigned char c;
-[; ;ser.c: 99: c = v >> 4;
-"99
-[e = _c -> >> -> _v `i -> 4 `i `uc ]
-[; ;ser.c: 100: if (c>9) {
-"100
-[e $ ! > -> _c `i -> 9 `i 120  ]
-{
-[; ;ser.c: 101: ser_putch('A'-10+c);
-"101
-[e ( _ser_putch (1 -> + - -> 65 `ui -> -> 10 `i `ui -> _c `ui `uc ]
-"102
-}
-[; ;ser.c: 102: } else {
-[e $U 121  ]
-[e :U 120 ]
-{
-[; ;ser.c: 103: ser_putch('0'+c);
-"103
-[e ( _ser_putch (1 -> + -> 48 `ui -> _c `ui `uc ]
-"104
-}
-[e :U 121 ]
-[; ;ser.c: 104: }
-[; ;ser.c: 106: c = v & 0x0F;
-"106
-[e = _c -> & -> _v `i -> 15 `i `uc ]
-[; ;ser.c: 107: if (c>9) {
+[; ;ser.c: 105: unsigned char c;
+[; ;ser.c: 107: c = v >> 4;
 "107
-[e $ ! > -> _c `i -> 9 `i 122  ]
-{
-[; ;ser.c: 108: ser_putch('A'-10+c);
+[e = _c -> >> -> _v `i -> 4 `i `uc ]
+[; ;ser.c: 108: if (c>9) {
 "108
-[e ( _ser_putch (1 -> + - -> 65 `ui -> -> 10 `i `ui -> _c `ui `uc ]
-"109
-}
-[; ;ser.c: 109: } else {
-[e $U 123  ]
-[e :U 122 ]
+[e $ ! > -> _c `i -> 9 `i 125  ]
 {
-[; ;ser.c: 110: ser_putch('0'+c);
+[; ;ser.c: 109: ser_putch('A'-10+c);
+"109
+[e ( _ser_putch (1 -> + - -> 65 `ui -> -> 10 `i `ui -> _c `ui `uc ]
 "110
-[e ( _ser_putch (1 -> + -> 48 `ui -> _c `ui `uc ]
+}
+[; ;ser.c: 110: } else {
+[e $U 126  ]
+[e :U 125 ]
+{
+[; ;ser.c: 111: ser_putch('0'+c);
 "111
-}
-[e :U 123 ]
-[; ;ser.c: 111: }
-[; ;ser.c: 112: }
+[e ( _ser_putch (1 -> + -> 48 `ui -> _c `ui `uc ]
 "112
-[e :UE 119 ]
 }
+[e :U 126 ]
+[; ;ser.c: 112: }
+[; ;ser.c: 114: c = v & 0x0F;
+"114
+[e = _c -> & -> _v `i -> 15 `i `uc ]
+[; ;ser.c: 115: if (c>9) {
+"115
+[e $ ! > -> _c `i -> 9 `i 127  ]
+{
+[; ;ser.c: 116: ser_putch('A'-10+c);
 "116
+[e ( _ser_putch (1 -> + - -> 65 `ui -> -> 10 `i `ui -> _c `ui `uc ]
+"117
+}
+[; ;ser.c: 117: } else {
+[e $U 128  ]
+[e :U 127 ]
+{
+[; ;ser.c: 118: ser_putch('0'+c);
+"118
+[e ( _ser_putch (1 -> + -> 48 `ui -> _c `ui `uc ]
+"119
+}
+[e :U 128 ]
+[; ;ser.c: 119: }
+[; ;ser.c: 120: }
+"120
+[e :UE 124 ]
+}
+"124
 [v _ser_init `(v  1 ef ]
 {
-[; ;ser.c: 115: void ser_init(void)
-[; ;ser.c: 116: {
+[; ;ser.c: 123: void ser_init(void)
+[; ;ser.c: 124: {
 [e :U _ser_init ]
 [f ]
-[; ;ser.c: 117: TRISC |= 0b10000000;
-"117
-[e =| _TRISC -> -> 128 `i `uc ]
-[; ;ser.c: 118: TRISC &= 0b10111111;
-"118
-[e =& _TRISC -> -> 191 `i `uc ]
-[; ;ser.c: 119: BRGH=1;
-"119
-[e = _BRGH -> -> 1 `i `b ]
-[; ;ser.c: 121: SPBRG=20;
-"121
-[e = _SPBRG -> -> 20 `i `uc ]
-[; ;ser.c: 124: TX9=0;
-"124
-[e = _TX9 -> -> 0 `i `b ]
-[; ;ser.c: 125: RX9=0;
+[; ;ser.c: 125: TRISC |= 0b10000000;
 "125
-[e = _RX9 -> -> 0 `i `b ]
-[; ;ser.c: 127: SYNC=0;
+[e =| _TRISC -> -> 128 `i `uc ]
+[; ;ser.c: 126: TRISC &= 0b10111111;
+"126
+[e =& _TRISC -> -> 191 `i `uc ]
+[; ;ser.c: 127: BRGH=1;
 "127
-[e = _SYNC -> -> 0 `i `b ]
-[; ;ser.c: 128: SPEN=1;
-"128
-[e = _SPEN -> -> 1 `i `b ]
-[; ;ser.c: 129: CREN=1;
+[e = _BRGH -> -> 1 `i `b ]
+[; ;ser.c: 129: SPBRG=20;
 "129
-[e = _CREN -> -> 1 `i `b ]
-[; ;ser.c: 130: TXIE=0;
-"130
-[e = _TXIE -> -> 0 `i `b ]
-[; ;ser.c: 131: RCIE=1;
-"131
-[e = _RCIE -> -> 1 `i `b ]
-[; ;ser.c: 132: TXEN=1;
+[e = _SPBRG -> -> 20 `i `uc ]
+[; ;ser.c: 132: TX9=0;
 "132
-[e = _TXEN -> -> 1 `i `b ]
-[; ;ser.c: 135: rxiptr=rxoptr=txiptr=txoptr=0;
+[e = _TX9 -> -> 0 `i `b ]
+[; ;ser.c: 133: RX9=0;
+"133
+[e = _RX9 -> -> 0 `i `b ]
+[; ;ser.c: 135: SYNC=0;
 "135
-[e = _rxiptr = _rxoptr = _txiptr = _txoptr -> -> 0 `i `uc ]
-[; ;ser.c: 136: }
+[e = _SYNC -> -> 0 `i `b ]
+[; ;ser.c: 136: SPEN=1;
 "136
-[e :UE 124 ]
+[e = _SPEN -> -> 1 `i `b ]
+[; ;ser.c: 137: CREN=1;
+"137
+[e = _CREN -> -> 1 `i `b ]
+[; ;ser.c: 138: TXIE=0;
+"138
+[e = _TXIE -> -> 0 `i `b ]
+[; ;ser.c: 139: RCIE=1;
+"139
+[e = _RCIE -> -> 1 `i `b ]
+[; ;ser.c: 140: TXEN=1;
+"140
+[e = _TXEN -> -> 1 `i `b ]
+[; ;ser.c: 143: rxiptr=rxoptr=txiptr=txoptr=0;
+"143
+[e = _rxiptr = _rxoptr = _txiptr = _txoptr -> -> 0 `i `uc ]
+[; ;ser.c: 144: }
+"144
+[e :UE 129 ]
 }

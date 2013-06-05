@@ -1,5 +1,5 @@
 
-# 1 "C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.2\adc.c"
+# 1 "C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.3\adc.c"
 
 # 82 "C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f877a.h"
 volatile unsigned char INDF @ 0x000;
@@ -1090,12 +1090,12 @@ extern void memcpyee(eeprom unsigned char *to, const unsigned char *from, unsign
 #pragma inline(_delay)
 extern void _delay(unsigned long);
 
-# 7 "C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.2\adc.h"
+# 7 "C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.3\adc.h"
 void init_adc(void);
 int adc_read(void);
 int adc_read_channel(unsigned char channel);
 
-# 6 "C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.2\adc.c"
+# 6 "C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.3\adc.c"
 int adc_read_channel(unsigned char channel)
 {
 switch(channel)

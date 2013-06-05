@@ -7,6 +7,6 @@
 
 int convert(int adc_value);
 int readIR();
-void rotateIR(char steps);
+void rotateIR(char steps, char direction);
 
 #endif 

@@ -881,7 +881,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _EECON1bits `VS99  1 e@396 ]
 "1167 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f877a.h
 [v _EECON2 `Vuc  1 e@397 ]
-"9 C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.2\adc.h
+"9 C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.3\adc.h
 [v _adc_read_channel `(i  0 ef1`uc ]
 "154 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic.h
 [v __delay `(v  0 ef1`ul ]
@@ -1722,8 +1722,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;adc.h: 9: int adc_read_channel(unsigned char channel);
 [; ;ir.h: 8: int convert(int adc_value);
 [; ;ir.h: 9: int readIR();
-[; ;ir.h: 10: void rotateIR(char steps);
-"11 C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.2\ir.c
+[; ;ir.h: 10: void rotateIR(char steps, char direction);
+"11 C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.3\ir.c
 [v _convert `(i  1 ef1`i ]
 {
 [; ;ir.c: 10: int convert(int adc_value)
@@ -1829,43 +1829,59 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 116 ]
 }
 "39
-[v _rotateIR `(v  1 ef1`uc ]
+[v _rotateIR `(v  1 ef2`uc`uc ]
 {
-[; ;ir.c: 38: void rotateIR(char steps)
+[; ;ir.c: 38: void rotateIR(char steps, char direction)
 [; ;ir.c: 39: {
 [e :U _rotateIR ]
 [v _steps `uc  1 r1 ]
+[v _direction `uc  1 r2 ]
 [f ]
-[; ;ir.c: 40: for (char stepNum = 1; stepNum <= steps; ++stepNum)
+[; ;ir.c: 40: PORTC |= 0b00000011;
 "40
+[e =| _PORTC -> -> 3 `i `uc ]
+[; ;ir.c: 41: SSPBUF = direction;
+"41
+[e = _SSPBUF _direction ]
+[; ;ir.c: 42: _delay((unsigned long)((200)*(20000000/4000.0)));
+"42
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;ir.c: 44: for (char stepNum = 1; stepNum <= steps; ++stepNum)
+"44
 {
 [v _stepNum `uc  1 a ]
 [e = _stepNum -> -> 1 `i `uc ]
 [e $U 121  ]
-"41
-[e :U 118 ]
-[; ;ir.c: 41: {
-{
-[; ;ir.c: 42: PORTC |= 0b00000100;
-"42
-[e =| _PORTC -> -> 4 `i `uc ]
-[; ;ir.c: 43: PORTC &= 0b11111011;
-"43
-[e =& _PORTC -> -> 251 `i `uc ]
-[; ;ir.c: 44: _delay((unsigned long)((100)*(20000000/4000.0)));
-"44
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
 "45
+[e :U 118 ]
+[; ;ir.c: 45: {
+{
+[; ;ir.c: 46: PORTC |= 0b00000100;
+"46
+[e =| _PORTC -> -> 4 `i `uc ]
+[; ;ir.c: 47: PORTC &= 0b11111011;
+"47
+[e =& _PORTC -> -> 251 `i `uc ]
+[; ;ir.c: 48: _delay((unsigned long)((20)*(20000000/4000.0)));
+"48
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"49
 }
-"40
+"44
 [e =+ _stepNum -> -> 1 `i `uc ]
 [e :U 121 ]
 [e $ <= -> _stepNum `i -> _steps `i 118  ]
 [e :U 119 ]
-"45
+"49
 }
-[; ;ir.c: 45: }
-[; ;ir.c: 46: }
-"46
+[; ;ir.c: 49: }
+[; ;ir.c: 51: SSPBUF = 0b00000000;
+"51
+[e = _SSPBUF -> -> 0 `i `uc ]
+[; ;ir.c: 52: _delay((unsigned long)((200)*(20000000/4000.0)));
+"52
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;ir.c: 54: }
+"54
 [e :UE 117 ]
 }

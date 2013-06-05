@@ -1,8 +1,9 @@
-C:\Program Files\HI-TECH Software\PICC\9.82\include\pic16f877a.h
-C:\Program Files\HI-TECH Software\PICC\9.82\include\htc.h
-C:\Program Files\HI-TECH Software\PICC\9.82\include\eeprom_routines.h
-C:\Program Files\HI-TECH Software\PICC\9.82\include\chip_select.h
-C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.1\drive.h
-C:\Program Files\HI-TECH Software\PICC\9.82\include\pic.h
-C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.1\ser.h
-C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.1\xtal.h
+C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.3\ser.h
+C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f877a.h
+C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.3\drive.h
+C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.3\sensors.h
+C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\htc.h
+C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\eeprom_routines.h
+C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\chip_select.h
+C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.3\xtal.h
+C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic.h

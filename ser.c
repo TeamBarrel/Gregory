@@ -69,6 +69,14 @@ unsigned char ser_getch(void)
 	return c;
 }
 
+void ser_putArr(unsigned char array[], int length)
+{
+	for(int i =0; i< length; i++)
+	{
+		ser_putch(array[i]);
+	}
+}
+
 void ser_putch(unsigned char c)
 {
 	while (((txiptr+1) & SER_FIFO_MASK)==txoptr)

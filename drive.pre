@@ -1,7 +1,7 @@
 
-# 1 "C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.2\drive.c"
+# 1 "C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.3\drive.c"
 
-# 55 "C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.2\ser.h"
+# 55 "C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.3\ser.h"
 bit ser_isrx(void);
 unsigned char ser_getch(void);
 void ser_putch(unsigned char byte);
@@ -1106,15 +1106,22 @@ extern void memcpyee(eeprom unsigned char *to, const unsigned char *from, unsign
 #pragma inline(_delay)
 extern void _delay(unsigned long);
 
-# 16 "C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.2\drive.h"
+# 16 "C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.3\drive.h"
 void drive(char highByteSpeed, char lowByteSpeed, char highByteRadius, char lowByteRadius);
 void driveForDistance(int moveDistance);
+bit isMoving();
 void turnAround();
 void turnLeft90();
 void turnRight90();
 void waitFor(char type, char highByte, char lowByte);
 
-# 8 "C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.2\drive.c"
+# 6 "C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.3\sensors.h"
+void checkSensors();
+bit getBit(char byte, int position);
+
+# 9 "C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.3\drive.c"
+volatile bit moving = 0;
+
 void drive(char highByteSpeed, char lowByteSpeed, char highByteRadius, char lowByteRadius)
 {
 _delay((unsigned long)((100)*(20000000/4000.0)));
@@ -1132,18 +1139,32 @@ volatile char high, low;
 int deltaDistance = 0;
 int distance = 0;
 
-drive(0, 125, 128, 0);
+moving = 1;
+drive(0, 250, 128, 0);
 
-while(distance >= moveDistance)
+
+while(moving)
 {
-ser_putch(137);
+
+
+ser_putch(142);
 ser_putch(19);
 high = ser_getch();
 low = ser_getch();
 deltaDistance = high*256 + low;
 distance += deltaDistance;
-}
+
+if(distance >= moveDistance)
+{
 drive(0, 0, 0, 0);
+moving = 0;
+}
+}
+}
+
+bit isMoving()
+{
+return moving;
 }
 
 void turnAround()
@@ -1151,6 +1172,8 @@ void turnAround()
 drive(0, 25, 0, 1);
 waitFor(157,0,170);
 drive(0, 0, 0, 0);
+_delay((unsigned long)((6500)*(20000000/4000.0)));
+_delay((unsigned long)((6500)*(20000000/4000.0)));
 }
 
 void turnLeft90()
@@ -1158,6 +1181,7 @@ void turnLeft90()
 drive(0, 25, 0, 1);
 waitFor(157,0,85);
 drive(0, 0, 0, 0);
+_delay((unsigned long)((6500)*(20000000/4000.0)));
 }
 
 void turnRight90()
@@ -1165,6 +1189,7 @@ void turnRight90()
 drive(0, 25, 255, 255);
 waitFor(157,255,169);
 drive(0, 0, 0, 0);
+_delay((unsigned long)((6500)*(20000000/4000.0)));
 }
 
 void waitFor(char type, char highByte, char lowByte)

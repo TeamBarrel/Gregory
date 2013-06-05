@@ -1,5 +1,8 @@
-#define BUILD // Comment this line out to omit from build
+//#define BUILD // Comment this line out to omit from build
 #if defined(BUILD)
+
+#include "map.h"
+#include "main.h"
 
 //VCMMNESW
 

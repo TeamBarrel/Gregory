@@ -4,12 +4,13 @@
 
 /********** #DEFINES **********/
 
-#define _XTAL_FREQ 20000000
 #define TRUE 1
 #define FALSE 0
 #define TMR0_VAL 100																		// TMR0 settings: Start count, period of 1ms, with prescaler = 32
 #define DEBOUNCE_REQ_COUNT 10
-#define START_PB RB0
+#define START_PB !RB0
+#define CW 0b00001111
+#define CCW 0b00001101
 
 /*********** TYPEDEFS ***********/
 
@@ -40,7 +41,7 @@ void init();
 void initIRobot();
 bit findWall();
 void findWalls();
-bit getBit(char byte, int position);
+//bit getBit(char byte, int position);
 void goBackward();
 void goForward();
 void goLeft();

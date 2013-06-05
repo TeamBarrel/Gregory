@@ -35,14 +35,22 @@ int readIR()
 	return cm;
 }
 
-void rotateIR(char steps)
+void rotateIR(char steps, char direction)
 {
+	PORTC |= 0b00000011; // Set CPLD to SM mode
+	SSPBUF = direction; // Clockwise half-steps
+	__delay_ms(200);
+
 	for (char stepNum = 1; stepNum <= steps; ++stepNum)										// For the amount of steps desired
 	{
 		PORTC |= 0b00000100;																/* Pulse SM_STEP */
 		PORTC &= 0b11111011;	
-		__delay_ms(100);
+		__delay_ms(20);
 	}
+
+	SSPBUF = 0b00000000; // Clear SSPBUF
+	__delay_ms(200);
+	
 }
 
 #endif

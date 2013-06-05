@@ -881,14 +881,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _EECON1bits `VS99  1 e@396 ]
 "1167 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f877a.h
 [v _EECON2 `Vuc  1 e@397 ]
+"9 C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.3\drive.c
+[v _moving `Vb  1 e ]
 "154 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic.h
 [v __delay `(v  0 ef1`ul ]
 [p i __delay ]
-"57 C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.2\ser.h
+"57 C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.3\ser.h
 [v _ser_putch `(v  0 ef1`uc ]
-"56 C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.2\ser.h
+"56 C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.3\ser.h
 [v _ser_getch `(uc  0 ef ]
-"21 C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.2\drive.h
+"22 C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.3\drive.h
 [v _waitFor `(v  0 ef3`uc`uc`uc ]
 [; ;ser.h: 55: bit ser_isrx(void);
 [; ;ser.h: 56: unsigned char ser_getch(void);
@@ -1735,188 +1737,239 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 154: extern void _delay(unsigned long);
 [; ;drive.h: 16: void drive(char highByteSpeed, char lowByteSpeed, char highByteRadius, char lowByteRadius);
 [; ;drive.h: 17: void driveForDistance(int moveDistance);
-[; ;drive.h: 18: void turnAround();
-[; ;drive.h: 19: void turnLeft90();
-[; ;drive.h: 20: void turnRight90();
-[; ;drive.h: 21: void waitFor(char type, char highByte, char lowByte);
-"9 C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.2\drive.c
+[; ;drive.h: 18: bit isMoving();
+[; ;drive.h: 19: void turnAround();
+[; ;drive.h: 20: void turnLeft90();
+[; ;drive.h: 21: void turnRight90();
+[; ;drive.h: 22: void waitFor(char type, char highByte, char lowByte);
+[; ;sensors.h: 6: void checkSensors();
+[; ;sensors.h: 7: bit getBit(char byte, int position);
+"9 C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.3\drive.c
+[i _moving
+-> 0 `i
+]
+[; ;drive.c: 9: volatile bit moving = 0;
+"12
 [v _drive `(v  1 ef4`uc`uc`uc`uc ]
 {
-[; ;drive.c: 8: void drive(char highByteSpeed, char lowByteSpeed, char highByteRadius, char lowByteRadius)
-[; ;drive.c: 9: {
+[; ;drive.c: 11: void drive(char highByteSpeed, char lowByteSpeed, char highByteRadius, char lowByteRadius)
+[; ;drive.c: 12: {
 [e :U _drive ]
 [v _highByteSpeed `uc  1 r1 ]
 [v _lowByteSpeed `uc  1 r2 ]
 [v _highByteRadius `uc  1 r3 ]
 [v _lowByteRadius `uc  1 r4 ]
 [f ]
-[; ;drive.c: 10: _delay((unsigned long)((100)*(20000000/4000.0)));
-"10
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-[; ;drive.c: 11: ser_putch(137);
-"11
-[e ( _ser_putch (1 -> -> 137 `i `uc ]
-[; ;drive.c: 12: ser_putch(highByteSpeed);
-"12
-[e ( _ser_putch (1 _highByteSpeed ]
-[; ;drive.c: 13: ser_putch(lowByteSpeed);
+[; ;drive.c: 13: _delay((unsigned long)((100)*(20000000/4000.0)));
 "13
-[e ( _ser_putch (1 _lowByteSpeed ]
-[; ;drive.c: 14: ser_putch(highByteRadius);
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;drive.c: 14: ser_putch(137);
 "14
-[e ( _ser_putch (1 _highByteRadius ]
-[; ;drive.c: 15: ser_putch(lowByteRadius);
+[e ( _ser_putch (1 -> -> 137 `i `uc ]
+[; ;drive.c: 15: ser_putch(highByteSpeed);
 "15
-[e ( _ser_putch (1 _lowByteRadius ]
-[; ;drive.c: 16: }
+[e ( _ser_putch (1 _highByteSpeed ]
+[; ;drive.c: 16: ser_putch(lowByteSpeed);
 "16
+[e ( _ser_putch (1 _lowByteSpeed ]
+[; ;drive.c: 17: ser_putch(highByteRadius);
+"17
+[e ( _ser_putch (1 _highByteRadius ]
+[; ;drive.c: 18: ser_putch(lowByteRadius);
+"18
+[e ( _ser_putch (1 _lowByteRadius ]
+[; ;drive.c: 19: }
+"19
 [e :UE 101 ]
 }
-"19
+"22
 [v _driveForDistance `(v  1 ef1`i ]
 {
-[; ;drive.c: 18: void driveForDistance(int moveDistance)
-[; ;drive.c: 19: {
+[; ;drive.c: 21: void driveForDistance(int moveDistance)
+[; ;drive.c: 22: {
 [e :U _driveForDistance ]
 [v _moveDistance `i  1 r1 ]
 [f ]
-"21
+"24
 [v _high `Vuc  1 a ]
 [v _low `Vuc  1 a ]
-"22
-[v _deltaDistance `i  1 a ]
-[; ;drive.c: 21: volatile char high, low;
-[; ;drive.c: 22: int deltaDistance = 0;
-[e = _deltaDistance -> 0 `i ]
-"23
-[v _distance `i  1 a ]
-[; ;drive.c: 23: int distance = 0;
-[e = _distance -> 0 `i ]
-[; ;drive.c: 25: drive(0, 125, 128, 0);
 "25
-[e ( _drive (4 , , , -> -> 0 `i `uc -> -> 125 `i `uc -> -> 128 `i `uc -> -> 0 `i `uc ]
-[; ;drive.c: 27: while(distance >= moveDistance)
-"27
+[v _deltaDistance `i  1 a ]
+[; ;drive.c: 24: volatile char high, low;
+[; ;drive.c: 25: int deltaDistance = 0;
+[e = _deltaDistance -> 0 `i ]
+"26
+[v _distance `i  1 a ]
+[; ;drive.c: 26: int distance = 0;
+[e = _distance -> 0 `i ]
+[; ;drive.c: 28: moving = 1;
+"28
+[e = _moving -> -> 1 `i `b ]
+[; ;drive.c: 29: drive(0, 250, 128, 0);
+"29
+[e ( _drive (4 , , , -> -> 0 `i `uc -> -> 250 `i `uc -> -> 128 `i `uc -> -> 0 `i `uc ]
+[; ;drive.c: 32: while(moving)
+"32
 [e $U 103  ]
 [e :U 104 ]
-[; ;drive.c: 28: {
-"28
-{
-[; ;drive.c: 29: ser_putch(137);
-"29
-[e ( _ser_putch (1 -> -> 137 `i `uc ]
-[; ;drive.c: 30: ser_putch(19);
-"30
-[e ( _ser_putch (1 -> -> 19 `i `uc ]
-[; ;drive.c: 31: high = ser_getch();
-"31
-[e = _high ( _ser_getch ..  ]
-[; ;drive.c: 32: low = ser_getch();
-"32
-[e = _low ( _ser_getch ..  ]
-[; ;drive.c: 33: deltaDistance = high*256 + low;
+[; ;drive.c: 33: {
 "33
+{
+[; ;drive.c: 36: ser_putch(142);
+"36
+[e ( _ser_putch (1 -> -> 142 `i `uc ]
+[; ;drive.c: 37: ser_putch(19);
+"37
+[e ( _ser_putch (1 -> -> 19 `i `uc ]
+[; ;drive.c: 38: high = ser_getch();
+"38
+[e = _high ( _ser_getch ..  ]
+[; ;drive.c: 39: low = ser_getch();
+"39
+[e = _low ( _ser_getch ..  ]
+[; ;drive.c: 40: deltaDistance = high*256 + low;
+"40
 [e = _deltaDistance + * -> _high `i -> 256 `i -> _low `i ]
-[; ;drive.c: 34: distance += deltaDistance;
-"34
+[; ;drive.c: 41: distance += deltaDistance;
+"41
 [e =+ _distance _deltaDistance ]
-"35
+[; ;drive.c: 43: if(distance >= moveDistance)
+"43
+[e $ ! >= _distance _moveDistance 106  ]
+[; ;drive.c: 44: {
+"44
+{
+[; ;drive.c: 45: drive(0, 0, 0, 0);
+"45
+[e ( _drive (4 , , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;drive.c: 46: moving = 0;
+"46
+[e = _moving -> -> 0 `i `b ]
+"47
+}
+[e :U 106 ]
+"48
 }
 [e :U 103 ]
-"27
-[e $ >= _distance _moveDistance 104  ]
+"32
+[e $ _moving 104  ]
 [e :U 105 ]
-[; ;drive.c: 35: }
-[; ;drive.c: 36: drive(0, 0, 0, 0);
-"36
-[e ( _drive (4 , , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-[; ;drive.c: 37: }
-"37
+[; ;drive.c: 47: }
+[; ;drive.c: 48: }
+[; ;drive.c: 49: }
+"49
 [e :UE 102 ]
 }
-"40
-[v _turnAround `(v  1 ef ]
+"52
+[v _isMoving `(b  1 ef ]
 {
-[; ;drive.c: 39: void turnAround()
-[; ;drive.c: 40: {
-[e :U _turnAround ]
+[; ;drive.c: 51: bit isMoving()
+[; ;drive.c: 52: {
+[e :U _isMoving ]
 [f ]
-[; ;drive.c: 41: drive(0, 25, 0, 1);
-"41
-[e ( _drive (4 , , , -> -> 0 `i `uc -> -> 25 `i `uc -> -> 0 `i `uc -> -> 1 `i `uc ]
-[; ;drive.c: 42: waitFor(157,0,170);
-"42
-[e ( _waitFor (3 , , -> -> 157 `i `uc -> -> 0 `i `uc -> -> 170 `i `uc ]
-[; ;drive.c: 43: drive(0, 0, 0, 0);
-"43
-[e ( _drive (4 , , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-[; ;drive.c: 44: }
-"44
-[e :UE 106 ]
-}
-"47
-[v _turnLeft90 `(v  1 ef ]
-{
-[; ;drive.c: 46: void turnLeft90()
-[; ;drive.c: 47: {
-[e :U _turnLeft90 ]
-[f ]
-[; ;drive.c: 48: drive(0, 25, 0, 1);
-"48
-[e ( _drive (4 , , , -> -> 0 `i `uc -> -> 25 `i `uc -> -> 0 `i `uc -> -> 1 `i `uc ]
-[; ;drive.c: 49: waitFor(157,0,85);
-"49
-[e ( _waitFor (3 , , -> -> 157 `i `uc -> -> 0 `i `uc -> -> 85 `i `uc ]
-[; ;drive.c: 50: drive(0, 0, 0, 0);
-"50
-[e ( _drive (4 , , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-[; ;drive.c: 51: }
-"51
+[; ;drive.c: 53: return moving;
+"53
+[e ) -> -> _moving `i `b ]
+[e $UE 107  ]
+[; ;drive.c: 54: }
+"54
 [e :UE 107 ]
 }
-"54
-[v _turnRight90 `(v  1 ef ]
-{
-[; ;drive.c: 53: void turnRight90()
-[; ;drive.c: 54: {
-[e :U _turnRight90 ]
-[f ]
-[; ;drive.c: 55: drive(0, 25, 255, 255);
-"55
-[e ( _drive (4 , , , -> -> 0 `i `uc -> -> 25 `i `uc -> -> 255 `i `uc -> -> 255 `i `uc ]
-[; ;drive.c: 56: waitFor(157,255,169);
-"56
-[e ( _waitFor (3 , , -> -> 157 `i `uc -> -> 255 `i `uc -> -> 169 `i `uc ]
-[; ;drive.c: 57: drive(0, 0, 0, 0);
 "57
-[e ( _drive (4 , , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-[; ;drive.c: 58: }
+[v _turnAround `(v  1 ef ]
+{
+[; ;drive.c: 56: void turnAround()
+[; ;drive.c: 57: {
+[e :U _turnAround ]
+[f ]
+[; ;drive.c: 58: drive(0, 25, 0, 1);
 "58
+[e ( _drive (4 , , , -> -> 0 `i `uc -> -> 25 `i `uc -> -> 0 `i `uc -> -> 1 `i `uc ]
+[; ;drive.c: 59: waitFor(157,0,170);
+"59
+[e ( _waitFor (3 , , -> -> 157 `i `uc -> -> 0 `i `uc -> -> 170 `i `uc ]
+[; ;drive.c: 60: drive(0, 0, 0, 0);
+"60
+[e ( _drive (4 , , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;drive.c: 61: _delay((unsigned long)((6500)*(20000000/4000.0)));
+"61
+[e ( __delay (1 -> * -> -> 6500 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;drive.c: 62: _delay((unsigned long)((6500)*(20000000/4000.0)));
+"62
+[e ( __delay (1 -> * -> -> 6500 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;drive.c: 63: }
+"63
 [e :UE 108 ]
 }
-"61
+"66
+[v _turnLeft90 `(v  1 ef ]
+{
+[; ;drive.c: 65: void turnLeft90()
+[; ;drive.c: 66: {
+[e :U _turnLeft90 ]
+[f ]
+[; ;drive.c: 67: drive(0, 25, 0, 1);
+"67
+[e ( _drive (4 , , , -> -> 0 `i `uc -> -> 25 `i `uc -> -> 0 `i `uc -> -> 1 `i `uc ]
+[; ;drive.c: 68: waitFor(157,0,85);
+"68
+[e ( _waitFor (3 , , -> -> 157 `i `uc -> -> 0 `i `uc -> -> 85 `i `uc ]
+[; ;drive.c: 69: drive(0, 0, 0, 0);
+"69
+[e ( _drive (4 , , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;drive.c: 70: _delay((unsigned long)((6500)*(20000000/4000.0)));
+"70
+[e ( __delay (1 -> * -> -> 6500 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;drive.c: 71: }
+"71
+[e :UE 109 ]
+}
+"74
+[v _turnRight90 `(v  1 ef ]
+{
+[; ;drive.c: 73: void turnRight90()
+[; ;drive.c: 74: {
+[e :U _turnRight90 ]
+[f ]
+[; ;drive.c: 75: drive(0, 25, 255, 255);
+"75
+[e ( _drive (4 , , , -> -> 0 `i `uc -> -> 25 `i `uc -> -> 255 `i `uc -> -> 255 `i `uc ]
+[; ;drive.c: 76: waitFor(157,255,169);
+"76
+[e ( _waitFor (3 , , -> -> 157 `i `uc -> -> 255 `i `uc -> -> 169 `i `uc ]
+[; ;drive.c: 77: drive(0, 0, 0, 0);
+"77
+[e ( _drive (4 , , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;drive.c: 78: _delay((unsigned long)((6500)*(20000000/4000.0)));
+"78
+[e ( __delay (1 -> * -> -> 6500 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;drive.c: 79: }
+"79
+[e :UE 110 ]
+}
+"82
 [v _waitFor `(v  1 ef3`uc`uc`uc ]
 {
-[; ;drive.c: 60: void waitFor(char type, char highByte, char lowByte)
-[; ;drive.c: 61: {
+[; ;drive.c: 81: void waitFor(char type, char highByte, char lowByte)
+[; ;drive.c: 82: {
 [e :U _waitFor ]
 [v _type `uc  1 r1 ]
 [v _highByte `uc  1 r2 ]
 [v _lowByte `uc  1 r3 ]
 [f ]
-[; ;drive.c: 62: _delay((unsigned long)((100)*(20000000/4000.0)));
-"62
+[; ;drive.c: 83: _delay((unsigned long)((100)*(20000000/4000.0)));
+"83
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-[; ;drive.c: 63: ser_putch(type);
-"63
+[; ;drive.c: 84: ser_putch(type);
+"84
 [e ( _ser_putch (1 _type ]
-[; ;drive.c: 64: ser_putch(highByte);
-"64
+[; ;drive.c: 85: ser_putch(highByte);
+"85
 [e ( _ser_putch (1 _highByte ]
-[; ;drive.c: 65: ser_putch(lowByte);
-"65
+[; ;drive.c: 86: ser_putch(lowByte);
+"86
 [e ( _ser_putch (1 _lowByte ]
-[; ;drive.c: 66: }
-"66
-[e :UE 109 ]
+[; ;drive.c: 87: }
+"87
+[e :UE 111 ]
 }

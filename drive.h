@@ -8,13 +8,14 @@
 #define ANGLE 157
 #define EVENT 157
 
-#define DRIVE_STRAIGHT() drive(0, 125, 128, 0)												// +125mm/s 											// -100mm/s
+#define DRIVE_STRAIGHT() drive(0, 250, 128, 0)												// +125mm/s 											// -100mm/s
 #define STOP() drive(0, 0, 0, 0)
 #define TURN_RIGHT() drive(0, 25, 255, 255)
 #define TURN_LEFT() drive(0, 25, 0, 1)
 
 void drive(char highByteSpeed, char lowByteSpeed, char highByteRadius, char lowByteRadius);
 void driveForDistance(int moveDistance);
+bit isMoving();
 void turnAround();
 void turnLeft90();
 void turnRight90();
