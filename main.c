@@ -32,6 +32,8 @@ volatile bit rightWall = 0;
 volatile bit leftWall = 0;
 volatile bit frontWall = 0;
 
+volatile bit walls[4] = {1,1,1,0};
+
 volatile direction directionMoved;
 
 volatile orientation currentOrientation = WEST;
@@ -93,7 +95,8 @@ void init()
 	
 	init_adc();
 	lcd_init();
-
+	initCellData();
+	
 	TRISB = 0b00011110; 																	/* PORTB I/O designation */
 
 	//timer0
@@ -145,17 +148,36 @@ void findWalls()
 	rotateIR(48); // Rotate 180deg
 	leftWall = findWall();
 	rotateIR(24); // Rotate 90deg
+	
+	int wallAtOrientation = 0;
 
 	if(rightWall)
+	{
 		lcd_write_data('R');
+		wallAtOrientation = RIGHT + currentOrientation;
+		if(wallAtOrientation >= 4)
+			wallAtOrientation -= 4;
+		walls[wallAtOrientation] = 1;
+	}
 	else
+	{
 		lcd_write_data(' ');
+	}
 	if(frontWall)
+	{
 		lcd_write_data('F');
+		walls[FORWARD+currentOrientation] = 1; // FORWARD = 0 therefore will never overflow
+	}
 	else
 		lcd_write_data(' ');
 	if(leftWall)
+	{
 		lcd_write_data('L');
+		wallAtOrientation = LEFT + currentOrientation;
+		if(wallAtOrientation >= 4)
+			wallAtOrientation -= 4;
+		walls[wallAtOrientation] = 1;
+	}
 	else
 		lcd_write_data(' ');		
 }
@@ -198,7 +220,6 @@ void goLeft()
 // Determine which cell to go to next and go there
 void goToNextCell()
 {
-	findWalls();
 	if(!rightWall)
 		goRight();
 	else if(!frontWall)
@@ -219,13 +240,15 @@ void goRight()
 	lcd_write_data('R');
 }
 	
-void runAdvanced()
+void run()
 {
 	lcd_set_cursor(0x00);
 	lcd_write_string("Walls@ R L (1,0)");
 	lcd_write_string("cuOr: W dirMo: -");
 	while(1)
 	{
+		findWalls();
+		writeCellData();
 		goToNextCell();
 		updateLocation();
 	}
@@ -242,11 +265,11 @@ void updateLocation()
 	switch(currentOrientation)
 	{
 		case NORTH:
-			++yCoord; 
+			--yCoord;
 			lcd_write_data('N');		
 			break;
 		case SOUTH:
-			--yCoord;
+			++yCoord;
 			lcd_write_data('S');
 			break;
 		case EAST:
@@ -275,7 +298,7 @@ void main(void)
 	while(1)
 	{
 		if(start.pressed) 
-			runAdvanced();
+			run();
 	}
 }
 

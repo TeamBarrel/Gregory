@@ -366,6 +366,136 @@ ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
 [File028]
+Location=C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.2\sensors.p1
+Folder=Intermediary
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|sensors.c|adc.c|drive.c|eeprom.c|lcd.c|main.c|map.c|ser.c|songs.c|ir.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File029]
+Location=C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.2\adc.p1
+Folder=Intermediary
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|sensors.c|adc.c|drive.c|eeprom.c|lcd.c|main.c|map.c|ser.c|songs.c|ir.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File030]
+Location=C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.2\drive.p1
+Folder=Intermediary
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|sensors.c|adc.c|drive.c|eeprom.c|lcd.c|main.c|map.c|ser.c|songs.c|ir.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File031]
+Location=C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.2\eeprom.p1
+Folder=Intermediary
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|sensors.c|adc.c|drive.c|eeprom.c|lcd.c|main.c|map.c|ser.c|songs.c|ir.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File032]
+Location=C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.2\lcd.p1
+Folder=Intermediary
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|sensors.c|adc.c|drive.c|eeprom.c|lcd.c|main.c|map.c|ser.c|songs.c|ir.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File033]
+Location=C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.2\main.p1
+Folder=Intermediary
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|sensors.c|adc.c|drive.c|eeprom.c|lcd.c|main.c|map.c|ser.c|songs.c|ir.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File034]
+Location=C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.2\map.p1
+Folder=Intermediary
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|sensors.c|adc.c|drive.c|eeprom.c|lcd.c|main.c|map.c|ser.c|songs.c|ir.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File035]
+Location=C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.2\ser.p1
+Folder=Intermediary
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|sensors.c|adc.c|drive.c|eeprom.c|lcd.c|main.c|map.c|ser.c|songs.c|ir.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File036]
+Location=C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.2\songs.p1
+Folder=Intermediary
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|sensors.c|adc.c|drive.c|eeprom.c|lcd.c|main.c|map.c|ser.c|songs.c|ir.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File037]
+Location=C:\Users\Lili\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.2\ir.p1
+Folder=Intermediary
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|sensors.c|adc.c|drive.c|eeprom.c|lcd.c|main.c|map.c|ser.c|songs.c|ir.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString=C9=2,1
+TraceCmdString=
+DebugOptions=
+[File038]
 Location=D:\Mechatronics 2\COMPETITION\COMPv0.1.cof
 Folder=Output
 DeviceName=PIC16F877A
@@ -378,7 +508,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File029]
+[File039]
 Location=D:\Mechatronics 2\COMPETITION\COMPv0.1.hex
 Folder=Output
 DeviceName=PIC16F877A
@@ -391,7 +521,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File030]
+[File040]
 Location=D:\Mechatronics 2\COMPETITION\COMPv0.1.sym
 Folder=Output
 DeviceName=PIC16F877A
@@ -404,7 +534,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File031]
+[File041]
 Location=D:\Mechatronics 2\COMPETITION\COMPv0.1.map
 Folder=Output
 DeviceName=PIC16F877A
@@ -417,7 +547,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File032]
+[File042]
 Location=D:\Mechatronics 2\COMPETITION\COMPv0.1.hxl
 Folder=Output
 DeviceName=PIC16F877A
@@ -430,7 +560,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File033]
+[File043]
 Location=D:\Mechatronics 2\COMPETITION\startup.lst
 Folder=Output
 DeviceName=PIC16F877A
@@ -443,7 +573,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File034]
+[File044]
 Location=D:\Mechatronics 2\COMPETITION\startup.rlf
 Folder=Output
 DeviceName=PIC16F877A
@@ -456,7 +586,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File035]
+[File045]
 Location=D:\Mechatronics 2\COMPETITION\doprnt.p1
 Folder=Output
 DeviceName=PIC16F877A
@@ -469,7 +599,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File036]
+[File046]
 Location=D:\Mechatronics 2\COMPETITION\doprnt.pre
 Folder=Output
 DeviceName=PIC16F877A
@@ -482,7 +612,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File037]
+[File047]
 Location=D:\Mechatronics 2\COMPETITION\COMPv0.1.obj
 Folder=Output
 DeviceName=PIC16F877A
@@ -495,7 +625,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File038]
+[File048]
 Location=D:\Mechatronics 2\COMPETITION\COMPv0.1.lst
 Folder=Output
 DeviceName=PIC16F877A
@@ -508,7 +638,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File039]
+[File049]
 Location=D:\Mechatronics 2\COMPETITION\COMPv0.1.rlf
 Folder=Output
 DeviceName=PIC16F877A
@@ -521,7 +651,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File040]
+[File050]
 Location=D:\Mechatronics 2\COMPETITION\COMPv0.1.sdb
 Folder=Output
 DeviceName=PIC16F877A
@@ -534,7 +664,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File041]
+[File051]
 Location=F:\Mechatronics 2\COMPETITION\COMPv0.1.cof
 Folder=Output
 DeviceName=PIC16F877A
@@ -547,7 +677,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File042]
+[File052]
 Location=F:\Mechatronics 2\COMPETITION\COMPv0.1.hex
 Folder=Output
 DeviceName=PIC16F877A
@@ -560,7 +690,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File043]
+[File053]
 Location=F:\Mechatronics 2\COMPETITION\COMPv0.1.sym
 Folder=Output
 DeviceName=PIC16F877A
@@ -573,7 +703,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File044]
+[File054]
 Location=F:\Mechatronics 2\COMPETITION\COMPv0.1.map
 Folder=Output
 DeviceName=PIC16F877A
@@ -586,7 +716,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File045]
+[File055]
 Location=F:\Mechatronics 2\COMPETITION\COMPv0.1.hxl
 Folder=Output
 DeviceName=PIC16F877A
@@ -599,7 +729,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File046]
+[File056]
 Location=F:\Mechatronics 2\COMPETITION\startup.lst
 Folder=Output
 DeviceName=PIC16F877A
@@ -612,7 +742,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File047]
+[File057]
 Location=F:\Mechatronics 2\COMPETITION\startup.rlf
 Folder=Output
 DeviceName=PIC16F877A
@@ -625,7 +755,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File048]
+[File058]
 Location=F:\Mechatronics 2\COMPETITION\doprnt.p1
 Folder=Output
 DeviceName=PIC16F877A
@@ -638,7 +768,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File049]
+[File059]
 Location=F:\Mechatronics 2\COMPETITION\doprnt.pre
 Folder=Output
 DeviceName=PIC16F877A
@@ -651,7 +781,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File050]
+[File060]
 Location=F:\Mechatronics 2\COMPETITION\COMPv0.1.obj
 Folder=Output
 DeviceName=PIC16F877A
@@ -664,7 +794,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File051]
+[File061]
 Location=F:\Mechatronics 2\COMPETITION\COMPv0.1.lst
 Folder=Output
 DeviceName=PIC16F877A
@@ -677,7 +807,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File052]
+[File062]
 Location=F:\Mechatronics 2\COMPETITION\COMPv0.1.rlf
 Folder=Output
 DeviceName=PIC16F877A
@@ -690,7 +820,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File053]
+[File063]
 Location=F:\Mechatronics 2\COMPETITION\COMPv0.1.sdb
 Folder=Output
 DeviceName=PIC16F877A
@@ -703,7 +833,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File054]
+[File064]
 Location=C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.1\COMPv0.1.cof
 Folder=Output
 DeviceName=PIC16F877A
@@ -716,7 +846,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File055]
+[File065]
 Location=C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.1\COMPv0.1.hex
 Folder=Output
 DeviceName=PIC16F877A
@@ -729,7 +859,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File056]
+[File066]
 Location=C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.1\COMPv0.1.sym
 Folder=Output
 DeviceName=PIC16F877A
@@ -742,7 +872,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File057]
+[File067]
 Location=C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.1\COMPv0.1.map
 Folder=Output
 DeviceName=PIC16F877A
@@ -755,7 +885,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File058]
+[File068]
 Location=C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.1\COMPv0.1.hxl
 Folder=Output
 DeviceName=PIC16F877A
@@ -768,7 +898,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File059]
+[File069]
 Location=C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.1\startup.lst
 Folder=Output
 DeviceName=PIC16F877A
@@ -781,7 +911,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File060]
+[File070]
 Location=C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.1\startup.rlf
 Folder=Output
 DeviceName=PIC16F877A
@@ -794,7 +924,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File061]
+[File071]
 Location=C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.1\doprnt.p1
 Folder=Output
 DeviceName=PIC16F877A
@@ -807,7 +937,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File062]
+[File072]
 Location=C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.1\doprnt.pre
 Folder=Output
 DeviceName=PIC16F877A
@@ -820,7 +950,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File063]
+[File073]
 Location=C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.1\COMPv0.1.obj
 Folder=Output
 DeviceName=PIC16F877A
@@ -833,7 +963,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File064]
+[File074]
 Location=C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.1\COMPv0.1.lst
 Folder=Output
 DeviceName=PIC16F877A
@@ -846,7 +976,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File065]
+[File075]
 Location=C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.1\COMPv0.1.rlf
 Folder=Output
 DeviceName=PIC16F877A
@@ -859,7 +989,7 @@ SuiteArgsString=
 ToolArgsString=C9=2,1
 TraceCmdString=
 DebugOptions=
-[File066]
+[File076]
 Location=C:\Documents and Settings\User\My Documents\Dropbox\Mechatronics 2\COMPETITION\COMPETITIONv0.1\COMPv0.1.sdb
 Folder=Output
 DeviceName=PIC16F877A
